@@ -18,26 +18,26 @@
 
   
   <link rel="canonical" href="http://www.web-tambouille.fr/2011/07/20/le-cru-2011-de-commons-lang-est-arrive-en-version-3-0-pour-java-5.html">
-  <link href="/web-tambouille/favicon.gif" rel="icon">
-  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="/favicon.gif" rel="icon">
+  <!--<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
   <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
 
-  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   
-<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link href="/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
 <link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
-<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
-<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+<link type="text/css" rel="stylesheet" href="/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
 
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">
   stLight.options({
     publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
     st_title: "Le cru 2011 de commons-lang est arrivé (en 3.0)",
-    st_url: "/web-tambouille"
+    st_url: ""
   });
 </script>
 
@@ -83,9 +83,9 @@
 
     <div class='widget-content'>
       <ul class="main-navigation">
-        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
-        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
-        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li class='selected pagemenu'><a href="/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
         <li style="float:right; padding-right:0px; line-height:12px;">
           <style>
             .google_translate img {
@@ -174,7 +174,7 @@
 <span class='fn'>
   Cat&eacute;gorie :
   
-    <a class='category' href='/web-tambouille/categories/framework/'>Framework</a>
+    <a class='category' href='/categories/framework/'>Framework</a>
   
 </span>
 
@@ -198,7 +198,7 @@
 Tags :&nbsp;
 <span class='post-labels'>
   
-    <a class='tag' href='/web-tambouille/tags/commons/'>Commons</a>, <a class='tag' href='/web-tambouille/tags/java/'>Java</a>
+    <a class='tag' href='/tags/commons/'>Commons</a>, <a class='tag' href='/tags/java/'>Java</a>
   
 </span>
 
@@ -212,7 +212,7 @@ Tags :&nbsp;
   
     <p><a href="https://picasaweb.google.com/lh/photo/WCXZIYRGz5ZYUuR94Z1IRw?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Apache Commons Lang" src="https://lh3.googleusercontent.com/-5YGGTBajr4Q/TjFe72NmOPI/AAAAAAAAAzM/RJ8T1OZWJEk/s800/ApacheBigFeather80-a18cf4c3e18b653d%25255B1%25255D.png" alt="Apache Commons Lang" width="84" height="80" /></a>Quelles sont les librairies que tout bon d&eacute;veloppeur Java a d&eacute;j&agrave; utilis&eacute;es au moins une fois dans ses applications ? Oui, je parle bien s&ucirc;r des fameuses&nbsp;<a href="http://commons.apache.org/" target="_blank">Apache Commons</a>&nbsp;!</p>
 <p>V&eacute;ritables biblioth&egrave;ques g&eacute;n&eacute;riques/r&eacute;utilisables, elles nous permettent de gagner un temps pr&eacute;cieux sur des snippets de code de tous les jours. Mais surtout : elles&nbsp;nous &eacute;vitent un nombre de bugs incalculables !&nbsp;Termin&eacute;e donc l&#8217;&eacute;criture d&#8217;un code <em>maison</em>&nbsp;bien souvent bugg&eacute;&nbsp;pour l&#8217;escaping, la suppression de caract&egrave;res sp&eacute;ciaux en d&eacute;but et fin de cha&icirc;ne, la gestion d&#8217;un param&egrave;tre <span style="font-family: 'courier new', courier;">null </span>que l&#8217;on peut facilement oublier ou bien encore la copie d&#8217;un fichier d&#8217;un emplacement &agrave; un autre <em>(ouverture/fermeture des Stream, gestion du path selon l&#8217;OS&#8230;)</em>, d&eacute;l&eacute;guons plut&ocirc;t cela aux Commons qui sont reconnues pour faire cela et surtout pour le faire bien.</p>
-<p>Parmi les plus connues et utilis&eacute;es&nbsp;<em>(regardez donc dans votre classpath)</em>, on peut citer :&nbsp;<a href="http://commons.apache.org/collections/" target="_blank">commons-collections</a>&nbsp;<em>(non, on ne troll pas avec guava svp&nbsp;<img style="border-style: initial; border-color: initial;" title="Wink" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em>,&nbsp;<a href="http://commons.apache.org/configuration/" target="_blank">commons-configuration</a>,&nbsp;<a href="http://commons.apache.org/dbcp/" target="_blank">commons-dbcp</a>,&nbsp;<a href="http://commons.apache.org/digester/" target="_blank">commons-digester</a>,&nbsp;<a href="http://commons.apache.org/io/" target="_blank">commons-io</a>,&nbsp;<a href="http://commons.apache.org/logging/" target="_blank">commons-logging</a>,&nbsp;<a href="http://commons.apache.org/validator/" target="_blank">commons-validator</a>&nbsp;et, le sujet de cet article,&nbsp;<a href="http://commons.apache.org/lang/" target="_blank">commons-lang</a>&nbsp;qui est sortie <a href="http://commons.apache.org/lang/upgradeto3_0.html" target="_blank">le 19 juillet dernier en version 3.0</a>. Au menu :</p>
+<p>Parmi les plus connues et utilis&eacute;es&nbsp;<em>(regardez donc dans votre classpath)</em>, on peut citer :&nbsp;<a href="http://commons.apache.org/collections/" target="_blank">commons-collections</a>&nbsp;<em>(non, on ne troll pas avec guava svp&nbsp;<img style="border-style: initial; border-color: initial;" title="Wink" src="/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em>,&nbsp;<a href="http://commons.apache.org/configuration/" target="_blank">commons-configuration</a>,&nbsp;<a href="http://commons.apache.org/dbcp/" target="_blank">commons-dbcp</a>,&nbsp;<a href="http://commons.apache.org/digester/" target="_blank">commons-digester</a>,&nbsp;<a href="http://commons.apache.org/io/" target="_blank">commons-io</a>,&nbsp;<a href="http://commons.apache.org/logging/" target="_blank">commons-logging</a>,&nbsp;<a href="http://commons.apache.org/validator/" target="_blank">commons-validator</a>&nbsp;et, le sujet de cet article,&nbsp;<a href="http://commons.apache.org/lang/" target="_blank">commons-lang</a>&nbsp;qui est sortie <a href="http://commons.apache.org/lang/upgradeto3_0.html" target="_blank">le 19 juillet dernier en version 3.0</a>. Au menu :</p>
 <p>Introduction<br /><span style="font-family: 'courier new', courier;">lang3.*<br />lang3.concurrent.*<br />lang3.builder.*<br />lang3.reflect.*<br />lang3.mutable|tuple.*</span><br />Conclusion</p>
 <p><!--more-->Introduction</p>
 <p>Seulement voil&agrave;, il y a un petit <em>hic </em>: la plupart de ces projets est &agrave; l&#8217;abandon, ou en tout cas n&#8217;a pas &eacute;t&eacute; mis &agrave; jour depuis plus de 3 ans <em>(ce qui est tr&egrave;s long dans le monde Java)</em>. On peut notamment citer collections <em>(avril 2008)</em>, configuration<em> (d&eacute;cembre 2008)</em>, logging<em> (mars 2008)</em> ou bien encore validator <em>(mars 2008)</em>.</p>
@@ -223,7 +223,7 @@ Tags :&nbsp;
 <h2>lang3.*</h2>
 <p>Le package <span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/package-summary.html" target="_blank">lang3.*</a></span> contient tous les utilitaires du type <span style="font-family: 'courier new', courier;">StringUtils</span>, <span style="font-family: 'courier new', courier;">ArrayUtils</span>, <span style="font-family: 'courier new', courier;">CharUtils</span>, <span style="font-family: 'courier new', courier;">ObjectUtils</span>, <span style="font-family: 'courier new', courier;">EnumUtils</span>&#8230; Pour une grande majorit&eacute;, notre utilisation de commons-lang se passe dans ce package.</p>
 <p>Petit exemple d&#8217;une utilisation quotidienne : dans la plupart des classes&nbsp;<span style="font-family: 'courier new', courier;">*Utils</span>, on trouve des m&eacute;thodes du type <span style="font-family: 'courier new', courier;">isEmpty</span>&nbsp;<em>(<span style="font-family: 'courier new', courier;">isBlank</span>&#8230;)</em>. Celles-ci g&egrave;rent &agrave; la fois l&#8217;aspect vide de l&#8217;objet,&nbsp;qu&#8217;on l&#8217;on soit un&nbsp;<span style="font-family: 'courier new', courier;">String</span>,&nbsp;une&nbsp;<span style="font-family: 'courier new', courier;">List</span>&nbsp;ou un&nbsp;<span style="font-family: 'courier new', courier;">Array</span>,&nbsp;mais aussi la non-nullit&eacute; i.e.&nbsp;<span style="font-family: 'courier new', courier;">object!=null</span>. Ce qui fait qu&#8217;un code comme&nbsp;<span style="font-family: 'courier new', courier;">myStr!=null &amp;&amp; !myStr.isEmpty()</span>&nbsp;peut aussi s&#8217;&eacute;crire&nbsp;<span style="font-family: 'courier new', courier;">StringUtils.isEmpty(myStr).&nbsp;</span>Certains pr&eacute;f&eacute;reront la premi&egrave;re expression et d&#8217;autres la deuxi&egrave;me, tout d&eacute;pendra du besoin. Par exemple, si notre code m&eacute;tier autorise&nbsp;<span style="font-family: 'courier new', courier;">null </span>comme param&egrave;tre d&#8217;entr&eacute;e et que <span style="font-family: 'courier new', courier;">null </span>signifie &nbsp;vide, alors la deuxi&egrave;me expression est plus adapt&eacute;e.</p>
-<p>Heureusement, commons-lang ne se limite pas qu&#8217;&agrave; ce cas ! Je ne vais quand m&ecirc;me pas mettre un jar pour &eacute;viter les <span style="font-family: 'courier new', courier;">obj!=null</span>&nbsp;<img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Petit floril&egrave;ge d&#8217;exemples avec des m&eacute;thodes que vous connaissaient certainement d&eacute;j&agrave; mais aussi avec les nouvelles qui sont plut&ocirc;t sympathiques :</p>
+<p>Heureusement, commons-lang ne se limite pas qu&#8217;&agrave; ce cas ! Je ne vais quand m&ecirc;me pas mettre un jar pour &eacute;viter les <span style="font-family: 'courier new', courier;">obj!=null</span>&nbsp;<img title="Tongue out" src="/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Petit floril&egrave;ge d&#8217;exemples avec des m&eacute;thodes que vous connaissaient certainement d&eacute;j&agrave; mais aussi avec les nouvelles qui sont plut&ocirc;t sympathiques :</p>
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -361,7 +361,7 @@ Tags :&nbsp;
 </span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;Person[fn=Web,ln=TAMBOUILLE]&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&quot;Web&quot;</span><span class="o">,</span> <span class="s">&quot;TAMBOUILLE&quot;</span><span class="o">).</span><span class="na">toString</span><span class="o">());</span>
 </span><span class='line'><span class="o">}</span>
 </span></code></pre></td></tr></table></div></figure>
-<p>Qu&#8217;ou&iuml;e-je ? Vous allez remplacer tous vos <span style="font-family: 'courier new', courier;">Object.equals</span>&nbsp;et vos <span style="font-family: 'courier new', courier;">Objects.hascode</span>&nbsp;guava par les builders de lang3 ? <img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" /></p>
+<p>Qu&#8217;ou&iuml;e-je ? Vous allez remplacer tous vos <span style="font-family: 'courier new', courier;">Object.equals</span>&nbsp;et vos <span style="font-family: 'courier new', courier;">Objects.hascode</span>&nbsp;guava par les builders de lang3 ? <img title="Tongue out" src="/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" /></p>
 <h2>lang3.reflect.*</h2>
 <p>Le package&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/reflect/package-summary.html" target="_blank">lang3.reflect.*</a></span>&nbsp;se focalise sur tout ce qui concerne l&#8217;acc&egrave;s et l&#8217;invocation par r&eacute;flexion. On retrouve ici 4 classes utilitaires :</p>
 <ul>
@@ -377,7 +377,7 @@ Tags :&nbsp;
 <p>Sachez que 3 impl&eacute;mentations existent : la <span style="font-family: 'courier new', courier;"><span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/Pair.html" target="_blank">Pair&lt;L, R&gt;</a></span></span>&nbsp;<em>(avec les m&eacute;thodes&nbsp;<span style="font-family: 'courier new', courier;">isLeft</span><span style="font-family: 'courier new', courier;">,&nbsp;</span><span style="font-family: 'courier new', courier;">getLeft</span><span style="font-family: 'courier new', courier;">, isRight, getRight, Pair.of(l,r)&#8230;</span>)</em>, la&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/MutablePair.html" target="_blank">MutablePair&lt;L, R&gt;</a></span> <em>(avec les m&eacute;thodes <span style="font-family: 'courier new', courier;">setLeft(l)</span> et <span style="font-family: 'courier new', courier;">setRight(r)</span>)</em> et l&#8217;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/ImmutablePair.html" target="_blank">ImmutablePair&lt;L, R&gt;</a></span>.</p>
 <h2>Conclusion</h2>
 <p>Ceci n&#8217;est qu&#8217;un bref aper&ccedil;u de tout se que contient la librairie. Elle arrive certes tr&egrave;s tard par rapport &agrave; d&#8217;autres concurrents qui ont d&eacute;j&agrave; bien avanc&eacute; techniquement <em>(Generics&#8230;)</em> mais aussi fonctionnellement <em>(concepts de la programmation fonctionnelle&#8230;)</em>&nbsp;mais au moins elle est l&agrave; !</p>
-<p>J&#8217;esp&egrave;re en tout cas vous avoir donn&eacute; envie de tester cette librairie car il n&#8217;y a pas que <a href="http://www.touilleur-express.fr/2010/11/03/google-guava-partie-1/" target="_blank">Guava</a> et <a href="http://web-tambouille.fr/2011/04/5/java-plus-programmation-fonctionnelle-plus-funky-egal-funkyjfunctional.html" target="_blank">FunkyJFunctionnal</a> dans la vie <img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+<p>J&#8217;esp&egrave;re en tout cas vous avoir donn&eacute; envie de tester cette librairie car il n&#8217;y a pas que <a href="http://www.touilleur-express.fr/2010/11/03/google-guava-partie-1/" target="_blank">Guava</a> et <a href="http://web-tambouille.fr/2011/04/5/java-plus-programmation-fonctionnelle-plus-funky-egal-funkyjfunctional.html" target="_blank">FunkyJFunctionnal</a> dans la vie <img title="Smile" src="/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
 <p>D&#8217;ailleurs, &agrave; quand une version <em>Generics </em>pour la fameuse commons-collections ? En attendant, si vous &ecirc;tes int&eacute;ress&eacute; <em>(et un petit peu intr&eacute;pide)</em>, vous pouvez regarder <a href="http://sourceforge.net/projects/collections/" target="_blank">ce projet sur sourceforge</a> qui est un portage de la libraire vers une version Java 5 adapt&eacute;e aux Generics.</p>
 
   
@@ -398,8 +398,8 @@ Tags :&nbsp;
   <p class="meta">
   
     <div class='blog-pager' id='blog-pager'>
-      <div class="alignleft"><a href="/web-tambouille/2011/06/15/interview-de-ryan-dahl-createur-de-node-js.html" title="Billets pr&eacute;c&eacute;dents : Interview de Ryan Dahl, créateur de Node.js">&laquo; Interview de Ryan Dahl, créateur de Node.js</a></div>
-      <div class="alignright"><a href="/web-tambouille/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html" title="Billets suivants : JUG Summer Camp 2011 : Optimiser votre site Web sur mobile">JUG Summer Camp 2011 : Optimiser votre site Web sur mobile &raquo;</a></div>
+      <div class="alignleft"><a href="/2011/06/15/interview-de-ryan-dahl-createur-de-node-js.html" title="Billets pr&eacute;c&eacute;dents : Interview de Ryan Dahl, créateur de Node.js">&laquo; Interview de Ryan Dahl, créateur de Node.js</a></div>
+      <div class="alignright"><a href="/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html" title="Billets suivants : JUG Summer Camp 2011 : Optimiser votre site Web sur mobile">JUG Summer Camp 2011 : Optimiser votre site Web sur mobile &raquo;</a></div>
       <div class='clear'></div>
     </div>
   
