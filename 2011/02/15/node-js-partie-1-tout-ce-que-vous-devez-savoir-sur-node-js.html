@@ -1,0 +1,495 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='true' name='MSSmartTagsPreventParsing' />
+  <title>Node.js partie 1 - Tout ce que vous devez savoir sur Node.js - Web Tambouille</title>
+  <meta name="author" content="Romain MATON (rmat0n)">
+
+  
+  <meta name="description" content="Node.js partie 1 - Tout ce que vous devez savoir sur Node.js Cat&eacute;gorie : Language | 15 février 2011 | Tags :&nbsp; Architecture, Javascript, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">
+  <link href="/web-tambouille/favicon.gif" rel="icon">
+  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
+
+  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  
+<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({
+    publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
+    st_title: "Node.js partie 1 - Tout ce que vous devez savoir sur Node.js",
+    st_url: "/web-tambouille"
+  });
+</script>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+
+  $(document).ready(function () {
+    $('a.lightbox').lightBox({
+      imageLoading: '/static/images/lightbox-ico-loading.gif',
+      imageBtnClose: '/static/images/lightbox-btn-close.gif',
+      imageBtnPrev: '/static/images/lightbox-btn-prev.gif',
+      imageBtnNext: '/static/images/lightbox-btn-next.gif',
+      imageBlank: '/static/images/lightbox-blank.gif'
+    });
+  });
+  /* ]]> */
+</script>
+
+</head>
+
+<body >
+<div class='navbar section' id='navbar'>
+  <div class='widget Navbar' id='Navbar1'>
+    <div></div>
+  </div>
+</div>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+      <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main (ir a principal) </a> |
+        <a href='#sidebar'>skip to sidebar (ir al sidebar)</a>
+      </span>
+    <div class='crosscol section' id='pages'>
+  <div class='widget PageList' id='PageList1'>
+    <h2>Pages</h2>
+
+    <div class='widget-content'>
+      <ul class="main-navigation">
+        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li style="float:right; padding-right:0px; line-height:12px;">
+          <style>
+            .google_translate img {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1.0;
+              opacity: 1.0;
+              border: 0;
+            }
+
+            .google_translate:hover img {
+              filter: alpha(opacity=30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+
+            .google_translatextra:hover img {
+              filter: alpha(opacity=0.30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+          </style>
+          <div>
+            <a class="google_translate" href="#" title="French" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cfr&hl=en';"><img alt="French" border="0" align="absbottom" title="French" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBrDZLrI/AAAAAAAAAC0/Kc6eDMT9LFI/s200/France.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="English" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cen&hl=en';"><img alt="English" border="0" align="absbottom" title="English" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBORD9bI/AAAAAAAAACs/XkaLmmin4zg/s200/United+Kingdom(Great+Britain).png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="German" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cde&hl=en';"><img alt="German" border="0" align="absbottom" title="German" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YVBzoFF2I/AAAAAAAAAC8/WgvMK3zP1Rk/s200/Germany.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Spain" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Ces&hl=en';"><img alt="Spain" border="0" align="absbottom" title="Spain" height="24" src="http://3.bp.blogspot.com/_5jbh95HruKA/S1YVCdHp5VI/AAAAAAAAADE/lWHzr5znExU/s200/Spain.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Italian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cit&hl=en';"><img alt="Italian" border="0" align="absbottom" title="Italian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVCskNubI/AAAAAAAAADM/ChdHC6vYT4s/s200/Italy.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Russian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cru&hl=en';"><img alt="Russian" border="0" align="absbottom" title="Russian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YWR-jg9pI/AAAAAAAAADc/vYZrPOzazHU/s200/Russian+Federation.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Japanese" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cja&hl=en';"><img alt="Japanese" border="0" align="absbottom" title="Japanese" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YWSR2_wYI/AAAAAAAAADs/GtKdPLKUluE/s200/Japan.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+          </div>
+        </li>
+      </ul>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='header-wrapper'>
+  <div class='header section' id='header'>
+    <div class='widget Header' id='Header1'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            Web Tambouille
+          </h1>
+        </div>
+        <div class='descriptionwrapper'>
+          <p class='description'><span>Java, Scala, Web, Android, HTML5, JS, NoSQL et bien d'autres !</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='twitter_div'>
+  <ul id='twitter_update_list'>
+    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+  </ul>
+</div>
+<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
+<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
+
+    <div id="content-wrapper">
+      <div id="main-wrapper">
+        <div class='main section' id='main'>
+          <div class='widget Blog' id='Blog1'>
+            <div class='blog-posts hfeed'>
+              <div class='post clearfix hentry uncustomized-post-template'>
+  
+<div class='clearfix'>
+  <div class='postmetahd'>
+    <h2 class='post-title entry-title single-post'>
+      
+        Node.js partie 1 - Tout ce que vous devez savoir sur Node.js
+      
+    </h2>
+    <p class='post-header-line-1'>
+      <span class='st_twitter_hcount' style="float: right;" displayText='Tweet'></span>
+      <span class='st_plusone_hcount' style="float: right;" displayText='Google +1'></span>
+      <span class='post-author vcard'>
+
+<span class='fn'>
+  Cat&eacute;gorie :
+  
+    <a class='category' href='/web-tambouille/categories/language/'>Language</a>
+  
+</span>
+
+</span> |
+      <span class='date-header'>
+
+
+
+
+
+
+
+
+  <time datetime="2011-02-15T00:00:00+01:00" pubdate data-updated="true">15 février 2011</time>
+
+
+
+</span> |
+      <span class='post-labels'>
+
+Tags :&nbsp;
+<span class='post-labels'>
+  
+    <a class='tag' href='/web-tambouille/tags/architecture/'>Architecture</a>, <a class='tag' href='/web-tambouille/tags/javascript/'>Javascript</a>, <a class='tag' href='/web-tambouille/tags/node-dot-js/'>Node.js</a>
+  
+</span>
+
+</span>
+    </p>
+  </div>
+</div>
+
+
+<div id="post" class='post-body entry-content'>
+  
+    <p><a href="https://lh5.googleusercontent.com/-E1DLFTEFczM/TiggQDjgitI/AAAAAAAAAyE/2ykc_U4xL8w/s288/nodejs-dark-small.png"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Node.js" src="https://lh5.googleusercontent.com/-E1DLFTEFczM/TiggQDjgitI/AAAAAAAAAyE/2ykc_U4xL8w/s288/nodejs-dark-small.png" alt="Node.js" width="200" height="61" /></a>Parmi les nombreuses technologies qui me passionnent actuellement, <a href="http://nodejs.org/" target="_blank">Node.js</a> tient une place importante. Et pour plusieurs raisons : d&eacute;veloppement Javascript c&ocirc;t&eacute; serveur, gestion des entr&eacute;es/sorties de mani&egrave;res non bloquantes, communaut&eacute; tr&egrave;s pr&eacute;sente avec de nombreux modules comme <a href="http://socket.io/" target="_blank">Socket.IO</a>&nbsp;et bien d&#8217;autres choses encore.</p>
+<p>C&#8217;est pour toutes ces raisons, et aussi parce que la nouvelle version <a href="http://linuxfr.org/2011/02/12/27858.html" target="_blank">0.4.0 vient de sortir</a>, que <a href="http://web-tambouille.fr/" target="_blank">Web Tambouille</a>&nbsp;vous propose une s&eacute;rie de 4 billets consacr&eacute;e exclusivement &agrave; votre <em>futur</em>&nbsp;<img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;serveur pr&eacute;f&eacute;r&eacute; : Node !</p>
+<p>Et cela commence d&egrave;s aujourd&#8217;hui avec une petite introduction g&eacute;n&eacute;rale du serveur, ses concepts, les interviews et autres vid&eacute;os &agrave; ne pas manquer, les liens &agrave; conna&icirc;tre&#8230; bref un condens&eacute; de tout ce que vous devez absolument savoir sur Node !</p>
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br />
+<a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br />
+<a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br />
+<a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+<p><!--more--></p>
+<h3>Pr&eacute;sentation</h3>
+<p>Node s&#8217;appuie sur&nbsp;<a href="http://code.google.com/p/v8/" target="_blank">V8</a>, le moteur Javascript de Google utilis&eacute; dans Chrome, qui fait partie des moteurs Javascript les plus puissants du march&eacute; actuellement. Node va nous permettre de d&eacute;velopper tr&egrave;s simplement des applications scalables. Comment ? Un petit tour sur le site nous explique son approche : <a href="http://nodejs.org/#about" target="_blank">http://nodejs.org/#about</a>. En fran&ccedil;ais et en quelques mots : l&#8217;id&eacute;e est d&#8217;utiliser des IO non bloquantes pour g&eacute;rer toutes les requ&ecirc;tes entrantes, sortantes ainsi que tout le process li&eacute; &agrave; la requ&ecirc;te.</p>
+<p>Prenons l&#8217;exemple du serveur Apache. Chaque requ&ecirc;te HTTP entrante se voit allouer un thread. Celui-ci est utilis&eacute; pendant toute la dur&eacute;e du traitement de la requ&ecirc;te : lecture/&eacute;criture en base de donn&eacute;es, lecture/&eacute;criture dans des fichiers de logs ou autres, ex&eacute;cution de code&#8230; Ainsi, si votre code c&ocirc;t&eacute; serveur fait un acc&egrave;s &agrave; la base de donn&eacute;es, celui-ci est <em>en attente</em> de la r&eacute;ponse.&nbsp;De plus, durant toute la dur&eacute;e de la requ&ecirc;te, le client sera bloqu&eacute;, en attente de la r&eacute;ponse du serveur.</p>
+<p>Node et plus globalement les serveurs dits non bloquants <em>(comme&nbsp;<a href="http://www.jboss.org/netty" target="_blank">Netty</a> ou <a href="https://github.com/rschildmeijer/deft" target="_blank">Deft</a>&nbsp;pour ceux qui tournent sur JVM)</em> adoptent une autre approche.&nbsp;Node n&#8217;utilise qu&#8217;un seul thread pour g&eacute;rer les requ&ecirc;tes entrantes. De plus, Node ne propose pas, dans ses API, de fonctions bloquantes. Ainsi, tout notre code est asynchrone. L&#8217;avantage imm&eacute;diat &agrave; cela est la simplification &agrave; l&#8217;extr&ecirc;me de la gestion de la concurrence dans nos applications qui n&#8217;est ici plus g&eacute;r&eacute;e par le d&eacute;veloppeur mais directement par l&#8217;OS. Concr&egrave;tement, toutes les fonctions fournies par Node prennent en param&egrave;tre un callback. Une fois que la fonction aura termin&eacute; son traitement, le callback sera appel&eacute; avec le r&eacute;sultat en param&egrave;tre et une &eacute;ventuelle erreur. Ainsi, pendant toute la dur&eacute;e du traitement, le thread sera rel&acirc;ch&eacute; et pourra &ecirc;tre donn&eacute; &agrave; une autre requ&ecirc;te pour effectuer un autre traitement. Nous sommes donc face &agrave; un syst&egrave;me &eacute;v&egrave;nementiel. Et&nbsp;Javascript est un tr&egrave;s bon choix de langage du fait que&nbsp;l&#8217;on peut&nbsp;<a href="http://web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">programmer de mani&egrave;re fonctionnelle avec celui-ci</a>. Les callbacks dans tous les sens, nous connaissons tr&egrave;s bien avec des librairies comme <a href="http://jquery.com/" target="_blank">jQuery</a>&nbsp;qui nous habituent depuis d&eacute;j&agrave; quelques temps &agrave; ce type de d&eacute;veloppement.</p>
+<p>Juste pour pinailler <img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />, il y a quand m&ecirc;me un &eacute;l&eacute;ment de la biblioth&egrave;que Node qui est bloquant &agrave; savoir&nbsp;<span style="font-family: 'courier new', courier;">require</span>&nbsp;<em>(module compatible <a href="http://www.commonjs.org/" target="_blank">commonJS</a>)</em> qui fait un appel synchrone pour r&eacute;cup&eacute;rer la d&eacute;pendance demand&eacute;e. D&#8217;ailleurs, lors d&#8217;une s&eacute;ance de questions/r&eacute;ponses donn&eacute;e il y a quelques mois, Ryan Dahl <em>(le cr&eacute;ateur de Node)</em> a admis qu&#8217;il serait possible de rendre cela asynchrone mais que cela n&#8217;avait pas forc&eacute;ment un sens puisqu&#8217;on pouvait consid&eacute;rer cela comme un pr&eacute;requis de d&eacute;veloppement. Cela ne me choque pas non plus&#8230;</p>
+<h3>Cas r&eacute;els d&#8217;utilisation</h3>
+<p>Car oui, sur le papier c&#8217;est beau :</p>
+<ul>
+<li>un serveur qui tient une charge tr&egrave;s importante en terme de connections par seconde</li>
+<li>peut-&ecirc;tre&nbsp;<a href="http://groups.google.com/group/nodejs/browse_thread/thread/d19df83c7fd1f3ca?pli=1" target="_blank">100 000 connections</a> sur un seul serveur</li>
+<li>et pourquoi pas&nbsp;1 000 000 d&#8217;utilisateurs&nbsp;comme dans cet <a href="http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-1/" target="_blank">article</a>&nbsp;:&nbsp;une webapp Comet qui utilise <a href="https://github.com/mochi/mochiweb" target="_blank">Mochiweb</a> <em>(Serveur lightweight HTTP en Erlang)</em></li>
+</ul>
+<p>Mais a t-on d&eacute;j&agrave; quelques retours d&#8217;utilisation en production ? Et c&#8217;est l&agrave; que &ccedil;a coince car malheureusement les retours sont assez rares&#8230; Node est &eacute;videmment un projet tr&egrave;s r&eacute;cent et beaucoup pensent qu&#8217;il serait suicidaire de partir en production avec ce serveur. L&#8217;argument de la jeunesse peut tenir la route, mais je me rappelle avoir entendu des choses douteuses comme : <em>&#8220;tant que le num&eacute;ro de version n&#8217;a pas atteint au moins un 1.x, c&#8217;est du suicide !&#8221;</em>. L&agrave;, j&#8217;ai envie de renvoyer ces personnes vers&nbsp;<a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> avec sa version 0.21 qui est juste utilis&eacute; pas <a href="http://engineering.twitter.com/2010/04/hadoop-at-twitter.html" target="_blank">Twitter</a>, <a href="http://www.facebook.com/note.php?note_id=16121578919" target="_blank">Facebook</a> ou bien encore <a href="http://nosql.mypopescu.com/post/1514472152/ebay-hadoop-hbase" target="_blank">eBay</a>. Comme quoi le num&eacute;ro de version ne veut pas forc&eacute;ment dire grand chose&nbsp;<img title="Wink" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />&nbsp;et surtout pas <em>interdit &agrave; la prod</em> !</p>
+<p>Apr&egrave;s quelques soir&eacute;es Javascript diverses et vari&eacute;es et quelques investigations aupr&egrave;s de la communaut&eacute;, il ressort qu&#8217;actuellement Node est beaucoup utilis&eacute; comme serveur de d&eacute;veloppement, pour une productivit&eacute; accrue, sur des frameworks comme Sproutcore. Le build final de l&#8217;application &eacute;tant dans ce cas compos&eacute; de fichiers statiques, celui-ci n&#8217;est d&egrave;s lors plus d&eacute;pendant de Node et peut tourner sur n&#8217;importe quel serveur HTTP. Node uniquement pour le d&eacute;veloppement ? Tout &ccedil;a ne nous aide pas beaucoup&#8230;</p>
+<p>Mais voil&agrave;, un petit billet est sorti avec un titre plut&ocirc;t accrocheur :&nbsp;<a href="http://bostinnovation.com/2011/01/15/who-is-using-node-js-and-why-yammer-bocoup-proxlet-and-yahoo/" target="_blank">Who is Using Node.js And Why ? Yammer, Bocoup, Proxlet and Yahoo</a>. Et en plus il y a du lourd !&nbsp;</p>
+<p>En regardant de plus pr&egrave;s, on remarque d&eacute;j&agrave; qu&#8217;il y a pas/peu d&#8217;inconv&eacute;nient remont&eacute; par ces entreprises, si ce n&#8217;est la jeunesse du framework. Rendez-vous compte : Proxlet a commenc&eacute; &agrave; utiliser Node en version 0.1.0 !!!&nbsp;Pour les avantages, le retour est unanime : Node est tr&egrave;s bon pour g&eacute;rer de nombreuses requ&ecirc;tes en parall&egrave;les, et ce n&#8217;est donc pas une surprise de se retrouver face &agrave; des applications de type proxy. Ainsi, Yammer utilise Node en tant que proxy cross-domain pour leur plateforme de d&eacute;veloppement.&nbsp;L&#8217;application de Proxlet est int&eacute;ressante &agrave; plusieurs points, ce qui me plait plus particuli&egrave;rement c&#8217;est cette full stack Javascript qui part d&#8217;une base de donn&eacute;es MongoDB, accessible par requ&ecirc;te Javascript, qui passe par un serveur Node pour finir en tant qu&#8217;extension Chrome. Un bel exemple de r&eacute;ussite d&#8217;une application 100% Javascript !</p>
+<p>A noter enfin que la partie <a href="http://www.myspace.com/threads#!__/home/sort/most_crowded" target="_blank">threads de MySpace</a> utilise aussi Node, le but &eacute;tant d&#8217;&ecirc;tre en temps r&eacute;el avec tous les threads d&eacute;pos&eacute;s sur le mur.</p>
+<h3>Quelques liens et vid&eacute;os</h3>
+<p>Tout d&#8217;abord les liens, on retiendra notamment :</p>
+<ul>
+<li><a href="https://github.com/ry/node/wiki/modules" target="_blank">https://github.com/ry/node/wiki/modules</a>&nbsp;:&nbsp;une liste tr&egrave;s compl&egrave;te des modules disponibles pour Node</li>
+<li><a href="http://npmjs.org/" target="_blank">NPM</a>&nbsp;: le package manager <em>officiel</em> qui simplifie grandement l&#8217;installation de modules</li>
+<li><a href="http://expressjs.com/" target="_blank">Express</a>&nbsp;: le framework web inspir&eacute; par <a href="http://www.sinatrarb.com/" target="_blank">Sinatra</a>&nbsp;avec une tr&egrave;s bonne <a href="http://blog.mklog.fr/article/express-framework-web-node" target="_blank">introduction chez mklabs</a></li>
+<li><a href="http://socket.io/" target="_blank">Socket.IO</a>&nbsp;: le framework ultime pour une application temps r&eacute;el multi navigateurs, il utilisera ainsi selon le support les Web Sockets, du Long Polling, Flash&#8230;</li>
+<li><a href="http://riakjs.org/" target="_blank">Riak-JS</a> : un client pour se connecter &agrave; une base Riak</li>
+<li><a href="https://github.com/senchalabs/connect" target="_blank">Connect</a> : middleware pour application Node</li>
+<li><a href="https://github.com/cloudhead/vows" target="_blank">Vows</a> : Behavior Driven Development asynchrone et Int&eacute;gration Continue pour Node</li>
+<li><a href="http://www.ianwootten.co.uk/2011/02/07/blog-rolling-with-couchdb-express-and-node-js" target="_blank">Tutoriel Blog Rolling</a> : un article tr&egrave;s complet pour cr&eacute;er un Blog en Node, Express et une base CouchDB</li>
+</ul>
+<p>En ce qui concerne les vid&eacute;os, je vous conseille cette tr&egrave;s bonne introduction par le cr&eacute;ateur de Node, Ryan Dahl, donn&eacute;e le 28 Juillet 2010 &agrave; la conf&eacute;rence Google Tech Talks (60 min) :&nbsp;<a href="http://www.youtube.com/watch?v=F6k8lTrAE2g" target="_blank">http://www.youtube.com/watch?v=F6k8lTrAE2g</a>.</p>
+<p>Et si vous avez encore un peu de temps, 3 autres vid&eacute;os sont disponibles sur InfoQ avec :</p>
+<ul>
+<li>une <a href="http://www.infoq.com/interviews/node-ryan-dahl" target="_blank">interview de Ryan Dahl</a></li>
+<li>une <a href="http://www.infoq.com/presentations/nodejs" target="_blank">session d&#8217;introduction lors de QCon</a></li>
+<li>une <a href="http://www.infoq.com/presentations/Parallel-Programming-with-Nodejs" target="_blank">autre session lors du Strange Loop</a> orient&eacute;e programmation parall&egrave;le</li>
+</ul>
+<h3>Installation</h3>
+<p>L&#8217;installation est assez simple : pour tout ceux qui fonctionnent sans package manager, cela se passe par <a href="https://github.com/ry/node/wiki/Installation" target="_blank">ici</a>&nbsp;et pour les autres cela se passe par <a href="https://github.com/ry/node/wiki/Installing-Node.js-via-package-manager" target="_blank">l&agrave;</a>.</p>
+<p>Sans package manager, cela d&eacute;pendra de votre OS. Le plus simple sous windows sera de passer par un &eacute;mulateur type <a href="http://www.cygwin.com/" target="_blank">Cygwin</a>. &Eacute;tant sous OSX, l&#8217;installation chez moi s&#8217;est r&eacute;sum&eacute;e aux 2 commandes suivantes&nbsp;<em>(j&#8217;utilise homebrew)</em> :</p>
+<pre class="brush: bash;fontsize: 100; first-line: 1; ">rmat0n:~$ brew install node
+rmat0n:~$ curl http://npmjs.org/install.sh | sudo sh</pre>
+<p>Simple non ?</p>
+<h3>Conclusion</h3>
+<p>Fin de cette premi&egrave;re partie, j&#8217;esp&egrave;re que vous avez les id&eacute;es claires sur ce qu&#8217;est Node, ce qu&#8217;il apporte et sa simplicit&eacute; d&#8217;utilisation, que l&#8217;on connaisse ou non Javascript.</p>
+<p>Dans le prochain article, je vous parlerai des IDE pour d&eacute;velopper une application Node et surtout de l&#8217;IDE en Node pour Node &agrave; savoir <a href="http://cloud9ide.com/" target="_blank">Cloud9</a>. <em>Stay tuned !</em></p>
+
+  
+  <div style='clear: both;'></div>
+</div>
+
+
+  
+    <div class="post-share-after">
+  <span class='st_twitter_vcount with_space' displayText='Tweet'></span>
+  <span class='st_plusone_vcount with_space' displayText='Google +1'></span>
+  <span class='st_linkedin_vcount with_space' displayText='LinkedIn'></span>
+  <span class='st_sharethis_vcount with_space' displayText='ShareThis'></span>
+</div>
+
+  
+
+  <p class="meta">
+  
+    <div class='blog-pager' id='blog-pager'>
+      <div class="alignleft"><a href="/web-tambouille/2011/02/08/interview-de-martin-odersky-how-i-met-my-spiritual-father.html" title="Billets pr&eacute;c&eacute;dents : Interview de Martin Odersky : How I met my (spiritual) father :-)">&laquo; Interview de Martin Odersky : How I met my (spiritual) father :-)</a></div>
+      <div class="alignright"><a href="/web-tambouille/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html" title="Billets suivants : Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js">Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js &raquo;</a></div>
+      <div class='clear'></div>
+    </div>
+  
+  </p>
+
+  
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+  
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-wrapper">
+        <div class='gadget clearfix' id='subscribe'>
+  <h4>Abonnez-vous !</h4>
+  <ul>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouille' target="_blank">Blog</a></li>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouilleComments' target="_blank">Commentaires</a></li>
+    <li class='twitter'><a href='http://twitter.com/rmat0n' target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+<div class='sidebar clearfix section' id='promotecolumn'>
+  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/rmat0n"></a>
+  <noscript>
+    <a href="http://flattr.com/thing/296927/Web-Tambouille-rmat0n" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+  </noscript>
+  <a href="http://www.viadeo.com/en/profile/romain.maton" style="margin-left:5px;vertical-align:text-bottom;">
+    <img src="http://mohamedtazi.com/viadeo_button_logo.jpg" width="50" border="0" alt="Mon profil sur Viadeo" />
+  </a>
+  <a href="http://fr.linkedin.com/in/rmaton" style="margin-left:5px;">
+    <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png" width="145" height="25" border="0" alt="Mon profil sur LinkedIn" />
+  </a>
+</div>
+
+
+<div class='sidebar clearfix section' id='searchcolumn'>
+  <form action="http://google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:www.web-tambouille.fr" />
+      Recherche : <input class="search" type="text" name="q" results="0" placeholder="Search" size="44px;" />
+    </fieldset>
+  </form>
+</div>
+
+
+<div class='sidebar clearfix section' id='onecolumn10'>
+  <div class='widget LinkList' id='LinkList10'>
+    <div id="tagCloud">
+      <h2>Mots-cl&eacute;s :</h2>
+      <div class='widget-content'>
+        <ul id="tagList">
+          <li><a style="font-size: 121%" href="/tags/android/">Android</a></li>
+<li><a style="font-size: 151%" href="/tags/devoxx/">Devoxx</a></li>
+<li><a style="font-size: 139%" href="/tags/fonctionnelle/">Fonctionnelle</a></li>
+<li><a style="font-size: 128%" href="/tags/html5/">HTML5</a></li>
+<li><a style="font-size: 165%" href="/tags/java/">Java</a></li>
+<li><a style="font-size: 163%" href="/tags/javascript/">Javascript</a></li>
+<li><a style="font-size: 160%" href="/tags/node-dot-js/">Node.js</a></li>
+<li><a style="font-size: 121%" href="/tags/play/">Play</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='clearfix' id='twocolumns'>
+  <div class='fl section' id='sl'>
+    <div class='widget Label' id='Label1'>
+      <h2>Cat&eacute;gories</h2>
+      <div class='widget-content list-label-widget-content'>
+        
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fr section' id='sr'>
+    <div class='widget BlogArchive' id='BlogArchive1'>
+      <h2>Archives</h2>
+      <div class='widget-content'>
+        <div id='ArchiveList'>
+          <div id='BlogArchive1_ArchiveList'>
+            <ul class='hierarchy'>
+              <!--li class='archivedate expanded'-->
+              <!--li><a class='post-count-link' href=> <span class='post-count' dir='ltr'>()</span></a></li-->
+              <!--li-->
+            </ul>
+          </div>
+        </div>
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:15px;">
+  <div id="zindepWidget" data-profil="http://www.leszindeps.fr/p/Romain/Maton/8aff0abe371c3fd601371c3fe3e40012" data-width="315"></div>
+</div>
+
+<div class='sidebar clearfix section' id='onecolumn20'>
+  <div class='widget LinkList' id='LinkList20'>
+    <div class='widget-content licence' style="padding-top:15px;">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Contrat Creative Commons" style="border-width:0;float:left;padding-right:5px;padding-top: 4px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      Cette oeuvre est mise &agrave; disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> Licence Creative Commons Paternit&eacute; - Pas d'Utilisation Commerciale -
+                                                                                                                                                   Partage &agrave;
+                                                                                                                                                   l'Identique 3.0 non transcrit</a>.
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1471642924127242";
+/* web-tambouille-1 */
+google_ad_slot = "8625499162";
+google_ad_width = 324;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+      </div>
+    </div>
+    <!--</div>-->
+    <footer role="contentinfo"><div class='clearfix clear' id='footer-wrapper'>
+  <div class='fl'>
+    Copyright &copy; 2013 - Romain MATON (rmat0n) - Propuls&eacute; par <a href="http://octopress.org">Octopress</a>
+  </div>
+  <div class='fr'><a href='http://cloudblogging.blogspot.com/'>Cloud Blogging</a> desgined by
+    <a href='http://btemplates.com/' title='Blogger Templates'><img alt='BTemplates' src='http://4.bp.blogspot.com/_Zuzii37VUO4/S59W9qxAUWI/AAAAAAAAEqY/4plNq9KEqBQ/s1600/blogger-templates.png' /></a>.
+  </div>
+</div>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'web-tambouille';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html';
+        var disqus_url = 'http://www.web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19424814-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript">
+  $("figure").each(function () {
+    $(this).html($(this).html().replace(/\t/g, "  "));
+  });
+</script>
+
+
+  </div>
+</div>
+</body>

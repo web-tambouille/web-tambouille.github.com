@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Débat | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/debat/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Guava ne pair jamais ?]]></title>
+    <link href="http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat.html"/>
+    <updated>2012-02-21T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Parker Lewis" src="http://www.toutelatele.com/IMG/jpg/parker-et-ses-copains.jpg" alt="Parker Lewis" width="250" height="179" />Bon OK seuls les plus de 30 ans comprendront la r&eacute;f&eacute;rence &agrave; cette s&eacute;rie ultime, mais cela devait &ecirc;tre dit <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />.</p>
+
+
+<p>Car oui, en me baladant sur les mailing-lists et issues de mes frameworks favoris, dont fait bien s&ucirc;r partie&nbsp;<a href="http://code.google.com/p/guava-libraries/" target="_blank"><span style="color: #0000ff;">Google-Guava</span></a>, je suis tomb&eacute; sur l'<em>issue 203</em> post&eacute;e il y a 2 ans et demi :&nbsp;<a href="http://code.google.com/p/guava-libraries/issues/detail?id=203" target="_blank"><span style="color: #0000ff;">Add Pair class and Itera*s.pairUp()</span></a>. Cela m'a rappel&eacute; un pr&eacute;c&eacute;dent article sur <a href="http://www.playframework.org/" target="_blank">Play! Framework</a>&nbsp;et la <a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html" target="_blank"><span style="color: #0000ff;">nouvelle librairie play.libs.F</span></a>. Une de ses nouveaut&eacute;s &eacute;tait justement l'<a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html#tuple" target="_blank"><span style="color: #0000ff;">ajout de la classe <span style="font-family: 'courier new', courier;">Tuple&lt;A, B&gt;</span></span></a>&nbsp;qui permet de stocker simplement plusieurs valeurs dans un objet <span style="font-family: 'courier new', courier;">T2</span> <em>(2 valeurs)</em>, <span style="font-family: 'courier new', courier;">T3</span> <em>(3 valeurs)</em> et ainsi de suite.</p>
+
+
+<p>Alors, pourquoi je vous parle de &ccedil;a ? Et bien parce que la team Guava a rejet&eacute; cette demande le 16 f&eacute;vrier dernier par <a href="http://code.google.com/p/guava-libraries/issues/detail?id=203#c17" target="_blank">ce commentaire</a>. Le d&eacute;bat est ouvert !</p>
+
+
+<p><!--more-->En effet, cette <em>issue</em> me rappelle une petite session de type <em>"d&eacute;bat"</em> que nous avions programm&eacute;e avec <a href="https://twitter.com/#!/jeremywallez" target="_blank">J&eacute;r&eacute;my</a>&nbsp;quand nous &eacute;tions organisateurs des XKE chez <a href="http://blog.xebia.fr/" target="_blank">Xebia</a> : <em>"Best practice : pour ou contre les tuples en Java"</em> par <a href="https://twitter.com/#!/sklouvi" target="_blank">Steve Klouvy</a>. L'id&eacute;e &eacute;tait d'&eacute;changer sur nos exp&eacute;riences concernant les retours de nos m&eacute;thodes Java entre projets, entre couches ou dans un m&ecirc;me projet. La session a eu son petit succ&egrave;s et avait d'ailleurs pas mal d&eacute;bord&eacute; <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Comme quoi m&ecirc;me des questions, qui paraissent simples voir sans int&eacute;r&ecirc;t, peuvent quand m&ecirc;me soulever les foules, et m&ecirc;me sur <a href="http://stackoverflow.com/questions/457775/does-java-need-tuples" target="_blank">StackOverflow</a> !</p>
+
+
+<p>La r&eacute;ponse de la team Guava sur cette classe <span style="font-family: 'courier new', courier;">Pair</span>, surtout le<em> *extensively*</em>&nbsp;alors qu'on ne parle ici que d'une classe <span style="font-family: 'courier new', courier;">Pair</span> <em>(un tuple &agrave; 2 valeurs, le <span style="font-family: 'courier new', courier;">T2</span> de Play! Framework)</em>&nbsp;m'a interpell&eacute;.<br />La question de son existence se pose donc car, en &eacute;tant succinct, Guava et Java ne poss&egrave;dent pas cet objet et ne le proposeront jamais, alors que Scala et Play! Framework le proposent ainsi que beaucoup d'autres.<br />Et surtout, j'ai &eacute;t&eacute; confront&eacute; &agrave; ce cas de figure&nbsp;la semaine derni&egrave;re&nbsp;et, apr&egrave;s &ecirc;tre parti sur une premi&egrave;re version &agrave; base de tuple <em>(que j'utilise depuis longtemps)</em>, j'ai refactor&eacute; vers une autre impl&eacute;mentation.&nbsp;</p>
+
+
+<p>Prenons un exemple : une m&eacute;thode vous renvoie les 10 derniers SMS re&ccedil;us par un utilisateur. Une nouvelle demande vous est remont&eacute;e par le m&eacute;tier : il faudrait aussi afficher sur la page le nombre total de nouveaux SMS <em>(les non consult&eacute;s)</em>.</p>
+
+
+<p>Plusieurs possibilit&eacute;s :</p>
+
+
+<ol>
+<li>Vous faites une nouvelle m&eacute;thode qui ne s'occupe que de retourner un entier et votre code appellera cette deuxi&egrave;me m&eacute;thode <em>(nombre de nouveaux messages)</em> en plus de la premi&egrave;re <em>(les 10 derniers)</em>.<br />Et vous ferez cela &agrave; chaque fois qu'une nouvelle demande surviendra.<br />Cela pourra donc &ecirc;tre un co&ucirc;t non n&eacute;gligeable en termes de performance car pour certaines demandes, y compris celle-l&agrave; <em>(selon le code des couches inf&eacute;rieurs)</em>, vous ferez plusieurs fois le m&ecirc;me travail <em>(acc&egrave;s base...)</em> car vous d&eacute;coupez en plusieurs m&eacute;thodes qui auraient p&ucirc;, pour certaines, &ecirc;tre regroup&eacute;es.</li>
+<li>Vous changez la m&eacute;thode existante : vous la renommez <em>(<span style="font-family: 'courier new', courier;">getLastTenMessages</span> en <span style="font-family: 'courier new', courier;">getNbNewAndLastTenMessages</span> ou autre chose)</em>, vous cr&eacute;ez un objet de type conteneur <em>(par exemple <span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>&nbsp;et vous changez le type de retour de votre m&eacute;thode<em> (<span style="font-family: 'courier new', courier;">List&lt;Message&gt;</span> en&nbsp;<span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>. Vous appellerez ainsi les 2 accesseurs pour r&eacute;cup&eacute;rer les 2 valeurs souhait&eacute;es dans votre action.<br />Un seul appel qui renvoie des donn&eacute;es m&eacute;tiers d'un m&ecirc;me domaine fonctionnel&nbsp;<em>(on ne renvoie que des valeurs li&eacute;es au messages)</em>&nbsp;avec factorisation du code. Toutefois, de nombreux objets de type conteneur seront cr&eacute;&eacute;s et donc &agrave; maintenir. Mis entre de mauvaises mains, on pourra se retrouver avec des m&eacute;thodes qui font la pluie et le beau temps, par exemple <span style="font-family: 'courier new', courier;">getCurrentUserNbNewAndLastTenMessagesCompleteLabelListAndNbTotalMessage</span> <img title="Surprised" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-surprised.gif" border="0" alt="Surprised" />.</li>
+<li>M&ecirc;me chose qu'au dessus mais avec un <span style="font-family: 'courier new', courier;">Tuple</span> &agrave; la place de cet objet conteneur. M&ecirc;mes avantages concernant la performance avec autre avantage : moins de code &agrave; maintenir ! Il faudra toutefois coder cette classe car elle n'existe pas mais cela n'est pas tr&egrave;s compliqu&eacute; m&ecirc;me typ&eacute;e <em>(exemple <a href="http://groups.google.com/group/comp.lang.java.help/msg/a9123f3b7e76776f" target="_blank">ici</a>).&nbsp;</em>Celle que j'ai cod&eacute;e me permet de faire des tuples par m&eacute;thode statique, ex : <span style="font-family: 'courier new', courier;">T2.of(val1, val2)</span> et m&ecirc;me chose pour <span style="font-family: 'courier new', courier;">T3</span>, <span style="font-family: 'courier new', courier;">T4</span>...&nbsp;En revanche, on peut perdre en lisibilit&eacute; avec ces <span style="font-family: 'courier new', courier;">_1</span>, <span style="font-family: 'courier new', courier;">_2</span>...</li>
+</ol>
+
+
+<p>Plusieurs choses concernant cet exemple et les solutions propos&eacute;es <em>(il en existe bien s&ucirc;r d'autres)</em> :</p>
+
+
+<ol>
+<li>On ne parle plus de la classe <span style="font-family: 'courier new', courier;">Pair</span> et mais plut&ocirc;t du concept de&nbsp;<span style="font-family: 'courier new', courier;">Tuple</span>&nbsp;<em>(dont le <span style="font-family: 'courier new', courier;">Pair</span> est un sous-ensemble)</em>.</li>
+<li>On se rend compte que le choix d'utiliser un tuple, un conteneur ou autre chose d&eacute;pend beaucoup de l'architecture mise en place et de jusqu'o&ugrave; on doit respecter cette architecture ou un pattern de code mis en place.</li>
+<li>Cela d&eacute;pend aussi de la documentation : en effet, quand sur le tuple vous faites <span style="font-family: 'courier new', courier;">tuple._1</span> et <span style="font-family: 'courier new', courier;">tuple._2</span>, savez-vous r&eacute;ellement ce que vous r&eacute;cup&eacute;rez depuis votre action ?<br />R&eacute;digez-vous syst&eacute;matiquement une javadoc qui permet &agrave; votre code client de savoir quels sont les param&egrave;tres d'entr&eacute;es et surtout de sorties&nbsp;?<br /><span style="font-family: 'courier new', courier;">retour.getNbNewMessage()</span> et <span style="font-family: 'courier new', courier;">retour.getLastTenMessages</span>&nbsp;pr&eacute;sents dans un objet conteneur ne sont-ils pas plus parlant ?</li>
+</ol>
+
+
+<p>Pas de r&eacute;ponse universelle mais un d&eacute;bat ouvert et bien s&ucirc;r quelque soit votre langage : qu'en pensez-vous ? comment faites-vous sur vos projets ? utilisez-vous des objets composites ? des tuples ? une m&eacute;thode = un retour donc si 3 retours alors split en 3 m&eacute;thodes et donc 3 objets, 3 appels &agrave; effectuer ? ... Et si vous avez des exemples encore plus flagrants pour appuyez vos arguments, n'h&eacute;sitez pas !</p>
+
+]]></content>
+  </entry>
+  
+</feed>

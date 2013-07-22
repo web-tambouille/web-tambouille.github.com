@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Java | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/java/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ne manquez pas 24 plugins chrono à Devoxx France 2013 !]]></title>
+    <link href="http://www.web-tambouille.fr/2013/03/25/ne-manquez-pas-24-plugins-chrono-devoxx-france-2013.html"/>
+    <updated>2013-03-25T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2013/03/25/ne-manquez-pas-24-plugins-chrono-devoxx-france-2013</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-bottom: 10px; margin-left: 10px;" title="Devoxx France" src="https://lh6.googleusercontent.com/-9F1gvUwxYlw/T24C2YvqelI/AAAAAAAAA2w/dsL1f2uKJhg/s389/devox-blog-home.png" alt="Devoxx France" />Que le temps passe vite... j'ai l'impression que <a href="http://www.devoxx.com/display/FR12/Accueil" target="_blank">Devoxx 2012</a> c'&eacute;tait hier <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>Bon, pas le temps d'&ecirc;tre nostalgique, on remet le couvert avec <a href="http://www.devoxx.com/display/FR13/Accueil?atl_token=3rXzZlfGau" target="_blank">Devoxx 2013</a>... et c'est d&eacute;j&agrave; pour mercredi !</p>
+
+
+<p>Toujours 3 jours de geekeries en tout genre, de goodies, de bonnes rencontres et de conf&eacute;rences &agrave; ne plus savoir o&ugrave; donner de la t&ecirc;te !</p>
+
+
+<p>Et cette ann&eacute;e encore, j'ai la chance de pouvoir vous faire un talk, en l'occurence un <a href="http://www.devoxx.com/display/FR13/Tools+in+Action" target="_blank">Tools In Action</a> et ce sera <a href="http://www.devoxx.com/display/FR13/24+Plugins+Chrono" target="_blank">24 Plugins Chrono</a> !</p>
+
+
+<p>Si vous voulez booster votre IDE et avoir les meilleurs plugins qui existent aujourd'hui, ne ratez surtout pas cette session !</p>
+
+
+<p>Donc rendez-vous est pris mercredi 27 mars sur la Seine B &agrave; 17h !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Un Devoxx 2012 sous le signe du Web]]></title>
+    <link href="http://www.web-tambouille.fr/2012/11/19/un-devoxx-2012-sous-le-signe-du-web-java-javascript-html5-mobile-scala-android.html"/>
+    <updated>2012-11-19T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/11/19/un-devoxx-2012-sous-le-signe-du-web-java-javascript-html5-mobile-scala-android</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/V9M1pDs55-FrTkscjO_8TtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="float: right; margin-top: 10px; margin-left: 10px;" title="Devoxx 2012" src="https://lh6.googleusercontent.com/-lxPDCqAb5EM/TiWhX2jhflI/AAAAAAAAAwQ/SJMUH5HgfSM/s288/LogoDevoxx150dpi%255B1%255D.jpg_version%253D1%2526modificationDate%253D1275294792000.jpg" alt="Devoxx 2012" width="288" height="108" /></a>Vous n'avez pas pu le manquer dans votre timeline twitter la semaine derni&egrave;re : du 12 au 16 novembre dernier avait lieu <a href="http://www.devoxx.com/display/DV12/Home" target="_blank">Devoxx 2012</a>, la plus grosse conf&eacute;rence Java d'Europe.</p>
+
+
+<p>C'est d&eacute;j&agrave; termin&eacute;, la semaine est pass&eacute;e &agrave; tr&egrave;s grande vitesse. Ce WE, c'est s&eacute;ance rattrapage des nombreuses heures de sommeil en retard <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>Et c'est bien repos&eacute; que je d&eacute;cide de me lancer dans ce petit r&eacute;sum&eacute; de ma semaine &agrave; Devoxx : les meilleurs moments, mes meilleurs sessions et celles que vous ne devrez absolument pas manquer sur <a href="http://www.parleys.com" target="_blank">Parley's</a>. Je retrouve toutes mes petites notes Evernote et mes quelques clich&eacute;s et c'est parti !</p>
+
+
+<p>D'ailleurs s'il y a bien une chose &agrave; retenir, c'est que cette nouvelle &eacute;dition de Devoxx World &eacute;tait clairement plac&eacute;e sous le signe du Web !</p>
+
+
+<p><!--more--></p>
+
+
+<h3>L'organisation</h3>
+
+
+<p>Comme chaque ann&eacute;e, c'est du tr&egrave;s bon mais les petits soucis persistent : un bracelet &eacute;tanche mais qui grattait un peu, tr&egrave;s difficile de se connecter au wifi <em>(voir pour moi impossible)</em>, les petits d&eacute;jeuners top, par contre le midi c'est moyen, pas de soir&eacute;e Noxx pour moi <em>(bo&icirc;te &agrave; c&ocirc;t&eacute; de la conf&eacute;rence)</em> mais les retours sont tr&egrave;s bons, un bon film comme chaque ann&eacute;e <em>(Skyfall)</em>, du caf&eacute; et des boissons absolument partout et de nombreux avec bien s&ucirc;r des goodies en veux-tu en voil&agrave;.</p>
+
+
+<p>C&ocirc;t&eacute; nouveaut&eacute;s, le bracelet NFC permettait de voter en sortant de la salle pour faire un <em>like</em> ou un <em>dislike</em> de la conf&eacute;rence. Utile pour voir quelle session a plu mais aussi celle qui &eacute;tait &agrave; c&ocirc;t&eacute;, et il y en a eu quelques unes...</p>
+
+
+<p>Devant chaque salle, pas de papier pour annoncer les sessions mais un Raspberry PI avec une petite appli JavaFX pour faire d&eacute;filer les sessions, une super id&eacute;e !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/6m2_jt4qrOxDz2nZCDXucNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="vertical-align: baseline;" title="Raspberry PI" src="https://lh3.googleusercontent.com/-JHRzP_MXb9Y/UKkcXTMsGqI/AAAAAAAAA-E/md31W3wz7fw/s288/2012-11-12%252009.09.52.jpg" alt="Raspberry PI" width="288" height="216" /></a>&nbsp; &nbsp;&nbsp;<a href="https://picasaweb.google.com/lh/photo/HUrRl7SzsJs1OJRjbI2EddMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="vertical-align: baseline;" title="Screen" src="https://lh5.googleusercontent.com/-_lj_sKh38pw/UKkcRgW5hYI/AAAAAAAAA-E/7xZj2mt6mDM/s288/2012-11-12%252010.51.30.jpg" alt="Screen" width="384" height="216" /></a></p>
+
+
+<p>Apr&egrave;s, questions de gouts, j'ai trouv&eacute; la playlist des les salles pendant les pauses ou entre 2 sessions plut&ocirc;t pas mal. C'est un d&eacute;tail mais quitte &agrave; <em>subir</em>, je pr&eacute;f&egrave;re de la bonne musique. Pas vous ?&nbsp;<img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<h3>Web, Mobile et Android</h3>
+
+
+<p>Je vous laisse voir l'<a href="http://www.devoxx.com/display/DV12/Schedule?atl_token=1bPqIgvjxn" target="_blank">agenda</a> en d&eacute;tail mais en effet c&ocirc;t&eacute; Web nous &eacute;tions g&acirc;t&eacute;s, voici quelques universit&eacute;s et conf&eacute;rences auxquelles j'ai pu assister :</p>
+
+
+<ul>
+<li>une universit&eacute; sur Play Framework 2,</li>
+<li>une universit&eacute; sur Javascript / HTML5,</li>
+<li>une universit&eacute; <em>Making the Web faster</em> pour l'optimisation des performances frontend mais pas seulement,</li>
+<li>une session sur Dart,</li>
+<li>une&nbsp;session&nbsp;sur le Chrome Dev Tools,</li>
+<li>une&nbsp;session&nbsp;sur AngularJS,</li>
+<li>et bien d'autres encore !</li>
+</ul>
+
+
+<p>M&ecirc;me chose c&ocirc;t&eacute; mobile et plus particuli&egrave;rement Android, j'ai pu voir :</p>
+
+
+<ul>
+<li>Android annotation,</li>
+<li>Android code injection <em>(pas top, plut&ocirc;t un cours sur AspectJ...)</em>,</li>
+<li>Android tools,</li>
+<li>Et de m&ecirc;me quelques autres sessions.</li>
+</ul>
+
+
+<p>Ces derni&egrave;res ann&eacute;es &eacute;taient plut&ocirc;t orient&eacute;es sur Android, NoSQL et bien s&ucirc;r beaucoup de talks autour de Java, cette ann&eacute;e nous voyons surtout des conf&eacute;rences autour du Web, que ce soit les outils, les frameworks ou plus g&eacute;n&eacute;ralement les performances Web. C'est d'ailleurs tr&egrave;s int&eacute;ressant de voir qu'il y a eu beaucoup moins de conf&eacute;rences autour de JEE, aucune sur JSF, GWT et Flex. Il y a comme un petit vent qui souffle sur nos grosses applications...</p>
+
+
+<h3>Les autres sessions</h3>
+
+
+<p>J'ai aussi vari&eacute; mon Devoxx avec d'autres sessions dont :</p>
+
+
+<ul>
+<li>une universit&eacute; sur Scala avanc&eacute;,</li>
+<li>une conf&eacute;rence sur Java 8 et les lambdas en action,</li>
+<li>une conf&eacute;rence&nbsp;<em>catastrophique</em> sur le garbage collector G1,</li>
+<li>une conf&eacute;rence, ou plut&ocirc;t un <em>stand up</em> monumental, de Chet Haase sur les <em>Modern software development anti-pattern</em>&nbsp;que je vous conseille fortement,</li>
+<li>une conf&eacute;rence avec les <em>Diabolical Developers</em>&nbsp;du <em>London JUG</em>,</li>
+<li>une conf&eacute;rence sur Elastic Search,</li>
+<li>une conf&eacute;rence sur les nouveaut&eacute;s de Spring 3.1 <em>(un peu lente)</em>,</li>
+<li>et plusieurs quickies et tools in action.</li>
+</ul>
+
+
+<p>Vous le voyez donc : Devoxx est de plus en plus vari&eacute; et le Web et Javascript prennent une part tr&egrave;s importante dans le planning, on voit que Google est pass&eacute;e par l&agrave;.</p>
+
+
+<p>Je ne vais pas non plus annuler ma journ&eacute;e&nbsp;<a href="http://www.dotjs.eu" target="_blank">DotJS</a>&nbsp;mais c'est int&eacute;ressant de voir cette communaut&eacute;, qui n'&eacute;tait pas tendre envers Javascript, s'int&eacute;resser voir adopter ces nouveaux frameworks JS.</p>
+
+
+<h3>Les keynotes</h3>
+
+
+<p>Comme chaque ann&eacute;e, nous avons eu droit &agrave; nos 3 keynotes le mercredi. Cela a commenc&eacute; par une d&eacute;monstration de ce que l'on peut faire avec Nao<em> (pas les baskets hein, le robot <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />) </em>et c'&eacute;tait assez impressionnant car je ne connaissais pas du tout :</p>
+
+
+<p>
+<object style="width: 640px; height: 360px;" width="640" height="360" data="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" type="application/x-shockwave-flash">
+<param name="data" value="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" />
+<param name="src" value="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" />
+</object>
+</p>
+
+
+<p>La premi&egrave;re sur Devoxx et Parley's avec la grosse info : Parley's laisse tomber Flash et passe sur HTML5 ! Encore une preuve que Flash est sur le d&eacute;clin, c'est pas comme si un <a href="http://web-tambouille.fr/tag/HTML5" target="_blank">certain blog</a> n'arr&ecirc;tait pas d'en parler <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></p>
+
+
+<p>Puis Oracle suivra avec une keynote bien mieux que les pr&eacute;c&eacute;dente, une arriv&eacute;e de <a href="http://steveonjava.com" target="_blank">Stephen Chin</a> &agrave; moto dans la salle de cin&eacute;ma, des d&eacute;mos plut&ocirc;t r&eacute;ussies et quasiment pas de bullet points. J'ai presque envie de dire : bravo Oracle !</p>
+
+
+<p>Puis la tant attendue keynote de Neal Ford, talentueux speaker, mais qui sur Geek Leaks n'arrive pas &agrave; convaincre. Dommage...</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/AFc1jGqQ-mC918Qb3YKA8NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Neal Ford" src="https://lh5.googleusercontent.com/-uWKm0rmtsYU/UKkaw3vU6GI/AAAAAAAAA-E/MNhWEHXew3U/s640/2012-11-14%252011.16.29.jpg" alt="Neal Ford" width="640" height="360" /></a></p>
+
+
+<h3>Code Story</h3>
+
+
+<p>Comme pour Devoxx France, l'&eacute;quipe <a href="http://code-story.net" target="_blank">Code Story</a> &eacute;tait pr&eacute;sente au grand complet pour nous d&eacute;velopper <em>from scratch</em> une nouvelle application et bien s&ucirc;r toujours dans les r&egrave;gles de l'art : du beau code, du java, du js, des tests et beaucoup de fun !&nbsp;J'ai pu m'y rendre plusieurs fois et c'est toujours un plaisir de les voir <em>live-coder</em>.&nbsp;Pour voir le r&eacute;sultat et avoir un petit r&eacute;sum&eacute;, <a href="http://code-story.net/2012/11/16/what-has-been-done-at-devoxx.html" target="_blank">rendez-vous sur leur site</a>.</p>
+
+
+<p><em>Kudos</em> &agrave; David, Jean-Laurent, Eric et S&eacute;bastian !</p>
+
+
+<h3>Sessions Web</h3>
+
+
+<p>Certainement la meilleure qu'il ma &eacute;t&eacute; donn&eacute; de voir toutes &eacute;ditions de Devoxx confondues. Une v&eacute;ritable bible de bonnes pratiques et surtout de pourquoi nous en sommes l&agrave;. J'avais pr&eacute;vu de le r&eacute;sumer dans cette article mais ce serait trop long et ignoble de la couper, donc un r&eacute;sum&eacute; plus complet dans quelques jours.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/B5xbS_P1ZAYh24oybqJbltMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Making the Web faster" src="https://lh5.googleusercontent.com/-r-bSsWA1wMI/UKkMhJ4bsjI/AAAAAAAAA70/VWCy4W8V_mE/s640/2012-11-13%252013.34.36.jpg" alt="Making the Web faster" width="640" height="360" /></a></p>
+
+
+<p>Universit&eacute; en demi-teinte : Javascript et HTML5 avec un bon speaker avec des exemples tir&eacute;s de sa librairie slidefast. Malheureusement les trop nombreuses lignes de code emp&ecirc;chaient de distinguer ce qui &eacute;tait pertinent : <em>l<em>ess </em></em><em>is more&nbsp;</em>! Tiens, &ccedil;a me rappelle la pr&eacute;sentation sur G1...&nbsp;</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/iFLU_Tqlm3UBIWVnz-ysUdMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Javascript et HTML5" src="https://lh4.googleusercontent.com/-peB6yZKlDiA/UKkbu_vrrDI/AAAAAAAAA-E/TlNKlpApqOs/s640/2012-11-12%252014.06.23.jpg" alt="Javascript et HTML5" width="640" height="360" /></a></p>
+
+
+<p>Autre session Web int&eacute;ressante : Dart. Le langage continue d'&eacute;voluer et les outils avec. Une bonne approche, cependant avec tous les langages au dessus de Javascript <em>(Coffeescript...)</em>, on ne sait plus trop &agrave; qui faire confiance... A suivre donc.</p>
+
+
+<p>Il y a eu aussi Play Framework 2 qui m'a enfin permis de mettre remettre &agrave; Play mais avec une toute nouvelle version, la derni&egrave;re fois que j'y avais touch&eacute; c'&eacute;tait avec la 1.2.4, et bien s&ucirc;r les choses ont beaucoup chang&eacute; : du Scala, Akka derri&egrave;re, des Promises, des Enumeratee et bien d'autres. J'ai bien aim&eacute; le support de RequireJS, tr&egrave;s belle librairie qui, selon votre archi c&ocirc;t&eacute; front, est amha obligatoire !</p>
+
+
+<p>Si vous voulez vous y mettre et revoir cette universit&eacute;, je vous d&eacute;conseille la premi&egrave;re partie qui est compl&egrave;tement rat&eacute;e. Foncez direct sur la deuxi&egrave;me, qui elle, est r&eacute;ussie.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/pzSikanbFEmyfYRq8lhlQdMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Play Framework 2" src="https://lh3.googleusercontent.com/-fMrHz_rzkOk/UKkcfSBI5ZI/AAAAAAAAA-E/t1Fgtcd0rMQ/s640/2012-11-12%252012.32.38.jpg" alt="Play Framework 2" width="640" height="360" /></a></p>
+
+
+<h3>Sessions Android</h3>
+
+
+<p>Beaucoup moins de sessions Android pour moi cette ann&eacute;e, apr&egrave;s quasiment toutes les sessions Android possibles &agrave; faire en 2010 et 2011, et aucun projet Android perso dans l'ann&eacute;e, je me suis tourn&eacute; vers des petites sessions autour des outils plut&ocirc;t que celles sur les optimisations de performances et les nouveaut&eacute;s.</p>
+
+
+<p>Bonne pioche : j'ai r&eacute;ellement accroch&eacute; sur un petit framework fran&ccedil;ais &agrave; savoir <a href="http://androidannotations.org" target="_blank">Android Annotations</a>. Des <em>annotations processors</em>&nbsp;&agrave; votre secours pour vous simplifier l'&eacute;criture de vos classes java dans Android ! C'est simple, j'ai envie de faire de l'Android l&agrave; tout de suite maintenant m&ecirc;me sans id&eacute;e, c'est pour vous dire <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" /></p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/P8-TPNhWARZwPO7mvXU1x9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Android Annotations" src="https://lh3.googleusercontent.com/-pZXuF2WYnfY/UKkbbr-jzmI/AAAAAAAAA-E/o6YaAYPjOMs/s640/2012-11-12%252016.54.53.jpg" alt="Android Annotations" width="640" height="360" /></a></p>
+
+
+<p>Autre conf&eacute;rence sur Android : les nouveaut&eacute;s du plugin Eclipse. Certes je suis sur IntelliJ IDEA mais autant rester <em>aware</em> des nouveaut&eacute;s &agrave; c&ocirc;t&eacute;. Qui sait, un <em>switch</em> est si vite arriv&eacute;...</p>
+
+
+<p>Plut&ocirc;t int&eacute;ressant : affichage multiple (selon la locale, l'orientation du t&eacute;l&eacute;phone...), des templates de projet, un WYSIWYG am&eacute;lior&eacute;, meilleure int&eacute;gration de Lint et quelques am&eacute;liorations de ci de l&agrave;. Il faudra tester pendant le d&eacute;veloppement pour r&eacute;ellement voir les impacts de tout cela !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/f2oYqX-eCY4OWVfoUCD90NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Android Eclipse" src="https://lh6.googleusercontent.com/-L_mMATprDH0/UKka_DGAobI/AAAAAAAAA-E/Q0BLfx-NzQw/s640/2012-11-13%252017.36.29.jpg" alt="Android Eclipse" width="640" height="360" /></a></p>
+
+
+<h3>Sessions Java et Scala</h3>
+
+
+<p>Avant derni&egrave;re partie de cette article autour de la JVM avec les sessions autour de Java et Scala. Tout d'abord Scala avec une excellente session de Bill Venners et Dick Wall en universit&eacute; en 2 fois 3 heures. J'ai la deuxi&egrave;me qui &eacute;tait tagu&eacute;e <em>advanced</em>. On peut en effet voir cela comme &ccedil;a car c'est parti tr&egrave;s fort avec entre autres :</p>
+
+
+<ul>
+<li>des rappels sur PreDef,</li>
+<li>applyDynamics,</li>
+<li>une revue compl&egrave;te des diff&eacute;rents types d'<span style="font-family: 'courier new', courier;">implicit</span>,</li>
+<li><span style="font-family: 'courier new', courier;">Manifest</span> <em>versus</em> <span style="font-family: 'courier new', courier;">ClassManifest</span>,</li>
+<li>une revue compl&egrave;te des diff&eacute;rents types de <em>Pattern Matching</em>,</li>
+<li>les monads <span style="font-family: 'courier new', courier;">Option</span> et <span style="font-family: 'courier new', courier;">Either</span>,</li>
+<li>et quelques bonnes pratiques g&eacute;n&eacute;rales.</li>
+</ul>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/9yOaYpRmjOF5pP26qtQyOtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Scala advanced" src="https://lh4.googleusercontent.com/-vSpP5G1wYP4/UKkbXfnRJiI/AAAAAAAAA-E/TjWjkPRpt_c/s640/2012-11-13%252009.32.40.jpg" alt="Scala advanced" width="640" height="360" /></a></p>
+
+
+<p>C&ocirc;t&eacute; Java, j'ai beaucoup aim&eacute; la pr&eacute;sentation live coding de <a href="http://guillaume.tardif.free.fr/wordpress/" target="_blank">Guillaume Tardif</a> sur les lambdas dans Java 8.&nbsp;Quelques liens pour installer Java 8 preview et direct dans IntelliJ IDEA qui supporte d&eacute;j&agrave; la syntaxe ! Que j'aime beaucoup d'ailleurs, vivement l'ann&eacute;e prochaine.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/fqu1_EkD7cxKEBEtOIlE4dMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Java 8 lambda" src="https://lh4.googleusercontent.com/-fpsCGnqLKG8/UKka6Em2i9I/AAAAAAAAA-E/bGp1DkHX7iA/s400/2012-11-13%252018.08.02.jpg" alt="Java 8 lambda" width="400" height="225" /></a></p>
+
+
+<p>Un bon compl&eacute;ment &agrave; cette session &eacute;tait la conf&eacute;rence JDK8&nbsp;de Joe Darcy <em>(lead sur Project Coin)</em>, plus bullet points que live coding <em>(un peu trop d'ailleurs...)</em> qui nous explique les internals du fonctionnement des lambdas et d'autres fonctionnalit&eacute;s de Java 8.</p>
+
+
+<p>C'est une session &agrave; voir mais buvez 3 Red Bull avant d'y aller car le ton monotone du speaker ainsi que certains slides sont mortels.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/SOUhBmEqyTfYh_8P7j0B3NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="JDK8" src="https://lh3.googleusercontent.com/-wxKfr8LNU1g/UKkauEIRqoI/AAAAAAAAA-E/e5J5x9MWJuk/s640/2012-11-14%252014.23.04.jpg" alt="JDK8" width="640" height="360" /></a></p>
+
+
+<p>A noter qu'il y a eu une session sur Spring 3.1 : trop de slides, trop de puces et un discours assez moyen pour au final peu de nouveaut&eacute;s. Le speaker m'a perdu en 10 minutes chrono, pourtant il faut y aller...</p>
+
+
+<h3>Sessions Fun</h3>
+
+
+<p>Comme chaque ann&eacute;e, je me suis fait ma petite pause <a href="http://javaposse.com" target="_blank">Java Posse</a> avec ma petite bi&egrave;re Atlassian. Une session moins dr&ocirc;le que les pr&eacute;c&eacute;dentes mais le fun est toujours l&agrave;. A noter que Chet Haase fait son entr&eacute;e dans les Java Posse apr&egrave;s le d&eacute;part d'un des membres.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/aP36bTgg9h-Wt-Jy0litotMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Java Posse" src="https://lh6.googleusercontent.com/-DdbHydXEq-s/UKkYYvRGXcI/AAAAAAAAA8M/RyM42O9Z2Jo/s640/2012-11-15%252015.13.16.jpg" alt="Java Posse" width="640" height="360" /></a></p>
+
+
+<p>Autre session qui partait bien mais a tr&egrave;s rapidement pris le tournant de l'humour &eacute;tait la session, toujours de Chet Haase pour les <em>process</em>. Des graphiques qui ne veulent rien dire, des donn&eacute;es tr&egrave;s douteuses et une magnifique cravate, que dire &agrave; part de ne pas louper cette session sur Parley's !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/gaybkXsfagm0n-hgPFHWK9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Chet Haase" src="https://lh3.googleusercontent.com/-aCkH47ytmck/UKkYNhVLX_I/AAAAAAAAA8E/oJh_dNOUf0Y/s640/2012-11-15%252019.06.21.jpg" alt="Chet Haase" width="640" height="360" /></a></p>
+
+
+<p>Et bien s&ucirc;r, comme &agrave; Devoxx France, les gars du London JUG avec une conf&eacute;rence <em>The Diabolical Developer</em> qui comme d'habitude ont fait le <em>show</em> !</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Chaque ann&eacute;e, on ressort de Devoxx la t&ecirc;te pleine d'infos et on attend qu'une chose : tester, ou pas, tout ce qu'on a vu en attendant l'ann&eacute;e suivante.</p>
+
+
+<p>Cette &eacute;dition 2012 aura &eacute;t&eacute; tr&egrave;s riche et je pense m&ecirc;me <em>(allez soyons fou)</em> que c'est ma meilleure ann&eacute;e de Devoxx ! En effet, en 4 ans, je n'ai jamais eu cette impression que le temps passait si vite mais surtout je n'ai eu autant de frameworks et d'outils &agrave; tester !</p>
+
+
+<p>Je vous retrouverai &agrave; <a href="http://www.dotjs.eu" target="_blank">DotJS</a> pour la plus grosse conf&eacute;rence Javascript de France !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Devoxx France 2012 : vidéo, slides et feedback !]]></title>
+    <link href="http://www.web-tambouille.fr/2012/05/29/devoxx-france-2012-video-slides-et-feedback-optimiser-votre-site-web-sur-mobile.html"/>
+    <updated>2012-05-29T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2012/05/29/devoxx-france-2012-video-slides-et-feedback-optimiser-votre-site-web-sur-mobile</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/YwpW-Mxm5xKuw4PQUqusENMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="margin-left: 10px; margin-bottom: 10px; float: right;" title="Devoxx France" src="https://lh6.googleusercontent.com/-9F1gvUwxYlw/T24C2YvqelI/AAAAAAAAA2w/dsL1f2uKJhg/s288/devox-blog-home.png" alt="Devoxx France" width="288" height="122" /></a>Le temps passe vite : Devoxx France, c'&eacute;tait d&eacute;j&agrave; il y a un mois... Pour ceux qui auraient loup&eacute; l'&eacute;v&egrave;nement : c'est tout simplement la plus grande conf&eacute;rence fran&ccedil;aise sur Java, sur 3 jours, avec des talks de qualit&eacute; mais aussi de nombreuses rencontres <em>off</em> entre les confs avec plein de geeks.</p>
+
+
+<p>Je me souviendrai longtemps de ce premier Devoxx France, et ce malgr&eacute; 3 d&eacute;placements en Belgique pour le Devoxx <em>original</em>, car j'ai eu la chance d'&ecirc;tre choisi pour une conf&eacute;rence sur l'Optimisation de site Web mobile ! C'est quand m&ecirc;me quelque chose de monter sur l'estrade <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>En attendant l'&eacute;dition 2013 <em>(avec une tr&egrave;s grande impatience)</em>, voici la vid&eacute;o et les slides de mon talk<em> (mis &agrave; jour pour l'occasion)</em>&nbsp;ainsi qu'un petit feedback.</p>
+
+
+<p><!--more--></p>
+
+
+<h3>Vid&eacute;o</h3>
+
+
+<p>La vid&eacute;o est disponible sur <a href="http://www.parleys.com/" target="_blank">Parley's</a>. Moyennant un petit abonnement annuel, vous pourrez revoir tous les talks de Devoxx France mais pas seulement : vous avez aussi acc&egrave;s &agrave; tous les talks pr&eacute;c&eacute;dents de Devoxx <em>(Belgique)</em>, de nombreux JUG et bien plus encore ! Alors allez-y, cela vaut vraiment le coup.</p>
+
+
+<p>
+<object width="750" height="380" data="http://www.parleys.com/dist/share/parleysshare.swf" type="application/x-shockwave-flash">
+<param name="data" value="http://www.parleys.com/dist/share/parleysshare.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="wmode" value="direct" />
+<param name="bgcolor" value="#222222" />
+<param name="flashVars" value="sv=true&amp;pageId=3273" />
+<param name="src" value="http://www.parleys.com/dist/share/parleysshare.swf" />
+<param name="flashvars" value="sv=true&amp;pageId=3273" />
+<param name="allowfullscreen" value="true" />
+</object>
+</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3>Slides</h3>
+
+
+<p>Comme d'habitude, tout est disponible sur slideshare. La pr&eacute;sentation est d&eacute;coup&eacute;e en 3 parties, voici les liens :</p>
+
+
+<ul>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-1-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-1-sur-3</a></li>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-2-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-2-sur-3</a></li>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-3-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-3-sur-3</a></li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<h3>Feedback</h3>
+
+
+<p>J'ai beaucoup appr&eacute;ci&eacute; la pr&eacute;sentation de <a href="http://twitter.com/#!/josepaumard" target="_blank">Jos&eacute; Paumard</a> en universit&eacute; <em>(<a href="http://www.devoxx.com/pages/viewpage.action?pageId=6128004" target="_blank">De Runnable et synchronized &agrave; parallel() et atomically()</a>)</em>, technique et tr&egrave;s bien expliqu&eacute;e.</p>
+
+
+<p>C&ocirc;t&eacute; tools in action, je retiens <a href="http://www.devoxx.com/pages/viewpage.action?pageId=6128101" target="_blank">Pratiquer DD en un &eacute;clair</a> d'<a href="https://twitter.com/#!/ulrich" target="_blank">Urich Vachon</a>,&nbsp;qui m'a vraiment donn&eacute; envie d'essayer <a href="http://fornax.itemis.de/confluence/display/fornax/Sculptor+(CSC)" target="_blank">Sculptor</a>,&nbsp;mais aussi <a href="http://www.devoxx.com/display/FR12/Chouchoutez+votre+code+JavaScript" target="_blank">Romain Linsolas</a> pour <a href="http://www.devoxx.com/display/FR12/Chouchoutez+votre+code+JavaScript" target="_blank">Chouchoutez votre code javascript</a>.</p>
+
+
+<p>Pour les conf&eacute;rences, je vous conseille&nbsp;<a href="http://www.devoxx.com/display/FR12/Manipulation+de+bytecode+++democratisons+la+magie+noire" target="_blank">Manipulation de bytecode : d&eacute;mocratisons la magie noire</a> par <a href="http://twitter.com/#!/jponge" target="_blank">Julien Ponge</a> et <a href="https://twitter.com/#!/flemouel" target="_blank">Fr&eacute;d&eacute;ric Le Mouel</a>,&nbsp;<a href="http://www.devoxx.com/display/FR12/Pour+une+fois+soyons+physique%21+Une+introduction+a+Arduino." target="_blank">Pour une fois soyons physique! Une introduction &agrave; Arduino</a> par <a href="http://twitter.com/#!/delabassee" target="_blank">David Delabass&eacute;e</a>&nbsp;et bien s&ucirc;r les <em>keynotes</em> de <a href="https://twitter.com/#!/chanezon" target="_blank">Patrick Chanezon</a> et <a href="https://twitter.com/#!/neal4d" target="_blank">Neal Ford</a> qui ont respectivement pr&eacute;sent&eacute; <a href="http://www.devoxx.com/display/FR12/Portrait+du+developpeur+en+The+Artist" target="_blank">Portrait du d&eacute;veloppeur en "The Artist"</a> et <a href="http://www.devoxx.com/display/FR12/Abstraction+Distractions+for+France" target="_blank">Abstraction Distractions</a>.</p>
+
+
+<p>Et bien s&ucirc;r, un petit tour de temps en temps pour voir <a href="https://twitter.com/#!/morlhon" target="_blank">Jean-Laurent De Morlhon</a>, <a href="https://twitter.com/#!/dgageot" target="_blank">David Gageot</a>,&nbsp;<a href="http://sebastian.lemerdy.free.fr/" target="_blank">Sebastian Le Merdy</a> et&nbsp;<a href="https://twitter.com/#!/ericlemerdy" target="_blank">Eric Le Merdy</a>&nbsp;pour <a href="http://www.code-story.net/" target="_blank">Code Story</a>&nbsp;avec le d&eacute;veloppement d'une application en 2 jours,&nbsp;une exp&eacute;rience &agrave; renouveler d'urgence.</p>
+
+
+<p>Au final, une seule chose &agrave; retenir : &agrave; l'ann&eacute;e prochaine <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Guava ne pair jamais ?]]></title>
+    <link href="http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat.html"/>
+    <updated>2012-02-21T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Parker Lewis" src="http://www.toutelatele.com/IMG/jpg/parker-et-ses-copains.jpg" alt="Parker Lewis" width="250" height="179" />Bon OK seuls les plus de 30 ans comprendront la r&eacute;f&eacute;rence &agrave; cette s&eacute;rie ultime, mais cela devait &ecirc;tre dit <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />.</p>
+
+
+<p>Car oui, en me baladant sur les mailing-lists et issues de mes frameworks favoris, dont fait bien s&ucirc;r partie&nbsp;<a href="http://code.google.com/p/guava-libraries/" target="_blank"><span style="color: #0000ff;">Google-Guava</span></a>, je suis tomb&eacute; sur l'<em>issue 203</em> post&eacute;e il y a 2 ans et demi :&nbsp;<a href="http://code.google.com/p/guava-libraries/issues/detail?id=203" target="_blank"><span style="color: #0000ff;">Add Pair class and Itera*s.pairUp()</span></a>. Cela m'a rappel&eacute; un pr&eacute;c&eacute;dent article sur <a href="http://www.playframework.org/" target="_blank">Play! Framework</a>&nbsp;et la <a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html" target="_blank"><span style="color: #0000ff;">nouvelle librairie play.libs.F</span></a>. Une de ses nouveaut&eacute;s &eacute;tait justement l'<a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html#tuple" target="_blank"><span style="color: #0000ff;">ajout de la classe <span style="font-family: 'courier new', courier;">Tuple&lt;A, B&gt;</span></span></a>&nbsp;qui permet de stocker simplement plusieurs valeurs dans un objet <span style="font-family: 'courier new', courier;">T2</span> <em>(2 valeurs)</em>, <span style="font-family: 'courier new', courier;">T3</span> <em>(3 valeurs)</em> et ainsi de suite.</p>
+
+
+<p>Alors, pourquoi je vous parle de &ccedil;a ? Et bien parce que la team Guava a rejet&eacute; cette demande le 16 f&eacute;vrier dernier par <a href="http://code.google.com/p/guava-libraries/issues/detail?id=203#c17" target="_blank">ce commentaire</a>. Le d&eacute;bat est ouvert !</p>
+
+
+<p><!--more-->En effet, cette <em>issue</em> me rappelle une petite session de type <em>"d&eacute;bat"</em> que nous avions programm&eacute;e avec <a href="https://twitter.com/#!/jeremywallez" target="_blank">J&eacute;r&eacute;my</a>&nbsp;quand nous &eacute;tions organisateurs des XKE chez <a href="http://blog.xebia.fr/" target="_blank">Xebia</a> : <em>"Best practice : pour ou contre les tuples en Java"</em> par <a href="https://twitter.com/#!/sklouvi" target="_blank">Steve Klouvy</a>. L'id&eacute;e &eacute;tait d'&eacute;changer sur nos exp&eacute;riences concernant les retours de nos m&eacute;thodes Java entre projets, entre couches ou dans un m&ecirc;me projet. La session a eu son petit succ&egrave;s et avait d'ailleurs pas mal d&eacute;bord&eacute; <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Comme quoi m&ecirc;me des questions, qui paraissent simples voir sans int&eacute;r&ecirc;t, peuvent quand m&ecirc;me soulever les foules, et m&ecirc;me sur <a href="http://stackoverflow.com/questions/457775/does-java-need-tuples" target="_blank">StackOverflow</a> !</p>
+
+
+<p>La r&eacute;ponse de la team Guava sur cette classe <span style="font-family: 'courier new', courier;">Pair</span>, surtout le<em> *extensively*</em>&nbsp;alors qu'on ne parle ici que d'une classe <span style="font-family: 'courier new', courier;">Pair</span> <em>(un tuple &agrave; 2 valeurs, le <span style="font-family: 'courier new', courier;">T2</span> de Play! Framework)</em>&nbsp;m'a interpell&eacute;.<br />La question de son existence se pose donc car, en &eacute;tant succinct, Guava et Java ne poss&egrave;dent pas cet objet et ne le proposeront jamais, alors que Scala et Play! Framework le proposent ainsi que beaucoup d'autres.<br />Et surtout, j'ai &eacute;t&eacute; confront&eacute; &agrave; ce cas de figure&nbsp;la semaine derni&egrave;re&nbsp;et, apr&egrave;s &ecirc;tre parti sur une premi&egrave;re version &agrave; base de tuple <em>(que j'utilise depuis longtemps)</em>, j'ai refactor&eacute; vers une autre impl&eacute;mentation.&nbsp;</p>
+
+
+<p>Prenons un exemple : une m&eacute;thode vous renvoie les 10 derniers SMS re&ccedil;us par un utilisateur. Une nouvelle demande vous est remont&eacute;e par le m&eacute;tier : il faudrait aussi afficher sur la page le nombre total de nouveaux SMS <em>(les non consult&eacute;s)</em>.</p>
+
+
+<p>Plusieurs possibilit&eacute;s :</p>
+
+
+<ol>
+<li>Vous faites une nouvelle m&eacute;thode qui ne s'occupe que de retourner un entier et votre code appellera cette deuxi&egrave;me m&eacute;thode <em>(nombre de nouveaux messages)</em> en plus de la premi&egrave;re <em>(les 10 derniers)</em>.<br />Et vous ferez cela &agrave; chaque fois qu'une nouvelle demande surviendra.<br />Cela pourra donc &ecirc;tre un co&ucirc;t non n&eacute;gligeable en termes de performance car pour certaines demandes, y compris celle-l&agrave; <em>(selon le code des couches inf&eacute;rieurs)</em>, vous ferez plusieurs fois le m&ecirc;me travail <em>(acc&egrave;s base...)</em> car vous d&eacute;coupez en plusieurs m&eacute;thodes qui auraient p&ucirc;, pour certaines, &ecirc;tre regroup&eacute;es.</li>
+<li>Vous changez la m&eacute;thode existante : vous la renommez <em>(<span style="font-family: 'courier new', courier;">getLastTenMessages</span> en <span style="font-family: 'courier new', courier;">getNbNewAndLastTenMessages</span> ou autre chose)</em>, vous cr&eacute;ez un objet de type conteneur <em>(par exemple <span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>&nbsp;et vous changez le type de retour de votre m&eacute;thode<em> (<span style="font-family: 'courier new', courier;">List&lt;Message&gt;</span> en&nbsp;<span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>. Vous appellerez ainsi les 2 accesseurs pour r&eacute;cup&eacute;rer les 2 valeurs souhait&eacute;es dans votre action.<br />Un seul appel qui renvoie des donn&eacute;es m&eacute;tiers d'un m&ecirc;me domaine fonctionnel&nbsp;<em>(on ne renvoie que des valeurs li&eacute;es au messages)</em>&nbsp;avec factorisation du code. Toutefois, de nombreux objets de type conteneur seront cr&eacute;&eacute;s et donc &agrave; maintenir. Mis entre de mauvaises mains, on pourra se retrouver avec des m&eacute;thodes qui font la pluie et le beau temps, par exemple <span style="font-family: 'courier new', courier;">getCurrentUserNbNewAndLastTenMessagesCompleteLabelListAndNbTotalMessage</span> <img title="Surprised" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-surprised.gif" border="0" alt="Surprised" />.</li>
+<li>M&ecirc;me chose qu'au dessus mais avec un <span style="font-family: 'courier new', courier;">Tuple</span> &agrave; la place de cet objet conteneur. M&ecirc;mes avantages concernant la performance avec autre avantage : moins de code &agrave; maintenir ! Il faudra toutefois coder cette classe car elle n'existe pas mais cela n'est pas tr&egrave;s compliqu&eacute; m&ecirc;me typ&eacute;e <em>(exemple <a href="http://groups.google.com/group/comp.lang.java.help/msg/a9123f3b7e76776f" target="_blank">ici</a>).&nbsp;</em>Celle que j'ai cod&eacute;e me permet de faire des tuples par m&eacute;thode statique, ex : <span style="font-family: 'courier new', courier;">T2.of(val1, val2)</span> et m&ecirc;me chose pour <span style="font-family: 'courier new', courier;">T3</span>, <span style="font-family: 'courier new', courier;">T4</span>...&nbsp;En revanche, on peut perdre en lisibilit&eacute; avec ces <span style="font-family: 'courier new', courier;">_1</span>, <span style="font-family: 'courier new', courier;">_2</span>...</li>
+</ol>
+
+
+<p>Plusieurs choses concernant cet exemple et les solutions propos&eacute;es <em>(il en existe bien s&ucirc;r d'autres)</em> :</p>
+
+
+<ol>
+<li>On ne parle plus de la classe <span style="font-family: 'courier new', courier;">Pair</span> et mais plut&ocirc;t du concept de&nbsp;<span style="font-family: 'courier new', courier;">Tuple</span>&nbsp;<em>(dont le <span style="font-family: 'courier new', courier;">Pair</span> est un sous-ensemble)</em>.</li>
+<li>On se rend compte que le choix d'utiliser un tuple, un conteneur ou autre chose d&eacute;pend beaucoup de l'architecture mise en place et de jusqu'o&ugrave; on doit respecter cette architecture ou un pattern de code mis en place.</li>
+<li>Cela d&eacute;pend aussi de la documentation : en effet, quand sur le tuple vous faites <span style="font-family: 'courier new', courier;">tuple._1</span> et <span style="font-family: 'courier new', courier;">tuple._2</span>, savez-vous r&eacute;ellement ce que vous r&eacute;cup&eacute;rez depuis votre action ?<br />R&eacute;digez-vous syst&eacute;matiquement une javadoc qui permet &agrave; votre code client de savoir quels sont les param&egrave;tres d'entr&eacute;es et surtout de sorties&nbsp;?<br /><span style="font-family: 'courier new', courier;">retour.getNbNewMessage()</span> et <span style="font-family: 'courier new', courier;">retour.getLastTenMessages</span>&nbsp;pr&eacute;sents dans un objet conteneur ne sont-ils pas plus parlant ?</li>
+</ol>
+
+
+<p>Pas de r&eacute;ponse universelle mais un d&eacute;bat ouvert et bien s&ucirc;r quelque soit votre langage : qu'en pensez-vous ? comment faites-vous sur vos projets ? utilisez-vous des objets composites ? des tuples ? une m&eacute;thode = un retour donc si 3 retours alors split en 3 m&eacute;thodes et donc 3 objets, 3 appels &agrave; effectuer ? ... Et si vous avez des exemples encore plus flagrants pour appuyez vos arguments, n'h&eacute;sitez pas !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Tambouille à Devoxx 2011 !]]></title>
+    <link href="http://www.web-tambouille.fr/2011/11/13/web-tambouille-a-la-conference-devoxx-2011.html"/>
+    <updated>2011-11-13T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2011/11/13/web-tambouille-a-la-conference-devoxx-2011</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Devoxx 2010" src="https://lh6.googleusercontent.com/-lxPDCqAb5EM/TiWhX2jhflI/AAAAAAAAAwQ/SJMUH5HgfSM/s800/LogoDevoxx150dpi%25255B1%25255D.jpg_version%25253D1%252526modificationDate%25253D1275294792000.jpg" alt="Devoxx 2010" width="200" height="75" /></p>
+
+
+<p>Tout comme <a href="http://web-tambouille.fr/2010/11/9/web-tambouille-a-la-conference-devoxx.html" target="_blank">l'ann&eacute;e derni&egrave;re</a>, Web Tambouille sera &agrave; la conf&eacute;rence&nbsp;<a href="http://www.devoxx.com/display/DV11/Home" target="_blank">Devoxx</a>, la plus grande conf&eacute;rence Java d'Europe voir du Monde ! Je ne pourrai malheureusement pas faire les 5 jours cette ann&eacute;e <img title="Frown" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-frown.gif" border="0" alt="Frown" />&nbsp;mais c'est avec grand plaisir que je serai sur Anvers &agrave; partir de mercredi !</p>
+
+
+<p>Le programme est toujours aussi all&eacute;chant et les stars sont au rendez-vous : Java, Play Framework, HTML, Android... bref tout ce que j'aime,&nbsp;il ne manque plus que du Node <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></p>
+
+
+<p>Pour les int&eacute;ress&eacute;s, Il y aura aussi la diffusion de Tintin le jeudi ainsi qu'une soir&eacute;e sp&eacute;cial <a href="http://www.eventbrite.com/event/2412608176" target="_blank">Devoxx @ Noxx Party</a> pour f&ecirc;ter les 10 ans de Devoxx !</p>
+
+
+<p>Et tout comme <a href="http://web-tambouille.fr/tag/Devoxx" target="_blank">l'ann&eacute;e derni&egrave;re</a>, je vous ferai quelques comptes rendus ainsi que du <a href="http://twitter.com/#!/webtambouille" target="_blank">live-twitting</a> sur le topic <a href="http://twitter.com/#!/search?q=%23Devoxx" target="_blank">#devoxx</a>&nbsp;<em>(et peut-&ecirc;tre aussi sur <a href="http://twitter.com/#!/search?q=%23Devoxx2011">#devoxx2011</a>)</em>. Vivement mercredi prochain, et en attendant demandez le menu !</p>
+
+
+<p><!--more--></p>
+
+
+<p><strong>Entr&eacute;es (mercredi)<img title="Tocque" src="https://lh3.googleusercontent.com/-2vuJcg9BICI/ThmqHYT0waI/AAAAAAAAAsQ/GBlnZ5fz3Ok/s144/toque.jpg" alt="Tocque" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Java: The Good, the Bad, and the Ugly Parts (<a href="http://www.devoxx.com/display/DV11/Java++The+Good%2C+the+Bad%2C+and+the+Ugly+Parts" target="_blank">track</a>)</li>
+<li>Play 2.0, a Web framework for a new era (<a href="http://www.devoxx.com/display/DV11/Play+2.0%2C+a+Web+framework+for+a+new+era" target="_blank">track</a>)</li>
+<li>Working Off the Grid : HTML5 Offline (<a href="http://www.devoxx.com/display/DV11/Working+Off+the+Grid++HTML5+Offline" target="_blank">track</a>)</li>
+<li>PhoneGap for Hybrid App Development (<a href="http://www.devoxx.com/display/DV11/PhoneGap+for+Hybrid+App+Development" target="_blank">track</a>)</li>
+<li>The File System API in JDK7 (<a href="http://www.devoxx.com/display/DV11/The+File+System+API+in+JDK+7" target="_blank">track</a>)</li>
+<li>JAX-RS 2.0 : RESTful Java on Steroids (<a href="http://www.devoxx.com/display/DV11/JAX-RS+2.0++RESTful+Java+on+Steroids" target="_blank">track</a>)</li>
+</ul>
+
+
+<p><strong>Plats (jeudi)&nbsp;</strong><strong><img title="Fourchette" src="https://lh4.googleusercontent.com/-eoTjToOqbss/ThmqPT7l92I/AAAAAAAAAuE/00BJC9rSUbY/s144/fourchette.jpg" alt="Fourchette" width="25" /></strong></p>
+
+
+<ul>
+<li>Above the Clouds : Introducing Akka (<a href="http://www.devoxx.com/display/DV11/Above+the+Clouds++Introducing+Akka" target="_blank">track</a>)</li>
+<li>Android Development Tools (<a href="http://www.devoxx.com/display/DV11/Android+Development+Tools" target="_blank">track</a>)</li>
+<li>HTML5 with Play/Scala Coffeescript and Jade (<a href="http://www.devoxx.com/display/DV11/HTML5+with+Play+Scala%2C+CoffeeScript+and+Jade" target="_blank">track</a>)</li>
+<li>JavaPosse Live (<a href="http://www.devoxx.com/display/DV11/Java+Posse+Live" target="_blank">track</a>)</li>
+<li>NoSQL, Big Data... so what ? (<a href="http://www.devoxx.com/display/DV11/NoSQL%2C+Big+Data+...+so+what" target="_blank">track</a>)</li>
+<li>Is Fantom light years ahead of Scala ? (<a href="http://www.devoxx.com/display/DV11/Is+Fantom+light+years+ahead+of+Scala" target="_blank">track</a>)</li>
+</ul>
+
+
+<p><strong>Desserts (vendredi)<img title="Dessert" src="https://lh3.googleusercontent.com/--RSZh6Jol2E/ThmqP9PmWjI/AAAAAAAAAuA/9CbRQJ0maUs/s144/gateau.jpg" alt="Dessert" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Technical Discussion Panel (<a href="http://www.devoxx.com/display/DV11/Technical+Discussion+Panel" target="_blank">track</a>)</li>
+<li>HTML5 Game Development: The most fun you can have in a browser (<a href="http://www.devoxx.com/display/DV11/HTML5+Game+Development++The+most+fun+you+can+have+in+a+browser" target="_blank">track</a>)</li>
+<li>Java on Mac OS X : Now What ? (<a href="http://www.devoxx.com/display/DV11/Java+on+Mac+OS+X++Now+What" target="_blank">track</a>)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

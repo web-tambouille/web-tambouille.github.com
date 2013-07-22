@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : ParisJS | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/parisjs/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Retour sur le ParisJS Meetup #7 et Ryan Dahl, le créateur de Node.js, sur Paris]]></title>
+    <link href="http://www.web-tambouille.fr/2011/05/26/retour-sur-le-parisjs-meetup-7-et-ryan-dahl-le-createur-de-nodejs-sur-paris.html"/>
+    <updated>2011-05-26T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/05/26/retour-sur-le-parisjs-meetup-7-et-ryan-dahl-le-createur-de-nodejs-sur-paris</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/JFhI0ChgzADwkT573aUAjA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="ParisJS" src="https://lh4.googleusercontent.com/-mnVffW-_FQA/ThmqQ7nP1eI/AAAAAAAAAug/iojGv_jOQ-I/s800/logo_parisjs.jpg" alt="ParisJS" width="160" height="112" /></a>Cela faisait quelques mois que je n'avais pas pu me rendre &agrave; un &eacute;v&egrave;nement du <a href="http://parisjs.org/" target="_blank">Paris JS</a>, une communaut&eacute; Javascript sur Paris. Et bien j'ai rattrap&eacute; ce retard en me rendant hier soir &agrave; la 7&egrave;me <em>(d&eacute;j&agrave;...)</em> soir&eacute;e du Paris JS dans les locaux de Vidal <em>(souvenirs...)</em>.</p>
+
+
+<p>Au menu, 5 talks :</p>
+
+
+<ul>
+<li>d&eacute;veloppement web pour TV connect&eacute;s et sp&eacute;cifiquement Samsung</li>
+<li>retour d'exp&eacute;rience int&eacute;ressant sur CouchDB avec des exemples de MapReduce, les fonctionnalit&eacute;s int&eacute;ressantes et celles &agrave; &eacute;viter...</li>
+<li>HTML5 et vid&eacute;o avec un &eacute;tat des specs et quelques impl&eacute;mentations <em>(et ce n'est malheureusement pas pour demain <img title="Frown" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-frown.gif" border="0" alt="Frown" />)</em></li>
+<li>expressivit&eacute; en Javascript <em>(non, ce n'est pas <a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a> !!!)</em> avec une pr&eacute;sentation de la librairie <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>, je l'utilise tous les jours donc je ne peux que la recommander car elle permet vraiment d'am&eacute;liorer la lisibilit&eacute; du code</li>
+<li>et enfin un petit point d'avancement du jeu <a href="http://pacmaze.com/" target="_blank">PacMaze</a></li>
+</ul>
+
+
+<p>Pour un compte-rendu plus exhaustif, je vous renvoie sur le blog de William et plus particuli&egrave;rement sur cet <a href="http://www.willdurand.fr/parisjs-7eme-edition-en-bref/" target="_blank">article</a>.</p>
+
+
+<p>Enfin, une belle annonce a &eacute;t&eacute; faite avec la venue sur Paris du cr&eacute;ateur de <a href="http://nodejs.org/" target="_blank">Node.JS</a> &agrave; savoir <a href="http://twitter.com/#!/ryah" target="_blank">Ryan Dahl</a> !</p>
+
+
+<p>Cela se passera le 8 Juin dans les locaux de Jolicloud. Une seule chose &agrave; faire : <a href="http://parisnodemeetup.eventbrite.com/" target="_blank">inscrivez-vous vite</a> !</p>
+
+]]></content>
+  </entry>
+  
+</feed>

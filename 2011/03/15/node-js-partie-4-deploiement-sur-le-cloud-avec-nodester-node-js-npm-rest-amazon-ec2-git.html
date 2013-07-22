@@ -1,0 +1,641 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='true' name='MSSmartTagsPreventParsing' />
+  <title>Node.js partie 4 - Déploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git - Web Tambouille</title>
+  <meta name="author" content="Romain MATON (rmat0n)">
+
+  
+  <meta name="description" content="Node.js partie 4 - Déploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git Cat&eacute;gorie : Outil | 15 mars 2011 | Tags :& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">
+  <link href="/web-tambouille/favicon.gif" rel="icon">
+  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
+
+  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  
+<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({
+    publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
+    st_title: "Node.js partie 4 - Déploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git",
+    st_url: "/web-tambouille"
+  });
+</script>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+
+  $(document).ready(function () {
+    $('a.lightbox').lightBox({
+      imageLoading: '/static/images/lightbox-ico-loading.gif',
+      imageBtnClose: '/static/images/lightbox-btn-close.gif',
+      imageBtnPrev: '/static/images/lightbox-btn-prev.gif',
+      imageBtnNext: '/static/images/lightbox-btn-next.gif',
+      imageBlank: '/static/images/lightbox-blank.gif'
+    });
+  });
+  /* ]]> */
+</script>
+
+</head>
+
+<body >
+<div class='navbar section' id='navbar'>
+  <div class='widget Navbar' id='Navbar1'>
+    <div></div>
+  </div>
+</div>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+      <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main (ir a principal) </a> |
+        <a href='#sidebar'>skip to sidebar (ir al sidebar)</a>
+      </span>
+    <div class='crosscol section' id='pages'>
+  <div class='widget PageList' id='PageList1'>
+    <h2>Pages</h2>
+
+    <div class='widget-content'>
+      <ul class="main-navigation">
+        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li style="float:right; padding-right:0px; line-height:12px;">
+          <style>
+            .google_translate img {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1.0;
+              opacity: 1.0;
+              border: 0;
+            }
+
+            .google_translate:hover img {
+              filter: alpha(opacity=30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+
+            .google_translatextra:hover img {
+              filter: alpha(opacity=0.30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+          </style>
+          <div>
+            <a class="google_translate" href="#" title="French" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cfr&hl=en';"><img alt="French" border="0" align="absbottom" title="French" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBrDZLrI/AAAAAAAAAC0/Kc6eDMT9LFI/s200/France.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="English" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cen&hl=en';"><img alt="English" border="0" align="absbottom" title="English" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBORD9bI/AAAAAAAAACs/XkaLmmin4zg/s200/United+Kingdom(Great+Britain).png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="German" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cde&hl=en';"><img alt="German" border="0" align="absbottom" title="German" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YVBzoFF2I/AAAAAAAAAC8/WgvMK3zP1Rk/s200/Germany.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Spain" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Ces&hl=en';"><img alt="Spain" border="0" align="absbottom" title="Spain" height="24" src="http://3.bp.blogspot.com/_5jbh95HruKA/S1YVCdHp5VI/AAAAAAAAADE/lWHzr5znExU/s200/Spain.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Italian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cit&hl=en';"><img alt="Italian" border="0" align="absbottom" title="Italian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVCskNubI/AAAAAAAAADM/ChdHC6vYT4s/s200/Italy.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Russian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cru&hl=en';"><img alt="Russian" border="0" align="absbottom" title="Russian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YWR-jg9pI/AAAAAAAAADc/vYZrPOzazHU/s200/Russian+Federation.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Japanese" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cja&hl=en';"><img alt="Japanese" border="0" align="absbottom" title="Japanese" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YWSR2_wYI/AAAAAAAAADs/GtKdPLKUluE/s200/Japan.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+          </div>
+        </li>
+      </ul>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='header-wrapper'>
+  <div class='header section' id='header'>
+    <div class='widget Header' id='Header1'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            Web Tambouille
+          </h1>
+        </div>
+        <div class='descriptionwrapper'>
+          <p class='description'><span>Java, Scala, Web, Android, HTML5, JS, NoSQL et bien d'autres !</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='twitter_div'>
+  <ul id='twitter_update_list'>
+    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+  </ul>
+</div>
+<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
+<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
+
+    <div id="content-wrapper">
+      <div id="main-wrapper">
+        <div class='main section' id='main'>
+          <div class='widget Blog' id='Blog1'>
+            <div class='blog-posts hfeed'>
+              <div class='post clearfix hentry uncustomized-post-template'>
+  
+<div class='clearfix'>
+  <div class='postmetahd'>
+    <h2 class='post-title entry-title single-post'>
+      
+        Node.js partie 4 - Déploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git
+      
+    </h2>
+    <p class='post-header-line-1'>
+      <span class='st_twitter_hcount' style="float: right;" displayText='Tweet'></span>
+      <span class='st_plusone_hcount' style="float: right;" displayText='Google +1'></span>
+      <span class='post-author vcard'>
+
+<span class='fn'>
+  Cat&eacute;gorie :
+  
+    <a class='category' href='/web-tambouille/categories/outil/'>Outil</a>
+  
+</span>
+
+</span> |
+      <span class='date-header'>
+
+
+
+
+
+
+
+
+  <time datetime="2011-03-15T00:00:00+01:00" pubdate data-updated="true">15 mars 2011</time>
+
+
+
+</span> |
+      <span class='post-labels'>
+
+Tags :&nbsp;
+<span class='post-labels'>
+  
+    <a class='tag' href='/web-tambouille/tags/cloud/'>Cloud</a>, <a class='tag' href='/web-tambouille/tags/git/'>Git</a>, <a class='tag' href='/web-tambouille/tags/node-dot-js/'>Node.js</a>, <a class='tag' href='/web-tambouille/tags/nodester/'>Nodester</a>
+  
+</span>
+
+</span>
+    </p>
+  </div>
+</div>
+
+
+<div id="post" class='post-body entry-content'>
+  
+    <p><a href="https://picasaweb.google.com/lh/photo/uZdg8vdYHVz9DpwmtixINw?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Nodester" src="https://lh3.googleusercontent.com/-WlI6_TX4TFE/ThmqQ-_KDUI/AAAAAAAAAuY/TPyyBKoVLjM/s800/logo_nodester.jpg" alt="Nodester" width="240" height="81" /></a>Dernier article <em>(et oui d&eacute;j&agrave;)</em> de la s&eacute;rie consacr&eacute;e &agrave; <a href="http://nodejs.org/" target="_blank">Node.js</a> et, maintenant que nous avons cod&eacute; notre <a href="http://www.webtambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html" target="_blank">premi&egrave;re application Node.js Web Sockets et HTML5</a>, nous allons terminer en beaut&eacute; le d&eacute;ploiement de l&#8217;application sur le cloud. Et c&#8217;est le sujet de cette 4&egrave;me partie avec l&#8217;&eacute;tude du service <a href="http://nodester.com/" target="_blank">Nodester</a>, une plateforme de d&eacute;ploiement open source d&#8217;applications Node.</p>
+<p>Nous allons regarder de plus pr&egrave;s comment fonctionne cette plateforme, comment d&eacute;ployer notre application et o&ugrave; se trouve t-elle, comment g&egrave;re t-elle les modules Node&#8230; en bref : qu&#8217;est-ce que Nodester et comment l&#8217;utilise t-on !</p>
+<p>Au menu : introduction <em>(EC2, Git&#8230;)</em>, les outils pour Nodester, d&eacute;tail de l&#8217;API REST, enregistrement au service et d&eacute;ploiement de l&#8217;application, d&eacute;ploiement d&#8217;une autre application, les plateformes de d&eacute;ploiement sur le cloud &eacute;quivalentes et enfin une petite conclusion.</p>
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /> <a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /> <a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /> <a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+<p><!--more--></p>
+<h3 style="font-size: 1.17em;">Introduction</h3>
+<p><a href="http://nodester.com/" target="_blank">Nodester</a> est une plateforme de d&eacute;ploiement d&#8217;applications Node sur le cloud. Cette plateforme utilise de nombreuses technologies parmi lesquelles :</p>
+<ul>
+<li><strong>Node :</strong> &eacute;vident&nbsp;<img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />&nbsp;actuellement Nodester utilise Node.js 0.4.0 et essaie d&#8217;&ecirc;tre le plus &agrave; jour possible</li>
+<li><strong>NPM :</strong> le package manager de modules Node est aussi pris en charge par Nodester et l&#8217;ajout/suppression de packages se fait en une seule ligne</li>
+<li><strong>Amazon WS :</strong>&nbsp;avec, pour faire simple, une instance d&#8217;EC2 g&eacute;r&eacute;e par Nodester et gratuite pour nous <em>(yeah !)</em>&nbsp;sur laquelle sera d&eacute;pos&eacute;e notre application</li>
+<li><strong>Amazon EC2, RackSpace, GoGrid&#8230; :</strong> mais il sera aussi possible de d&eacute;ployer votre application Node sur votre propre instance d&#8217;un service sur le cloud <em>(moyennant&nbsp;<a href="https://github.com/nodester/nodester/blob/master/install.txt" target="_blank">quelques installations</a>&nbsp;sur votre instance)</em></li>
+<li><strong>CouchOne :</strong> un service qui fournit une base CouchDB sur le cloud sur laquelle Nodester stocke entre autres les utilisateurs</li>
+<li><strong>REST :</strong> Nodester s&#8217;attaque par API REST, que ce soit pour demander un coupon, param&eacute;trer votre cl&eacute; SSH, installer/d&eacute;marrer/arr&ecirc;ter votre application mais aussi pour installer/supprimer un module NPM</li>
+<li><strong>Git :</strong> la commande&nbsp;<span style="font-family: 'courier new', courier;">git push</span> est utilis&eacute;e pour d&eacute;ployer votre application sur Nodester, il vous suffira d&#8217;ajouter une <span style="font-family: 'courier new', courier;">remote</span> Nodester &agrave; votre projet Github</li>
+</ul>
+<p>Pas mal non ? On remarque plusieurs technologies, outils et services qui ont le vent en poupe en ce moment, qu&#8217;ils soient utilis&eacute;s par les entreprises <em>(EC2)</em> ou par la communaut&eacute; <em>(Git/Github, NPM&#8230;)</em>. Mais ce n&#8217;est pas seulement qu&#8217;une vitrine technologique, cela donne surtout au final une utilisation extra-simple du service. On peut ainsi d&eacute;ployer en 2 minutes chrono, le plus long sera surtout d&#8217;attendre votre coupon !</p>
+<p>Il n&#8217;y a que la base de donn&eacute;es CouchDB par CouchOne sur laquelle j&#8217;aurais quelques doutes :</p>
+<ul>
+<li>nombreux billets d&eacute;crivant des <a href="http://labs.linkfluence.net/nosql/2011/03/07/moving_from_couchdb_to_riak.html" target="_blank">migrations de CouchDB vers Riak ou autres</a>&#8230; suite &agrave; des probl&egrave;mes de scalabilt&eacute; <em>(qui est tout de m&ecirc;me la base du mouvement NoSQL)</em></li>
+<li>mais aussi <a href="http://nodester.tumblr.com/post/2969688860/nodester-news" target="_blank">une attaque en d&eacute;but d&#8217;ann&eacute;e qui a supprim&eacute;e toutes les donn&eacute;es</a> de la base de Nodester.</li>
+</ul>
+<p>Je chipote mais cela fait d&eacute;j&agrave; peut-&ecirc;tre trop&#8230;</p>
+<h3>Outils</h3>
+<p>Petite section juste pour dire que vous pouvez utiliser Nodester de diff&eacute;rentes mani&egrave;res :</p>
+<ul>
+<li>un bon vieux curl</li>
+<li>ou le superbe client Nodester qui s&#8217;installe par NPM :&nbsp;<span style="font-family: 'courier new', courier;">npm install nodester-cli</span></li>
+</ul>
+<p>Toutes les API <em>(ou presque)</em> ont &eacute;t&eacute; wrapp&eacute;es par le client, ce qui les rend ainsi encore plus simples d&#8217;utilisation. Si vous avez NPM install&eacute; sur votre machine <em>(ce qui devrait d&eacute;j&agrave; &ecirc;tre le cas non <img title="Wink" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em>, je vous le recommande fortement. Quelques exemples :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester status
+</span><span class='line'>nodester info checking api status for: api.nodester.com
+</span><span class='line'>nodester info status up
+</span><span class='line'>nodester info appshosted 405
+</span><span class='line'>nodester info appsrunning 272
+</span><span class='line'>
+</span><span class='line'>rmat0n:~$ curl http://nodester.com/status
+</span><span class='line'>{"status":"up","appshosted":405,"appsrunning":272}</span></code></pre></td></tr></table></div></figure>
+<p>Le client fournit aussi une aide d&eacute;taill&eacute;e pour chaque commande <em>(selon le niveau dans lequel vous &ecirc;tes)</em>. Par exemple, prenons directement &agrave; la racine du client et ensuite une fois <span style="font-family: 'courier new', courier;">app</span> s&eacute;lectionn&eacute; :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester
+</span><span class='line'>nodester info showing all available sub commands
+</span><span class='line'>nodester status
+</span><span class='line'>nodester coupon
+</span><span class='line'>nodester apps
+</span><span class='line'>nodester app
+</span><span class='line'>nodester user
+</span><span class='line'>nodester appdomain
+</span><span class='line'>nodester domain
+</span><span class='line'>nodester npm
+</span><span class='line'>nodester appnpm
+</span><span class='line'>nodester info For more help, type nodester help
+</span><span class='line'>
+</span><span class='line'>rmat0n:~$ nodester app
+</span><span class='line'>nodester &lt;appname> is not required if inside an app directory after you call setup
+</span><span class='line'>nodester app setup &lt;appname> - Configure this app for future app commands
+</span><span class='line'>nodester app info &lt;appname> - Returns app specific information
+</span><span class='line'>nodester app logs &lt;appname> - Returns app logs
+</span><span class='line'>nodester app stop|start|restart &lt;appname> - Controls app status.
+</span><span class='line'>nodester app create &lt;appname> &lt;startfile> - Creates a new app named &lt;appname>, &lt;startfile> is optional.
+</span><span class='line'>nodester app init &lt;appname> - Fetches the remote repo and sets it up.
+</span><span class='line'>nodester app clone &lt;appname> - Fetches the remote repo.</span></code></pre></td></tr></table></div></figure>
+<p>Alors, il est pas mieux le client ^^ et surtout on a plus besoin de faire des va-et-vient sur la <a href="http://nodester.com/api.html" target="_blank">page API de Nodester</a>.<br /> Mais tout n&#8217;est pas wrapp&eacute; actuellement <em>(suppression d&#8217;application)</em> donc gardez le curl &agrave; c&ocirc;t&eacute; de vous.</p>
+<h3>API REST</h3>
+<p>Les grandes cat&eacute;gories de l&#8217;API sont les suivantes <em>(<a href="http://nodester.com/api.html" target="_blank">d&eacute;tail complet</a>)</em> :</p>
+<ul>
+<li><strong>Coupon :</strong> le point d&#8217;entr&eacute;e pour l&#8217;acc&egrave;s &agrave; Nodester, faites votre appel et vous obtiendrez un coupon <em>(batch par mail)</em> que vous pourrez ensuite utiliser pour vous enregistrer</li>
+<li><strong>Status :</strong> le statut de la plateforme</li>
+<li><strong>User :</strong> enregistrement, mise &agrave; jour et suppression de l&#8217;utilisateur</li>
+<li><strong>App :</strong>&nbsp;information,&nbsp;cr&eacute;ation, mise &agrave; jour et suppression d&#8217;une application de l&#8217;utilisateur</li>
+<li><strong>Apps :</strong> liste toutes les applications d&#8217;un utilisateur</li>
+<li><strong>Appnpm :</strong> ajout, mise &agrave; jour ou suppression d&#8217;un package NPM</li>
+<li><strong>Appdomains </strong>: permet de mettre un domaine pour une application</li>
+</ul>
+<p>Et avec toutes ces commandes, nous sommes pr&ecirc;ts pour enfin d&eacute;ployer notre application Node. C&#8217;est parti !</p>
+<h3>Ready ? Now Register, Set Up and Deploy it !</h3>
+<p>Je pars du principe que vous n&#8217;avez pas de compte utilisateur. Donc pour commencer, nous allons en cr&eacute;er un et pour cela il vous faut un coupon :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester coupon your_email@company.com
+</span><span class='line'>nodester info Requesting coupon code for: your_email@company.com
+</span><span class='line'>nodester info SUCCESS - you are now in queue to receive an invite on our next batch!</span></code></pre></td></tr></table></div></figure>
+<p style="text-align: left;">Maintenant, on utilise l&#8217;url de cr&eacute;ation d&#8217;utilisateur avec notre coupon <em>(que vous recevrez par mail)</em>, un identifiant, notre mot de passe et notre cl&eacute; SSH. Notez que vous pouvez, pour cette partie, vous rendre sur le site et passer par le menu <em>register</em>. Attention, Nodester a besoin que tous les caract&egrave;res <em>+</em> de votre cl&eacute; SSH soient remplac&eacute;s par&nbsp;<em>%2B</em>. Un petit combo <span style="font-family: 'courier new', courier;">cat/sed/pbcopy</span> fait le travail :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ cat ~/.ssh/id_rsa.pub | sed s/'+'/'%2B'/g > ~/.ssh/id_rsa_nodester.pub
+</span><span class='line'>rmat0n:~$ nodester user create your_username your_password your_email@company.com ~/.ssh/id_rsa_nodester.pub your_coupon</span></code></pre></td></tr></table></div></figure>
+<p>Voil&agrave; ! Vous avez cr&eacute;&eacute; un user en 2 appels REST <img title="Laughing" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />&nbsp;Maintenant, occupons-nous de l&#8217;application et commen&ccedil;ons par la cr&eacute;er <em>(le nom de l&#8217;application en dernier argument n&#8217;est pas n&eacute;cessaire si on est d&eacute;j&agrave; dans le dossier projet)</em> :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester app create
+</span><span class='line'>nodester info Checking config..
+</span><span class='line'>nodester info creating app: node-example server.js
+</span><span class='line'>nodester info successfully created app node-example to will run on port from server.js
+</span><span class='line'>nodester info run nodester app init node-example to setup this app.</span></code></pre></td></tr></table></div></figure>
+<p>Tr&egrave;s bien, l&#8217;application est cr&eacute;&eacute;e, je n&#8217;ai plus qu&#8217;&agrave; r&eacute;cup&eacute;rer le port et la remote git, soit 1 commande pour r&eacute;cup&eacute;rer les informations et 2 commandes pour ajouter la remote et faire mon premier push :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester app info
+</span><span class='line'>nodester info Checking config..
+</span><span class='line'>nodester info Gathering information about: node-example
+</span><span class='line'>nodester info node-example on port 9876 running: true
+</span><span class='line'>nodester info gitrepo: ec2-user@nodester.com:/home/ec2-user/hosted_apps/your_username/blabla.git
+</span><span class='line'>nodester info appfile: server.js
+</span><span class='line'>rmat0n:~/node-example (master)$ git remote add nodester ec2-user@nodester.com:/home/ec2-user/hosted_apps/your_username/blabla.git
+</span><span class='line'>rmat0n:~/node-example (master)$ git push nodester master</span></code></pre></td></tr></table></div></figure>
+<p>Maintenant, j&#8217;installe les modules dont j&#8217;ai besoin &agrave; savoir express et socket.io et je d&eacute;marre l&#8217;application :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install express@2.0.0beta
+</span><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install socket.io
+</span><span class='line'>rmat0n:~/node-example (master)$ nodester app start</span></code></pre></td></tr></table></div></figure>
+<p>That&#8217;s all ! Et l&#8217;application sera accessible &agrave; l&#8217;url suivante :&nbsp;<a href="http://node-example.nodester.com/" target="_blank">http://node-example.nodester.com/</a> avec dans mon cas une petite erreur et un non-d&eacute;marrage de l&#8217;appli&nbsp;<img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;car j&#8217;utilise <span style="font-family: 'courier new', courier;">express@2.0.0beta</span>&nbsp;or je ne peux pas l&#8217;installer sur Nodester puisque ce module demande au moins un Node 0.4.1. Mais ce qui est plut&ocirc;t agr&eacute;able, c&#8217;est que ma ligne sup&eacute;rieure, lors de l&#8217;installation d&#8217;express, me renvoit un log d&#8217;erreur explicite.</p>
+<p>Ce qui me fait rebondir sur les logs du serveur qui sont accessibles par la commande&nbsp;<span style="font-family: 'courier new', courier;">nodester app logs</span></p>
+<p>&nbsp;Je pourrais bien s&ucirc;r downgrader mon express en 1.0.7 mais l&#8217;important n&#8217;est pas l&agrave; et je pr&eacute;f&egrave;re attendre que Nodester upgrade sa version de Node. Mais on voit encore une fois que l&#8217;on touche une limite du cloud&#8230;</p>
+<p>Et pour que vous ne restiez pas sur votre faim, voici une application qui fonctionne <em>(elle)</em> et qui utilise aussi les Web Sockets.</p>
+<h3>Autre exemple : JSRoulette</h3>
+<p>La JSRoulette est une petite roulette qui sort al&eacute;atoirement un r&eacute;sultat, par d&eacute;faut elle est remplie avec des nombres. Mais on peut la configurer pour afficher ce que l&#8217;on veut avec, tant que les donn&eacute;es sont accessibles par requ&ecirc;te GET avec un r&eacute;sultat en JSON, le tout avec un appel JSONP pour le cross-domain. Un petit exemple :</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>REST : http://api.twitter.com/1/statuses/followers/jresig.json?callback=callback
+</span><span class='line'>Transformer (value at x) : x.name
+</span><span class='line'>GET !</span></code></pre></td></tr></table></div></figure>
+<p>Et une fois l&#8217;appel et la transformation effectu&eacute;s, la roulette sera&nbsp;remplie avec les followers twitter de John Resig ! Notez l&#8217;attribut <span style="font-family: 'courier new', courier;">callback=callback</span>, en effet la roulette s&#8217;attend &agrave; recevoir obligatoire un JSONP dans une m&eacute;thode <span style="font-family: 'courier new', courier;">callback</span>. Cela m&eacute;riterait une petite &eacute;volution <img title="Wink" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+<p>L&#8217;application est accessible de 2 mani&egrave;res diff&eacute;rentes :</p>
+<ul>
+<li>Soit avec un seul navigateur :&nbsp;<a href="http://jsroulette.nodester.com/" target="_blank">http://jsroulette.nodester.com/</a>, vous avez un bouton et vous faites tourner la roulette</li>
+<li>Soit avec 2 navigateurs, un sur votre PC portable/bureau et l&#8217;autre sur votre mobile :&nbsp;<a href="http://jsroulette.nodester.com/?profile=le_token_de_votre_choix" target="_blank">http://jsroulette.nodester.com/?profile=le_token_de_votre_choix</a> &agrave; saisir sur vos navigateurs. Si vous n&#8217;avez pas de mobile sur vous, vous pouvez ajouter en param&egrave;tre <span style="font-family: 'courier new', courier;">&amp;theme=mobile</span> pour simuler un navigateur sur mobile</li>
+</ul>
+<p>La deuxi&egrave;me mani&egrave;re est plus int&eacute;ressante puisqu&#8217;elle utilise les Web Sockets :</p>
+<ul>
+<li>en appuyant sur le bouton push sur le mobile, on envoie une demande de lancement de la roulette</li>
+<li>le navigateur qui contient la roulette et qui poss&egrave;de le m&ecirc;me token r&eacute;cup&egrave;re la demande et lance la roulette</li>
+<li>une fois le r&eacute;sultat obtenu, le gagnant est envoy&eacute; au serveur qui broadcaste l&#8217;info au client mobile de m&ecirc;me token qui affichera le r&eacute;sultat sous le bouton</li>
+</ul>
+<p>Malgr&eacute; une longue p&eacute;riode d&#8217;inactivit&eacute;, la connexion reste ouverte et les appels restent quasi instantan&eacute;s <em>(qu&#8217;ils soient Web Sockets natives, Long Polling, Flash&#8230;)</em>. Un bon point pour l&#8217;application et la plateforme Nodester !</p>
+<h3>Autres services</h3>
+<p>Si vous vous int&eacute;ressez de pr&egrave;s aux solutions de d&eacute;ploiement d&#8217;applications Node sur le cloud, je vous conseille 2 autres solutions :</p>
+<ul>
+<li><a href="https://www.duostack.com/" target="_blank">Duostack</a> : d&eacute;ploiement sur le cloud d&#8217;applications Ruby et Node par commande Git</li>
+<li><a href="https://no.de/" target="_blank">Joyent Node</a> <em>(et son superbe nom de domaine <a href="https://no.de/" target="_blank">https://no.de</a> !)</em> : de m&ecirc;me, une API REST et du Git pour le d&eacute;ploiement</li>
+</ul>
+<p>Et bien s&ucirc;r, si vous connaissez d&#8217;autres services gratuits d&#8217;h&eacute;bergements d&#8217;applications Node =&gt; section commentaires !</p>
+<p>Je n&#8217;ai pas regard&eacute; les offres payantes, si quelqu&#8217;un a un retour &agrave; faire sur celles-ci je suis preneur.</p>
+<h3>Conclusion</h3>
+<p>Nodester est un service int&eacute;ressant pour d&eacute;ployer une application Node, POC ou autre. Maintenant, il faut reconna&icirc;tre que le service est en &eacute;volution constante et il n&#8217;est pas rare que lors d&#8217;une mise &agrave; jour importante, plus rien ne fonctionne. C&#8217;est arriv&eacute; lors de la mise &agrave; jour vers Node 0.4.0 o&ugrave; pendant tout le WE le service d&#8217;authentification pour acc&eacute;der par API &agrave; son application ne fonctionnait plus. Certes, les d&eacute;veloppeurs ont &eacute;t&eacute; tr&egrave;s r&eacute;actifs et pour un POC ce n&#8217;est pas si grave mais pour une application qui se doit d&#8217;&ecirc;tre disponible&#8230;</p>
+<p>Toutefois, je ne chargerai pas trop Nodester car comme beaucoup l&#8217;ont remarqu&eacute;, Web Tambouille a &eacute;t&eacute; indisponible une bonne partie de la journ&eacute;e le 08 mars dernier. Vous le savez peut-&ecirc;tre d&eacute;j&agrave; mais ce blog &eacute;crit en Python tourne sur Google App Engine et malheureusement ce jour l&agrave;, GAE a eu quelques soucis pour les applis Python :</p>
+<p><a class="lightbox" href="https://lh3.googleusercontent.com/-WrOZtQHAbZg/ThmqPaMkrHI/AAAAAAAAAt8/BuZijxN60sA/s800/gae_statusboard.jpg"><img class="aligncenter" title="Probl&egrave;me Python sur GAE" src="https://lh3.googleusercontent.com/-WrOZtQHAbZg/ThmqPaMkrHI/AAAAAAAAAt8/BuZijxN60sA/s800/gae_statusboard.jpg" alt="Probl&egrave;me Python sur GAE" width="455" height="169" /></a></p>
+<p>Donc certes le cloud nous offre une scalabilit&eacute; infinie, du billing adapt&eacute;&nbsp;selon la charge serveur <em>(plus de serveur, de CPU&#8230;)</em>, n&eacute;anmoins on est pas &agrave; l&#8217;abri d&#8217;une panne de service ! Donc cela arrive, m&ecirc;me &agrave; Google, Nodester risque aussi de rencontrer ces probl&eacute;matiques et je constate que la r&eacute;activit&eacute; des d&eacute;veloppeurs est l&agrave; et cela me plait !</p>
+<p>Plusieurs liens pour suivre, contribuer&#8230; autour de Nodester :</p>
+<ul>
+<li>le site :&nbsp;<a href="http://nodester.com/" target="_blank">http://nodester.com/</a></li>
+<li>la vid&eacute;o d&#8217;introduction :&nbsp;<a href="http://www.youtube.com/watch?v=IMCXbrI_Ygk" target="_blank">http://www.youtube.com/watch?v=IMCXbrI_Ygk</a></li>
+<li>le blog :&nbsp;<a href="http://nodester.tumblr.com/" target="_blank">http://nodester.tumblr.com/</a></li>
+<li>le twitter :&nbsp;<a href="http://twitter.com/Nodester" target="_blank">http://twitter.com/Nodester</a></li>
+<li>le github :&nbsp;<a href="https://github.com/nodester/nodester" target="_blank">https://github.com/nodester/nodester</a></li>
+</ul>
+<p>Et vous aurez droit, d&#8217;ici quelques jours, a une interview du cr&eacute;ateur de Nodester &agrave; savoir <a href="http://twitter.com/chrismatthieu" target="_blank">Chris Matthieu</a> !</p>
+
+  
+  <div style='clear: both;'></div>
+</div>
+
+
+  
+    <div class="post-share-after">
+  <span class='st_twitter_vcount with_space' displayText='Tweet'></span>
+  <span class='st_plusone_vcount with_space' displayText='Google +1'></span>
+  <span class='st_linkedin_vcount with_space' displayText='LinkedIn'></span>
+  <span class='st_sharethis_vcount with_space' displayText='ShareThis'></span>
+</div>
+
+  
+
+  <p class="meta">
+  
+    <div class='blog-pager' id='blog-pager'>
+      <div class="alignleft"><a href="/web-tambouille/2011/03/08/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html" title="Billets pr&eacute;c&eacute;dents : Node.JS partie 3 - Première application Node.js et HTML5">&laquo; Node.JS partie 3 - Première application Node.js et HTML5</a></div>
+      <div class="alignright"><a href="/web-tambouille/2011/03/23/interview-de-chris-matthieu-createur-de-nodester-node-js.html" title="Billets suivants : Interview de Chris Matthieu, créateur de Nodester">Interview de Chris Matthieu, créateur de Nodester &raquo;</a></div>
+      <div class='clear'></div>
+    </div>
+  
+  </p>
+
+  
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+  
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-wrapper">
+        <div class='gadget clearfix' id='subscribe'>
+  <h4>Abonnez-vous !</h4>
+  <ul>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouille' target="_blank">Blog</a></li>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouilleComments' target="_blank">Commentaires</a></li>
+    <li class='twitter'><a href='http://twitter.com/rmat0n' target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+<div class='sidebar clearfix section' id='promotecolumn'>
+  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/rmat0n"></a>
+  <noscript>
+    <a href="http://flattr.com/thing/296927/Web-Tambouille-rmat0n" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+  </noscript>
+  <a href="http://www.viadeo.com/en/profile/romain.maton" style="margin-left:5px;vertical-align:text-bottom;">
+    <img src="http://mohamedtazi.com/viadeo_button_logo.jpg" width="50" border="0" alt="Mon profil sur Viadeo" />
+  </a>
+  <a href="http://fr.linkedin.com/in/rmaton" style="margin-left:5px;">
+    <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png" width="145" height="25" border="0" alt="Mon profil sur LinkedIn" />
+  </a>
+</div>
+
+
+<div class='sidebar clearfix section' id='searchcolumn'>
+  <form action="http://google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:www.web-tambouille.fr" />
+      Recherche : <input class="search" type="text" name="q" results="0" placeholder="Search" size="44px;" />
+    </fieldset>
+  </form>
+</div>
+
+
+<div class='sidebar clearfix section' id='onecolumn10'>
+  <div class='widget LinkList' id='LinkList10'>
+    <div id="tagCloud">
+      <h2>Mots-cl&eacute;s :</h2>
+      <div class='widget-content'>
+        <ul id="tagList">
+          <li><a style="font-size: 121%" href="/tags/android/">Android</a></li>
+<li><a style="font-size: 151%" href="/tags/devoxx/">Devoxx</a></li>
+<li><a style="font-size: 139%" href="/tags/fonctionnelle/">Fonctionnelle</a></li>
+<li><a style="font-size: 128%" href="/tags/html5/">HTML5</a></li>
+<li><a style="font-size: 165%" href="/tags/java/">Java</a></li>
+<li><a style="font-size: 163%" href="/tags/javascript/">Javascript</a></li>
+<li><a style="font-size: 160%" href="/tags/node-dot-js/">Node.js</a></li>
+<li><a style="font-size: 121%" href="/tags/play/">Play</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='clearfix' id='twocolumns'>
+  <div class='fl section' id='sl'>
+    <div class='widget Label' id='Label1'>
+      <h2>Cat&eacute;gories</h2>
+      <div class='widget-content list-label-widget-content'>
+        
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fr section' id='sr'>
+    <div class='widget BlogArchive' id='BlogArchive1'>
+      <h2>Archives</h2>
+      <div class='widget-content'>
+        <div id='ArchiveList'>
+          <div id='BlogArchive1_ArchiveList'>
+            <ul class='hierarchy'>
+              <!--li class='archivedate expanded'-->
+              <!--li><a class='post-count-link' href=> <span class='post-count' dir='ltr'>()</span></a></li-->
+              <!--li-->
+            </ul>
+          </div>
+        </div>
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:15px;">
+  <div id="zindepWidget" data-profil="http://www.leszindeps.fr/p/Romain/Maton/8aff0abe371c3fd601371c3fe3e40012" data-width="315"></div>
+</div>
+
+<div class='sidebar clearfix section' id='onecolumn20'>
+  <div class='widget LinkList' id='LinkList20'>
+    <div class='widget-content licence' style="padding-top:15px;">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Contrat Creative Commons" style="border-width:0;float:left;padding-right:5px;padding-top: 4px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      Cette oeuvre est mise &agrave; disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> Licence Creative Commons Paternit&eacute; - Pas d'Utilisation Commerciale -
+                                                                                                                                                   Partage &agrave;
+                                                                                                                                                   l'Identique 3.0 non transcrit</a>.
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1471642924127242";
+/* web-tambouille-1 */
+google_ad_slot = "8625499162";
+google_ad_width = 324;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+      </div>
+    </div>
+    <!--</div>-->
+    <footer role="contentinfo"><div class='clearfix clear' id='footer-wrapper'>
+  <div class='fl'>
+    Copyright &copy; 2013 - Romain MATON (rmat0n) - Propuls&eacute; par <a href="http://octopress.org">Octopress</a>
+  </div>
+  <div class='fr'><a href='http://cloudblogging.blogspot.com/'>Cloud Blogging</a> desgined by
+    <a href='http://btemplates.com/' title='Blogger Templates'><img alt='BTemplates' src='http://4.bp.blogspot.com/_Zuzii37VUO4/S59W9qxAUWI/AAAAAAAAEqY/4plNq9KEqBQ/s1600/blogger-templates.png' /></a>.
+  </div>
+</div>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'web-tambouille';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html';
+        var disqus_url = 'http://www.web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19424814-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript">
+  $("figure").each(function () {
+    $(this).html($(this).html().replace(/\t/g, "  "));
+  });
+</script>
+
+
+  </div>
+</div>
+</body>

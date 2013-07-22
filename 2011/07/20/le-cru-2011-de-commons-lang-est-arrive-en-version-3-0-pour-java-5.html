@@ -1,0 +1,611 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='true' name='MSSmartTagsPreventParsing' />
+  <title>Le cru 2011 de commons-lang est arrivé (en 3.0) - Web Tambouille</title>
+  <meta name="author" content="Romain MATON (rmat0n)">
+
+  
+  <meta name="description" content="Le cru 2011 de commons-lang est arrivé (en 3.0) Cat&eacute;gorie : Framework | 20 juillet 2011 | Tags :&nbsp; Commons, Java Quelles sont les &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.web-tambouille.fr/2011/07/20/le-cru-2011-de-commons-lang-est-arrive-en-version-3-0-pour-java-5.html">
+  <link href="/web-tambouille/favicon.gif" rel="icon">
+  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
+
+  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  
+<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({
+    publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
+    st_title: "Le cru 2011 de commons-lang est arrivé (en 3.0)",
+    st_url: "/web-tambouille"
+  });
+</script>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+
+  $(document).ready(function () {
+    $('a.lightbox').lightBox({
+      imageLoading: '/static/images/lightbox-ico-loading.gif',
+      imageBtnClose: '/static/images/lightbox-btn-close.gif',
+      imageBtnPrev: '/static/images/lightbox-btn-prev.gif',
+      imageBtnNext: '/static/images/lightbox-btn-next.gif',
+      imageBlank: '/static/images/lightbox-blank.gif'
+    });
+  });
+  /* ]]> */
+</script>
+
+</head>
+
+<body >
+<div class='navbar section' id='navbar'>
+  <div class='widget Navbar' id='Navbar1'>
+    <div></div>
+  </div>
+</div>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+      <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main (ir a principal) </a> |
+        <a href='#sidebar'>skip to sidebar (ir al sidebar)</a>
+      </span>
+    <div class='crosscol section' id='pages'>
+  <div class='widget PageList' id='PageList1'>
+    <h2>Pages</h2>
+
+    <div class='widget-content'>
+      <ul class="main-navigation">
+        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li style="float:right; padding-right:0px; line-height:12px;">
+          <style>
+            .google_translate img {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1.0;
+              opacity: 1.0;
+              border: 0;
+            }
+
+            .google_translate:hover img {
+              filter: alpha(opacity=30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+
+            .google_translatextra:hover img {
+              filter: alpha(opacity=0.30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+          </style>
+          <div>
+            <a class="google_translate" href="#" title="French" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cfr&hl=en';"><img alt="French" border="0" align="absbottom" title="French" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBrDZLrI/AAAAAAAAAC0/Kc6eDMT9LFI/s200/France.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="English" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cen&hl=en';"><img alt="English" border="0" align="absbottom" title="English" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBORD9bI/AAAAAAAAACs/XkaLmmin4zg/s200/United+Kingdom(Great+Britain).png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="German" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cde&hl=en';"><img alt="German" border="0" align="absbottom" title="German" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YVBzoFF2I/AAAAAAAAAC8/WgvMK3zP1Rk/s200/Germany.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Spain" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Ces&hl=en';"><img alt="Spain" border="0" align="absbottom" title="Spain" height="24" src="http://3.bp.blogspot.com/_5jbh95HruKA/S1YVCdHp5VI/AAAAAAAAADE/lWHzr5znExU/s200/Spain.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Italian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cit&hl=en';"><img alt="Italian" border="0" align="absbottom" title="Italian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVCskNubI/AAAAAAAAADM/ChdHC6vYT4s/s200/Italy.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Russian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cru&hl=en';"><img alt="Russian" border="0" align="absbottom" title="Russian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YWR-jg9pI/AAAAAAAAADc/vYZrPOzazHU/s200/Russian+Federation.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Japanese" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cja&hl=en';"><img alt="Japanese" border="0" align="absbottom" title="Japanese" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YWSR2_wYI/AAAAAAAAADs/GtKdPLKUluE/s200/Japan.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+          </div>
+        </li>
+      </ul>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='header-wrapper'>
+  <div class='header section' id='header'>
+    <div class='widget Header' id='Header1'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            Web Tambouille
+          </h1>
+        </div>
+        <div class='descriptionwrapper'>
+          <p class='description'><span>Java, Scala, Web, Android, HTML5, JS, NoSQL et bien d'autres !</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='twitter_div'>
+  <ul id='twitter_update_list'>
+    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+  </ul>
+</div>
+<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
+<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
+
+    <div id="content-wrapper">
+      <div id="main-wrapper">
+        <div class='main section' id='main'>
+          <div class='widget Blog' id='Blog1'>
+            <div class='blog-posts hfeed'>
+              <div class='post clearfix hentry uncustomized-post-template'>
+  
+<div class='clearfix'>
+  <div class='postmetahd'>
+    <h2 class='post-title entry-title single-post'>
+      
+        Le cru 2011 de commons-lang est arrivé (en 3.0)
+      
+    </h2>
+    <p class='post-header-line-1'>
+      <span class='st_twitter_hcount' style="float: right;" displayText='Tweet'></span>
+      <span class='st_plusone_hcount' style="float: right;" displayText='Google +1'></span>
+      <span class='post-author vcard'>
+
+<span class='fn'>
+  Cat&eacute;gorie :
+  
+    <a class='category' href='/web-tambouille/categories/framework/'>Framework</a>
+  
+</span>
+
+</span> |
+      <span class='date-header'>
+
+
+
+
+
+
+
+
+  <time datetime="2011-07-20T00:00:00+02:00" pubdate data-updated="true">20 juillet 2011</time>
+
+
+
+</span> |
+      <span class='post-labels'>
+
+Tags :&nbsp;
+<span class='post-labels'>
+  
+    <a class='tag' href='/web-tambouille/tags/commons/'>Commons</a>, <a class='tag' href='/web-tambouille/tags/java/'>Java</a>
+  
+</span>
+
+</span>
+    </p>
+  </div>
+</div>
+
+
+<div id="post" class='post-body entry-content'>
+  
+    <p><a href="https://picasaweb.google.com/lh/photo/WCXZIYRGz5ZYUuR94Z1IRw?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Apache Commons Lang" src="https://lh3.googleusercontent.com/-5YGGTBajr4Q/TjFe72NmOPI/AAAAAAAAAzM/RJ8T1OZWJEk/s800/ApacheBigFeather80-a18cf4c3e18b653d%25255B1%25255D.png" alt="Apache Commons Lang" width="84" height="80" /></a>Quelles sont les librairies que tout bon d&eacute;veloppeur Java a d&eacute;j&agrave; utilis&eacute;es au moins une fois dans ses applications ? Oui, je parle bien s&ucirc;r des fameuses&nbsp;<a href="http://commons.apache.org/" target="_blank">Apache Commons</a>&nbsp;!</p>
+<p>V&eacute;ritables biblioth&egrave;ques g&eacute;n&eacute;riques/r&eacute;utilisables, elles nous permettent de gagner un temps pr&eacute;cieux sur des snippets de code de tous les jours. Mais surtout : elles&nbsp;nous &eacute;vitent un nombre de bugs incalculables !&nbsp;Termin&eacute;e donc l&#8217;&eacute;criture d&#8217;un code <em>maison</em>&nbsp;bien souvent bugg&eacute;&nbsp;pour l&#8217;escaping, la suppression de caract&egrave;res sp&eacute;ciaux en d&eacute;but et fin de cha&icirc;ne, la gestion d&#8217;un param&egrave;tre <span style="font-family: 'courier new', courier;">null </span>que l&#8217;on peut facilement oublier ou bien encore la copie d&#8217;un fichier d&#8217;un emplacement &agrave; un autre <em>(ouverture/fermeture des Stream, gestion du path selon l&#8217;OS&#8230;)</em>, d&eacute;l&eacute;guons plut&ocirc;t cela aux Commons qui sont reconnues pour faire cela et surtout pour le faire bien.</p>
+<p>Parmi les plus connues et utilis&eacute;es&nbsp;<em>(regardez donc dans votre classpath)</em>, on peut citer :&nbsp;<a href="http://commons.apache.org/collections/" target="_blank">commons-collections</a>&nbsp;<em>(non, on ne troll pas avec guava svp&nbsp;<img style="border-style: initial; border-color: initial;" title="Wink" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em>,&nbsp;<a href="http://commons.apache.org/configuration/" target="_blank">commons-configuration</a>,&nbsp;<a href="http://commons.apache.org/dbcp/" target="_blank">commons-dbcp</a>,&nbsp;<a href="http://commons.apache.org/digester/" target="_blank">commons-digester</a>,&nbsp;<a href="http://commons.apache.org/io/" target="_blank">commons-io</a>,&nbsp;<a href="http://commons.apache.org/logging/" target="_blank">commons-logging</a>,&nbsp;<a href="http://commons.apache.org/validator/" target="_blank">commons-validator</a>&nbsp;et, le sujet de cet article,&nbsp;<a href="http://commons.apache.org/lang/" target="_blank">commons-lang</a>&nbsp;qui est sortie <a href="http://commons.apache.org/lang/upgradeto3_0.html" target="_blank">le 19 juillet dernier en version 3.0</a>. Au menu :</p>
+<p>Introduction<br /><span style="font-family: 'courier new', courier;">lang3.*<br />lang3.concurrent.*<br />lang3.builder.*<br />lang3.reflect.*<br />lang3.mutable|tuple.*</span><br />Conclusion</p>
+<p><!--more-->Introduction</p>
+<p>Seulement voil&agrave;, il y a un petit <em>hic </em>: la plupart de ces projets est &agrave; l&#8217;abandon, ou en tout cas n&#8217;a pas &eacute;t&eacute; mis &agrave; jour depuis plus de 3 ans <em>(ce qui est tr&egrave;s long dans le monde Java)</em>. On peut notamment citer collections <em>(avril 2008)</em>, configuration<em> (d&eacute;cembre 2008)</em>, logging<em> (mars 2008)</em> ou bien encore validator <em>(mars 2008)</em>.</p>
+<p>La date n&#8217;est pas un crit&egrave;re en soi, en effet <a href="http://blog.xebia.fr/2011/08/02/revue-de-presse-xebia-222/#Java" target="_blank">Java 7 vient tout juste de sortir</a> et il faut savoir que la sortie de Java 6 date d&eacute;j&agrave; d&#8217;il y a presque 5 ans ! Ainsi, on pourrait se dire que les librairies ont pris tout ce qu&#8217;il y avait &agrave; prendre dans Java 6 pendant presque 3 ans de d&eacute;veloppement et ainsi, &agrave; partir de mi-2008, il n&#8217;y a pas eu de nouveau d&eacute;veloppement car<em>&nbsp;plus rien &agrave; faire</em><em>&nbsp;de nouveau</em> dans ces librairies. Il faut donc attendre Java 7&#8230;</p>
+<p>Sauf que, pour ceux qui les utilisent tous les jours et qui suivent leur d&eacute;veloppement, ce n&#8217;est pas du tout le cas. En effet, la plupart d&#8217;entre elles sont rest&eacute;es bloqu&eacute;es sont du code Java 1.4 et ne sont donc m&ecirc;me pas compatibles avec les nombreuses nouveaut&eacute;s de Java 5.0 dont l&#8217;une des &eacute;volutions marquantes de cette distribution &agrave; savoir les&nbsp;<a href="http://en.wikipedia.org/wiki/Generics_in_Java" target="_blank">Generics</a>, d&#8217;o&ugrave; le grand succ&egrave;s de guava par rapport &agrave; commons-collections ces derni&egrave;res ann&eacute;es.</p>
+<p>Et c&#8217;est dans ce climat que commons-lang sort en version 3.0 avec de nombreuses nouvelles m&eacute;thodes <em>(pour StringUtils, WordUtils&#8230;)</em>, qui d&#8217;ailleurs devraient vous faire rappeler leurs &eacute;quivalentes dans Guava <em>(au niveau de Strings)</em>, mais aussi avec l&#8217;int&eacute;gration&#8230; des Generics ! Voyons tout cela en d&eacute;tail.</p>
+<p>La liste compl&egrave;te des ajouts, suppressions, am&eacute;liorations et bugs fixed se trouve sur <a href="http://commons.apache.org/lang/upgradeto3_0.html" target="_blank">cette page</a>.</p>
+<h2>lang3.*</h2>
+<p>Le package <span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/package-summary.html" target="_blank">lang3.*</a></span> contient tous les utilitaires du type <span style="font-family: 'courier new', courier;">StringUtils</span>, <span style="font-family: 'courier new', courier;">ArrayUtils</span>, <span style="font-family: 'courier new', courier;">CharUtils</span>, <span style="font-family: 'courier new', courier;">ObjectUtils</span>, <span style="font-family: 'courier new', courier;">EnumUtils</span>&#8230; Pour une grande majorit&eacute;, notre utilisation de commons-lang se passe dans ce package.</p>
+<p>Petit exemple d&#8217;une utilisation quotidienne : dans la plupart des classes&nbsp;<span style="font-family: 'courier new', courier;">*Utils</span>, on trouve des m&eacute;thodes du type <span style="font-family: 'courier new', courier;">isEmpty</span>&nbsp;<em>(<span style="font-family: 'courier new', courier;">isBlank</span>&#8230;)</em>. Celles-ci g&egrave;rent &agrave; la fois l&#8217;aspect vide de l&#8217;objet,&nbsp;qu&#8217;on l&#8217;on soit un&nbsp;<span style="font-family: 'courier new', courier;">String</span>,&nbsp;une&nbsp;<span style="font-family: 'courier new', courier;">List</span>&nbsp;ou un&nbsp;<span style="font-family: 'courier new', courier;">Array</span>,&nbsp;mais aussi la non-nullit&eacute; i.e.&nbsp;<span style="font-family: 'courier new', courier;">object!=null</span>. Ce qui fait qu&#8217;un code comme&nbsp;<span style="font-family: 'courier new', courier;">myStr!=null &amp;&amp; !myStr.isEmpty()</span>&nbsp;peut aussi s&#8217;&eacute;crire&nbsp;<span style="font-family: 'courier new', courier;">StringUtils.isEmpty(myStr).&nbsp;</span>Certains pr&eacute;f&eacute;reront la premi&egrave;re expression et d&#8217;autres la deuxi&egrave;me, tout d&eacute;pendra du besoin. Par exemple, si notre code m&eacute;tier autorise&nbsp;<span style="font-family: 'courier new', courier;">null </span>comme param&egrave;tre d&#8217;entr&eacute;e et que <span style="font-family: 'courier new', courier;">null </span>signifie &nbsp;vide, alors la deuxi&egrave;me expression est plus adapt&eacute;e.</p>
+<p>Heureusement, commons-lang ne se limite pas qu&#8217;&agrave; ce cas ! Je ne vais quand m&ecirc;me pas mettre un jar pour &eacute;viter les <span style="font-family: 'courier new', courier;">obj!=null</span>&nbsp;<img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Petit floril&egrave;ge d&#8217;exemples avec des m&eacute;thodes que vous connaissaient certainement d&eacute;j&agrave; mais aussi avec les nouvelles qui sont plut&ocirc;t sympathiques :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_StringUtils</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;Web...&quot;</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">abbreviate</span><span class="o">(</span><span class="s">&quot;Web Tambouille&quot;</span><span class="o">,</span> <span class="mi">6</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">countMatches</span><span class="o">(</span><span class="s">&quot;Web Tambouille&quot;</span><span class="o">,</span> <span class="s">&quot;e&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertNull</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">trimToNull</span><span class="o">(</span><span class="s">&quot;     &quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="n">EMPTY</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">trimToEmpty</span><span class="o">(</span><span class="s">&quot;     &quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertFalse</span><span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isAllUpperCase</span><span class="o">(</span><span class="s">&quot;WEB TAMBoUILLE&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;oaoa&quot;</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">difference</span><span class="o">(</span><span class="s">&quot;Web Tambouille&quot;</span><span class="o">,</span> <span class="s">&quot;Web Tambooaoa&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">getLevenshteinDistance</span><span class="o">(</span><span class="s">&quot;hello&quot;</span><span class="o">,</span> <span class="s">&quot;hallo&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">getLevenshteinDistance</span><span class="o">(</span><span class="s">&quot;elephant&quot;</span><span class="o">,</span> <span class="s">&quot;hippo&quot;</span><span class="o">));</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_StringEscapeUtils</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;&lt;webt&amp;amp;mbouille xml &gt;&quot;</span><span class="o">,</span> <span class="n">StringEscapeUtils</span><span class="o">.</span><span class="na">escapeXml</span><span class="o">(</span><span class="s">&quot;&lt;webt&amp;amp;mbouille xml /&gt;&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;webtambouille\\\\njava&quot;</span><span class="o">,</span> <span class="n">StringEscapeUtils</span><span class="o">.</span><span class="na">escapeJava</span><span class="o">(</span><span class="s">&quot;webtambouille\\njava&quot;</span><span class="o">));</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_RandomStringUtils</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">RandomStringUtils</span><span class="o">.</span><span class="na">random</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s">&quot;abcde&quot;</span><span class="o">));</span> <span class="c1">// dcc</span>
+</span><span class='line'>	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">RandomStringUtils</span><span class="o">.</span><span class="na">randomAlphanumeric</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// TBPUqddYJl</span>
+</span><span class='line'>	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">RandomStringUtils</span><span class="o">.</span><span class="na">randomNumeric</span><span class="o">(</span><span class="mi">6</span><span class="o">));</span> <span class="c1">// 722169</span>
+</span><span class='line'>	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">RandomStringUtils</span><span class="o">.</span><span class="na">randomAlphabetic</span><span class="o">(</span><span class="mi">4</span><span class="o">));</span> <span class="c1">// Tyow</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_WordUtils</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;Web Tambouille&quot;</span><span class="o">,</span> <span class="n">WordUtils</span><span class="o">.</span><span class="na">capitalize</span><span class="o">(</span><span class="s">&quot;web tambouille&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;WT&quot;</span><span class="o">,</span> <span class="n">WordUtils</span><span class="o">.</span><span class="na">initials</span><span class="o">(</span><span class="s">&quot;Web Tambouille&quot;</span><span class="o">));</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;wEB tambouille&quot;</span><span class="o">,</span> <span class="n">WordUtils</span><span class="o">.</span><span class="na">swapCase</span><span class="o">(</span><span class="s">&quot;Web TAMBOUILLE&quot;</span><span class="o">));</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_ArrayUtils</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
+</span><span class='line'>	<span class="n">Assert</span><span class="o">.</span><span class="na">assertArrayEquals</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">ArrayUtils</span><span class="o">.</span><span class="na">clone</span><span class="o">(</span><span class="n">array</span><span class="o">));</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>A noter aussi la classe <span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/Range.html" target="_blank"><span style="font-family: 'courier new', courier;">Range&lt;T&gt;</span></a></span> <em>(oui oui, les voil&agrave; nos fameux Generics)</em> qui permet d&#8217;avoir un range d&#8217;objets de type <span style="font-family: 'courier new', courier;">T</span>&nbsp;. Le pr&eacute; requis est bien s&ucirc;r, comme c&#8217;est un <em>range </em>donc une liste de valeur ordonn&eacute;es, d&#8217;avoir un objet qui impl&eacute;mente <span style="font-family: 'courier new', courier;">Comparable </span>ou qui fournit un <span style="font-family: 'courier new', courier;">Comparator</span>. On aura alors &agrave; notre disposition plusieurs m&eacute;thodes de comparaison : <span style="font-family: 'courier new', courier;">isBefore(t)</span>, <span style="font-family: 'courier new', courier;">isAfter(t)</span>, <span style="font-family: 'courier new', courier;">between(from, to)</span>, <span style="font-family: 'courier new', courier;">isNaturalOrdering()</span>, <span style="font-family: 'courier new', courier;">getMaximum()</span>&#8230;</p>
+<h2>lang3.concurrent.*</h2>
+<p>Le package <a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/package-summary.html" target="_blank"><span style="font-family: 'courier new', courier;">lang3.concurrent.*</span></a> contient plusieurs utilitaires qui enrichissent le package que les d&eacute;veloppeurs Java connaissent bien &agrave; savoir&nbsp;<a href="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/package-summary.html" target="_blank"><span style="font-family: 'courier new', courier;">java.util.concurrent</span></a>.</p>
+<p>On y trouve une interface <a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/ConcurrentInitializer.html" target="_blank"><span style="font-family: 'courier new', courier;">ConcurrentInitializer&lt;T&gt;</span></a> qui sera l&#8217;interface pour les classes utilitaires qui g&egrave;reront l&#8217;initialisation d&#8217;objets de mani&egrave;re thread-safe. L&#8217;id&eacute;e est donc d&#8217;acc&eacute;der &agrave; un objet de mani&egrave;re thread-safe : si chaque thread re&ccedil;oit ce <span style="font-family: 'courier new', courier;">ConcurrentInitializer, alors&nbsp;</span>ils acc&egrave;deront tous au m&ecirc;me objet qui sera produit par ce <span style="font-family: 'courier new', courier;">ConcurrentInitializer</span>. Parmi ces classes, on trouve notamment :</p>
+<ul>
+<li><span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/AtomicInitializer.html" target="_blank">AtomicInitializer&lt;T&gt;</a></span> : elle v&eacute;rifie si la variable&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/AtomicReference.html?is-external=true" target="_blank">AtomicReference</a></span>&nbsp;existe, si oui la retourne. Sinon elle appelle la m&eacute;thode <span style="font-family: 'courier new', courier;">initialize()</span>. Apr&egrave;s cr&eacute;ation de la valeur, si la variable&nbsp;<span style="font-family: 'courier new', courier;">AtomicReference </span>est toujours <span style="font-family: 'courier new', courier;">null</span>,&nbsp;elle est stock&eacute;e dans la variable AtomicReference. Sinon, elle retourne la variable&nbsp;<span style="font-family: 'courier new', courier;">AtomicReference</span>.<br />Et l&agrave; vous me d&icirc;tes : pourquoi retester la variable <span style="font-family: 'courier new', courier;">AtomicReference </span>puisqu&#8217;elle &eacute;tait d&eacute;j&agrave; <span style="font-family: 'courier new', courier;">null</span>&#8230; dans un contexte monothread oui, mais pas dans un contexte multithread. Comme le d&eacute;crit la javadoc :&nbsp;si plusieurs threads arrivent en m&ecirc;me temps, il se pourrait qu&#8217;ils appellent tous la m&eacute;thode <span style="font-family: 'courier new', courier;">initialize()</span> <em>(le &#8220;revers&#8221; de cette classe)</em>. Toutefois, l&#8217;algorithme utilis&eacute; par la m&eacute;thode <span style="font-family: 'courier new', courier;">get()</span> garantit que le m&ecirc;me objet sera retourn&eacute; &agrave; tous les threads.<br />Comme tout se fait &agrave; l&#8217;aide de variables atomiques, il n&#8217;y a pas besoin de faire de la synchronisation et donc pas de deadlock possible. Compar&eacute;e &agrave; la classe <span style="font-family: 'courier new', courier;">LazyInitializer&lt;T&gt;</span> <em>(un petit peu plus loin)</em>, l&#8217;avantage est que l&#8217;acc&egrave;s &agrave; la donn&eacute;e est tr&egrave;s rapide <em>(pas de <span style="font-family: 'courier new', courier;">synchronized</span>)</em>, par contre la m&eacute;thode d&#8217;initialisation peut &ecirc;tre appel&eacute;e plusieurs fois.</li>
+<li><span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/BackgroundInitializer.html" target="_blank">BackgroundInitializer&lt;T&gt;</a></span> : elle permet d&#8217;effectuer une initialisation&nbsp;complexe&nbsp;d&#8217;un objet&nbsp;en t&acirc;che de fond. Exemple : apr&egrave;s avoir cr&eacute;&eacute; notre objet <span style="font-family: 'courier new', courier;">complexObject = new MyBackgroundInitializer()</span>, on appelle la m&eacute;thode&nbsp;<span style="font-family: 'courier new', courier;">complexObject.start()</span> qui d&eacute;marre un thread en parall&egrave;le dont le r&ocirc;le sera d&#8217;effectuer l&#8217;initialisation. Notre code continue de s&#8217;ex&eacute;cuter <em>(non bloquant)</em> jusqu&#8217;&agrave; l&#8217;appelle &agrave; la m&eacute;thode&nbsp;<span style="font-family: 'courier new', courier;">complexObject.get()</span>, notre code est alors bloqu&eacute; : si l&#8217;initialisation &eacute;tait termin&eacute;e, l&#8217;objet est imm&eacute;diatement retourn&eacute; ; sinon le code attend la fin de cr&eacute;ation de l&#8217;objet qui lui sera ensuite retourn&eacute;. C&#8217;est donc le m&ecirc;me comportement que pour un <span style="font-family: 'courier new', courier;">Future&lt;T&gt;</span>, <span style="font-family: 'courier new', courier;">BackgroundInitializer&lt;T&gt;&nbsp;</span>est d&#8217;ailleurs un wrapper de <span style="font-family: 'courier new', courier;">Future&lt;T&gt;</span>&nbsp;qui contient aussi un&nbsp;<span style="font-family: 'courier new', courier;">ExecutorService</span> pour lancer la t&acirc;che en parall&egrave;le.</li>
+<li><span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/LazyInitializer.html" target="_blank">LazyInitializer&lt;T&gt;</a></span> : beaucoup de langages ont ce comportement par d&eacute;faut, il parlera donc &agrave; plusieurs d&#8217;entre vous. L&#8217;id&eacute;e est de retarder l&#8217;initialisation de l&#8217;objet uniquement quand celui-ci sera utilis&eacute;. Ainsi, notre m&eacute;moire est &eacute;conomis&eacute;e puisque, selon notre code m&eacute;tier,&nbsp;peut-&ecirc;tre&nbsp;que cet objet ne sera jamais instanci&eacute;.</li>
+</ul>
+<p>On trouve aussi la classe&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/concurrent/ConcurrentUtils.html" target="_blank">ConcurrentUtils</a>&nbsp;</span>qui nous offrira tout un tas de m&eacute;thodes utilitaires comme <span style="font-family: 'courier new', courier;">constantFuture(t)</span>, <span style="font-family: 'courier new', courier;">createIfAbsent(ConcurrentMap, Key, ConcurrentInitializer)</span> ou bien encore <span style="font-family: 'courier new', courier;">extractCauseUnchecked(ExecutionException)</span> <em>(qui retourne une <span style="font-family: 'courier new', courier;">ConcurrentRuntimeException</span>)</em>.</p>
+<p>Le package est tr&egrave;s bien d&eacute;taill&eacute; sur la <a href="https://commons.apache.org/lang/userguide.html#lang3.concurrent." target="_blank">page d&#8217;annonce</a>, je vous conseille d&#8217;aller y faire un tour !</p>
+<h2>lang3.builder.*</h2>
+<p>Le package <span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/builder/package-summary.html" target="_blank">lang3.builder.*</a></span> contient tout une panoplie de builders tous plus utiles les uns que les autres. On y trouve notamment le <span style="font-family: 'courier new', courier;">EqualsBuilder</span>, le <span style="font-family: 'courier new', courier;">HashCodeBuilder</span>, le <span style="font-family: 'courier new', courier;">ToStringBuilder </span>ou bien encore le <span style="font-family: 'courier new', courier;">ReflectionToStringBuilder&nbsp;</span><em>(qui utilise la r&eacute;flexion pour calculer son <span style="font-family: 'courier new', courier;">toString()</span>)</em>. Quelques exemples :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Test</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">lang3_builders</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>	<span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&quot;Joshua&quot;</span><span class="o">,</span> <span class="s">&quot;BLOCH&quot;</span><span class="o">);</span>
+</span><span class='line'>	<span class="n">Person</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&quot;Doug&quot;</span><span class="o">,</span> <span class="s">&quot;LEA&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="n">assertFalse</span><span class="o">(</span><span class="k">new</span> <span class="n">EqualsBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">fn</span><span class="o">,</span> <span class="n">p2</span><span class="o">.</span><span class="na">fn</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">ln</span><span class="o">,</span> <span class="n">p2</span><span class="o">.</span><span class="na">ln</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="n">assertNotSame</span><span class="o">(</span><span class="k">new</span> <span class="n">HashCodeBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">fn</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">ln</span><span class="o">).</span><span class="na">build</span><span class="o">(),</span>
+</span><span class='line'>                      <span class="k">new</span> <span class="nf">HashCodeBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">fn</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">p2</span><span class="o">.</span><span class="na">ln</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="k">new</span> <span class="n">CompareToBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">fn</span><span class="o">,</span> <span class="n">p2</span><span class="o">.</span><span class="na">fn</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">p1</span><span class="o">.</span><span class="na">ln</span><span class="o">,</span> <span class="n">p2</span><span class="o">.</span><span class="na">ln</span><span class="o">).</span><span class="na">build</span><span class="o">().</span><span class="na">intValue</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;Person[firstname=Joshua,lastname=BLOCH]&quot;</span><span class="o">,</span>
+</span><span class='line'>                      <span class="k">new</span> <span class="nf">ToStringBuilder</span><span class="o">(</span><span class="n">p1</span><span class="o">,</span> <span class="n">ToStringStyle</span><span class="o">.</span><span class="na">SHORT_PREFIX_STYLE</span><span class="o">)</span>
+</span><span class='line'>		            <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;firstname&quot;</span><span class="o">,</span> <span class="n">p1</span><span class="o">.</span><span class="na">fn</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;lastname&quot;</span><span class="o">,</span> <span class="n">p1</span><span class="o">.</span><span class="na">ln</span><span class="o">).</span><span class="na">build</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="c1">// In Person class :</span>
+</span><span class='line'>	<span class="c1">// @Override</span>
+</span><span class='line'>	<span class="c1">// public String toString() {</span>
+</span><span class='line'>	<span class="c1">//    return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).build();</span>
+</span><span class='line'>	<span class="c1">// }</span>
+</span><span class='line'>	<span class="n">assertEquals</span><span class="o">(</span><span class="s">&quot;Person[fn=Web,ln=TAMBOUILLE]&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&quot;Web&quot;</span><span class="o">,</span> <span class="s">&quot;TAMBOUILLE&quot;</span><span class="o">).</span><span class="na">toString</span><span class="o">());</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>Qu&#8217;ou&iuml;e-je ? Vous allez remplacer tous vos <span style="font-family: 'courier new', courier;">Object.equals</span>&nbsp;et vos <span style="font-family: 'courier new', courier;">Objects.hascode</span>&nbsp;guava par les builders de lang3 ? <img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" /></p>
+<h2>lang3.reflect.*</h2>
+<p>Le package&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/reflect/package-summary.html" target="_blank">lang3.reflect.*</a></span>&nbsp;se focalise sur tout ce qui concerne l&#8217;acc&egrave;s et l&#8217;invocation par r&eacute;flexion. On retrouve ici 4 classes utilitaires :</p>
+<ul>
+<li><span style="font-family: 'courier new', courier;">ConstructorUtils </span>: elle permet de r&eacute;cup&eacute;rer un objet <span style="font-family: 'courier new', courier;">Constructor </span>qui repr&eacute;sente le constructeur d&#8217;une classe, elle permet aussi d&#8217;invoquer un constructeur <em>(<span style="font-family: 'courier new', courier;">invokeConstructor(&#8230;)</span>)</em>.</li>
+<li><span style="font-family: 'courier new', courier;">FieldUtils </span>: tout comme pour le constructeur, cette classe permet &nbsp;de r&eacute;cup&eacute;rer un objet <span style="font-family: 'courier new', courier;">Field</span>, de lire sa valeur ou de la changer <em>(<span style="font-family: 'courier new', courier;">read</span> et <span style="font-family: 'courier new', courier;">write</span>)</em>. Elle contient aussi des m&eacute;thodes pour g&eacute;rer sp&eacute;cifiquement le cas des champs statiques.</li>
+<li><span style="font-family: 'courier new', courier;">MethodUtils </span>: je pense que vous avez compris&#8230;</li>
+<li><span style="font-family: 'courier new', courier;">TypeUtils </span>: cette classe se concentre sur le type des objets pass&eacute;s en param&egrave;tres, ainsi on pourra r&eacute;cup&eacute;rer les <span style="font-family: 'courier new', courier;">lower </span>et upper bounds, savoir si l&#8217;objet en entr&eacute;e <span style="font-family: 'courier new', courier;">isInstanceOf </span>d&#8217;un type, si c&#8217;est un array avec <span style="font-family: 'courier new', courier;">isArrayType</span>&#8230;</li>
+</ul>
+<h2>lang3.mutable|tuple.*</h2>
+<p>Comme vous le savez, toutes les classes <span style="font-family: 'courier new', courier;">Integer</span>, <span style="font-family: 'courier new', courier;">Double</span>, <span style="font-family: 'courier new', courier;">Long</span>&#8230; sont des wrappers pour leur &eacute;quivalent primitif et donc par principe immuables. C&#8217;est l&agrave; qu&#8217;intervient le package&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/mutable/package-summary.html" target="_blank">lang3.mutable.*</a></span>&nbsp;qui va nous permettre de cr&eacute;er des <span style="font-family: 'courier new', courier;">MutableInteger</span>, <span style="font-family: 'courier new', courier;">MutableDouble</span> et <span style="font-family: 'courier new', courier;">MutableLong</span><em><span style="font-family: 'courier new', courier;"> </span>(et bien d&#8217;autres)</em> ! En ce qui concerne les nouvelles m&eacute;thodes, on pourra utiliser <em>(selon la classe)</em> <span style="font-family: 'courier new', courier;">add(x), substract(x), increment(), decrement(), isInfinite(), isNaN()</span>&#8230; la liste est longue !</p>
+<p>A noter aussi, Generics obligent, la classe <span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/mutable/MutableObject.html" target="_blank">MutableObject&lt;T&gt;</a></span> qui va nous permettre de d&eacute;finir notre propre type <span style="font-family: 'courier new', courier;">T</span>. On aura alors acc&egrave;s &agrave; des m&eacute;thodes comme <span style="font-family: 'courier new', courier;">getValue()</span> ou <span style="font-family: 'courier new', courier;">setValue(t)</span> qui seront typ&eacute;es pour retourner/prendre un type <span style="font-family: 'courier new', courier;">T</span>.</p>
+<p>Quant au dernier package de cet article, &agrave; savoir le package&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/package-summary.html" target="_blank">lang3.tuple.*</a></span>, je ne peux que repenser &agrave; tout ce que je vous ai d&eacute;j&agrave; pr&eacute;sent&eacute; sur ce blog et notamment la partie sur les <a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html#tuple" target="_blank">Tuple&lt;A, B&gt; de la librairie play.libs.F</a> ! Je vous renvoie donc vers celui-ci pour l&#8217;id&eacute;e g&eacute;n&eacute;rale autour de ce concept.</p>
+<p>Sachez que 3 impl&eacute;mentations existent : la <span style="font-family: 'courier new', courier;"><span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/Pair.html" target="_blank">Pair&lt;L, R&gt;</a></span></span>&nbsp;<em>(avec les m&eacute;thodes&nbsp;<span style="font-family: 'courier new', courier;">isLeft</span><span style="font-family: 'courier new', courier;">,&nbsp;</span><span style="font-family: 'courier new', courier;">getLeft</span><span style="font-family: 'courier new', courier;">, isRight, getRight, Pair.of(l,r)&#8230;</span>)</em>, la&nbsp;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/MutablePair.html" target="_blank">MutablePair&lt;L, R&gt;</a></span> <em>(avec les m&eacute;thodes <span style="font-family: 'courier new', courier;">setLeft(l)</span> et <span style="font-family: 'courier new', courier;">setRight(r)</span>)</em> et l&#8217;<span style="font-family: 'courier new', courier;"><a href="http://commons.apache.org/lang/api/org/apache/commons/lang3/tuple/ImmutablePair.html" target="_blank">ImmutablePair&lt;L, R&gt;</a></span>.</p>
+<h2>Conclusion</h2>
+<p>Ceci n&#8217;est qu&#8217;un bref aper&ccedil;u de tout se que contient la librairie. Elle arrive certes tr&egrave;s tard par rapport &agrave; d&#8217;autres concurrents qui ont d&eacute;j&agrave; bien avanc&eacute; techniquement <em>(Generics&#8230;)</em> mais aussi fonctionnellement <em>(concepts de la programmation fonctionnelle&#8230;)</em>&nbsp;mais au moins elle est l&agrave; !</p>
+<p>J&#8217;esp&egrave;re en tout cas vous avoir donn&eacute; envie de tester cette librairie car il n&#8217;y a pas que <a href="http://www.touilleur-express.fr/2010/11/03/google-guava-partie-1/" target="_blank">Guava</a> et <a href="http://web-tambouille.fr/2011/04/5/java-plus-programmation-fonctionnelle-plus-funky-egal-funkyjfunctional.html" target="_blank">FunkyJFunctionnal</a> dans la vie <img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+<p>D&#8217;ailleurs, &agrave; quand une version <em>Generics </em>pour la fameuse commons-collections ? En attendant, si vous &ecirc;tes int&eacute;ress&eacute; <em>(et un petit peu intr&eacute;pide)</em>, vous pouvez regarder <a href="http://sourceforge.net/projects/collections/" target="_blank">ce projet sur sourceforge</a> qui est un portage de la libraire vers une version Java 5 adapt&eacute;e aux Generics.</p>
+
+  
+  <div style='clear: both;'></div>
+</div>
+
+
+  
+    <div class="post-share-after">
+  <span class='st_twitter_vcount with_space' displayText='Tweet'></span>
+  <span class='st_plusone_vcount with_space' displayText='Google +1'></span>
+  <span class='st_linkedin_vcount with_space' displayText='LinkedIn'></span>
+  <span class='st_sharethis_vcount with_space' displayText='ShareThis'></span>
+</div>
+
+  
+
+  <p class="meta">
+  
+    <div class='blog-pager' id='blog-pager'>
+      <div class="alignleft"><a href="/web-tambouille/2011/06/15/interview-de-ryan-dahl-createur-de-node-js.html" title="Billets pr&eacute;c&eacute;dents : Interview de Ryan Dahl, créateur de Node.js">&laquo; Interview de Ryan Dahl, créateur de Node.js</a></div>
+      <div class="alignright"><a href="/web-tambouille/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html" title="Billets suivants : JUG Summer Camp 2011 : Optimiser votre site Web sur mobile">JUG Summer Camp 2011 : Optimiser votre site Web sur mobile &raquo;</a></div>
+      <div class='clear'></div>
+    </div>
+  
+  </p>
+
+  
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+  
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-wrapper">
+        <div class='gadget clearfix' id='subscribe'>
+  <h4>Abonnez-vous !</h4>
+  <ul>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouille' target="_blank">Blog</a></li>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouilleComments' target="_blank">Commentaires</a></li>
+    <li class='twitter'><a href='http://twitter.com/rmat0n' target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+<div class='sidebar clearfix section' id='promotecolumn'>
+  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/rmat0n"></a>
+  <noscript>
+    <a href="http://flattr.com/thing/296927/Web-Tambouille-rmat0n" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+  </noscript>
+  <a href="http://www.viadeo.com/en/profile/romain.maton" style="margin-left:5px;vertical-align:text-bottom;">
+    <img src="http://mohamedtazi.com/viadeo_button_logo.jpg" width="50" border="0" alt="Mon profil sur Viadeo" />
+  </a>
+  <a href="http://fr.linkedin.com/in/rmaton" style="margin-left:5px;">
+    <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png" width="145" height="25" border="0" alt="Mon profil sur LinkedIn" />
+  </a>
+</div>
+
+
+<div class='sidebar clearfix section' id='searchcolumn'>
+  <form action="http://google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:www.web-tambouille.fr" />
+      Recherche : <input class="search" type="text" name="q" results="0" placeholder="Search" size="44px;" />
+    </fieldset>
+  </form>
+</div>
+
+
+<div class='sidebar clearfix section' id='onecolumn10'>
+  <div class='widget LinkList' id='LinkList10'>
+    <div id="tagCloud">
+      <h2>Mots-cl&eacute;s :</h2>
+      <div class='widget-content'>
+        <ul id="tagList">
+          <li><a style="font-size: 121%" href="/tags/android/">Android</a></li>
+<li><a style="font-size: 151%" href="/tags/devoxx/">Devoxx</a></li>
+<li><a style="font-size: 139%" href="/tags/fonctionnelle/">Fonctionnelle</a></li>
+<li><a style="font-size: 128%" href="/tags/html5/">HTML5</a></li>
+<li><a style="font-size: 165%" href="/tags/java/">Java</a></li>
+<li><a style="font-size: 163%" href="/tags/javascript/">Javascript</a></li>
+<li><a style="font-size: 160%" href="/tags/node-dot-js/">Node.js</a></li>
+<li><a style="font-size: 121%" href="/tags/play/">Play</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='clearfix' id='twocolumns'>
+  <div class='fl section' id='sl'>
+    <div class='widget Label' id='Label1'>
+      <h2>Cat&eacute;gories</h2>
+      <div class='widget-content list-label-widget-content'>
+        
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fr section' id='sr'>
+    <div class='widget BlogArchive' id='BlogArchive1'>
+      <h2>Archives</h2>
+      <div class='widget-content'>
+        <div id='ArchiveList'>
+          <div id='BlogArchive1_ArchiveList'>
+            <ul class='hierarchy'>
+              <!--li class='archivedate expanded'-->
+              <!--li><a class='post-count-link' href=> <span class='post-count' dir='ltr'>()</span></a></li-->
+              <!--li-->
+            </ul>
+          </div>
+        </div>
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:15px;">
+  <div id="zindepWidget" data-profil="http://www.leszindeps.fr/p/Romain/Maton/8aff0abe371c3fd601371c3fe3e40012" data-width="315"></div>
+</div>
+
+<div class='sidebar clearfix section' id='onecolumn20'>
+  <div class='widget LinkList' id='LinkList20'>
+    <div class='widget-content licence' style="padding-top:15px;">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Contrat Creative Commons" style="border-width:0;float:left;padding-right:5px;padding-top: 4px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      Cette oeuvre est mise &agrave; disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> Licence Creative Commons Paternit&eacute; - Pas d'Utilisation Commerciale -
+                                                                                                                                                   Partage &agrave;
+                                                                                                                                                   l'Identique 3.0 non transcrit</a>.
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1471642924127242";
+/* web-tambouille-1 */
+google_ad_slot = "8625499162";
+google_ad_width = 324;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+      </div>
+    </div>
+    <!--</div>-->
+    <footer role="contentinfo"><div class='clearfix clear' id='footer-wrapper'>
+  <div class='fl'>
+    Copyright &copy; 2013 - Romain MATON (rmat0n) - Propuls&eacute; par <a href="http://octopress.org">Octopress</a>
+  </div>
+  <div class='fr'><a href='http://cloudblogging.blogspot.com/'>Cloud Blogging</a> desgined by
+    <a href='http://btemplates.com/' title='Blogger Templates'><img alt='BTemplates' src='http://4.bp.blogspot.com/_Zuzii37VUO4/S59W9qxAUWI/AAAAAAAAEqY/4plNq9KEqBQ/s1600/blogger-templates.png' /></a>.
+  </div>
+</div>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'web-tambouille';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.web-tambouille.fr/2011/07/20/le-cru-2011-de-commons-lang-est-arrive-en-version-3-0-pour-java-5.html';
+        var disqus_url = 'http://www.web-tambouille.fr/2011/07/20/le-cru-2011-de-commons-lang-est-arrive-en-version-3-0-pour-java-5.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19424814-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript">
+  $("figure").each(function () {
+    $(this).html($(this).html().replace(/\t/g, "  "));
+  });
+</script>
+
+
+  </div>
+</div>
+</body>

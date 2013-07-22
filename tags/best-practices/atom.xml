@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Best Practices | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/best-practices/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JUG Summer Camp 2011 : Optimiser votre site Web sur mobile]]></title>
+    <link href="http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html"/>
+    <updated>2011-09-18T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/dEdSDijs-GS7IGs630GIlQ?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="JUG Summer Camp 2011" src="https://lh5.googleusercontent.com/-l_qCVT9xY7o/TnYLlD7mjqI/AAAAAAAAAz8/AXeoY6zRj6M/s800/jugsummercamp_1131.png" alt="JUG Summer Camp 2011" width="113" height="123" /></a>L'&eacute;dition 2011 du <a href="http://www.jugsummercamp.org/" target="_blank">JUG Summer Camp</a>&nbsp;de La Rochelle vient de s'achever et ce fut un tr&egrave;s bon cru ! Les sessions &eacute;taient tr&egrave;s vari&eacute;es : Java 7, Cloud, Oracle, OSGi, Dojo... mais aussi une session <a href="https://sites.google.com/site/jugsummercamp/presentations" target="_blank">Optimiser votre site Web sur mobile</a> que j'ai pr&eacute;sent&eacute;e lors de cette journ&eacute;e.</p>
+
+
+<p>Si vous avez manqu&eacute; l'&eacute;v&egrave;nement, voici un petit r&eacute;sum&eacute; sur le site de <a href="http://cfalguiere.wordpress.com/2011/09/17/le-jug-summer-camp-cest-fini-pour-cette-annee/" target="_blank">Claude Falgui&egrave;re</a>.</p>
+
+
+<p>Et, en attendant l'upload des vid&eacute;os sur <a href="http://www.parleys.com/" target="_blank">Parley's</a>, voici les slides de cette pr&eacute;sentation <em>(disponible sur <a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">slideshare</a>)</em> :</p>
+
+
+<p>&nbsp;</p>
+
+
+<div id="__ss_9307839" style="width: 510px;"><strong><a title="Optimiser votre site Web sur mobile" href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">Optimiser votre site Web sur mobile</a></strong><br />
+<object id="__sse9307839" width="510" height="426" data="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" type="application/x-shockwave-flash">
+<param name="data" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="name" value="__sse9307839" />
+<param name="allowfullscreen" value="true" />
+</object>
+<p>&nbsp;</p>
+<div style="padding: 5px 0 12px;">View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/rmat0n" target="_blank">rmat0n</a></div>
+</div>
+
+
+<p>&nbsp;</p>
+
+
+<p>Encore merci &agrave; toute l'&eacute;quipe du JUG Summer Camp <em>(Orianne, J&eacute;r&ocirc;me et tous ceux que j'oublie) </em>pour cette superbe &eacute;dition. Vivement 2012 !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bonnes pratiques de performance pour Webapp HTML5]]></title>
+    <link href="http://www.web-tambouille.fr/2011/01/18/bonnes-pratiques-de-performance-pour-webapp-html5.html"/>
+    <updated>2011-01-18T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2011/01/18/bonnes-pratiques-de-performance-pour-webapp-html5</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/14qU5Hfk_JVdTNBSnxqlsA?feat=embedwebsite"><img style="float: right; margin-bottom: 10px;" title="HTML 5" src="https://lh5.googleusercontent.com/-fwsYPhh6YjA/ThmqQUF2BzI/AAAAAAAAAuQ/UmInw2cyjQ4/s800/logo_html5.png" alt="HTML 5" width="144" height="144" /></a>En attendant que HTML5 devienne une r&eacute;f&eacute;rence incontournable en entreprise <em>(sa standardisation n'est malheureusement <a href="http://news.cnet.com/8301-30685_3-20008935-264.html" target="_blank">pas pr&egrave;s d'arriver</a>)</em>, nous pouvons toujours nous former aux <a href="https://developer.mozilla.org/En/Using_web_workers" target="_blank">Web Workers</a>, aux <a href="http://zackhobson.com/2010/03/28/node-js-and-web-sockets.html" target="_blank">Web Sockets</a> ou bien encore au <a href="http://www.w3schools.com/html5/html5_webstorage.asp" target="_blank">Web Storage</a>.</p>
+
+
+<p>Pour l'instant cela reste de l'auto formation qui consiste &agrave; int&eacute;grer les bonnes pratiques d'utilisation et &agrave; identifier les difficult&eacute;s qui seront souvent rencontr&eacute;es dans des projets r&eacute;els &agrave; grande envergure <em>(nombre de connexions, utilisateurs simultan&eacute;s ou requ&ecirc;tes par seconde)</em>. Bien souvent, ces besoins de performances nous en font voir des vertes et des pas m&ucirc;res ! C'est ainsi que l'on exp&eacute;rimente les limites d'un framework, d'une architecture ou m&ecirc;me d'un langage.</p>
+
+
+<p>Si vous ne connaissez pas encore <a href="http://www.html5rocks.com/" target="_blank">HTML5Rocks</a>, le portail de Google d&eacute;di&eacute; aux d&eacute;veloppeurs HTML5, il est grand temps d'aller y faire un tour ! Les tutoriaux sont nombreux et je voulais partager avec vous celui-ci : <a href="http://www.html5rocks.com/tutorials/speed/quick/" target="_blank">Best Practices for a Faster Web App with HTML5</a>.</p>
+
+
+<p><!--more--></p>
+
+
+<p>L'article met en avant 10 astuces pour avoir de bonnes performances dans une application HTML5. Encore une fois, et m&ecirc;me si plusieurs librairies existent et nous permettent de simuler HTML5 dans d'anciens navigateurs, il sera difficile d'appliquer toutes ces bonnes pratiques en entreprise. Ce n'est toutefois pas une raison pour nous priver de ces <em>best practices</em> et nous allons rapidement les parcourir.</p>
+
+
+<h3>Astuce 1 : utiliser le Web Storage plut&ocirc;t que les Cookies</h3>
+
+
+<p>Et un constat : toutes vos donn&eacute;es de cookies, pour un site donn&eacute;, sont envoy&eacute;es dans le header de toutes vos requ&ecirc;tes HTTP ! Ce qui bien s&ucirc;r peut avoir un impact sur le temps de r&eacute;ponse de vos requ&ecirc;tes. Une bonne pratique qui en d&eacute;coule est de r&eacute;duire la taille de vos Cookies.</p>
+
+
+<p>Mais gr&acirc;ce &agrave; HTML5, il est possible de faire mieux et d'utiliser le <a href="http://www.w3schools.com/html5/html5_webstorage.asp" target="_blank">Web Storage</a> avec le <span style="font-family: courier new,courier;">sessionStorage</span> et le <span style="font-family: courier new,courier;">localStorage</span>. Les informations sont ainsi persist&eacute;es c&ocirc;t&eacute; client pour la dur&eacute;e de la session ou ind&eacute;finiment et les donn&eacute;es ne sont pas transf&eacute;r&eacute;es lors d'une requ&ecirc;te HTTP. Plut&ocirc;t int&eacute;ressant !</p>
+
+
+<h3>Astuce 2 : utiliser les transitions CSS au lieu des animations Javascript</h3>
+
+
+<p>Dans de nombreux cas, vous pouvez vous passer des animations Javascript et ainsi utiliser les <a href="http://www.alsacreations.com/tuto/lire/873-transitions-css3-animations.html" target="_blank">transitions CSS3</a>. Ces effets se font par l'ajout/suppression de classes sur vos &eacute;l&eacute;ments HTML.</p>
+
+
+<p>Vous gagnerez en taux de transfert car globalement le code n&eacute;cessaire pour effectuer un effet est plus concis en CSS3 comparer &agrave; sa version Javascript. De plus, avec les acc&eacute;l&eacute;rations mat&eacute;riels au niveau GPU, vous gagnerez en fluidit&eacute;.</p>
+
+
+<h3>Astuce 3 : pr&eacute;f&eacute;rer une base de donn&eacute;es c&ocirc;t&eacute; client plut&ocirc;t que des aller-retour c&ocirc;t&eacute; serveur</h3>
+
+
+<p>L'id&eacute;e ici n'est pas de mettre votre base de donn&eacute;es Oracle avec toutes vos donn&eacute;es sensibles c&ocirc;t&eacute; client <em>(je vous voyais venir <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em> mais plut&ocirc;t de limiter le plus possible le nombre de requ&ecirc;tes HTTP surtout de type XHR. C'est d'ailleurs une optimisation de performance importante recherch&eacute;e pour tout site &agrave; haut trafic. Et encore une fois, le <span style="font-family: courier new,courier;">sessionStorage</span> et le <span style="font-family: courier new,courier;">localStorage</span> seront vos alli&eacute;s.</p>
+
+
+<h3>Astuce 4 : optimisation Javascript = &eacute;normes avantages en terme de performance</h3>
+
+
+<p>L'exemple donn&eacute; ici est l'objet <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array#Methods" target="_blank">Array</a> qui r&eacute;cup&egrave;re un grand nombre de m&eacute;thodes &agrave; partir de Javascript 1.6. D'ailleurs, ces m&eacute;thodes devraient vous rappeler l'article pr&eacute;c&eacute;demment paru sur Web Tambouille sur la <a href="http://web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">Programmation Fonctionnelle en Javascript</a>, sauf que cette fois-ci pas de librairies externes ! Il en ressort que ces nouvelles m&eacute;thodes <span style="font-family: courier new,courier;">forEach</span>, <span style="font-family: courier new,courier;">map</span>, <span style="font-family: courier new,courier;">filter</span> et consorts sont plus rapides que notre bonne vieille boucle &agrave; la main <span style="font-family: courier new,courier;">for(var i=0; i&lt;arr.length; i++)</span>. De m&ecirc;me, il est pr&eacute;f&eacute;rable d'utiliser le parsing JSON natif &agrave; l'aide de <span style="font-family: courier new,courier;">JSON.parse()</span>, plus rapide que n'importe quelle librairie externe.</p>
+
+
+<h3>Astuce 5 : utiliser le cache manifest et pas seulement le offline</h3>
+
+
+<p>Il y a 2 ans, Wordpress utilisa Google Gears <em>(offline apps)</em> pour mettre en cache plusieurs ressources de la partie admin et ainsi gagner en rapidit&eacute;. Le <a href="http://www.html5rocks.com/tutorials/appcache/beginner/" target="_blank">cache manifest</a> va aussi nous &ecirc;tre utile.</p>
+
+
+<p>Exemple : nous allons pouvoir traiter diff&eacute;remment une donn&eacute;e JSON, qui &eacute;volue dans le temps, et un HTML d'enrobage, qui lui, &eacute;volue moins. Ce dernier sera cach&eacute; <em>(avec une balise sp&eacute;cifique)</em> et consid&eacute;r&eacute; comme un template sur lequel on bouclera avec la donn&eacute;e JSON pour mettre &agrave; jour une partie du site. On obtiendra alors une grosse partie du HTML qui sera cach&eacute; et une autre partie plus dynamique intimement li&eacute;e &agrave; de la donn&eacute;e pure qui ne le sera pas.</p>
+
+
+<h3>Astuce 6 : activer l'acc&eacute;l&eacute;ration mat&eacute;rielle</h3>
+
+
+<p>Ce point d&eacute;pendra vraiment du navigateur... mais l'id&eacute;e est encore une fois de d&eacute;l&eacute;guer au GPU tout ce que l'on peut pour gagner en terme de temps et d'effet visuel. La petite ligne magique mais qui toutefois ne garantit rien : <span style="font-family: courier new,courier;">.hwaccel {&nbsp; -webkit-transform: translateZ(0); }</span>.</p>
+
+
+<h3>Astuce 7 : utiliser les Web Workers pour de lourdes op&eacute;rations CPU</h3>
+
+
+<p>Car en effet : les Web Workers sont rapides et surtout d&eacute;coupl&eacute;s du thread de l'UI. Vous allez donc pouvoir effectuer des traitements lourds en t&acirc;che de fond et continuer de travailler sur votre interface sans &ecirc;tre bloqu&eacute;.</p>
+
+
+<h3>Astuce 8 : utiliser les attributs et input types HTML5 dans vos formulaires</h3>
+
+
+<p>En plus des existants <span style="font-family: courier new,courier;">text</span>, <span style="font-family: courier new,courier;">password</span> et <span style="font-family: courier new,courier;">file</span>, HTML5 ajoute les <span style="font-family: courier new,courier;">search</span>, <span style="font-family: courier new,courier;">tel</span>, <span style="font-family: courier new,courier;">url</span>, <span style="font-family: courier new,courier;">email</span>, <span style="font-family: courier new,courier;">datetime</span>, <span style="font-family: courier new,courier;">date</span>, <span style="font-family: courier new,courier;">month</span>, <span style="font-family: courier new,courier;">week</span>, <span style="font-family: courier new,courier;">time</span>, <span style="font-family: courier new,courier;">datetime-local</span>, <span style="font-family: courier new,courier;">number</span>, <span style="font-family: courier new,courier;">range</span> and <span style="font-family: courier new,courier;">color</span>. L'id&eacute;e ici est d'utiliser les validations natives de ces champs mais aussi de pouvoir passer par les attributs <span style="font-family: courier new,courier;">required</span> et <span style="font-family: courier new,courier;">pattern</span>, ce dernier permettant de sp&eacute;cifier sa propre expression r&eacute;guli&egrave;re de validation. De plus, si les validations ne sont pas respect&eacute;es, l'envoi du formulaire est bloqu&eacute;. L&agrave; aussi, pas de gestion sp&eacute;cifique du <span style="font-family: courier new,courier;">onclick</span> pour bloquer selon telles ou telles conditions.</p>
+
+
+<p>Une nouvelle fois, plus besoin de passer par une librairie externe Javascript pour faire ceci. On obtient de plus une r&eacute;duction de code concernant toutes ces validations, et boum! encore un gain en termes de transfert r&eacute;seau!</p>
+
+
+<h3>Astuce 9 : utiliser les effets CSS3 plut&ocirc;t que des images sprites</h3>
+
+
+<p>CSS3 apporte un grand nombre de nouveaut&eacute;s : les <span style="font-family: courier new,courier;">linear</span> et <span style="font-family: courier new,courier;">radial gradients</span>, les fameux <span style="font-family: courier new,courier;">rounded corners</span>, les masques, les transformations/rotations et bien d'autres encore ! Et, comme le dit le tutoriel, remplacer une image sprites de 2k par une centaine de bytes CSS nous fait encore gagner en transfert r&eacute;seau. Une fois encore, si le navigateur ne supporte pas ces effets, des librairies comme <a href="http://www.modernizr.com/" target="_blank">modernizr</a> peuvent g&eacute;rer cette compatibilit&eacute; descendante avec les navigateurs ne les g&eacute;rant pas.</p>
+
+
+<h3>Astuce 10 : utiliser les Web Sockets au lieu de XmlHttpRequest</h3>
+
+
+<p>Les Web Sockets ont &eacute;t&eacute; con&ccedil;ues en r&eacute;ponse &agrave; la popularit&eacute; de Comet, et les avantages des Web Sockets sont nombreux.<br />Prenons quelques chiffres : selon certains rapports, les Web Sockets r&eacute;duisent le transfert r&eacute;seau de 35% ! Et sur de gros volumes, les performances des WS sont meilleures que celle de XHR <em>(1 &agrave; 5 fois plus rapide)</em>.</p>
+
+
+<p>Donc si vous le pouvez, pr&eacute;f&eacute;rez l'utilisation des Web Sockets au lieu des appels XmlHttpRequest.</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Beaucoup de bonnes pratiques dans ce tutoriel ! Quelques outils peuvent nous aider dans cette qu&ecirc;te de la performance, je dirai m&ecirc;me plus qu'ils sont &agrave; installer d'urgence :     <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a>, <a href="http://code.google.com/webtoolkit/speedtracer/">Speed Tracer for Chrome</a> ou <a href="http://ajax.dynatrace.com/pages/">DynaTrace Ajax for IE</a>.</p>
+
+
+<p>D'autres articles sont &agrave; venir : nous allons mettre les mains dans les Web Sockets avec Node.JS, les Web Workers<em> (et ce ne sera pas un calcul de nombres premiers) </em>mais aussi les transitions CSS3.</p>
+
+
+<p>Un beau programme non ? Donc <em>stay tuned</em> <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

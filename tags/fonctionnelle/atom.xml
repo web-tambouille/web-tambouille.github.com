@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Fonctionnelle | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/fonctionnelle/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript++]]></title>
+    <link href="http://www.web-tambouille.fr/2012/02/23/javascript-plus-plus-evolution-du-langage.html"/>
+    <updated>2012-02-23T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/02/23/javascript-plus-plus-evolution-du-langage</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/nMrNHG_1l1y3WohchX2EKNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Programmation fonctionnelle" src="https://lh4.googleusercontent.com/-Il3aKnteYJY/ThmqRC_eSXI/AAAAAAAAAuk/d1gwQ4AkEeY/s800/logo_programmation_fonctionnelle.jpg" alt="Programmation fonctionnelle" /></a>Quelques nouvelles de Javascript avec ce tr&egrave;s bon article sur D&eacute;veloppez :&nbsp;<a href="http://blog.developpez.com/web/p10401/web/javascript/le-core-javascript-s-enrichit-de-nouvell/" target="_blank">Le "core" JavaScript s'enrichit de nouvelles m&eacute;thodes</a>.</p>
+
+
+<p>En effet, je vous pr&eacute;sentais il y a un an quelques exemples de <a href="../2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">programmation fonctionnelle en Javascript</a>&nbsp;avec des librairies telles que <a href="http://osteele.com/sources/javascript/functional/" target="_blank">functional-javascript</a> ou <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>.</p>
+
+
+<p>Sans pour autant arriver &agrave; ce niveau de fonctionnalit&eacute;s, Javascript de dote de nouvelles m&eacute;thodes que nous allons rapidement parcourir.</p>
+
+
+<p><!--more--></p>
+
+
+<h3>Array</h3>
+
+
+<p>La plupart de ces m&eacute;thodes sont d&eacute;j&agrave; pr&eacute;sentes dans&nbsp;<a href="http://osteele.com/sources/javascript/functional/" target="_blank">functional-javascript</a>&nbsp;et&nbsp;<a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>, l'avantage est que si vous n'utilisiez que celles-l&agrave;, plus besoin de mettre la librairie dans vos scripts !<br /> Enfin, seulement si vous visez les tous derniers navigateurs du march&eacute;...</p>
+
+
+<ul>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">every</span> :</span>&nbsp;retourne true si tous les &eacute;l&eacute;ments valident la fonction et false sinon.<br /> exemple : <span style="font-family: 'courier new', courier;">[1, 4, 8].every(function(val) { return val &gt; 0 });</span> retournera <span style="font-family: 'courier new', courier;">true</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">some</span> :</span>&nbsp;retourne true si au moins un des &eacute;l&eacute;ments valide la fonction et false sinon.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[1, -4, 8].some(function(val) { return val &lt; 0 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">true</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">filter</span> :</span>&nbsp;retourne un nouveau tableau avec les &eacute;l&eacute;ments ayant valid&eacute;s la fonction.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[3, 4, 7, 12].filter(function(val) { return val%2==0 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">[4, 12]</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">forEach</span> :</span>&nbsp;appelle la fonction sur tous les &eacute;l&eacute;ments&nbsp;du tableau.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[5, 9].forEach(function(val) { alert(val) });</span>&nbsp;fera 2 appels &agrave; la fonction <span style="font-family: 'courier new', courier;">alert</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">map</span> :</span>&nbsp;retourne un nouveau tableau avec tous les &eacute;l&eacute;ments transform&eacute;s par la fonction<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[1, 2, 3].map(function(val) { return val*3 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">[3, 6, 9]</span>.</li>
+</ul>
+
+
+<h3>String</h3>
+
+
+<p>Aussi &eacute;trange que cela puisse para&icirc;tre, des fonctions de type <span style="font-family: 'courier new', courier;">trim</span> n'existent pas par d&eacute;faut sur l'objet String en Javascript.<br /> La plupart des d&eacute;veloppeurs passent par des librairies comme jQuery ou autres pour faire cela. Plus besoin !</p>
+
+
+<ul>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trim</span>&nbsp;:</span>&nbsp;supprime les caract&egrave;res d'espacement.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trim();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"toto"</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trimRight</span>&nbsp;:</span>&nbsp;comme <span style="font-family: 'courier new', courier;">trim</span>&nbsp;mais uniquement &agrave; droite.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trimRight();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"&nbsp;&nbsp;toto"</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trimLeft</span>&nbsp;:</span>&nbsp;comme <span style="font-family: 'courier new', courier;">trim</span>&nbsp;mais uniquement &agrave; gauche.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trimLeft();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"toto&nbsp;&nbsp;&nbsp;"</span>.</li>
+</ul>
+
+
+<p>Comme d'habitude, c'est une bonne nouvelle car cela permettra &eacute;ventuellement d'embarquer moins de librairies d'ici <em>quelques ann&eacute;es</em>.<br /> Le probl&egrave;me &eacute;tant que ces <em>quelques ann&eacute;es</em> repr&eacute;sentent la dur&eacute;e qu'auront les "vieux" navigateurs &agrave; se faire remplacer par une version plus r&eacute;cente, et on connait le fabuleux destin d'IE6 qui a surv&eacute;cu bien plus longtemps que pr&eacute;vu...<br /> Donc oui : des nouvelles fonctionnalit&eacute;s dans Javascript mais toujours ces librairies dans nos tags script !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Guava ne pair jamais ?]]></title>
+    <link href="http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat.html"/>
+    <updated>2012-02-21T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/02/21/guava-ne-pair-jamais-debat</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Parker Lewis" src="http://www.toutelatele.com/IMG/jpg/parker-et-ses-copains.jpg" alt="Parker Lewis" width="250" height="179" />Bon OK seuls les plus de 30 ans comprendront la r&eacute;f&eacute;rence &agrave; cette s&eacute;rie ultime, mais cela devait &ecirc;tre dit <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />.</p>
+
+
+<p>Car oui, en me baladant sur les mailing-lists et issues de mes frameworks favoris, dont fait bien s&ucirc;r partie&nbsp;<a href="http://code.google.com/p/guava-libraries/" target="_blank"><span style="color: #0000ff;">Google-Guava</span></a>, je suis tomb&eacute; sur l'<em>issue 203</em> post&eacute;e il y a 2 ans et demi :&nbsp;<a href="http://code.google.com/p/guava-libraries/issues/detail?id=203" target="_blank"><span style="color: #0000ff;">Add Pair class and Itera*s.pairUp()</span></a>. Cela m'a rappel&eacute; un pr&eacute;c&eacute;dent article sur <a href="http://www.playframework.org/" target="_blank">Play! Framework</a>&nbsp;et la <a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html" target="_blank"><span style="color: #0000ff;">nouvelle librairie play.libs.F</span></a>. Une de ses nouveaut&eacute;s &eacute;tait justement l'<a href="http://web-tambouille.fr/2011/05/3/play-framework-nouvelle-librairie-play.libs.f.html#tuple" target="_blank"><span style="color: #0000ff;">ajout de la classe <span style="font-family: 'courier new', courier;">Tuple&lt;A, B&gt;</span></span></a>&nbsp;qui permet de stocker simplement plusieurs valeurs dans un objet <span style="font-family: 'courier new', courier;">T2</span> <em>(2 valeurs)</em>, <span style="font-family: 'courier new', courier;">T3</span> <em>(3 valeurs)</em> et ainsi de suite.</p>
+
+
+<p>Alors, pourquoi je vous parle de &ccedil;a ? Et bien parce que la team Guava a rejet&eacute; cette demande le 16 f&eacute;vrier dernier par <a href="http://code.google.com/p/guava-libraries/issues/detail?id=203#c17" target="_blank">ce commentaire</a>. Le d&eacute;bat est ouvert !</p>
+
+
+<p><!--more-->En effet, cette <em>issue</em> me rappelle une petite session de type <em>"d&eacute;bat"</em> que nous avions programm&eacute;e avec <a href="https://twitter.com/#!/jeremywallez" target="_blank">J&eacute;r&eacute;my</a>&nbsp;quand nous &eacute;tions organisateurs des XKE chez <a href="http://blog.xebia.fr/" target="_blank">Xebia</a> : <em>"Best practice : pour ou contre les tuples en Java"</em> par <a href="https://twitter.com/#!/sklouvi" target="_blank">Steve Klouvy</a>. L'id&eacute;e &eacute;tait d'&eacute;changer sur nos exp&eacute;riences concernant les retours de nos m&eacute;thodes Java entre projets, entre couches ou dans un m&ecirc;me projet. La session a eu son petit succ&egrave;s et avait d'ailleurs pas mal d&eacute;bord&eacute; <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;Comme quoi m&ecirc;me des questions, qui paraissent simples voir sans int&eacute;r&ecirc;t, peuvent quand m&ecirc;me soulever les foules, et m&ecirc;me sur <a href="http://stackoverflow.com/questions/457775/does-java-need-tuples" target="_blank">StackOverflow</a> !</p>
+
+
+<p>La r&eacute;ponse de la team Guava sur cette classe <span style="font-family: 'courier new', courier;">Pair</span>, surtout le<em> *extensively*</em>&nbsp;alors qu'on ne parle ici que d'une classe <span style="font-family: 'courier new', courier;">Pair</span> <em>(un tuple &agrave; 2 valeurs, le <span style="font-family: 'courier new', courier;">T2</span> de Play! Framework)</em>&nbsp;m'a interpell&eacute;.<br />La question de son existence se pose donc car, en &eacute;tant succinct, Guava et Java ne poss&egrave;dent pas cet objet et ne le proposeront jamais, alors que Scala et Play! Framework le proposent ainsi que beaucoup d'autres.<br />Et surtout, j'ai &eacute;t&eacute; confront&eacute; &agrave; ce cas de figure&nbsp;la semaine derni&egrave;re&nbsp;et, apr&egrave;s &ecirc;tre parti sur une premi&egrave;re version &agrave; base de tuple <em>(que j'utilise depuis longtemps)</em>, j'ai refactor&eacute; vers une autre impl&eacute;mentation.&nbsp;</p>
+
+
+<p>Prenons un exemple : une m&eacute;thode vous renvoie les 10 derniers SMS re&ccedil;us par un utilisateur. Une nouvelle demande vous est remont&eacute;e par le m&eacute;tier : il faudrait aussi afficher sur la page le nombre total de nouveaux SMS <em>(les non consult&eacute;s)</em>.</p>
+
+
+<p>Plusieurs possibilit&eacute;s :</p>
+
+
+<ol>
+<li>Vous faites une nouvelle m&eacute;thode qui ne s'occupe que de retourner un entier et votre code appellera cette deuxi&egrave;me m&eacute;thode <em>(nombre de nouveaux messages)</em> en plus de la premi&egrave;re <em>(les 10 derniers)</em>.<br />Et vous ferez cela &agrave; chaque fois qu'une nouvelle demande surviendra.<br />Cela pourra donc &ecirc;tre un co&ucirc;t non n&eacute;gligeable en termes de performance car pour certaines demandes, y compris celle-l&agrave; <em>(selon le code des couches inf&eacute;rieurs)</em>, vous ferez plusieurs fois le m&ecirc;me travail <em>(acc&egrave;s base...)</em> car vous d&eacute;coupez en plusieurs m&eacute;thodes qui auraient p&ucirc;, pour certaines, &ecirc;tre regroup&eacute;es.</li>
+<li>Vous changez la m&eacute;thode existante : vous la renommez <em>(<span style="font-family: 'courier new', courier;">getLastTenMessages</span> en <span style="font-family: 'courier new', courier;">getNbNewAndLastTenMessages</span> ou autre chose)</em>, vous cr&eacute;ez un objet de type conteneur <em>(par exemple <span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>&nbsp;et vous changez le type de retour de votre m&eacute;thode<em> (<span style="font-family: 'courier new', courier;">List&lt;Message&gt;</span> en&nbsp;<span style="font-family: 'courier new', courier;">NbNewAndLastTenMessagesContainer</span>)</em>. Vous appellerez ainsi les 2 accesseurs pour r&eacute;cup&eacute;rer les 2 valeurs souhait&eacute;es dans votre action.<br />Un seul appel qui renvoie des donn&eacute;es m&eacute;tiers d'un m&ecirc;me domaine fonctionnel&nbsp;<em>(on ne renvoie que des valeurs li&eacute;es au messages)</em>&nbsp;avec factorisation du code. Toutefois, de nombreux objets de type conteneur seront cr&eacute;&eacute;s et donc &agrave; maintenir. Mis entre de mauvaises mains, on pourra se retrouver avec des m&eacute;thodes qui font la pluie et le beau temps, par exemple <span style="font-family: 'courier new', courier;">getCurrentUserNbNewAndLastTenMessagesCompleteLabelListAndNbTotalMessage</span> <img title="Surprised" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-surprised.gif" border="0" alt="Surprised" />.</li>
+<li>M&ecirc;me chose qu'au dessus mais avec un <span style="font-family: 'courier new', courier;">Tuple</span> &agrave; la place de cet objet conteneur. M&ecirc;mes avantages concernant la performance avec autre avantage : moins de code &agrave; maintenir ! Il faudra toutefois coder cette classe car elle n'existe pas mais cela n'est pas tr&egrave;s compliqu&eacute; m&ecirc;me typ&eacute;e <em>(exemple <a href="http://groups.google.com/group/comp.lang.java.help/msg/a9123f3b7e76776f" target="_blank">ici</a>).&nbsp;</em>Celle que j'ai cod&eacute;e me permet de faire des tuples par m&eacute;thode statique, ex : <span style="font-family: 'courier new', courier;">T2.of(val1, val2)</span> et m&ecirc;me chose pour <span style="font-family: 'courier new', courier;">T3</span>, <span style="font-family: 'courier new', courier;">T4</span>...&nbsp;En revanche, on peut perdre en lisibilit&eacute; avec ces <span style="font-family: 'courier new', courier;">_1</span>, <span style="font-family: 'courier new', courier;">_2</span>...</li>
+</ol>
+
+
+<p>Plusieurs choses concernant cet exemple et les solutions propos&eacute;es <em>(il en existe bien s&ucirc;r d'autres)</em> :</p>
+
+
+<ol>
+<li>On ne parle plus de la classe <span style="font-family: 'courier new', courier;">Pair</span> et mais plut&ocirc;t du concept de&nbsp;<span style="font-family: 'courier new', courier;">Tuple</span>&nbsp;<em>(dont le <span style="font-family: 'courier new', courier;">Pair</span> est un sous-ensemble)</em>.</li>
+<li>On se rend compte que le choix d'utiliser un tuple, un conteneur ou autre chose d&eacute;pend beaucoup de l'architecture mise en place et de jusqu'o&ugrave; on doit respecter cette architecture ou un pattern de code mis en place.</li>
+<li>Cela d&eacute;pend aussi de la documentation : en effet, quand sur le tuple vous faites <span style="font-family: 'courier new', courier;">tuple._1</span> et <span style="font-family: 'courier new', courier;">tuple._2</span>, savez-vous r&eacute;ellement ce que vous r&eacute;cup&eacute;rez depuis votre action ?<br />R&eacute;digez-vous syst&eacute;matiquement une javadoc qui permet &agrave; votre code client de savoir quels sont les param&egrave;tres d'entr&eacute;es et surtout de sorties&nbsp;?<br /><span style="font-family: 'courier new', courier;">retour.getNbNewMessage()</span> et <span style="font-family: 'courier new', courier;">retour.getLastTenMessages</span>&nbsp;pr&eacute;sents dans un objet conteneur ne sont-ils pas plus parlant ?</li>
+</ol>
+
+
+<p>Pas de r&eacute;ponse universelle mais un d&eacute;bat ouvert et bien s&ucirc;r quelque soit votre langage : qu'en pensez-vous ? comment faites-vous sur vos projets ? utilisez-vous des objets composites ? des tuples ? une m&eacute;thode = un retour donc si 3 retours alors split en 3 m&eacute;thodes et donc 3 objets, 3 appels &agrave; effectuer ? ... Et si vous avez des exemples encore plus flagrants pour appuyez vos arguments, n'h&eacute;sitez pas !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Scala en pratique : présentations + exercices disponibles en ligne]]></title>
+    <link href="http://www.web-tambouille.fr/2011/05/31/scala-en-pratique-presentation-et-exercices-disponibles-en-ligne.html"/>
+    <updated>2011-05-31T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/05/31/scala-en-pratique-presentation-et-exercices-disponibles-en-ligne</id>
+    <content type="html"><![CDATA[<p>La pr&eacute;sentation Scala en pratique et les exercices de live coding&nbsp;<em>(<a href="../2011/05/13/soiree-scala-au-lorraine-jug.html" target="_blank">donn&eacute;s au Lorraine JUG</a>)</em>&nbsp;sont disponibles en ligne sur <a href="http://www.slideshare.net/rmat0n/scala-par-la-pratique-8140705" target="_blank">Slideshare</a> et sur <a href="https://github.com/rmat0n/scala-in-practice" target="_blank">Github</a>. A vous de tester et de me faire vos retours <em>(que j'esp&egrave;re nombreux)</em> !</p>
+
+
+<div id="__ss_8140705" style="width: 510px;"><strong><a title="Scala par la pratique" href="http://www.slideshare.net/rmat0n/scala-par-la-pratique-8140705">Scala par la pratique</a></strong>
+<object id="__sse8140705" width="510" height="426" data="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=20110518lorraine-jugscalaparlapratique-110529053537-phpapp01&amp;stripped_title=scala-par-la-pratique-8140705&amp;userName=rmat0n" type="application/x-shockwave-flash">
+<param name="data" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=20110518lorraine-jugscalaparlapratique-110529053537-phpapp01&amp;stripped_title=scala-par-la-pratique-8140705&amp;userName=rmat0n" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=20110518lorraine-jugscalaparlapratique-110529053537-phpapp01&amp;stripped_title=scala-par-la-pratique-8140705&amp;userName=rmat0n" />
+<param name="name" value="__sse8140705" />
+<param name="allowfullscreen" value="true" />
+</object>
+<div style="padding: 5px 0 12px;">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/rmat0n">rmat0n</a></div>
+</div>
+
+
+<p>Et encore merci au Lorraine JUG et &agrave; tous les JUG de France qui m'ont permis de faire cette pr&eacute;sentation !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Retour sur le ParisJS Meetup #7 et Ryan Dahl, le créateur de Node.js, sur Paris]]></title>
+    <link href="http://www.web-tambouille.fr/2011/05/26/retour-sur-le-parisjs-meetup-7-et-ryan-dahl-le-createur-de-nodejs-sur-paris.html"/>
+    <updated>2011-05-26T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/05/26/retour-sur-le-parisjs-meetup-7-et-ryan-dahl-le-createur-de-nodejs-sur-paris</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/JFhI0ChgzADwkT573aUAjA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="ParisJS" src="https://lh4.googleusercontent.com/-mnVffW-_FQA/ThmqQ7nP1eI/AAAAAAAAAug/iojGv_jOQ-I/s800/logo_parisjs.jpg" alt="ParisJS" width="160" height="112" /></a>Cela faisait quelques mois que je n'avais pas pu me rendre &agrave; un &eacute;v&egrave;nement du <a href="http://parisjs.org/" target="_blank">Paris JS</a>, une communaut&eacute; Javascript sur Paris. Et bien j'ai rattrap&eacute; ce retard en me rendant hier soir &agrave; la 7&egrave;me <em>(d&eacute;j&agrave;...)</em> soir&eacute;e du Paris JS dans les locaux de Vidal <em>(souvenirs...)</em>.</p>
+
+
+<p>Au menu, 5 talks :</p>
+
+
+<ul>
+<li>d&eacute;veloppement web pour TV connect&eacute;s et sp&eacute;cifiquement Samsung</li>
+<li>retour d'exp&eacute;rience int&eacute;ressant sur CouchDB avec des exemples de MapReduce, les fonctionnalit&eacute;s int&eacute;ressantes et celles &agrave; &eacute;viter...</li>
+<li>HTML5 et vid&eacute;o avec un &eacute;tat des specs et quelques impl&eacute;mentations <em>(et ce n'est malheureusement pas pour demain <img title="Frown" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-frown.gif" border="0" alt="Frown" />)</em></li>
+<li>expressivit&eacute; en Javascript <em>(non, ce n'est pas <a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a> !!!)</em> avec une pr&eacute;sentation de la librairie <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>, je l'utilise tous les jours donc je ne peux que la recommander car elle permet vraiment d'am&eacute;liorer la lisibilit&eacute; du code</li>
+<li>et enfin un petit point d'avancement du jeu <a href="http://pacmaze.com/" target="_blank">PacMaze</a></li>
+</ul>
+
+
+<p>Pour un compte-rendu plus exhaustif, je vous renvoie sur le blog de William et plus particuli&egrave;rement sur cet <a href="http://www.willdurand.fr/parisjs-7eme-edition-en-bref/" target="_blank">article</a>.</p>
+
+
+<p>Enfin, une belle annonce a &eacute;t&eacute; faite avec la venue sur Paris du cr&eacute;ateur de <a href="http://nodejs.org/" target="_blank">Node.JS</a> &agrave; savoir <a href="http://twitter.com/#!/ryah" target="_blank">Ryan Dahl</a> !</p>
+
+
+<p>Cela se passera le 8 Juin dans les locaux de Jolicloud. Une seule chose &agrave; faire : <a href="http://parisnodemeetup.eventbrite.com/" target="_blank">inscrivez-vous vite</a> !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Soirée Scala au Lorraine JUG]]></title>
+    <link href="http://www.web-tambouille.fr/2011/05/13/soiree-scala-au-lorraine-jug.html"/>
+    <updated>2011-05-13T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/05/13/soiree-scala-au-lorraine-jug</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/qhEHO0c3ALXjJhhQj_QwpA?feat=embedwebsite"><img style="margin-left: 10px; margin-bottom: 10px; float: right;" title="Lorraine JUG" src="https://lh4.googleusercontent.com/-Ial0ufm7IC0/TiW6Z0GHTYI/AAAAAAAAAxg/Bl-iP4ieD2g/s800/Logo%25252BLorraineJUG%25252B%25252528small%25252529%25255B1%25255D.png" alt="Lorraine JUG" width="250" height="39" /></a><em>(article &eacute;crit sur le <a href="http://blog.xebia.fr/2011/05/13/soiree-scala-au-lorraine-jug/" target="_blank">blog de Xebia</a>)</em></p>
+
+
+<p>Et 1, et 2, et 2.9 ! Ce n&rsquo;est pas au stade que cela se passe mais &agrave;  l&rsquo;ESIAL : Scala, dont la toute derni&egrave;re version est d&rsquo;ailleurs  disponible depuis hier, est &agrave; nouveau mis &agrave; l&rsquo;honneur et cette fois-ci  au <a title="Lorraine JUG" href="http://lorrainejug.blogspot.com/2011/04/le-lorraine-jug-java-user-group-de.html">Lorraine JUG</a>. Je vous donne rendez-vous le mercredi 18 mai pour une soir&eacute;e de deux heures consacr&eacute;e &agrave; Scala avec au programme :</p>
+
+
+<ul>
+<li>Ses origines</li>
+<li>Les outils et frameworks de son &eacute;cosyst&egrave;me</li>
+<li>Les difficult&eacute;s et freins &agrave; son adoption</li>
+<li>Les nouveaut&eacute;s de la toute nouvelle version 2.9.0</li>
+<li>Les entreprises qui l&rsquo;utilisent</li>
+<li>Une session d&rsquo;une heure de live coding : exemples de programmation fonctionnelle, un <a title="S-99" href="http://aperiodic.net/phil/scala/s-99/">S-99</a> et&hellip; du <a title="Play Framework" href="http://scala.playframework.org/">Play Framework</a> !</li>
+</ul>
+
+
+<p>Les inscriptions se passent par <a title="ici" href="http://jugevents.org/jugevents/event/37403">ici</a>. Venez nombreux !</p>
+
+]]></content>
+  </entry>
+  
+</feed>

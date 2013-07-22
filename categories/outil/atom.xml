@@ -1,0 +1,791 @@
+---
+        layout: nil
+        ---
+        <?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title><![CDATA[Cat&eacute;gorie : Outil | Web Tambouille]]></title>
+    <link href="http://www.web-tambouille.fr/categories/outil/atom.xml" rel="self"/>
+    <link href="http://www.web-tambouille.fr/"/>
+    <updated>2013-07-22T22:08:13+02:00</updated>
+    <id>http://www.web-tambouille.fr/</id>
+    <author>
+        <name><![CDATA[Romain MATON (rmat0n)]]></name>
+        
+    </author>
+    <generator uri="http://octopress.org/">Octopress</generator>
+
+    
+    <entry>
+        <title type="html"><![CDATA[Node.js partie 4 - Déploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git]]></title>
+        <link href="http://www.web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html"/>
+        <updated>2011-03-15T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/uZdg8vdYHVz9DpwmtixINw?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Nodester" src="https://lh3.googleusercontent.com/-WlI6_TX4TFE/ThmqQ-_KDUI/AAAAAAAAAuY/TPyyBKoVLjM/s800/logo_nodester.jpg" alt="Nodester" width="240" height="81" /></a>Dernier article <em>(et oui d&eacute;j&agrave;)</em> de la s&eacute;rie consacr&eacute;e &agrave; <a href="http://nodejs.org/" target="_blank">Node.js</a> et, maintenant que nous avons cod&eacute; notre <a href="http://www.webtambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html" target="_blank">premi&egrave;re application Node.js Web Sockets et HTML5</a>, nous allons terminer en beaut&eacute; le d&eacute;ploiement de l'application sur le cloud. Et c'est le sujet de cette 4&egrave;me partie avec l'&eacute;tude du service <a href="http://nodester.com/" target="_blank">Nodester</a>, une plateforme de d&eacute;ploiement open source d'applications Node.</p>
+
+
+<p>Nous allons regarder de plus pr&egrave;s comment fonctionne cette plateforme, comment d&eacute;ployer notre application et o&ugrave; se trouve t-elle, comment g&egrave;re t-elle les modules Node... en bref : qu'est-ce que Nodester et comment l'utilise t-on !</p>
+
+
+<p>Au menu : introduction <em>(EC2, Git...)</em>, les outils pour Nodester, d&eacute;tail de l'API REST, enregistrement au service et d&eacute;ploiement de l'application, d&eacute;ploiement d'une autre application, les plateformes de d&eacute;ploiement sur le cloud &eacute;quivalentes et enfin une petite conclusion.</p>
+
+
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /> <a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /> <a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /> <a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+
+
+<p><!--more--></p>
+
+
+<h3 style="font-size: 1.17em;">Introduction</h3>
+
+
+<p><a href="http://nodester.com/" target="_blank">Nodester</a> est une plateforme de d&eacute;ploiement d'applications Node sur le cloud. Cette plateforme utilise de nombreuses technologies parmi lesquelles :</p>
+
+
+<ul>
+<li><strong>Node :</strong> &eacute;vident&nbsp;<img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />&nbsp;actuellement Nodester utilise Node.js 0.4.0 et essaie d'&ecirc;tre le plus &agrave; jour possible</li>
+<li><strong>NPM :</strong> le package manager de modules Node est aussi pris en charge par Nodester et l'ajout/suppression de packages se fait en une seule ligne</li>
+<li><strong>Amazon WS :</strong>&nbsp;avec, pour faire simple, une instance d'EC2 g&eacute;r&eacute;e par Nodester et gratuite pour nous <em>(yeah !)</em>&nbsp;sur laquelle sera d&eacute;pos&eacute;e notre application</li>
+<li><strong>Amazon EC2, RackSpace, GoGrid... :</strong> mais il sera aussi possible de d&eacute;ployer votre application Node sur votre propre instance d'un service sur le cloud <em>(moyennant&nbsp;<a href="https://github.com/nodester/nodester/blob/master/install.txt" target="_blank">quelques installations</a>&nbsp;sur votre instance)</em></li>
+<li><strong>CouchOne :</strong> un service qui fournit une base CouchDB sur le cloud sur laquelle Nodester stocke entre autres les utilisateurs</li>
+<li><strong>REST :</strong> Nodester s'attaque par API REST, que ce soit pour demander un coupon, param&eacute;trer votre cl&eacute; SSH, installer/d&eacute;marrer/arr&ecirc;ter votre application mais aussi pour installer/supprimer un module NPM</li>
+<li><strong>Git :</strong> la commande&nbsp;<span style="font-family: 'courier new', courier;">git push</span> est utilis&eacute;e pour d&eacute;ployer votre application sur Nodester, il vous suffira d'ajouter une <span style="font-family: 'courier new', courier;">remote</span> Nodester &agrave; votre projet Github</li>
+</ul>
+
+
+<p>Pas mal non ? On remarque plusieurs technologies, outils et services qui ont le vent en poupe en ce moment, qu'ils soient utilis&eacute;s par les entreprises <em>(EC2)</em> ou par la communaut&eacute; <em>(Git/Github, NPM...)</em>. Mais ce n'est pas seulement qu'une vitrine technologique, cela donne surtout au final une utilisation extra-simple du service. On peut ainsi d&eacute;ployer en 2 minutes chrono, le plus long sera surtout d'attendre votre coupon !</p>
+
+
+<p>Il n'y a que la base de donn&eacute;es CouchDB par CouchOne sur laquelle j'aurais quelques doutes :</p>
+
+
+<ul>
+<li>nombreux billets d&eacute;crivant des <a href="http://labs.linkfluence.net/nosql/2011/03/07/moving_from_couchdb_to_riak.html" target="_blank">migrations de CouchDB vers Riak ou autres</a>... suite &agrave; des probl&egrave;mes de scalabilt&eacute; <em>(qui est tout de m&ecirc;me la base du mouvement NoSQL)</em></li>
+<li>mais aussi <a href="http://nodester.tumblr.com/post/2969688860/nodester-news" target="_blank">une attaque en d&eacute;but d'ann&eacute;e qui a supprim&eacute;e toutes les donn&eacute;es</a> de la base de Nodester.</li>
+</ul>
+
+
+<p>Je chipote mais cela fait d&eacute;j&agrave; peut-&ecirc;tre trop...</p>
+
+
+<h3>Outils</h3>
+
+
+<p>Petite section juste pour dire que vous pouvez utiliser Nodester de diff&eacute;rentes mani&egrave;res :</p>
+
+
+<ul>
+<li>un bon vieux curl</li>
+<li>ou le superbe client Nodester qui s'installe par NPM :&nbsp;<span style="font-family: 'courier new', courier;">npm install nodester-cli</span></li>
+</ul>
+
+
+<p>Toutes les API <em>(ou presque)</em> ont &eacute;t&eacute; wrapp&eacute;es par le client, ce qui les rend ainsi encore plus simples d'utilisation. Si vous avez NPM install&eacute; sur votre machine <em>(ce qui devrait d&eacute;j&agrave; &ecirc;tre le cas non <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em>, je vous le recommande fortement. Quelques exemples :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester status
+</span><span class='line'>nodester info checking api status for: api.nodester.com
+</span><span class='line'>nodester info status up
+</span><span class='line'>nodester info appshosted 405
+</span><span class='line'>nodester info appsrunning 272&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>rmat0n:~$ curl &lt;a href="http://nodester.com/status">http://nodester.com/status&lt;/a>
+</span><span class='line'>{&ldquo;status&rdquo;:&ldquo;up&rdquo;,&ldquo;appshosted&rdquo;:405,&ldquo;appsrunning&rdquo;:272}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Le client fournit aussi une aide d&eacute;taill&eacute;e pour chaque commande <em>(selon le niveau dans lequel vous &ecirc;tes)</em>. Par exemple, prenons directement &agrave; la racine du client et ensuite une fois <span style="font-family: 'courier new', courier;">app</span> s&eacute;lectionn&eacute; :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester
+</span><span class='line'>nodester info showing all available sub commands
+</span><span class='line'>nodester status
+</span><span class='line'>nodester coupon
+</span><span class='line'>nodester apps
+</span><span class='line'>nodester app
+</span><span class='line'>nodester user
+</span><span class='line'>nodester appdomain
+</span><span class='line'>nodester domain
+</span><span class='line'>nodester npm
+</span><span class='line'>nodester appnpm
+</span><span class='line'>nodester info For more help, type nodester help&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>rmat0n:~$ nodester app
+</span><span class='line'>nodester &lt;appname> is not required if inside an app directory after you call setup
+</span><span class='line'>nodester app setup &lt;appname> &ndash; Configure this app for future app commands
+</span><span class='line'>nodester app info &lt;appname> &ndash; Returns app specific information
+</span><span class='line'>nodester app logs &lt;appname> &ndash; Returns app logs
+</span><span class='line'>nodester app stop|start|restart &lt;appname> &ndash; Controls app status.
+</span><span class='line'>nodester app create &lt;appname> &lt;startfile> &ndash; Creates a new app named &lt;appname>, &lt;startfile> is optional.
+</span><span class='line'>nodester app init &lt;appname> &ndash; Fetches the remote repo and sets it up.
+</span><span class='line'>nodester app clone &lt;appname> &ndash; Fetches the remote repo.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Alors, il est pas mieux le client ^^ et surtout on a plus besoin de faire des va-et-vient sur la <a href="http://nodester.com/api.html" target="_blank">page API de Nodester</a>.<br /> Mais tout n'est pas wrapp&eacute; actuellement <em>(suppression d'application)</em> donc gardez le curl &agrave; c&ocirc;t&eacute; de vous.</p>
+
+
+<h3>API REST</h3>
+
+
+<p>Les grandes cat&eacute;gories de l'API sont les suivantes <em>(<a href="http://nodester.com/api.html" target="_blank">d&eacute;tail complet</a>)</em> :</p>
+
+
+<ul>
+<li><strong>Coupon :</strong> le point d'entr&eacute;e pour l'acc&egrave;s &agrave; Nodester, faites votre appel et vous obtiendrez un coupon <em>(batch par mail)</em> que vous pourrez ensuite utiliser pour vous enregistrer</li>
+<li><strong>Status :</strong> le statut de la plateforme</li>
+<li><strong>User :</strong> enregistrement, mise &agrave; jour et suppression de l'utilisateur</li>
+<li><strong>App :</strong>&nbsp;information,&nbsp;cr&eacute;ation, mise &agrave; jour et suppression d'une application de l'utilisateur</li>
+<li><strong>Apps :</strong> liste toutes les applications d'un utilisateur</li>
+<li><strong>Appnpm :</strong> ajout, mise &agrave; jour ou suppression d'un package NPM</li>
+<li><strong>Appdomains </strong>: permet de mettre un domaine pour une application</li>
+</ul>
+
+
+<p>Et avec toutes ces commandes, nous sommes pr&ecirc;ts pour enfin d&eacute;ployer notre application Node. C'est parti !</p>
+
+
+<h3>Ready ? Now Register, Set Up and Deploy it !</h3>
+
+
+<p>Je pars du principe que vous n'avez pas de compte utilisateur. Donc pour commencer, nous allons en cr&eacute;er un et pour cela il vous faut un coupon :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester coupon &lt;a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#121;&#111;&#x75;&#x72;&#x5f;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#99;&#111;&#109;&#112;&#x61;&#x6e;&#121;&#x2e;&#99;&#111;&#109;">&#121;&#111;&#x75;&#x72;&#95;&#x65;&#109;&#x61;&#105;&#108;&#x40;&#x63;&#111;&#109;&#112;&#x61;&#x6e;&#x79;&#x2e;&#x63;&#111;&#x6d;&lt;/a>
+</span><span class='line'>nodester info Requesting coupon code for: &lt;a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x79;&#111;&#117;&#x72;&#x5f;&#x65;&#x6d;&#97;&#105;&#108;&#64;&#99;&#x6f;&#x6d;&#112;&#97;&#x6e;&#121;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#111;&#x75;&#x72;&#x5f;&#x65;&#109;&#97;&#x69;&#x6c;&#64;&#x63;&#111;&#x6d;&#x70;&#97;&#x6e;&#x79;&#46;&#x63;&#x6f;&#109;&lt;/a>
+</span><span class='line'>nodester info SUCCESS &ndash; you are now in queue to receive an invite on our next batch!</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p style="text-align: left;">Maintenant, on utilise l'url de cr&eacute;ation d'utilisateur avec notre coupon <em>(que vous recevrez par mail)</em>, un identifiant, notre mot de passe et notre cl&eacute; SSH. Notez que vous pouvez, pour cette partie, vous rendre sur le site et passer par le menu <em>register</em>. Attention, Nodester a besoin que tous les caract&egrave;res <em>+</em> de votre cl&eacute; SSH soient remplac&eacute;s par&nbsp;<em>%2B</em>. Un petit combo <span style="font-family: 'courier new', courier;">cat/sed/pbcopy</span> fait le travail :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ cat ~/.ssh/id_rsa.pub | sed s/&lsquo;+&rsquo;/&lsquo;%2B&rsquo;/g > ~/.ssh/id_rsa_nodester.pub
+</span><span class='line'>rmat0n:~$ nodester user create your_username your_password &lt;a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x79;&#111;&#117;&#x72;&#x5f;&#x65;&#109;&#x61;&#105;&#x6c;&#64;&#x63;&#x6f;&#109;&#112;&#x61;&#x6e;&#121;&#46;&#99;&#111;&#109;">&#x79;&#111;&#117;&#x72;&#95;&#101;&#x6d;&#97;&#x69;&#108;&#64;&#x63;&#111;&#x6d;&#x70;&#97;&#110;&#x79;&#x2e;&#x63;&#111;&#x6d;&lt;/a> ~/.ssh/id_rsa_nodester.pub your_coupon</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Voil&agrave; ! Vous avez cr&eacute;&eacute; un user en 2 appels REST <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />&nbsp;Maintenant, occupons-nous de l'application et commen&ccedil;ons par la cr&eacute;er <em>(le nom de l'application en dernier argument n'est pas n&eacute;cessaire si on est d&eacute;j&agrave; dans le dossier projet)</em> :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester app create
+</span><span class='line'>nodester info Checking config..
+</span><span class='line'>nodester info creating app: node-example server.js
+</span><span class='line'>nodester info successfully created app node-example to will run on port from server.js
+</span><span class='line'>nodester info run nodester app init node-example to setup this app.</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Tr&egrave;s bien, l'application est cr&eacute;&eacute;e, je n'ai plus qu'&agrave; r&eacute;cup&eacute;rer le port et la remote git, soit 1 commande pour r&eacute;cup&eacute;rer les informations et 2 commandes pour ajouter la remote et faire mon premier push :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester app info
+</span><span class='line'>nodester info Checking config..
+</span><span class='line'>nodester info Gathering information about: node-example
+</span><span class='line'>nodester info node-example on port 9876 running: true
+</span><span class='line'>nodester info gitrepo: ec2-user@nodester.com:/home/ec2-user/hosted_apps/your_username/blabla.git
+</span><span class='line'>nodester info appfile: server.js
+</span><span class='line'>rmat0n:~/node-example (master)$ git remote add nodester ec2-user@nodester.com:/home/ec2-user/hosted_apps/your_username/blabla.git
+</span><span class='line'>rmat0n:~/node-example (master)$ git push nodester master</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Maintenant, j'installe les modules dont j'ai besoin &agrave; savoir express et socket.io et je d&eacute;marre l'application :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install &lt;a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#x65;&#120;&#x70;&#x72;&#x65;&#x73;&#115;&#x40;&#50;&#46;&#x30;&#x2e;&#48;&#98;&#x65;&#x74;&#x61;">&#x65;&#120;&#112;&#x72;&#x65;&#x73;&#115;&#64;&#x32;&#46;&#48;&#46;&#48;&#98;&#x65;&#x74;&#x61;&lt;/a>
+</span><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install socket.io
+</span><span class='line'>rmat0n:~/node-example (master)$ nodester app start</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>That's all ! Et l'application sera accessible &agrave; l'url suivante :&nbsp;<a href="http://node-example.nodester.com/" target="_blank">http://node-example.nodester.com/</a> avec dans mon cas une petite erreur et un non-d&eacute;marrage de l'appli&nbsp;<img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;car j'utilise <span style="font-family: 'courier new', courier;">express@2.0.0beta</span>&nbsp;or je ne peux pas l'installer sur Nodester puisque ce module demande au moins un Node 0.4.1. Mais ce qui est plut&ocirc;t agr&eacute;able, c'est que ma ligne sup&eacute;rieure, lors de l'installation d'express, me renvoit un log d'erreur explicite.</p>
+
+
+<p>Ce qui me fait rebondir sur les logs du serveur qui sont accessibles par la commande&nbsp;<span style="font-family: 'courier new', courier;">nodester app logs</span></p>
+
+
+<p>&nbsp;Je pourrais bien s&ucirc;r downgrader mon express en 1.0.7 mais l'important n'est pas l&agrave; et je pr&eacute;f&egrave;re attendre que Nodester upgrade sa version de Node. Mais on voit encore une fois que l'on touche une limite du cloud...</p>
+
+
+<p>Et pour que vous ne restiez pas sur votre faim, voici une application qui fonctionne <em>(elle)</em> et qui utilise aussi les Web Sockets.</p>
+
+
+<h3>Autre exemple : JSRoulette</h3>
+
+
+<p>La JSRoulette est une petite roulette qui sort al&eacute;atoirement un r&eacute;sultat, par d&eacute;faut elle est remplie avec des nombres. Mais on peut la configurer pour afficher ce que l'on veut avec, tant que les donn&eacute;es sont accessibles par requ&ecirc;te GET avec un r&eacute;sultat en JSON, le tout avec un appel JSONP pour le cross-domain. Un petit exemple :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>REST : &lt;a href="http://api.twitter.com/1/statuses/followers/jresig.json?callback=callback">http://api.twitter.com/1/statuses/followers/jresig.json?callback=callback&lt;/a>
+</span><span class='line'>Transformer (value at x) : x.name
+</span><span class='line'>GET !</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Et une fois l'appel et la transformation effectu&eacute;s, la roulette sera&nbsp;remplie avec les followers twitter de John Resig ! Notez l'attribut <span style="font-family: 'courier new', courier;">callback=callback</span>, en effet la roulette s'attend &agrave; recevoir obligatoire un JSONP dans une m&eacute;thode <span style="font-family: 'courier new', courier;">callback</span>. Cela m&eacute;riterait une petite &eacute;volution <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>L'application est accessible de 2 mani&egrave;res diff&eacute;rentes :</p>
+
+
+<ul>
+<li>Soit avec un seul navigateur :&nbsp;<a href="http://jsroulette.nodester.com/" target="_blank">http://jsroulette.nodester.com/</a>, vous avez un bouton et vous faites tourner la roulette</li>
+<li>Soit avec 2 navigateurs, un sur votre PC portable/bureau et l'autre sur votre mobile :&nbsp;<a href="http://jsroulette.nodester.com/?profile=le_token_de_votre_choix" target="_blank">http://jsroulette.nodester.com/?profile=le_token_de_votre_choix</a> &agrave; saisir sur vos navigateurs. Si vous n'avez pas de mobile sur vous, vous pouvez ajouter en param&egrave;tre <span style="font-family: 'courier new', courier;">&amp;theme=mobile</span> pour simuler un navigateur sur mobile</li>
+</ul>
+
+
+<p>La deuxi&egrave;me mani&egrave;re est plus int&eacute;ressante puisqu'elle utilise les Web Sockets :</p>
+
+
+<ul>
+<li>en appuyant sur le bouton push sur le mobile, on envoie une demande de lancement de la roulette</li>
+<li>le navigateur qui contient la roulette et qui poss&egrave;de le m&ecirc;me token r&eacute;cup&egrave;re la demande et lance la roulette</li>
+<li>une fois le r&eacute;sultat obtenu, le gagnant est envoy&eacute; au serveur qui broadcaste l'info au client mobile de m&ecirc;me token qui affichera le r&eacute;sultat sous le bouton</li>
+</ul>
+
+
+<p>Malgr&eacute; une longue p&eacute;riode d'inactivit&eacute;, la connexion reste ouverte et les appels restent quasi instantan&eacute;s <em>(qu'ils soient Web Sockets natives, Long Polling, Flash...)</em>. Un bon point pour l'application et la plateforme Nodester !</p>
+
+
+<h3>Autres services</h3>
+
+
+<p>Si vous vous int&eacute;ressez de pr&egrave;s aux solutions de d&eacute;ploiement d'applications Node sur le cloud, je vous conseille 2 autres solutions :</p>
+
+
+<ul>
+<li><a href="https://www.duostack.com/" target="_blank">Duostack</a> : d&eacute;ploiement sur le cloud d'applications Ruby et Node par commande Git</li>
+<li><a href="https://no.de/" target="_blank">Joyent Node</a> <em>(et son superbe nom de domaine <a href="https://no.de/" target="_blank">https://no.de</a> !)</em> : de m&ecirc;me, une API REST et du Git pour le d&eacute;ploiement</li>
+</ul>
+
+
+<p>Et bien s&ucirc;r, si vous connaissez d'autres services gratuits d'h&eacute;bergements d'applications Node =&gt; section commentaires !</p>
+
+
+<p>Je n'ai pas regard&eacute; les offres payantes, si quelqu'un a un retour &agrave; faire sur celles-ci je suis preneur.</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Nodester est un service int&eacute;ressant pour d&eacute;ployer une application Node, POC ou autre. Maintenant, il faut reconna&icirc;tre que le service est en &eacute;volution constante et il n'est pas rare que lors d'une mise &agrave; jour importante, plus rien ne fonctionne. C'est arriv&eacute; lors de la mise &agrave; jour vers Node 0.4.0 o&ugrave; pendant tout le WE le service d'authentification pour acc&eacute;der par API &agrave; son application ne fonctionnait plus. Certes, les d&eacute;veloppeurs ont &eacute;t&eacute; tr&egrave;s r&eacute;actifs et pour un POC ce n'est pas si grave mais pour une application qui se doit d'&ecirc;tre disponible...</p>
+
+
+<p>Toutefois, je ne chargerai pas trop Nodester car comme beaucoup l'ont remarqu&eacute;, Web Tambouille a &eacute;t&eacute; indisponible une bonne partie de la journ&eacute;e le 08 mars dernier. Vous le savez peut-&ecirc;tre d&eacute;j&agrave; mais ce blog &eacute;crit en Python tourne sur Google App Engine et malheureusement ce jour l&agrave;, GAE a eu quelques soucis pour les applis Python :</p>
+
+
+<p><a class="lightbox" href="https://lh3.googleusercontent.com/-WrOZtQHAbZg/ThmqPaMkrHI/AAAAAAAAAt8/BuZijxN60sA/s800/gae_statusboard.jpg"><img class="aligncenter" title="Probl&egrave;me Python sur GAE" src="https://lh3.googleusercontent.com/-WrOZtQHAbZg/ThmqPaMkrHI/AAAAAAAAAt8/BuZijxN60sA/s800/gae_statusboard.jpg" alt="Probl&egrave;me Python sur GAE" width="455" height="169" /></a></p>
+
+
+<p>Donc certes le cloud nous offre une scalabilit&eacute; infinie, du billing adapt&eacute;&nbsp;selon la charge serveur <em>(plus de serveur, de CPU...)</em>, n&eacute;anmoins on est pas &agrave; l'abri d'une panne de service ! Donc cela arrive, m&ecirc;me &agrave; Google, Nodester risque aussi de rencontrer ces probl&eacute;matiques et je constate que la r&eacute;activit&eacute; des d&eacute;veloppeurs est l&agrave; et cela me plait !</p>
+
+
+<p>Plusieurs liens pour suivre, contribuer... autour de Nodester :</p>
+
+
+<ul>
+<li>le site :&nbsp;<a href="http://nodester.com/" target="_blank">http://nodester.com/</a></li>
+<li>la vid&eacute;o d'introduction :&nbsp;<a href="http://www.youtube.com/watch?v=IMCXbrI_Ygk" target="_blank">http://www.youtube.com/watch?v=IMCXbrI_Ygk</a></li>
+<li>le blog :&nbsp;<a href="http://nodester.tumblr.com/" target="_blank">http://nodester.tumblr.com/</a></li>
+<li>le twitter :&nbsp;<a href="http://twitter.com/Nodester" target="_blank">http://twitter.com/Nodester</a></li>
+<li>le github :&nbsp;<a href="https://github.com/nodester/nodester" target="_blank">https://github.com/nodester/nodester</a></li>
+</ul>
+
+
+<p>Et vous aurez droit, d'ici quelques jours, a une interview du cr&eacute;ateur de Nodester &agrave; savoir <a href="http://twitter.com/chrismatthieu" target="_blank">Chris Matthieu</a> !</p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js]]></title>
+        <link href="http://www.web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html"/>
+        <updated>2011-02-22T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/--ARY5R3ysp4PWa81wVPhA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Cloud9 IDE" src="https://lh5.googleusercontent.com/-nCfsVq1IazM/ThmqQGoXI4I/AAAAAAAAAuM/VXBrHmBCDbo/s800/logo_cloud9ide.jpg" alt="Cloud9 IDE" width="120" height="120" /></a>Suite de la s&eacute;rie de billets consacr&eacute;s &agrave; <a href="http://nodejs.org/" target="_blank">Node.js</a>. Apr&egrave;s une <a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">petite introduction</a> de ce serveur Javascript, nous allons faire&nbsp;un petit tour du c&ocirc;t&eacute; des environnements de d&eacute;veloppement.</p>
+
+
+<p>Un <a href="http://web-tambouille.fr/2010/11/7/debugger-une-application-nodejs-cote-serveur.html" target="_blank">pr&eacute;c&eacute;dent article</a> de Web Tambouille avait d&eacute;j&agrave; d&eacute;taill&eacute; comment d&eacute;buguer une application Node par <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> ou &agrave; l'aide de <a href="https://github.com/dannycoates/node-inspector" target="_blank">node-inspector</a>. Moyennant l'installation du&nbsp;<a href="http://code.google.com/p/chromedevtools/" target="_blank">Eclipse debugger plugin for V8</a>, il sera donc possible d'utiliser tout IDE qui s'appuie sur le noyau Eclipse : <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-361/heliossr1" target="_blank">Eclipse Classic</a>, <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/heliossr1" target="_blank">Eclipse for Javascript Developpers</a>, <a href="http://www.aptana.com/" target="_blank">Aptana</a>&nbsp;et bien d'autres encore. De m&ecirc;me, en choisissant de faire le debug de l'application dans node-inspector, tout &eacute;diteur de texte pourra &ecirc;tre utilis&eacute; pour le d&eacute;veloppement : <a href="http://www.vim.org/" target="_blank">VIM</a>, <a href="http://macromates.com/" target="_blank">TextMate</a> ou votre &eacute;diteur pr&eacute;f&eacute;r&eacute; !</p>
+
+
+<p>Je vais donc vous pr&eacute;senter un tout autre IDE &agrave; savoir&nbsp;<a href="http://cloud9ide.com/" target="_blank">Cloud9</a>. Il est sp&eacute;cialement con&ccedil;u pour le d&eacute;veloppement d'applications Javascript avec le gros avantage d'inclure nativement le debug d'application Node. Voyons cela de plus pr&egrave;s.</p>
+
+
+<p>Au menu : Yet another Javascript IDE, installation, utilisation, points forts, points faibles, roadmap et une petite conclusion.</p>
+
+
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /><a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /><a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /><a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+
+
+<p><!--more--></p>
+
+
+<h3>Yet Another Javascript IDE ?</h3>
+
+
+<p><a href="http://cloud9ide.com/" target="_blank">Cloud9</a> est un IDE sp&eacute;cialement con&ccedil;u pour les d&eacute;veloppeurs Javascript. Comme le rappelle la <a href="http://cloud9ide.com/" target="_blank">page d'accueil du site</a>, de nombreux environnements de d&eacute;veloppement incluent un support de HTML/CSS/Javascript avec coloration syntaxique, compl&eacute;tion... mais cela reste souvent assez d&eacute;cevant.</p>
+
+
+<p>J'ai beaucoup travaill&eacute; avec Eclipse et, c&ocirc;t&eacute; Web, il faut bien admettre que ce n'est vraiment pas sa force, que ce soit avec la <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-361/heliossr1" target="_blank">version classique</a> ou des versions plus orient&eacute;es Web comme <a href="http://www.aptana.com/" target="_blank">Aptana</a> ou <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/heliossr1" target="_blank">E4JD</a>. Depuis plusieurs mois, je suis pass&eacute; sur <a href="http://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a>&nbsp;et, dans sa version Ultimate <em>(la C.E. n'est malheureusement pas concern&eacute;)</em>, force est de constater que le support de Javascript est tr&egrave;s bon : une coloration syntaxique qui va plus loin que la simple couleur sur des cha&icirc;nes de caract&egrave;res, une compl&eacute;tion assez &eacute;volu&eacute;e, des outils int&eacute;gr&eacute;s pour&nbsp;<a href="http://blogs.jetbrains.com/idea/2010/04/javascript-debugger-improvements/" target="_blank">d&eacute;buguer c&ocirc;t&eacute; client et c&ocirc;t&eacute; serveur du code Javascript</a>, etc... Tout ceci fait qu'IntelliJ IDEA est actuellement un des meilleurs IDE Javascript du march&eacute; <em>(pas forc&eacute;ment son but premier mais c'est bon &agrave; prendre)</em>.&nbsp;A noter aussi qu'IntelliJ propose un IDE compl&egrave;tement d&eacute;di&eacute; au Web : <a href="http://www.jetbrains.com/webstorm/" target="_blank">Web Storm</a>. N'h&eacute;sitez pas &agrave; faire vos retours en commentaires si vous avez pu jouer avec.</p>
+
+
+<p>Mais depuis peu, un autre IDE fait du bruit : <a href="http://cloud9ide.com/" target="_blank">Cloud9</a>, l'IDE fait par des <em>Javascripteurs</em> pour des <em>Javascripteurs</em> <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />. Ses principales caract&eacute;ristiques sont :</p>
+
+
+<ul>
+<li>IDE en ligne <em>(pour l'instant en b&ecirc;ta ferm&eacute;)</em> qui sera donc accessible par votre navigateur</li>
+<li>Propose, en terme de fonctionalit&eacute;s d'&eacute;diteur, au moins aussi bien que la concurrence</li>
+<li>Facile &agrave; &eacute;tendre pour rajouter toutes sortes de plugins</li>
+<li>Support du debug d'application Node</li>
+<li>Test et d&eacute;ploiement sur le cloud</li>
+</ul>
+
+
+<p>Techniquement, Cloud9 c'est : un serveur Node, de l'ajax dans tous les sens, des Web Sockets, du HTML5... en gros, un condens&eacute; de nouvelles technologies ! Il est d'ailleurs un tr&egrave;s bel exemple de ce que l'on peut faire avec toutes ces nouvelles technos.&nbsp;Objectif de l'IDE :</p>
+
+
+<blockquote>We want to be to Eclipse what Google Docs is to Microsoft Word <em>(<a href="http://cloud9ide.posterous.com/a-short-introduction-to-the-cloud9-ide" target="_blank">citation</a>)</em></blockquote>
+
+
+<h3>Installation</h3>
+
+
+<p>Pour l'utiliser, 2 possibilit&eacute;s :</p>
+
+
+<ol>
+<li>avoir un <a href="http://run.cloud9ide.com/" target="_blank">compte pour la b&ecirc;ta priv&eacute;e</a> online</li>
+<li>ou <a href="https://github.com/ajaxorg/cloud9" target="_blank">cloner le projet</a> sur git</li>
+</ol>
+
+
+<p>Pour ma part, j'ai choisi, apr&egrave;s 5 secondes d'attente de ticket <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />, la deuxi&egrave;me solution. Cela se r&eacute;sume donc tr&egrave;s simplement par :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">rmat0n</span><span class="o">:~</span><span class="nx">$</span> <span class="nx">git</span> <span class="nx">clone</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://github.com/ajaxorg/cloud9.git&quot;</span><span class="o">&gt;</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/ajaxorg/cloud9.git&lt;/a&gt;</span>
+</span><span class='line'><span class="nx">rmat0n</span><span class="o">:~</span><span class="nx">$</span> <span class="nx">node</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">cloud9</span><span class="p">.</span><span class="nx">js</span> <span class="o">-</span><span class="nx">w</span> <span class="o">/</span><span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">your</span><span class="o">/</span><span class="nx">workspace</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Cloud9 d&eacute;pend de plusieurs autres projets github <em>(Socket.IO...),</em> donc le premier lancement sera un peu long avec un nombre assez cons&eacute;quent de <span style="font-family: 'courier new', courier;">git clone</span>. Une fois tous les t&eacute;l&eacute;chargements termin&eacute;s, vous devriez voir ce joli log dans votre console :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>                     <span class="p">.</span>  <span class="p">..</span><span class="nx">__</span><span class="o">%|</span><span class="nx">iiiiiii</span><span class="o">=&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">gt</span><span class="p">;,..</span>
+</span><span class='line'>                      <span class="nx">_</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">iIIviiiiiiiiiillli</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">_</span><span class="p">.</span>
+</span><span class='line'>                   <span class="p">.</span><span class="nx">ivIvilli</span><span class="o">%||+++++|</span><span class="nx">iillllvs</span><span class="p">;</span><span class="nx">_</span>
+</span><span class='line'>                 <span class="p">..</span><span class="nx">nvlIlv</span><span class="o">|~</span><span class="err">`</span><span class="p">..........</span> <span class="o">-&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">lt</span><span class="p">;</span><span class="o">*</span><span class="nx">IIIvv</span><span class="o">=</span>
+</span><span class='line'>                <span class="p">.)</span><span class="nx">nvvvvv</span><span class="o">-</span><span class="p">....</span> <span class="p">.</span>   <span class="p">..</span> <span class="p">...</span>  <span class="o">~</span><span class="nx">nvvvo</span><span class="o">=</span><span class="p">.</span>
+</span><span class='line'>     <span class="p">.</span><span class="nx">__i</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">iiiii</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vvvvn</span><span class="p">(</span><span class="o">=</span> <span class="p">.</span>  <span class="p">.</span> <span class="p">..</span><span class="nx">i</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">gt</span><span class="p">;,</span> <span class="p">.</span>  <span class="p">...</span> <span class="o">+</span><span class="p">)</span><span class="nx">nnnv</span><span class="p">..</span>
+</span><span class='line'>  <span class="nx">_i</span><span class="o">%</span><span class="nx">vvvvllIIlIlIvIvvv</span><span class="p">(</span>   <span class="p">..</span> <span class="p">.</span> <span class="nx">lnnsi</span>  <span class="p">.</span>    <span class="o">:</span><span class="p">)</span><span class="nx">vnvnsissvisi</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">__</span><span class="p">.</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="p">.</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vnvvvvvvIvvvvvvvlvvII</span><span class="p">;.</span> <span class="p">.</span>     <span class="o">|</span><span class="nx">nnvv</span><span class="o">:</span>  <span class="p">.</span> <span class="p">.</span> <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;)</span><span class="nx">lvvlIIIIlvvIvnnns</span><span class="o">=&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="p">.</span>
+</span><span class='line'> <span class="p">.</span><span class="o">:</span><span class="nx">vnvvvvvvvvvvvvvIvIvIIvv</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="o">:</span>  <span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;</span> <span class="o">|</span><span class="p">{}</span><span class="nx">l</span><span class="p">.</span>    <span class="p">.</span> <span class="o">:&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">lvIvvvvvvvvvvvvvvnov</span><span class="p">.</span>
+</span><span class='line'> <span class="o">|</span><span class="p">)</span><span class="nx">nvnvnvnvnvnvvvvvvvvvvvvis</span> <span class="p">.</span>            <span class="p">.</span> <span class="p">.</span>  <span class="o">=</span><span class="nx">ivvvvvvvvvvvnvnvnvnvnn</span><span class="p">..</span>
+</span><span class='line'><span class="p">.</span><span class="nx">nnnnnnvnnvnvnvnvvvnvvvvvvvnv</span><span class="o">&lt;</span><span class="err">/em&gt;   .    .       :vnvvvvvvvnvnnvnnnnnnnnov;</span>
+</span><span class='line'><span class="o">:</span><span class="mi">2</span><span class="nx">oonnnnnnnnnvnvnnvnvvnvvvvvIvvi</span><span class="o">==&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">i</span><span class="p">..</span>    <span class="p">.</span>  <span class="p">.</span><span class="nx">vvvvvvvvnvnnvnnnnnnnnooooc</span>
+</span><span class='line'><span class="o">:</span><span class="nx">nnooonnnnnnnnnnvvnvvvvvvvvIvIlIvvnI</span><span class="o">-</span>      <span class="p">.</span><span class="o">=</span><span class="nx">vvvvvvvvnvnvnnnnnnnnnnooo2</span><span class="p">(</span>
+</span><span class='line'> <span class="o">|</span><span class="p">{</span><span class="nx">XooooonnnnnvnvnvvvvvvvIIIIIIIIv</span><span class="o">|&amp;</span><span class="nx">ndash</span><span class="p">;</span>      <span class="p">.</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vIlIIvIvvvvvnvvnvnnnnnooo2v</span><span class="p">(</span>
+</span><span class='line'> <span class="p">.){</span><span class="mi">2</span><span class="nx">ooooonnnnvnvnvvvvvIIIIIIlll</span><span class="o">+&amp;</span><span class="nx">ndash</span><span class="p">;</span>     <span class="p">.</span> <span class="o">=</span><span class="p">)</span><span class="nx">lllIIvIvvvvvvvnvnnnvnnooo22</span><span class="o">-</span><span class="err">`</span>
+</span><span class='line'>   <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;{</span><span class="mi">2</span><span class="nx">oooonnnnnvvvvvvvlIIlllllil</span><span class="o">==&lt;</span><span class="err">/em&gt;   ._iIllillllllIvvvvvvnvnnnnoooo*&amp;ndash;</span>
+</span><span class='line'>  <span class="p">.</span> <span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;.</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="mi">11</span><span class="nx">oonnvvvnvvIIlIlliliiiiillii</span><span class="o">||</span><span class="nx">iliiiiiiililllIIvvvvvnnnnn2</span><span class="p">}(</span><span class="o">~</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>  <span class="p">.</span> <span class="o">-+~!</span><span class="nx">lvvnvIvIIllliiiii</span><span class="o">|</span><span class="nx">i</span><span class="o">|||</span><span class="nx">i</span><span class="o">||</span><span class="nx">i</span><span class="o">|||</span><span class="nx">i</span><span class="o">||</span><span class="nx">iiiiilillIIvvvvvv</span><span class="p">}</span><span class="o">|</span><span class="err">&quot;</span><span class="o">-</span> <span class="p">.</span>
+</span><span class='line'>      <span class="p">.</span> <span class="p">..</span><span class="o">--~++++++++~+~+~+~+-+-+~+~+-+~+~++~++++++~~~-:</span><span class="p">..</span> <span class="p">.</span>
+</span><span class='line'>           <span class="p">.</span> <span class="p">.</span>  <span class="p">.</span> <span class="p">.</span> <span class="p">....</span> <span class="p">.</span> <span class="p">.</span> <span class="p">....</span> <span class="p">..</span> <span class="p">...</span> <span class="p">..</span> <span class="p">...</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+</span><span class='line'>
+</span><span class='line'>                       <span class="nx">Ajax</span><span class="p">.</span><span class="nx">org</span> <span class="nx">Cloud9</span> <span class="nx">IDE</span>
+</span><span class='line'>                          <span class="nx">version</span> <span class="mf">0.2</span><span class="p">.</span><span class="mi">0</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Votre Cloud9 est pr&ecirc;t ! Rendez-vous alors imm&eacute;diatement &agrave; l'url suivante :&nbsp;<a href="http://127.0.0.1:3000" target="_blank">http://127.0.0.1:3000</a>&nbsp;et, apr&egrave;s cr&eacute;ation de votre projet javascript dans le&nbsp;<span style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;">/path/to/your/workspace</span>, vous devriez voir l'interface suivante :</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-8b_JKSm3XDg/ThmqKYeSAvI/AAAAAAAAAs0/sWMKKgPQSQw/s800/cloud9ide_complete_example.jpg"><img class="aligncenter" title="Cloud9 Interface" src="https://lh5.googleusercontent.com/-8b_JKSm3XDg/ThmqKYeSAvI/AAAAAAAAAs0/sWMKKgPQSQw/s800/cloud9ide_complete_example.jpg" alt="Cloud9 Interface" width="600" height="466" /></a></p>
+
+
+<p>Pour l'heure, si vous avez le dernier Node 0.4.0 install&eacute;, l'IDE d&eacute;marre et plante&nbsp;instantan&eacute;ment. Il a fallu que je downgrade vers un ancien Node<em> (0.2.6)</em> pour que Cloud9 refonctionne. Il faudra donc attendre un peu pour que la version sur github soit compatible avec le dernier Node.</p>
+
+
+<h3>Utilisation</h3>
+
+
+<p>Pour l'instant, l'IDE dispose de 4 menus :</p>
+
+
+<ul>
+<li><strong>File :</strong> new (file, folder...), open, save, save as, save all, settings...</li>
+<li><strong>Edit :</strong> undo, redo, cut, copy, paste, search, search &amp; replace, go to line...</li>
+<li><strong>View :</strong> theme, syntax highlighting, select full line, highlight active line, show print margin...</li>
+<li>et <strong>Windows :</strong> layout, status bar, toolbar, editors, tree, debug, console, close tab, close all tabs, close all but current tab...</li>
+</ul>
+
+
+<p>On voit que l'on est donc face &agrave; un menu assez standard pour un environnement de d&eacute;veloppement mais qui reste toutefois assez light par rapport &agrave; ce qu'Eclipse, IDEA... nous proposent actuellement.&nbsp;On peut donc faire de la recherche <em>(avec gestion de la casse, regexp...)</em>, du remplacement ou aller directement &agrave; une ligne pr&eacute;cise.&nbsp;C&ocirc;t&eacute;&nbsp;pr&eacute;f&eacute;rences,&nbsp;il est possible de d&eacute;finir que l'on retourne &agrave; la ligne &agrave; partir d'un certain nombre de caract&egrave;res, si l'on affiche les fichiers cach&eacute;s, le nombre d'espaces par tabulation... En ce qui concerne les th&egrave;mes, une petite dizaine sont &agrave; votre disposition. J'aime beaucoup, pour le confort de lecture, le th&egrave;me <a href="http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/" target="_blank">Monokai</a> :</p>
+
+
+<p><a class="lightbox" href="https://lh6.googleusercontent.com/-ONbeY_Gda8M/ThmqK9HRwlI/AAAAAAAAAs4/0-SyVEwiraU/s800/cloud9ide_ide_example.jpg"><img class="aligncenter" title="Cloud9 Theme" src="https://lh6.googleusercontent.com/-ONbeY_Gda8M/ThmqK9HRwlI/AAAAAAAAAs4/0-SyVEwiraU/s800/cloud9ide_ide_example.jpg" alt="Cloud9 Theme" width="300" height="323" /></a></p>
+
+
+<p>Notez aussi qu'il existe un raccourci clavier&nbsp;pour&nbsp;toutes les actions du menu <em>(changement d'onglet...)</em>.</p>
+
+
+<p>Nous sommes d'accord, cela reste tr&egrave;s bas niveau compar&eacute; aux IDE que nous avons actuellement.</p>
+
+
+<p>Mais la puissance de Cloud9 r&eacute;side dans son int&eacute;gration native avec Node et ainsi pouvoir lancer et d&eacute;buguer son application Node directement dans Cloud9 sans aucun plugin additionnel. Si vous retournez 2 images plus haut, vous verrez des petites ic&ocirc;nes <span style="font-family: 'courier new', courier;">run</span>/<span style="font-family: 'courier new', courier;">debug</span>/<span style="font-family: 'courier new', courier;">stop</span>. Il vous suffit de vous placer sur votre fichier serveur Javascript et de faire un run pour lancer le serveur Node ! La console s'active alors et l'on voit dans mon exemple que Socket.IO est pr&ecirc;t &agrave; recevoir des clients. On profite d&egrave;s lors d'une vue <span style="font-family: 'courier new', courier;">variable</span>&nbsp;qui affiche l'&eacute;tat de toutes les variables &agrave; l'endroit o&ugrave; le breakpoint a &eacute;t&eacute; pos&eacute;. On peut aussi faire de l'inspection avec des expressions que l'on peut d&eacute;finir soit m&ecirc;me. On peut donc tout d&eacute;buguer dans l'IDE, que ce soit un fichier client ou un fichier serveur.</p>
+
+
+<p>Cette int&eacute;gration est extr&ecirc;mement bien faite et, pour le coup, bien sup&eacute;rieure aux autres IDE du march&eacute;. Donc si vous faites du Node, Cloud9 est fait pour vous...</p>
+
+
+<h3>Points forts / Points faibles / Roadmap</h3>
+
+
+<p>... mais attention quand m&ecirc;me car pendant les semaines qui viennent il va falloir tol&eacute;rer de revenir un peu &agrave; l'&acirc;ge de pierre en terme de fonctionnalit&eacute;s. J'exag&egrave;re &agrave; peine...</p>
+
+
+<p>C&ocirc;t&eacute; points forts :</p>
+
+
+<ul>
+<li>run et debug natif d'applications Node<em> (d&eacute;finitivement la killer feature de l'IDE)</em></li>
+<li>vue console</li>
+<li>vue variable avec l'&eacute;tat des tous les objets et la possibilit&eacute; de d&eacute;finir des expressions sp&eacute;cifiques</li>
+<li>th&egrave;mes et coloration syntaxique</li>
+</ul>
+
+
+<ul>
+</ul>
+
+
+<p>Et pour les points faibles <em>(qui sont tr&egrave;s li&eacute;s &agrave; la jeunesse de l'outil)</em> :</p>
+
+
+<ul>
+<li>pas de compl&eacute;tion !!!</li>
+<li>pas de refactoring possible <em>(renommage...)</em></li>
+<li>peu de plugins</li>
+<li>peu de documentations pour cr&eacute;er ses propres plugins</li>
+</ul>
+
+
+<p>Mais attention, la roadmap est encourageante et corrigera plusieurs points faibles cit&eacute;s ci-dessus :</p>
+
+
+<ul>
+<li>une version online ouverte &agrave; tous</li>
+<li>meilleure int&eacute;gration avec git et github</li>
+<li>outils de refactoring Javascript</li>
+<li>compl&eacute;tion</li>
+<li>chrome debugging</li>
+</ul>
+
+
+<p>Donc pas de panique, les points faibles seront corrig&eacute;s dans les prochains mois.</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Alors faut-il utiliser Cloud9 d&egrave;s aujourd'hui ?</p>
+
+
+<p>Si vous faites du d&eacute;veloppement Node, la r&eacute;ponse est clairement oui : l'int&eacute;gration est vraiment tr&egrave;s bonne et les points faibles s'oublient assez vite. De toute fa&ccedil;on, Javascript &eacute;tant dynamique, on a l'habitude depuis longtemps d'avoir une compl&eacute;tion et du refactoring tr&egrave;s limit&eacute;s.</p>
+
+
+<p>Si vous ne faites pas de Node, tout d&eacute;pendra de votre tol&eacute;rance aux points faibles cit&eacute;s : certains d&eacute;veloppeurs ne supportent pas de ne pas avoir de compl&eacute;tion. Pour ceux l&agrave;, il sera difficile de s'y mettre avec la version actuelle. De m&ecirc;me, si vous &ecirc;tes un accro aux nombreux fonctionnalit&eacute;s de votre Eclipse ou IntelliJ IDEA, le passage &agrave; Cloud9 vous fera certainement sourire <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>Mais dans tous les cas, c'est vraiment un IDE &agrave; essayer, que vous l'adoptiez ou non !</p>
+
+
+<p>Connaissez-vous d'autres IDE Web / Javascript ?</p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Débugger une application Node.js]]></title>
+        <link href="http://www.web-tambouille.fr/2010/11/07/debugger-une-application-node-js-cote-serveur.html"/>
+        <updated>2010-11-07T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2010/11/07/debugger-une-application-node-js-cote-serveur</id>
+        <content type="html"><![CDATA[<div><a href="http://nodejs.org/" target="_blank">Node.js</a> est un serveur orient&eacute; &eacute;v&egrave;nement qui tourne sur le <a href="http://code.google.com/p/v8/" target="_blank">moteur Javascript V8 de Google</a>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Sa particularit&eacute; : alors que la plupart des frameworks Java ont pour principe de nous faire coder Java c&ocirc;t&eacute; client <em>(<a href="http://code.google.com/intl/fr-FR/webtoolkit/" target="_blank">GWT</a>, <a href="http://wicket.apache.org/" target="_blank">Wicket</a>&nbsp;ou bien encore <a href="http://vaadin.com/home" target="_blank">Vaadin</a>)</em>&nbsp;et ainsi faire que le d&eacute;veloppeur n'ait &agrave; coder aucune ligne de Javascript, Node nous fait coder Javascript &agrave; la fois c&ocirc;t&eacute; client mais surtout c&ocirc;t&eacute; serveur. Donc tout le contraire !</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Question : comment fait-on pour d&eacute;bugger une application Node ?</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Sur le client, <a href="http://www.chromium.org/devtools" target="_blank">Google Chrome Developper Tool</a> ou <a href="https://addons.mozilla.org/fr/firefox/addon/1843/" target="_blank">Firebug</a> font le boulot.&nbsp;C'est surtout c&ocirc;t&eacute; serveur que la question se pose et les solutions sont <a href="https://github.com/ry/node/wiki/modules#debugging" target="_blank">nombreuses</a> !&nbsp;J'ai retenu pour cet article le <a href="https://github.com/ry/node/wiki/Using-Eclipse-as-Node-Applications-Debugger" target="_blank">debug depuis Eclipse &agrave; l'aide du plugin v8</a>&nbsp;ainsi que le plugin&nbsp;<a href="https://github.com/dannycoates/node-inspector" target="_blank">node-inspector</a>&nbsp;pour un debug dans le navigateur.</div>
+
+
+<div>&nbsp;</div>
+
+
+<p><!--more--></p>
+
+
+<div><strong>Eclipse</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Il est possible de d&eacute;bugger une application Node directement depuis son IDE Eclipse &agrave; l'aide de l'<a href="http://code.google.com/p/chromedevtools/" target="_blank">Eclipse debugger plugin for v8</a>. Comme pour nos applications Tomcat, Jetty... l'id&eacute;e est de d&eacute;marrer le serveur node en debug avec un port sp&eacute;cifique sur lequel on viendra se connecter en remote.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Tout d'abord, il faut installer le plugin, l'url de l'update site est la suivante :&nbsp;<a href="http://chromedevtools.googlecode.com/svn/update/dev/" target="_blank">http://chromedevtools.googlecode.com/svn/update/dev/</a>&nbsp;<em>(que vous utiliserez &agrave; partir de Help &gt; Install New Software...)</em>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>A partir de l&agrave;, 2 options sont possibles :</div>
+
+
+<div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// No break</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span><span class="p">[</span><span class="o">=</span><span class="nx">port</span><span class="p">]</span> <span class="nx">nodeapp</span><span class="p">.</span><span class="nx">js</span>
+</span><span class='line'><span class="c1">// With break</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span><span class="o">-</span><span class="nx">brk</span><span class="p">[</span><span class="o">=</span><span class="nx">port</span><span class="p">]</span> <span class="nx">nodeapp</span><span class="p">.</span><span class="nx">js</span><span class="o">&lt;</span><span class="err">/pre&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+
+
+<div>L'option <em>--debug</em> permet de lancer l'application de mani&egrave;re non bloquante, il sera possible de se connecter en remote plus tard. Alors que l'option <em>--debug-brk</em> bloquera l'application qui sera en attente d'une connexion remote.&nbsp;Le port par d&eacute;faut est le port 5858.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Une fois votre application lanc&eacute;e en debug, il vous faudra cr&eacute;er une configuration de debug dans Eclipse au niveau de <em>Standalone V8 VM</em> :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><a class="lightbox" href="https://lh6.googleusercontent.com/-oMHwvkagy40/TiWdH2zpjoI/AAAAAAAAAv8/6xVTfXDqWb4/s800/sZqH3%25255B1%25255D.png"><img class="aligncenter" style="vertical-align: middle;" src="https://lh6.googleusercontent.com/-oMHwvkagy40/TiWdH2zpjoI/AAAAAAAAAv8/6xVTfXDqWb4/s800/sZqH3%25255B1%25255D.png" alt="Eclipse Debug Window" width="600" height="383" /></a></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Une fois la configuration cr&eacute;&eacute;e, n'oubliez pas de mettre 5858 comme port de connexion remote.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><em>That's all !</em> A vous les joies du debug, il ne vous reste plus qu'&agrave; mettre des breakpoints depuis l'&eacute;diteur Javascript fourni par le plugin :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><a class="lightbox" href="https://lh6.googleusercontent.com/-N25waz6TnqU/TiWdKuzK5RI/AAAAAAAAAv8/gd5_GQcE7Mo/s800/TuqCv%25255B1%25255D.png"><img class="aligncenter" style="vertical-align: middle;" src="https://lh6.googleusercontent.com/-N25waz6TnqU/TiWdKuzK5RI/AAAAAAAAAv8/gd5_GQcE7Mo/s800/TuqCv%25255B1%25255D.png" alt="Eclipse Editor" width="600" height="489" /></a></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>A noter qu'il est possible de se connecter sur une machine distante.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>La documentation compl&egrave;te se trouve <a href="https://github.com/ry/node/wiki/Using-Eclipse-as-Node-Applications-Debugger" target="_blank">ici</a>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><strong>Node-Inspector</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Node Inspector est un debugger Node par navigateur qui s'appuie sur WebKit. Il fonctionne sur tous les navigateurs compatible WebKit <em>(Chrome, Safari...)</em>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>L'installation se fait par <a href="http://github.com/isaacs/npm" target="_blank">nmp</a>&nbsp;avec la commande suivante :</div>
+
+
+<div>
+<pre class="brush: bash;fontsize: 100; first-line: 1; ">npm install node-inspector</pre>
+</div>
+
+
+<div>Le debug de l'application se fait en 3 &eacute;tapes :</div>
+
+
+<div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// Démarrer l&#39;inspecteur en tâche de fond</span>
+</span><span class='line'><span class="nx">node</span><span class="o">-</span><span class="nx">inspector</span> <span class="o">&amp;</span>
+</span><span class='line'><span class="c1">// Démarrer votre application Node</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span> <span class="nx">NodeApp</span><span class="p">.</span><span class="nx">js</span>
+</span><span class='line'><span class="c1">// Ouvrir votre navigateur WebKit favori</span>
+</span><span class='line'><span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8080/debug?port=5858</span>
+</span><span class='line'><span class="c1">// Puis rdv sur votre application</span>
+</span><span class='line'><span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8124/</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Et voil&agrave;, votre application Node est pr&ecirc;te pour le debug.</p>
+</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Si vous avec une dizaine de minutes devant vous, je vous conseille cette petite vid&eacute;o explicative de l'outil :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>
+<object width="425" height="350" data="http://www.youtube.com/v/AOnK3NVnxL8" type="application/x-shockwave-flash"><br />
+<param name="data" value="http://www.youtube.com/v/AOnK3NVnxL8" />
+<param name="play" value="false" />
+<param name="loop" value="false" />
+<param name="scale" value="showall" />
+<param name="src" value="http://www.youtube.com/v/AOnK3NVnxL8" /></object></div>
+
+
+<div>&nbsp;</div>
+
+
+<div><strong>Conclusion</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Quel outil choisir ?&nbsp;Et bien tout d&eacute;pend de votre utilisation.</div>
+
+
+<div>Du fait que je travaille tous les jours sur Eclipse, j'ai suis de suite parti sur le plugin V8.</div>
+
+
+<div>Si vous utilisez un autre &eacute;diteur <em>(TextMate, VIM...)</em>, vous irez plut&ocirc;t sur node-inspector ou un autre outil du m&ecirc;me genre.</div>
+
+
+<div>Dans tous les cas, ces outils sont des must have pour d&eacute;velopper vos applications Node !</div>
+
+
+<div>A vous le debug Javascript c&ocirc;t&eacute; serveur <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></div>
+
+
+<div>&nbsp;</div>
+
+]]></content>
+    </entry>
+    
+</feed>

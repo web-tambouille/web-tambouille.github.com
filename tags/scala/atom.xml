@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Scala" | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/scala/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Web Tambouille à Devoxx 2011 !]]></title>
+    <link href="http://www.web-tambouille.fr/2011/11/13/web-tambouille-a-la-conference-devoxx-2011.html"/>
+    <updated>2011-11-13T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2011/11/13/web-tambouille-a-la-conference-devoxx-2011</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Devoxx 2010" src="https://lh6.googleusercontent.com/-lxPDCqAb5EM/TiWhX2jhflI/AAAAAAAAAwQ/SJMUH5HgfSM/s800/LogoDevoxx150dpi%25255B1%25255D.jpg_version%25253D1%252526modificationDate%25253D1275294792000.jpg" alt="Devoxx 2010" width="200" height="75" /></p>
+
+
+<p>Tout comme <a href="http://web-tambouille.fr/2010/11/9/web-tambouille-a-la-conference-devoxx.html" target="_blank">l'ann&eacute;e derni&egrave;re</a>, Web Tambouille sera &agrave; la conf&eacute;rence&nbsp;<a href="http://www.devoxx.com/display/DV11/Home" target="_blank">Devoxx</a>, la plus grande conf&eacute;rence Java d'Europe voir du Monde ! Je ne pourrai malheureusement pas faire les 5 jours cette ann&eacute;e <img title="Frown" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-frown.gif" border="0" alt="Frown" />&nbsp;mais c'est avec grand plaisir que je serai sur Anvers &agrave; partir de mercredi !</p>
+
+
+<p>Le programme est toujours aussi all&eacute;chant et les stars sont au rendez-vous : Java, Play Framework, HTML, Android... bref tout ce que j'aime,&nbsp;il ne manque plus que du Node <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></p>
+
+
+<p>Pour les int&eacute;ress&eacute;s, Il y aura aussi la diffusion de Tintin le jeudi ainsi qu'une soir&eacute;e sp&eacute;cial <a href="http://www.eventbrite.com/event/2412608176" target="_blank">Devoxx @ Noxx Party</a> pour f&ecirc;ter les 10 ans de Devoxx !</p>
+
+
+<p>Et tout comme <a href="http://web-tambouille.fr/tag/Devoxx" target="_blank">l'ann&eacute;e derni&egrave;re</a>, je vous ferai quelques comptes rendus ainsi que du <a href="http://twitter.com/#!/webtambouille" target="_blank">live-twitting</a> sur le topic <a href="http://twitter.com/#!/search?q=%23Devoxx" target="_blank">#devoxx</a>&nbsp;<em>(et peut-&ecirc;tre aussi sur <a href="http://twitter.com/#!/search?q=%23Devoxx2011">#devoxx2011</a>)</em>. Vivement mercredi prochain, et en attendant demandez le menu !</p>
+
+
+<p><!--more--></p>
+
+
+<p><strong>Entr&eacute;es (mercredi)<img title="Tocque" src="https://lh3.googleusercontent.com/-2vuJcg9BICI/ThmqHYT0waI/AAAAAAAAAsQ/GBlnZ5fz3Ok/s144/toque.jpg" alt="Tocque" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Java: The Good, the Bad, and the Ugly Parts (<a href="http://www.devoxx.com/display/DV11/Java++The+Good%2C+the+Bad%2C+and+the+Ugly+Parts" target="_blank">track</a>)</li>
+<li>Play 2.0, a Web framework for a new era (<a href="http://www.devoxx.com/display/DV11/Play+2.0%2C+a+Web+framework+for+a+new+era" target="_blank">track</a>)</li>
+<li>Working Off the Grid : HTML5 Offline (<a href="http://www.devoxx.com/display/DV11/Working+Off+the+Grid++HTML5+Offline" target="_blank">track</a>)</li>
+<li>PhoneGap for Hybrid App Development (<a href="http://www.devoxx.com/display/DV11/PhoneGap+for+Hybrid+App+Development" target="_blank">track</a>)</li>
+<li>The File System API in JDK7 (<a href="http://www.devoxx.com/display/DV11/The+File+System+API+in+JDK+7" target="_blank">track</a>)</li>
+<li>JAX-RS 2.0 : RESTful Java on Steroids (<a href="http://www.devoxx.com/display/DV11/JAX-RS+2.0++RESTful+Java+on+Steroids" target="_blank">track</a>)</li>
+</ul>
+
+
+<p><strong>Plats (jeudi)&nbsp;</strong><strong><img title="Fourchette" src="https://lh4.googleusercontent.com/-eoTjToOqbss/ThmqPT7l92I/AAAAAAAAAuE/00BJC9rSUbY/s144/fourchette.jpg" alt="Fourchette" width="25" /></strong></p>
+
+
+<ul>
+<li>Above the Clouds : Introducing Akka (<a href="http://www.devoxx.com/display/DV11/Above+the+Clouds++Introducing+Akka" target="_blank">track</a>)</li>
+<li>Android Development Tools (<a href="http://www.devoxx.com/display/DV11/Android+Development+Tools" target="_blank">track</a>)</li>
+<li>HTML5 with Play/Scala Coffeescript and Jade (<a href="http://www.devoxx.com/display/DV11/HTML5+with+Play+Scala%2C+CoffeeScript+and+Jade" target="_blank">track</a>)</li>
+<li>JavaPosse Live (<a href="http://www.devoxx.com/display/DV11/Java+Posse+Live" target="_blank">track</a>)</li>
+<li>NoSQL, Big Data... so what ? (<a href="http://www.devoxx.com/display/DV11/NoSQL%2C+Big+Data+...+so+what" target="_blank">track</a>)</li>
+<li>Is Fantom light years ahead of Scala ? (<a href="http://www.devoxx.com/display/DV11/Is+Fantom+light+years+ahead+of+Scala" target="_blank">track</a>)</li>
+</ul>
+
+
+<p><strong>Desserts (vendredi)<img title="Dessert" src="https://lh3.googleusercontent.com/--RSZh6Jol2E/ThmqP9PmWjI/AAAAAAAAAuA/9CbRQJ0maUs/s144/gateau.jpg" alt="Dessert" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Technical Discussion Panel (<a href="http://www.devoxx.com/display/DV11/Technical+Discussion+Panel" target="_blank">track</a>)</li>
+<li>HTML5 Game Development: The most fun you can have in a browser (<a href="http://www.devoxx.com/display/DV11/HTML5+Game+Development++The+most+fun+you+can+have+in+a+browser" target="_blank">track</a>)</li>
+<li>Java on Mac OS X : Now What ? (<a href="http://www.devoxx.com/display/DV11/Java+on+Mac+OS+X++Now+What" target="_blank">track</a>)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Web | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/web/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Un Devoxx 2012 sous le signe du Web]]></title>
+    <link href="http://www.web-tambouille.fr/2012/11/19/un-devoxx-2012-sous-le-signe-du-web-java-javascript-html5-mobile-scala-android.html"/>
+    <updated>2012-11-19T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2012/11/19/un-devoxx-2012-sous-le-signe-du-web-java-javascript-html5-mobile-scala-android</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/V9M1pDs55-FrTkscjO_8TtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="float: right; margin-top: 10px; margin-left: 10px;" title="Devoxx 2012" src="https://lh6.googleusercontent.com/-lxPDCqAb5EM/TiWhX2jhflI/AAAAAAAAAwQ/SJMUH5HgfSM/s288/LogoDevoxx150dpi%255B1%255D.jpg_version%253D1%2526modificationDate%253D1275294792000.jpg" alt="Devoxx 2012" width="288" height="108" /></a>Vous n'avez pas pu le manquer dans votre timeline twitter la semaine derni&egrave;re : du 12 au 16 novembre dernier avait lieu <a href="http://www.devoxx.com/display/DV12/Home" target="_blank">Devoxx 2012</a>, la plus grosse conf&eacute;rence Java d'Europe.</p>
+
+
+<p>C'est d&eacute;j&agrave; termin&eacute;, la semaine est pass&eacute;e &agrave; tr&egrave;s grande vitesse. Ce WE, c'est s&eacute;ance rattrapage des nombreuses heures de sommeil en retard <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>Et c'est bien repos&eacute; que je d&eacute;cide de me lancer dans ce petit r&eacute;sum&eacute; de ma semaine &agrave; Devoxx : les meilleurs moments, mes meilleurs sessions et celles que vous ne devrez absolument pas manquer sur <a href="http://www.parleys.com" target="_blank">Parley's</a>. Je retrouve toutes mes petites notes Evernote et mes quelques clich&eacute;s et c'est parti !</p>
+
+
+<p>D'ailleurs s'il y a bien une chose &agrave; retenir, c'est que cette nouvelle &eacute;dition de Devoxx World &eacute;tait clairement plac&eacute;e sous le signe du Web !</p>
+
+
+<p><!--more--></p>
+
+
+<h3>L'organisation</h3>
+
+
+<p>Comme chaque ann&eacute;e, c'est du tr&egrave;s bon mais les petits soucis persistent : un bracelet &eacute;tanche mais qui grattait un peu, tr&egrave;s difficile de se connecter au wifi <em>(voir pour moi impossible)</em>, les petits d&eacute;jeuners top, par contre le midi c'est moyen, pas de soir&eacute;e Noxx pour moi <em>(bo&icirc;te &agrave; c&ocirc;t&eacute; de la conf&eacute;rence)</em> mais les retours sont tr&egrave;s bons, un bon film comme chaque ann&eacute;e <em>(Skyfall)</em>, du caf&eacute; et des boissons absolument partout et de nombreux avec bien s&ucirc;r des goodies en veux-tu en voil&agrave;.</p>
+
+
+<p>C&ocirc;t&eacute; nouveaut&eacute;s, le bracelet NFC permettait de voter en sortant de la salle pour faire un <em>like</em> ou un <em>dislike</em> de la conf&eacute;rence. Utile pour voir quelle session a plu mais aussi celle qui &eacute;tait &agrave; c&ocirc;t&eacute;, et il y en a eu quelques unes...</p>
+
+
+<p>Devant chaque salle, pas de papier pour annoncer les sessions mais un Raspberry PI avec une petite appli JavaFX pour faire d&eacute;filer les sessions, une super id&eacute;e !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/6m2_jt4qrOxDz2nZCDXucNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="vertical-align: baseline;" title="Raspberry PI" src="https://lh3.googleusercontent.com/-JHRzP_MXb9Y/UKkcXTMsGqI/AAAAAAAAA-E/md31W3wz7fw/s288/2012-11-12%252009.09.52.jpg" alt="Raspberry PI" width="288" height="216" /></a>&nbsp; &nbsp;&nbsp;<a href="https://picasaweb.google.com/lh/photo/HUrRl7SzsJs1OJRjbI2EddMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="vertical-align: baseline;" title="Screen" src="https://lh5.googleusercontent.com/-_lj_sKh38pw/UKkcRgW5hYI/AAAAAAAAA-E/7xZj2mt6mDM/s288/2012-11-12%252010.51.30.jpg" alt="Screen" width="384" height="216" /></a></p>
+
+
+<p>Apr&egrave;s, questions de gouts, j'ai trouv&eacute; la playlist des les salles pendant les pauses ou entre 2 sessions plut&ocirc;t pas mal. C'est un d&eacute;tail mais quitte &agrave; <em>subir</em>, je pr&eacute;f&egrave;re de la bonne musique. Pas vous ?&nbsp;<img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<h3>Web, Mobile et Android</h3>
+
+
+<p>Je vous laisse voir l'<a href="http://www.devoxx.com/display/DV12/Schedule?atl_token=1bPqIgvjxn" target="_blank">agenda</a> en d&eacute;tail mais en effet c&ocirc;t&eacute; Web nous &eacute;tions g&acirc;t&eacute;s, voici quelques universit&eacute;s et conf&eacute;rences auxquelles j'ai pu assister :</p>
+
+
+<ul>
+<li>une universit&eacute; sur Play Framework 2,</li>
+<li>une universit&eacute; sur Javascript / HTML5,</li>
+<li>une universit&eacute; <em>Making the Web faster</em> pour l'optimisation des performances frontend mais pas seulement,</li>
+<li>une session sur Dart,</li>
+<li>une&nbsp;session&nbsp;sur le Chrome Dev Tools,</li>
+<li>une&nbsp;session&nbsp;sur AngularJS,</li>
+<li>et bien d'autres encore !</li>
+</ul>
+
+
+<p>M&ecirc;me chose c&ocirc;t&eacute; mobile et plus particuli&egrave;rement Android, j'ai pu voir :</p>
+
+
+<ul>
+<li>Android annotation,</li>
+<li>Android code injection <em>(pas top, plut&ocirc;t un cours sur AspectJ...)</em>,</li>
+<li>Android tools,</li>
+<li>Et de m&ecirc;me quelques autres sessions.</li>
+</ul>
+
+
+<p>Ces derni&egrave;res ann&eacute;es &eacute;taient plut&ocirc;t orient&eacute;es sur Android, NoSQL et bien s&ucirc;r beaucoup de talks autour de Java, cette ann&eacute;e nous voyons surtout des conf&eacute;rences autour du Web, que ce soit les outils, les frameworks ou plus g&eacute;n&eacute;ralement les performances Web. C'est d'ailleurs tr&egrave;s int&eacute;ressant de voir qu'il y a eu beaucoup moins de conf&eacute;rences autour de JEE, aucune sur JSF, GWT et Flex. Il y a comme un petit vent qui souffle sur nos grosses applications...</p>
+
+
+<h3>Les autres sessions</h3>
+
+
+<p>J'ai aussi vari&eacute; mon Devoxx avec d'autres sessions dont :</p>
+
+
+<ul>
+<li>une universit&eacute; sur Scala avanc&eacute;,</li>
+<li>une conf&eacute;rence sur Java 8 et les lambdas en action,</li>
+<li>une conf&eacute;rence&nbsp;<em>catastrophique</em> sur le garbage collector G1,</li>
+<li>une conf&eacute;rence, ou plut&ocirc;t un <em>stand up</em> monumental, de Chet Haase sur les <em>Modern software development anti-pattern</em>&nbsp;que je vous conseille fortement,</li>
+<li>une conf&eacute;rence avec les <em>Diabolical Developers</em>&nbsp;du <em>London JUG</em>,</li>
+<li>une conf&eacute;rence sur Elastic Search,</li>
+<li>une conf&eacute;rence sur les nouveaut&eacute;s de Spring 3.1 <em>(un peu lente)</em>,</li>
+<li>et plusieurs quickies et tools in action.</li>
+</ul>
+
+
+<p>Vous le voyez donc : Devoxx est de plus en plus vari&eacute; et le Web et Javascript prennent une part tr&egrave;s importante dans le planning, on voit que Google est pass&eacute;e par l&agrave;.</p>
+
+
+<p>Je ne vais pas non plus annuler ma journ&eacute;e&nbsp;<a href="http://www.dotjs.eu" target="_blank">DotJS</a>&nbsp;mais c'est int&eacute;ressant de voir cette communaut&eacute;, qui n'&eacute;tait pas tendre envers Javascript, s'int&eacute;resser voir adopter ces nouveaux frameworks JS.</p>
+
+
+<h3>Les keynotes</h3>
+
+
+<p>Comme chaque ann&eacute;e, nous avons eu droit &agrave; nos 3 keynotes le mercredi. Cela a commenc&eacute; par une d&eacute;monstration de ce que l'on peut faire avec Nao<em> (pas les baskets hein, le robot <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />) </em>et c'&eacute;tait assez impressionnant car je ne connaissais pas du tout :</p>
+
+
+<p>
+<object style="width: 640px; height: 360px;" width="640" height="360" data="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" type="application/x-shockwave-flash">
+<param name="data" value="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" />
+<param name="src" value="http://www.youtube.com/v/KZeG3zXYymY?version=3&amp;hl=fr_FR" />
+</object>
+</p>
+
+
+<p>La premi&egrave;re sur Devoxx et Parley's avec la grosse info : Parley's laisse tomber Flash et passe sur HTML5 ! Encore une preuve que Flash est sur le d&eacute;clin, c'est pas comme si un <a href="http://web-tambouille.fr/tag/HTML5" target="_blank">certain blog</a> n'arr&ecirc;tait pas d'en parler <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></p>
+
+
+<p>Puis Oracle suivra avec une keynote bien mieux que les pr&eacute;c&eacute;dente, une arriv&eacute;e de <a href="http://steveonjava.com" target="_blank">Stephen Chin</a> &agrave; moto dans la salle de cin&eacute;ma, des d&eacute;mos plut&ocirc;t r&eacute;ussies et quasiment pas de bullet points. J'ai presque envie de dire : bravo Oracle !</p>
+
+
+<p>Puis la tant attendue keynote de Neal Ford, talentueux speaker, mais qui sur Geek Leaks n'arrive pas &agrave; convaincre. Dommage...</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/AFc1jGqQ-mC918Qb3YKA8NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Neal Ford" src="https://lh5.googleusercontent.com/-uWKm0rmtsYU/UKkaw3vU6GI/AAAAAAAAA-E/MNhWEHXew3U/s640/2012-11-14%252011.16.29.jpg" alt="Neal Ford" width="640" height="360" /></a></p>
+
+
+<h3>Code Story</h3>
+
+
+<p>Comme pour Devoxx France, l'&eacute;quipe <a href="http://code-story.net" target="_blank">Code Story</a> &eacute;tait pr&eacute;sente au grand complet pour nous d&eacute;velopper <em>from scratch</em> une nouvelle application et bien s&ucirc;r toujours dans les r&egrave;gles de l'art : du beau code, du java, du js, des tests et beaucoup de fun !&nbsp;J'ai pu m'y rendre plusieurs fois et c'est toujours un plaisir de les voir <em>live-coder</em>.&nbsp;Pour voir le r&eacute;sultat et avoir un petit r&eacute;sum&eacute;, <a href="http://code-story.net/2012/11/16/what-has-been-done-at-devoxx.html" target="_blank">rendez-vous sur leur site</a>.</p>
+
+
+<p><em>Kudos</em> &agrave; David, Jean-Laurent, Eric et S&eacute;bastian !</p>
+
+
+<h3>Sessions Web</h3>
+
+
+<p>Certainement la meilleure qu'il ma &eacute;t&eacute; donn&eacute; de voir toutes &eacute;ditions de Devoxx confondues. Une v&eacute;ritable bible de bonnes pratiques et surtout de pourquoi nous en sommes l&agrave;. J'avais pr&eacute;vu de le r&eacute;sumer dans cette article mais ce serait trop long et ignoble de la couper, donc un r&eacute;sum&eacute; plus complet dans quelques jours.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/B5xbS_P1ZAYh24oybqJbltMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Making the Web faster" src="https://lh5.googleusercontent.com/-r-bSsWA1wMI/UKkMhJ4bsjI/AAAAAAAAA70/VWCy4W8V_mE/s640/2012-11-13%252013.34.36.jpg" alt="Making the Web faster" width="640" height="360" /></a></p>
+
+
+<p>Universit&eacute; en demi-teinte : Javascript et HTML5 avec un bon speaker avec des exemples tir&eacute;s de sa librairie slidefast. Malheureusement les trop nombreuses lignes de code emp&ecirc;chaient de distinguer ce qui &eacute;tait pertinent : <em>l<em>ess </em></em><em>is more&nbsp;</em>! Tiens, &ccedil;a me rappelle la pr&eacute;sentation sur G1...&nbsp;</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/iFLU_Tqlm3UBIWVnz-ysUdMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Javascript et HTML5" src="https://lh4.googleusercontent.com/-peB6yZKlDiA/UKkbu_vrrDI/AAAAAAAAA-E/TlNKlpApqOs/s640/2012-11-12%252014.06.23.jpg" alt="Javascript et HTML5" width="640" height="360" /></a></p>
+
+
+<p>Autre session Web int&eacute;ressante : Dart. Le langage continue d'&eacute;voluer et les outils avec. Une bonne approche, cependant avec tous les langages au dessus de Javascript <em>(Coffeescript...)</em>, on ne sait plus trop &agrave; qui faire confiance... A suivre donc.</p>
+
+
+<p>Il y a eu aussi Play Framework 2 qui m'a enfin permis de mettre remettre &agrave; Play mais avec une toute nouvelle version, la derni&egrave;re fois que j'y avais touch&eacute; c'&eacute;tait avec la 1.2.4, et bien s&ucirc;r les choses ont beaucoup chang&eacute; : du Scala, Akka derri&egrave;re, des Promises, des Enumeratee et bien d'autres. J'ai bien aim&eacute; le support de RequireJS, tr&egrave;s belle librairie qui, selon votre archi c&ocirc;t&eacute; front, est amha obligatoire !</p>
+
+
+<p>Si vous voulez vous y mettre et revoir cette universit&eacute;, je vous d&eacute;conseille la premi&egrave;re partie qui est compl&egrave;tement rat&eacute;e. Foncez direct sur la deuxi&egrave;me, qui elle, est r&eacute;ussie.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/pzSikanbFEmyfYRq8lhlQdMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Play Framework 2" src="https://lh3.googleusercontent.com/-fMrHz_rzkOk/UKkcfSBI5ZI/AAAAAAAAA-E/t1Fgtcd0rMQ/s640/2012-11-12%252012.32.38.jpg" alt="Play Framework 2" width="640" height="360" /></a></p>
+
+
+<h3>Sessions Android</h3>
+
+
+<p>Beaucoup moins de sessions Android pour moi cette ann&eacute;e, apr&egrave;s quasiment toutes les sessions Android possibles &agrave; faire en 2010 et 2011, et aucun projet Android perso dans l'ann&eacute;e, je me suis tourn&eacute; vers des petites sessions autour des outils plut&ocirc;t que celles sur les optimisations de performances et les nouveaut&eacute;s.</p>
+
+
+<p>Bonne pioche : j'ai r&eacute;ellement accroch&eacute; sur un petit framework fran&ccedil;ais &agrave; savoir <a href="http://androidannotations.org" target="_blank">Android Annotations</a>. Des <em>annotations processors</em>&nbsp;&agrave; votre secours pour vous simplifier l'&eacute;criture de vos classes java dans Android ! C'est simple, j'ai envie de faire de l'Android l&agrave; tout de suite maintenant m&ecirc;me sans id&eacute;e, c'est pour vous dire <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" /></p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/P8-TPNhWARZwPO7mvXU1x9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Android Annotations" src="https://lh3.googleusercontent.com/-pZXuF2WYnfY/UKkbbr-jzmI/AAAAAAAAA-E/o6YaAYPjOMs/s640/2012-11-12%252016.54.53.jpg" alt="Android Annotations" width="640" height="360" /></a></p>
+
+
+<p>Autre conf&eacute;rence sur Android : les nouveaut&eacute;s du plugin Eclipse. Certes je suis sur IntelliJ IDEA mais autant rester <em>aware</em> des nouveaut&eacute;s &agrave; c&ocirc;t&eacute;. Qui sait, un <em>switch</em> est si vite arriv&eacute;...</p>
+
+
+<p>Plut&ocirc;t int&eacute;ressant : affichage multiple (selon la locale, l'orientation du t&eacute;l&eacute;phone...), des templates de projet, un WYSIWYG am&eacute;lior&eacute;, meilleure int&eacute;gration de Lint et quelques am&eacute;liorations de ci de l&agrave;. Il faudra tester pendant le d&eacute;veloppement pour r&eacute;ellement voir les impacts de tout cela !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/f2oYqX-eCY4OWVfoUCD90NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Android Eclipse" src="https://lh6.googleusercontent.com/-L_mMATprDH0/UKka_DGAobI/AAAAAAAAA-E/Q0BLfx-NzQw/s640/2012-11-13%252017.36.29.jpg" alt="Android Eclipse" width="640" height="360" /></a></p>
+
+
+<h3>Sessions Java et Scala</h3>
+
+
+<p>Avant derni&egrave;re partie de cette article autour de la JVM avec les sessions autour de Java et Scala. Tout d'abord Scala avec une excellente session de Bill Venners et Dick Wall en universit&eacute; en 2 fois 3 heures. J'ai la deuxi&egrave;me qui &eacute;tait tagu&eacute;e <em>advanced</em>. On peut en effet voir cela comme &ccedil;a car c'est parti tr&egrave;s fort avec entre autres :</p>
+
+
+<ul>
+<li>des rappels sur PreDef,</li>
+<li>applyDynamics,</li>
+<li>une revue compl&egrave;te des diff&eacute;rents types d'<span style="font-family: 'courier new', courier;">implicit</span>,</li>
+<li><span style="font-family: 'courier new', courier;">Manifest</span> <em>versus</em> <span style="font-family: 'courier new', courier;">ClassManifest</span>,</li>
+<li>une revue compl&egrave;te des diff&eacute;rents types de <em>Pattern Matching</em>,</li>
+<li>les monads <span style="font-family: 'courier new', courier;">Option</span> et <span style="font-family: 'courier new', courier;">Either</span>,</li>
+<li>et quelques bonnes pratiques g&eacute;n&eacute;rales.</li>
+</ul>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/9yOaYpRmjOF5pP26qtQyOtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Scala advanced" src="https://lh4.googleusercontent.com/-vSpP5G1wYP4/UKkbXfnRJiI/AAAAAAAAA-E/TjWjkPRpt_c/s640/2012-11-13%252009.32.40.jpg" alt="Scala advanced" width="640" height="360" /></a></p>
+
+
+<p>C&ocirc;t&eacute; Java, j'ai beaucoup aim&eacute; la pr&eacute;sentation live coding de <a href="http://guillaume.tardif.free.fr/wordpress/" target="_blank">Guillaume Tardif</a> sur les lambdas dans Java 8.&nbsp;Quelques liens pour installer Java 8 preview et direct dans IntelliJ IDEA qui supporte d&eacute;j&agrave; la syntaxe ! Que j'aime beaucoup d'ailleurs, vivement l'ann&eacute;e prochaine.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/fqu1_EkD7cxKEBEtOIlE4dMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Java 8 lambda" src="https://lh4.googleusercontent.com/-fpsCGnqLKG8/UKka6Em2i9I/AAAAAAAAA-E/bGp1DkHX7iA/s400/2012-11-13%252018.08.02.jpg" alt="Java 8 lambda" width="400" height="225" /></a></p>
+
+
+<p>Un bon compl&eacute;ment &agrave; cette session &eacute;tait la conf&eacute;rence JDK8&nbsp;de Joe Darcy <em>(lead sur Project Coin)</em>, plus bullet points que live coding <em>(un peu trop d'ailleurs...)</em> qui nous explique les internals du fonctionnement des lambdas et d'autres fonctionnalit&eacute;s de Java 8.</p>
+
+
+<p>C'est une session &agrave; voir mais buvez 3 Red Bull avant d'y aller car le ton monotone du speaker ainsi que certains slides sont mortels.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/SOUhBmEqyTfYh_8P7j0B3NMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="JDK8" src="https://lh3.googleusercontent.com/-wxKfr8LNU1g/UKkauEIRqoI/AAAAAAAAA-E/e5J5x9MWJuk/s640/2012-11-14%252014.23.04.jpg" alt="JDK8" width="640" height="360" /></a></p>
+
+
+<p>A noter qu'il y a eu une session sur Spring 3.1 : trop de slides, trop de puces et un discours assez moyen pour au final peu de nouveaut&eacute;s. Le speaker m'a perdu en 10 minutes chrono, pourtant il faut y aller...</p>
+
+
+<h3>Sessions Fun</h3>
+
+
+<p>Comme chaque ann&eacute;e, je me suis fait ma petite pause <a href="http://javaposse.com" target="_blank">Java Posse</a> avec ma petite bi&egrave;re Atlassian. Une session moins dr&ocirc;le que les pr&eacute;c&eacute;dentes mais le fun est toujours l&agrave;. A noter que Chet Haase fait son entr&eacute;e dans les Java Posse apr&egrave;s le d&eacute;part d'un des membres.</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/aP36bTgg9h-Wt-Jy0litotMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Java Posse" src="https://lh6.googleusercontent.com/-DdbHydXEq-s/UKkYYvRGXcI/AAAAAAAAA8M/RyM42O9Z2Jo/s640/2012-11-15%252015.13.16.jpg" alt="Java Posse" width="640" height="360" /></a></p>
+
+
+<p>Autre session qui partait bien mais a tr&egrave;s rapidement pris le tournant de l'humour &eacute;tait la session, toujours de Chet Haase pour les <em>process</em>. Des graphiques qui ne veulent rien dire, des donn&eacute;es tr&egrave;s douteuses et une magnifique cravate, que dire &agrave; part de ne pas louper cette session sur Parley's !</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/gaybkXsfagm0n-hgPFHWK9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img class="aligncenter" style="vertical-align: baseline;" title="Chet Haase" src="https://lh3.googleusercontent.com/-aCkH47ytmck/UKkYNhVLX_I/AAAAAAAAA8E/oJh_dNOUf0Y/s640/2012-11-15%252019.06.21.jpg" alt="Chet Haase" width="640" height="360" /></a></p>
+
+
+<p>Et bien s&ucirc;r, comme &agrave; Devoxx France, les gars du London JUG avec une conf&eacute;rence <em>The Diabolical Developer</em> qui comme d'habitude ont fait le <em>show</em> !</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Chaque ann&eacute;e, on ressort de Devoxx la t&ecirc;te pleine d'infos et on attend qu'une chose : tester, ou pas, tout ce qu'on a vu en attendant l'ann&eacute;e suivante.</p>
+
+
+<p>Cette &eacute;dition 2012 aura &eacute;t&eacute; tr&egrave;s riche et je pense m&ecirc;me <em>(allez soyons fou)</em> que c'est ma meilleure ann&eacute;e de Devoxx ! En effet, en 4 ans, je n'ai jamais eu cette impression que le temps passait si vite mais surtout je n'ai eu autant de frameworks et d'outils &agrave; tester !</p>
+
+
+<p>Je vous retrouverai &agrave; <a href="http://www.dotjs.eu" target="_blank">DotJS</a> pour la plus grosse conf&eacute;rence Javascript de France !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JUG Summer Camp 2011 : Optimiser votre site Web sur mobile]]></title>
+    <link href="http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html"/>
+    <updated>2011-09-18T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/dEdSDijs-GS7IGs630GIlQ?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="JUG Summer Camp 2011" src="https://lh5.googleusercontent.com/-l_qCVT9xY7o/TnYLlD7mjqI/AAAAAAAAAz8/AXeoY6zRj6M/s800/jugsummercamp_1131.png" alt="JUG Summer Camp 2011" width="113" height="123" /></a>L'&eacute;dition 2011 du <a href="http://www.jugsummercamp.org/" target="_blank">JUG Summer Camp</a>&nbsp;de La Rochelle vient de s'achever et ce fut un tr&egrave;s bon cru ! Les sessions &eacute;taient tr&egrave;s vari&eacute;es : Java 7, Cloud, Oracle, OSGi, Dojo... mais aussi une session <a href="https://sites.google.com/site/jugsummercamp/presentations" target="_blank">Optimiser votre site Web sur mobile</a> que j'ai pr&eacute;sent&eacute;e lors de cette journ&eacute;e.</p>
+
+
+<p>Si vous avez manqu&eacute; l'&eacute;v&egrave;nement, voici un petit r&eacute;sum&eacute; sur le site de <a href="http://cfalguiere.wordpress.com/2011/09/17/le-jug-summer-camp-cest-fini-pour-cette-annee/" target="_blank">Claude Falgui&egrave;re</a>.</p>
+
+
+<p>Et, en attendant l'upload des vid&eacute;os sur <a href="http://www.parleys.com/" target="_blank">Parley's</a>, voici les slides de cette pr&eacute;sentation <em>(disponible sur <a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">slideshare</a>)</em> :</p>
+
+
+<p>&nbsp;</p>
+
+
+<div id="__ss_9307839" style="width: 510px;"><strong><a title="Optimiser votre site Web sur mobile" href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">Optimiser votre site Web sur mobile</a></strong><br />
+<object id="__sse9307839" width="510" height="426" data="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" type="application/x-shockwave-flash">
+<param name="data" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="name" value="__sse9307839" />
+<param name="allowfullscreen" value="true" />
+</object>
+<p>&nbsp;</p>
+<div style="padding: 5px 0 12px;">View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/rmat0n" target="_blank">rmat0n</a></div>
+</div>
+
+
+<p>&nbsp;</p>
+
+
+<p>Encore merci &agrave; toute l'&eacute;quipe du JUG Summer Camp <em>(Orianne, J&eacute;r&ocirc;me et tous ceux que j'oublie) </em>pour cette superbe &eacute;dition. Vivement 2012 !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web-Tambouille à Devoxx, le menu du chef !]]></title>
+    <link href="http://www.web-tambouille.fr/2010/11/09/web-tambouille-a-la-conference-devoxx.html"/>
+    <updated>2010-11-09T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2010/11/09/web-tambouille-a-la-conference-devoxx</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Devoxx 2010" src="https://lh6.googleusercontent.com/-lxPDCqAb5EM/TiWhX2jhflI/AAAAAAAAAwQ/SJMUH5HgfSM/s800/LogoDevoxx150dpi%25255B1%25255D.jpg_version%25253D1%252526modificationDate%25253D1275294792000.jpg" alt="Devoxx 2010" width="200" height="75" /></p>
+
+
+<p><a href="http://www.devoxx.com/display/Devoxx2K10/Home" target="_blank">Devoxx</a>, vous connaissez ? En quelques mots, c'est tout simplement la plus grande conf&eacute;rence Java en Europe. Voir m&ecirc;me <em>(apr&egrave;s un JavaOne assez d&eacute;cevant)</em>&nbsp;la plus grande du monde ! Elle se tiendra la semaine prochaine du Lundi 15 au Vendredi 19 Novembre &agrave; Anvers en Belgique.</p>
+
+
+<p>Et le <a href="http://www.devoxx.com/display/Devoxx2K10/Schedule" target="_blank">programme</a>&nbsp;est plus&nbsp;qu'all&eacute;chant&nbsp;: 5 jours de conf&eacute;rences, keynotes,&nbsp;<a href="http://en.wikipedia.org/wiki/Birds_of_a_Feather_(computing)" target="_blank">BOF</a>, Hands On... avec des sujets tels que Java, NoSQL, Web et bien d'autres.</p>
+
+
+<p>Malheureusement, vous ne pourrez pas &ecirc;tre pr&eacute;sent ? Rassurez-vous : <a href="../../">Web-Tambouille</a> y sera ! Et vous fera des comptes-rendus quotidiens des sessions les plus int&eacute;ressantes ainsi que du <a href="http://twitter.com/#!/webtambouille" target="_blank">live-twitting</a> sur le topic <a href="http://twitter.com/#!/search?q=%23Devoxx" target="_blank">#devoxx</a>. En esp&eacute;rant que le wifi fonctionne bien cette ann&eacute;e... Demandez le menu !</p>
+
+
+<p><!--more--></p>
+
+
+<p><strong>Entr&eacute;es<img title="Tocque" src="https://lh3.googleusercontent.com/-2vuJcg9BICI/ThmqHYT0waI/AAAAAAAAAsQ/GBlnZ5fz3Ok/s144/toque.jpg" alt="Tocque" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Cr&eacute;ation de Web Applications avec MongoDB (<a href="http://www.devoxx.com/display/Devoxx2K10/Building+Web+Applications+with+MongoDB" target="_blank">lundi</a>)</li>
+<li>Augmentation de votre productivit&eacute; avec Mylyn (<a href="http://www.devoxx.com/display/Devoxx2K10/Increasing+developer+productivity+with+Mylyn" target="_blank">lundi</a>)</li>
+<li>Plongeons dans Android (<a href="http://www.devoxx.com/display/Devoxx2K10/Dive+into+Android" target="_blank">mardi</a>)</li>
+<li>Nouveaut&eacute;s d'Hibernate avec les perspectives JPA2 (<a href="http://www.devoxx.com/display/Devoxx2K10/What's+new+in+Hibernate++a+JPA+2+perspective" target="_blank">mardi</a>)</li>
+</ul>
+
+
+<p><strong>Plats&nbsp;<img title="Fourchette" src="https://lh4.googleusercontent.com/-eoTjToOqbss/ThmqPT7l92I/AAAAAAAAAuE/00BJC9rSUbY/s144/fourchette.jpg" alt="Fourchette" width="25" /></strong></p>
+
+
+<ul>
+<li>Cr&eacute;ation de Web Applications scalable and RESTful (<a href="http://www.devoxx.com/display/Devoxx2K10/Scalable+and+RESTful+web+applications++at+the+crossroads+of+Kauri+and+Lily" target="_blank">mardi</a>)</li>
+<li>Keynote &eacute;tat du Web par les cr&eacute;ateurs d'ajaxian (<a href="http://www.devoxx.com/display/Devoxx2K10/The+State+of+the+Web" target="_blank">mercredi</a>)</li>
+<li>Informations sur JAX-RS, JEE6 et le futur (<a href="http://www.devoxx.com/display/Devoxx2K10/JAX-RS,+Java+EE+6,+and+the+future" target="_blank">mercredi</a>)</li>
+<li>D&eacute;lice de programmation fonctionnelle avec le projet Lambda (<a href="http://www.devoxx.com/display/Devoxx2K10/Project+Lambda++To+Multicore+and+Beyond" target="_blank">mercredi</a>)</li>
+<li>Farandole de nouveaut&eacute;s de Scala 2.8 (<a href="http://www.devoxx.com/display/Devoxx2K10/What's+New+in+Scala+2.8" target="_blank">mercredi</a>)</li>
+<li>Mille feuilles de Web Sockets HTML5 pour des appli web cool (<a href="http://www.devoxx.com/display/Devoxx2K10/HTML5+Websockets++A+New+World+of+Limitless,+Live,+and+Wickedly+Cool+Web+Applications" target="_blank">mercredi</a>)</li>
+<li>Android en action (<a href="http://www.devoxx.com/display/Devoxx2K10/Android+Graphics+and+Animations" target="_blank">mercredi</a>)</li>
+</ul>
+
+
+<p><strong>Desserts<img title="Dessert" src="https://lh3.googleusercontent.com/--RSZh6Jol2E/ThmqP9PmWjI/AAAAAAAAAuA/9CbRQJ0maUs/s144/gateau.jpg" alt="Dessert" width="30" height="21" /></strong></p>
+
+
+<ul>
+<li>Comparaison de frameworks Web sur JVM (<a href="http://www.devoxx.com/display/Devoxx2K10/Comparing+JVM+Web+Frameworks" target="_blank">jeudi</a>)</li>
+<li>D&eacute;clinaisons de trucs et astuces avec Android (<a href="http://www.devoxx.com/display/Devoxx2K10/Android+UI+Development++Tips,+Tricks,+and+Techniques" target="_blank">jeudi</a>)</li>
+<li>Live des JavaPosse ! (<a href="http://www.devoxx.com/display/Devoxx2K10/JavaPosse+Live" target="_blank">jeudi</a>)</li>
+<li>Duo fondant de Web Sockets et JSF (<a href="http://www.devoxx.com/display/Devoxx2K10/WebSockets+meet+JavaServer+Faces" target="_blank">vendredi</a>)</li>
+</ul>
+
+
+<p>Rendez-vous lundi matin pour une premi&egrave;re mise en bouche <img style="border: 0px initial initial;" title="Surprised" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-surprised.gif" alt="Surprised" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Retour sur le WebWorkersCamp10]]></title>
+    <link href="http://www.web-tambouille.fr/2010/10/31/retour-sur-le-webworkerscamp10.html"/>
+    <updated>2010-10-31T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2010/10/31/retour-sur-le-webworkerscamp10</id>
+    <content type="html"><![CDATA[<p><a class="lightbox" href="https://lh4.googleusercontent.com/-exE3wUUeICw/ThmqIOdWhZI/AAAAAAAAAsY/pzOQ0zfj6mk/s800/webworkercamp_af83.jpg"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" src="https://lh4.googleusercontent.com/-exE3wUUeICw/ThmqIOdWhZI/AAAAAAAAAsY/pzOQ0zfj6mk/s800/webworkercamp_af83.jpg" alt="af83" width="200" height="267" /></a>Pour le premier billet de web-tambouille, rien de mieux qu'un retour&nbsp;de la journ&eacute;e <a href="http://barcamp.org/WebWorkersCamp10" target="_blank">WebWorkersCamp10</a>, un Barcamp orient&eacute; Web et Javascript,&nbsp;organis&eacute; &agrave; La Cantine par&nbsp;<span style="color: #000000;"><a href="http://dev.af83.com/barcamp/webworkerscamp10-paris-2930-octobre-2010/2010/09/22" target="_blank">af83</a>.&nbsp;</span>Cet &eacute;v&egrave;nement s'est d&eacute;roul&eacute; hier, samedi 30 octobre, et nous a tenu en haleine toute la journ&eacute;e avec des sessions toutes plus int&eacute;ressantes les unes que les autres.</p>
+
+
+<p>D&egrave;s l'arriv&eacute;e, petite session amusante de s&eacute;lection d'auto-collants &agrave; se r&eacute;partir entre nous : un avec notre nom et plusieurs autres avec diff&eacute;rentes technologies. Pas de r&egrave;gles, on colle ce que l'on veut ! Ces auto-collants sont tr&egrave;s vari&eacute;s : Firefox, Unbuntu, Cassandra, Redis ou bien encore Python. Il y en a pour tous les go&ucirc;ts ! Pour ma part : Scala, CouchDB, Riak, Node et Hadoop. Vraiment tout et n'importe quoi comme s&eacute;lection n'est-ce pas <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p><!--more--></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Vient le moment d'&eacute;crire au tableau les sujets dont on veut parler ou sur lesquels on souhaiterait &eacute;changer :</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-YKd8Igd6Pn8/ThmqIesOUpI/AAAAAAAAAsg/Cs3QXU-KWbo/s800/webworkercamp_tableau.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh5.googleusercontent.com/-YKd8Igd6Pn8/ThmqIesOUpI/AAAAAAAAAsg/Cs3QXU-KWbo/s800/webworkercamp_tableau.jpg" alt="Tableau matin" width="500" height="375" /></a></p>
+
+
+<p>Et on se retrouve avec des sessions toutes plus int&eacute;ressantes les unes que les autres : OAuth, Rest Mongo, RX OS, Sproutwit, Dispatch, Unhosted, MapReduce et Montgrel 2.</p>
+
+
+<p><strong>OAuth</strong></p>
+
+
+<p>Ma premi&egrave;re session, <a href="http://fr.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a>, est un retour sur ce qu'est ce protocole d'authentification avec l'exemple de Twitter. L'id&eacute;e est simple : prenons l'exemple de Facebook. Lors de notre premi&egrave;re connexion, Facebook nous demande entre autres de saisir directement sur son site notre login/password GMail si l'on souhaite importer nos contacts GMail dans Facebook. La fonctionnalit&eacute; est bonne, ce qui n'est pas le cas de l'impl&eacute;mentation. En effet, vous avez tout simplement fourni vos&nbsp;identifiants&nbsp;GMail &agrave; Facebook qui a donc acc&egrave;s &agrave; tous vos comptes Google ! Niveau trou de s&eacute;curit&eacute; c'est pas mal du tout...</p>
+
+
+<p>Alors qu'avec Twitter, une application tierce souhaitant acc&eacute;der &agrave; nos donn&eacute;es Twitter ne nous demandera jamais nos identifiants directement. En effet, l'application ne fera que demander un acc&egrave;s aux API Twitter. Nous sommes alors redirig&eacute;s vers le site de Twitter sur une page nous demandant de nous identifier et d'autoriser ou non cette application &agrave; acc&eacute;der &agrave; nos donn&eacute;es. Certes, nous devons toujours nous authentifier mais cette fois-ci nous le faisons directement sur le site de Twitter et l'application externe ne connait absolument notre login/password. Si nous autorisons l'application tierce &agrave; acc&eacute;der &agrave; nos donn&eacute;es, Twitter renvoie un <em>Access Token</em> qui permettra &agrave; l'application tierce de taper sur les API Twitter. D&egrave;s lors que nous ne souhaitons refuser l'acc&egrave;s de nos donn&eacute;es &agrave; cette application, il suffit de retourner sur Twitter et d'invalider l'acc&egrave;s<em> (revoke access) </em>de cette application.</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-metia5yc_Dw/ThmqHgH1McI/AAAAAAAAAsU/_BlSdvFOmIs/s800/webworkercamp_oauth.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh5.googleusercontent.com/-metia5yc_Dw/ThmqHgH1McI/AAAAAAAAAsU/_BlSdvFOmIs/s800/webworkercamp_oauth.jpg" alt="Web Workers Camp 10 OAuth" width="500" height="375" /></a></p>
+
+
+<p>Simple en pratique, les premiers retours sont que les &amp;eacufte;changes r&eacute;seaux sont plus nombreux mais surtout qu'un simple token non sign&eacute; ne suffit pas pour avoir une s&eacute;curit&eacute; optimale. L'id&eacute;al serait que, pour acc&eacute;der aux API, ce token soit sign&eacute; et qu'un transfert HTTPS se fasse. Ainsi, c&ocirc;t&eacute; API, Twitter pourra confirmer que l'application entrante est bien celle qui poss&egrave;de cette cl&eacute;. En effet, on s'expose toujours &agrave; un vol de cl&eacute;, en&nbsp;l'occurrence&nbsp;un vol de notre <em>Access Token.</em>&nbsp;Ce sera le cas avec <a href="http://hueniverse.com/2010/05/introducing-oauth-2-0/" target="_blank">OAuth 2</a>. Le mot de la fin : la s&eacute;curit&eacute;, c'est surtout une histoire d'impl&eacute;mentation <em>(bonne ou mauvaise)</em> ! L'heure &eacute;tant pass&eacute;e tr&egrave;s vite, nous n'avons pas eu le temps de regarder de plus pr&egrave;s OpenID, Salmon et OStatus, ce qui laisse une belle ouverture pour approfondir le sujet chez soi.</p>
+
+
+<p><strong>Sproutwit</strong></p>
+
+
+<p>Petite session de code avec la cr&eacute;ation from scratch <em>(mais avec quelques copier-coller quand m&ecirc;me)</em> d'un client Web Twitter. Les technologies : framework&nbsp;<a href="http://www.sproutcore.com/" target="_blank">Sproutcore</a>, base de donn&eacute;es <a href="http://www.sqlite.org/" target="_blank">SQLite</a> le tout tournant sur du <a href="http://nodejs.org/" target="_blank">Node</a>. Un tr&egrave;s bonne pr&eacute;sentation qui donne vraiment envie de regarder Sproutcore : cr&eacute;ation d'un squelette de projet en une ligne, cr&eacute;ation &agrave; la vol&eacute;e de m&eacute;ta-propri&eacute;t&eacute;s lors de requ&ecirc;tes en base, propri&eacute;t&eacute;s cachables avec gestion de l'&eacute;viction, composant haut niveau<em> (liste lazy load&eacute;e selon les &eacute;l&eacute;ments visibles, lancement des requ&ecirc;tes ajax selon la scrollbar)</em>...</p>
+
+
+<p>Une fois le d&eacute;veloppement termin&eacute;, Sproutcore g&eacute;n&egrave;re un fichier HTML, un JS et un CSS et toute l'application est ainsi servie en statique ! Il est possible de lazy-loader des parties du site pour ne pas avoir &agrave; charger tout d'un seul coup. A noter qu'une fois de plus Node est utilis&eacute; pour le d&eacute;veloppement, le r&eacute;sultat final &eacute;tant une suite de fichiers statiques pouvant &ecirc;tre d&eacute;ploy&eacute;s sur n'importe quel type de serveur. Donc toujours pas de Node en prod<em> (m&ecirc;me si certains &eacute;voquaient cette possibilit&eacute; dans les mois &agrave; venir)</em> ! Une session vraiment sympa.</p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/-N17cuoXt5kU/ThmqIAf6FyI/AAAAAAAAAsc/dUj01XMA8Fw/s800/webworkercamp_sproutcore.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh4.googleusercontent.com/-N17cuoXt5kU/ThmqIAf6FyI/AAAAAAAAAsc/dUj01XMA8Fw/s800/webworkercamp_sproutcore.jpg" alt="Web Workers Camp 10 Sproutcore" width="500" height="283" /></a></p>
+
+
+<p><strong>Dispatch</strong></p>
+
+
+<p>Petite pr&eacute;sentation d'une librairie en cours de d&eacute;veloppement qui permet de g&eacute;rer une pile d'&eacute;v&egrave;nements sur un serveur NodeJS <em>(qui pour rappel ne fonctionne qu'avec un seul thread)</em>. 2 types de piles sont impl&eacute;ment&eacute;es : la LinearQueue et la ConcurrentQueue. Exemple avec une ConcurrentQueue :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">aTask</span> <span class="o">=</span> <span class="nx">dispatch</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">workHard</span><span class="p">();</span> <span class="p">});</span>
+</span><span class='line'><span class="nx">aTask</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">complete</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="nx">callback</span><span class="p">);</span>
+</span><span class='line'><span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">aTask</span><span class="p">);</span>
+</span><span class='line'><span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{});</span>
+</span><span class='line'><span class="nx">queue</span><span class="p">.</span><span class="nx">suspend</span><span class="p">();</span>
+</span><span class='line'><span class="nx">queue</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
+</span><span class='line'><span class="nx">println</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">My</span> <span class="nx">queue</span> <span class="nx">has</span> <span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">+</span><span class="nx">queue</span><span class="p">.</span><span class="nx">concurrency_count</span><span class="p">()</span><span class="o">+&amp;</span><span class="nx">ldquo</span><span class="p">;</span> <span class="nx">tasks</span><span class="p">.</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Il est ainsi possible de contr&ocirc;ler les appels. Exemple : Google Translate limite les appels avec un trop grand nombre de mots &agrave; traduire ce qui peut tr&egrave;s vite &ecirc;tre bloquant pour une application tierce. Avec ces piles, on peut limiter les appels, les retarder ou les relancer&nbsp;ult&eacute;rieurement. La librairie &eacute;tant en d&eacute;veloppement, plusieurs id&eacute;es ont surgies de toutes part comme la&nbsp;possibilit&eacute;&nbsp;de faire un noeud Node sp&eacute;cifique qui ne contiendrait que ces piles. Ainsi, tous les autres noeuds applicatifs taperaient sur ce noeud pour r&eacute;cup&eacute;rer les t&acirc;ches &agrave; effectuer et l'instance Node de la pile n'a pas de r&eacute;plication d'&eacute;v&egrave;nements &agrave; g&eacute;rer, elle est standalone et g&egrave;re elle-m&ecirc;me ses &eacute;v&egrave;nements comme bon lui semble. Wait &amp; see...</p>
+
+
+<p>Pause pizzas / cocas <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />&nbsp;et programme de l'apr&egrave;s-midi :</p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/-RllshxhlT-g/ThmqIylHhoI/AAAAAAAAAsk/PJIyxS2wTYY/s800/webworkercamp_tableau_2.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh4.googleusercontent.com/-RllshxhlT-g/ThmqIylHhoI/AAAAAAAAAsk/PJIyxS2wTYY/s800/webworkercamp_tableau_2.jpg" alt="Web Workers Camp 10 Tableau apr&egrave;s midi" width="500" height="375" /></a></p>
+
+
+<p><strong>Designing REST API</strong></p>
+
+
+<p>Pr&eacute;sentation au format <a href="http://www.html5rocks.com/" target="_blank">HTML5</a> de <a href="http://twitter.com/jeremi" target="_blank">J&eacute;r&eacute;mi Joslin</a> de chez Exo sur le design d'API REST avec entre autres : pourquoi faire des API, qu'est-ce qu'une ressource REST, les diff&eacute;rents verbes HTTP, les codes d'erreurs, gestion de l'authentification, exemples d'API avec Twitter, Facebook, Google Buzz... Id&eacute;al pour d&eacute;couvrir ou approfondir REST.</p>
+
+
+<p><strong>ParisJS !!!</strong></p>
+
+
+<p>Il est grand temps qu'un Javascript User Group se monte sur Paris : ce sera le ParisJS ! Un google-group est en cours de cr&eacute;ation, l'objectif &eacute;tant de regrouper tous les &eacute;v&egrave;nements Javascript &agrave; un seul endroit. Une tr&egrave;s bonne initiative car entre les JSMeetUp, les JSCamp et les WebWorkersCamp ce n'est pas facile de s'y retrouver <img title="Undecided" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-undecided.gif" border="0" alt="Undecided" /></p>
+
+
+<p><strong>20 projets en 40... en fait 20 minutes</strong></p>
+
+
+<p>Excellente pr&eacute;sentation sur un format <a href="http://fr.wikipedia.org/wiki/Pecha_Kucha" target="_blank">Pecha Kucha</a> un peu adapt&eacute; puisque les slides &eacute;taient d'un peu moins d'une minute <em>(au lieu des 20 secondes id&eacute;ales)</em> :</p>
+
+
+<ul>
+<li><a href="http://github.com/spk/validate-website">validate-website</a>, un web crawler de validation de site web</li>
+<li><a href="http://github.com/acaudwell/Gource" target="_blank">gource</a>, votre repository en vid&eacute;o</li>
+<li><a href="http://betterthangrep.com/" target="_blank">ACK</a>, un grep en 3 lettres <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></li>
+<li><a href="http://freshmeat.net/projects/dstat/" target="_blank">Dstat</a></li>
+<li><a href="http://pygments.org/" target="_blank">pygments</a>, coloration syntaxique</li>
+<li><a href="http://jonls.dk/redshift/" target="_blank">Redshift</a>, faites du bien &agrave; vos yeux !</li>
+<li><a href="http://dailystamp.com/" target="_blank">DailyStamp</a>, tamponnez chaque jour travaill&eacute; pour obtenir un gros score</li>
+<li><a href="http://www.elasticsearch.com/" target="_blank">ElasticSearch</a>, un search engine sur le cloud</li>
+<li><a href="http://www.zeromq.org/" target="_blank">ZeroMQ</a></li>
+<li><a href="http://github.com/SPORE/api-description" target="_blank">Spore / api-description</a></li>
+<li><a href="http://htty.github.com/" target="_blank">Htty</a>, une console de requ&ecirc;tes HTTP</li>
+<li><a href="http://codebutler.github.com/firesheep/" target="_blank">Firesheep</a>, no comment...</li>
+<li><a href="http://www.iamcal.com/png-store/" target="_blank">PNGStore</a>, JS et CSS dans un PNG</li>
+<li><a href="http://pmt.sourceforge.net/pngcrush/" target="_blank">PNGCrush</a>, r&eacute;duisez la taille de vos PNG</li>
+<li><a href="http://vaporjs.com/" target="_blank">vapor.js</a>, juste g&eacute;nial ! je fork de suite <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></li>
+<li><a href="http://www.testswarm.com/" target="_blank">TestSwarm</a>, cloud testing multi browsers multi OS</li>
+<li><a href="http://github.com/cloudhead/vows">Vows</a>, CI pour Node</li>
+<li><a href="http://socket.io/" target="_blank">SocketIO</a>, gestion des impl&eacute;mentations Web Socket pour vous (multi browsers)</li>
+<li><a href="http://github.com/github/gollum/">Gollum</a>, le wiki de github</li>
+<li><a href="http://github.com/slainer68/cockatoo" target="_blank">Cockatoo</a></li>
+</ul>
+
+
+<p>Pari tenu, plein de petites choses &agrave; tester.<br /> Une derni&egrave;re session id&eacute;ale pour apprendre et pour rire !</p>
+
+
+<p><strong>Conclusion</strong></p>
+
+
+<p>Une journ&eacute;e vraiment sympa, enrichissante et tr&egrave;s conviviale avec plein de geeks ! Et &ccedil;a fait plaisir.</p>
+
+
+<p>Un grand merci &agrave; af83 et &agrave; <a href="http://twitter.com/oripekelman" target="_blank">Ori Pekelman</a> pour cette journ&eacute;e, vivement la prochaine !</p>
+
+]]></content>
+  </entry>
+  
+</feed>

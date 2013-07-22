@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Mobile | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/mobile/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Devoxx France 2012 : vidéo, slides et feedback !]]></title>
+    <link href="http://www.web-tambouille.fr/2012/05/29/devoxx-france-2012-video-slides-et-feedback-optimiser-votre-site-web-sur-mobile.html"/>
+    <updated>2012-05-29T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2012/05/29/devoxx-france-2012-video-slides-et-feedback-optimiser-votre-site-web-sur-mobile</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/YwpW-Mxm5xKuw4PQUqusENMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="margin-left: 10px; margin-bottom: 10px; float: right;" title="Devoxx France" src="https://lh6.googleusercontent.com/-9F1gvUwxYlw/T24C2YvqelI/AAAAAAAAA2w/dsL1f2uKJhg/s288/devox-blog-home.png" alt="Devoxx France" width="288" height="122" /></a>Le temps passe vite : Devoxx France, c'&eacute;tait d&eacute;j&agrave; il y a un mois... Pour ceux qui auraient loup&eacute; l'&eacute;v&egrave;nement : c'est tout simplement la plus grande conf&eacute;rence fran&ccedil;aise sur Java, sur 3 jours, avec des talks de qualit&eacute; mais aussi de nombreuses rencontres <em>off</em> entre les confs avec plein de geeks.</p>
+
+
+<p>Je me souviendrai longtemps de ce premier Devoxx France, et ce malgr&eacute; 3 d&eacute;placements en Belgique pour le Devoxx <em>original</em>, car j'ai eu la chance d'&ecirc;tre choisi pour une conf&eacute;rence sur l'Optimisation de site Web mobile ! C'est quand m&ecirc;me quelque chose de monter sur l'estrade <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>En attendant l'&eacute;dition 2013 <em>(avec une tr&egrave;s grande impatience)</em>, voici la vid&eacute;o et les slides de mon talk<em> (mis &agrave; jour pour l'occasion)</em>&nbsp;ainsi qu'un petit feedback.</p>
+
+
+<p><!--more--></p>
+
+
+<h3>Vid&eacute;o</h3>
+
+
+<p>La vid&eacute;o est disponible sur <a href="http://www.parleys.com/" target="_blank">Parley's</a>. Moyennant un petit abonnement annuel, vous pourrez revoir tous les talks de Devoxx France mais pas seulement : vous avez aussi acc&egrave;s &agrave; tous les talks pr&eacute;c&eacute;dents de Devoxx <em>(Belgique)</em>, de nombreux JUG et bien plus encore ! Alors allez-y, cela vaut vraiment le coup.</p>
+
+
+<p>
+<object width="750" height="380" data="http://www.parleys.com/dist/share/parleysshare.swf" type="application/x-shockwave-flash">
+<param name="data" value="http://www.parleys.com/dist/share/parleysshare.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="wmode" value="direct" />
+<param name="bgcolor" value="#222222" />
+<param name="flashVars" value="sv=true&amp;pageId=3273" />
+<param name="src" value="http://www.parleys.com/dist/share/parleysshare.swf" />
+<param name="flashvars" value="sv=true&amp;pageId=3273" />
+<param name="allowfullscreen" value="true" />
+</object>
+</p>
+
+
+<p>&nbsp;</p>
+
+
+<h3>Slides</h3>
+
+
+<p>Comme d'habitude, tout est disponible sur slideshare. La pr&eacute;sentation est d&eacute;coup&eacute;e en 3 parties, voici les liens :</p>
+
+
+<ul>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-1-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-1-sur-3</a></li>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-2-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-2-sur-3</a></li>
+<li><a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-3-sur-3" target="_blank">http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile-devoxx-france-2012-partie-3-sur-3</a></li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<h3>Feedback</h3>
+
+
+<p>J'ai beaucoup appr&eacute;ci&eacute; la pr&eacute;sentation de <a href="http://twitter.com/#!/josepaumard" target="_blank">Jos&eacute; Paumard</a> en universit&eacute; <em>(<a href="http://www.devoxx.com/pages/viewpage.action?pageId=6128004" target="_blank">De Runnable et synchronized &agrave; parallel() et atomically()</a>)</em>, technique et tr&egrave;s bien expliqu&eacute;e.</p>
+
+
+<p>C&ocirc;t&eacute; tools in action, je retiens <a href="http://www.devoxx.com/pages/viewpage.action?pageId=6128101" target="_blank">Pratiquer DD en un &eacute;clair</a> d'<a href="https://twitter.com/#!/ulrich" target="_blank">Urich Vachon</a>,&nbsp;qui m'a vraiment donn&eacute; envie d'essayer <a href="http://fornax.itemis.de/confluence/display/fornax/Sculptor+(CSC)" target="_blank">Sculptor</a>,&nbsp;mais aussi <a href="http://www.devoxx.com/display/FR12/Chouchoutez+votre+code+JavaScript" target="_blank">Romain Linsolas</a> pour <a href="http://www.devoxx.com/display/FR12/Chouchoutez+votre+code+JavaScript" target="_blank">Chouchoutez votre code javascript</a>.</p>
+
+
+<p>Pour les conf&eacute;rences, je vous conseille&nbsp;<a href="http://www.devoxx.com/display/FR12/Manipulation+de+bytecode+++democratisons+la+magie+noire" target="_blank">Manipulation de bytecode : d&eacute;mocratisons la magie noire</a> par <a href="http://twitter.com/#!/jponge" target="_blank">Julien Ponge</a> et <a href="https://twitter.com/#!/flemouel" target="_blank">Fr&eacute;d&eacute;ric Le Mouel</a>,&nbsp;<a href="http://www.devoxx.com/display/FR12/Pour+une+fois+soyons+physique%21+Une+introduction+a+Arduino." target="_blank">Pour une fois soyons physique! Une introduction &agrave; Arduino</a> par <a href="http://twitter.com/#!/delabassee" target="_blank">David Delabass&eacute;e</a>&nbsp;et bien s&ucirc;r les <em>keynotes</em> de <a href="https://twitter.com/#!/chanezon" target="_blank">Patrick Chanezon</a> et <a href="https://twitter.com/#!/neal4d" target="_blank">Neal Ford</a> qui ont respectivement pr&eacute;sent&eacute; <a href="http://www.devoxx.com/display/FR12/Portrait+du+developpeur+en+The+Artist" target="_blank">Portrait du d&eacute;veloppeur en "The Artist"</a> et <a href="http://www.devoxx.com/display/FR12/Abstraction+Distractions+for+France" target="_blank">Abstraction Distractions</a>.</p>
+
+
+<p>Et bien s&ucirc;r, un petit tour de temps en temps pour voir <a href="https://twitter.com/#!/morlhon" target="_blank">Jean-Laurent De Morlhon</a>, <a href="https://twitter.com/#!/dgageot" target="_blank">David Gageot</a>,&nbsp;<a href="http://sebastian.lemerdy.free.fr/" target="_blank">Sebastian Le Merdy</a> et&nbsp;<a href="https://twitter.com/#!/ericlemerdy" target="_blank">Eric Le Merdy</a>&nbsp;pour <a href="http://www.code-story.net/" target="_blank">Code Story</a>&nbsp;avec le d&eacute;veloppement d'une application en 2 jours,&nbsp;une exp&eacute;rience &agrave; renouveler d'urgence.</p>
+
+
+<p>Au final, une seule chose &agrave; retenir : &agrave; l'ann&eacute;e prochaine <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JUG Summer Camp 2011 : Optimiser votre site Web sur mobile]]></title>
+    <link href="http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides.html"/>
+    <updated>2011-09-18T00:00:00+02:00</updated>
+    <id>http://www.web-tambouille.fr/2011/09/18/optimiser-votre-site-web-sur-mobile-jug-summer-camp-2011-slides</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/dEdSDijs-GS7IGs630GIlQ?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="JUG Summer Camp 2011" src="https://lh5.googleusercontent.com/-l_qCVT9xY7o/TnYLlD7mjqI/AAAAAAAAAz8/AXeoY6zRj6M/s800/jugsummercamp_1131.png" alt="JUG Summer Camp 2011" width="113" height="123" /></a>L'&eacute;dition 2011 du <a href="http://www.jugsummercamp.org/" target="_blank">JUG Summer Camp</a>&nbsp;de La Rochelle vient de s'achever et ce fut un tr&egrave;s bon cru ! Les sessions &eacute;taient tr&egrave;s vari&eacute;es : Java 7, Cloud, Oracle, OSGi, Dojo... mais aussi une session <a href="https://sites.google.com/site/jugsummercamp/presentations" target="_blank">Optimiser votre site Web sur mobile</a> que j'ai pr&eacute;sent&eacute;e lors de cette journ&eacute;e.</p>
+
+
+<p>Si vous avez manqu&eacute; l'&eacute;v&egrave;nement, voici un petit r&eacute;sum&eacute; sur le site de <a href="http://cfalguiere.wordpress.com/2011/09/17/le-jug-summer-camp-cest-fini-pour-cette-annee/" target="_blank">Claude Falgui&egrave;re</a>.</p>
+
+
+<p>Et, en attendant l'upload des vid&eacute;os sur <a href="http://www.parleys.com/" target="_blank">Parley's</a>, voici les slides de cette pr&eacute;sentation <em>(disponible sur <a href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">slideshare</a>)</em> :</p>
+
+
+<p>&nbsp;</p>
+
+
+<div id="__ss_9307839" style="width: 510px;"><strong><a title="Optimiser votre site Web sur mobile" href="http://www.slideshare.net/rmat0n/optimiser-votre-site-web-sur-mobile" target="_blank">Optimiser votre site Web sur mobile</a></strong><br />
+<object id="__sse9307839" width="510" height="426" data="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" type="application/x-shockwave-flash">
+<param name="data" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" />
+<param name="src" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=optimisationsitewebmobilesmaller-110918102052-phpapp02&amp;stripped_title=optimiser-votre-site-web-sur-mobile&amp;userName=rmat0n" />
+<param name="name" value="__sse9307839" />
+<param name="allowfullscreen" value="true" />
+</object>
+<p>&nbsp;</p>
+<div style="padding: 5px 0 12px;">View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/rmat0n" target="_blank">rmat0n</a></div>
+</div>
+
+
+<p>&nbsp;</p>
+
+
+<p>Encore merci &agrave; toute l'&eacute;quipe du JUG Summer Camp <em>(Orianne, J&eacute;r&ocirc;me et tous ceux que j'oublie) </em>pour cette superbe &eacute;dition. Vivement 2012 !</p>
+
+]]></content>
+  </entry>
+  
+</feed>

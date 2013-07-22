@@ -1,0 +1,792 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='true' name='MSSmartTagsPreventParsing' />
+  <title>Programmation fonctionnelle en Javascript - Web Tambouille</title>
+  <meta name="author" content="Romain MATON (rmat0n)">
+
+  
+  <meta name="description" content="Programmation fonctionnelle en Javascript Cat&eacute;gorie : Language | 11 janvier 2011 | Tags :&nbsp; Fonctionnelle, Javascript Parmi les sujets &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html">
+  <link href="/web-tambouille/favicon.gif" rel="icon">
+  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
+
+  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  
+<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({
+    publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
+    st_title: "Programmation fonctionnelle en Javascript",
+    st_url: "/web-tambouille"
+  });
+</script>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+
+  $(document).ready(function () {
+    $('a.lightbox').lightBox({
+      imageLoading: '/static/images/lightbox-ico-loading.gif',
+      imageBtnClose: '/static/images/lightbox-btn-close.gif',
+      imageBtnPrev: '/static/images/lightbox-btn-prev.gif',
+      imageBtnNext: '/static/images/lightbox-btn-next.gif',
+      imageBlank: '/static/images/lightbox-blank.gif'
+    });
+  });
+  /* ]]> */
+</script>
+
+</head>
+
+<body >
+<div class='navbar section' id='navbar'>
+  <div class='widget Navbar' id='Navbar1'>
+    <div></div>
+  </div>
+</div>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+      <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main (ir a principal) </a> |
+        <a href='#sidebar'>skip to sidebar (ir al sidebar)</a>
+      </span>
+    <div class='crosscol section' id='pages'>
+  <div class='widget PageList' id='PageList1'>
+    <h2>Pages</h2>
+
+    <div class='widget-content'>
+      <ul class="main-navigation">
+        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li style="float:right; padding-right:0px; line-height:12px;">
+          <style>
+            .google_translate img {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1.0;
+              opacity: 1.0;
+              border: 0;
+            }
+
+            .google_translate:hover img {
+              filter: alpha(opacity=30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+
+            .google_translatextra:hover img {
+              filter: alpha(opacity=0.30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+          </style>
+          <div>
+            <a class="google_translate" href="#" title="French" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cfr&hl=en';"><img alt="French" border="0" align="absbottom" title="French" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBrDZLrI/AAAAAAAAAC0/Kc6eDMT9LFI/s200/France.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="English" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cen&hl=en';"><img alt="English" border="0" align="absbottom" title="English" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBORD9bI/AAAAAAAAACs/XkaLmmin4zg/s200/United+Kingdom(Great+Britain).png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="German" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cde&hl=en';"><img alt="German" border="0" align="absbottom" title="German" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YVBzoFF2I/AAAAAAAAAC8/WgvMK3zP1Rk/s200/Germany.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Spain" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Ces&hl=en';"><img alt="Spain" border="0" align="absbottom" title="Spain" height="24" src="http://3.bp.blogspot.com/_5jbh95HruKA/S1YVCdHp5VI/AAAAAAAAADE/lWHzr5znExU/s200/Spain.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Italian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cit&hl=en';"><img alt="Italian" border="0" align="absbottom" title="Italian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVCskNubI/AAAAAAAAADM/ChdHC6vYT4s/s200/Italy.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Russian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cru&hl=en';"><img alt="Russian" border="0" align="absbottom" title="Russian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YWR-jg9pI/AAAAAAAAADc/vYZrPOzazHU/s200/Russian+Federation.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Japanese" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cja&hl=en';"><img alt="Japanese" border="0" align="absbottom" title="Japanese" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YWSR2_wYI/AAAAAAAAADs/GtKdPLKUluE/s200/Japan.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+          </div>
+        </li>
+      </ul>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='header-wrapper'>
+  <div class='header section' id='header'>
+    <div class='widget Header' id='Header1'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            Web Tambouille
+          </h1>
+        </div>
+        <div class='descriptionwrapper'>
+          <p class='description'><span>Java, Scala, Web, Android, HTML5, JS, NoSQL et bien d'autres !</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='twitter_div'>
+  <ul id='twitter_update_list'>
+    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+  </ul>
+</div>
+<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
+<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
+
+    <div id="content-wrapper">
+      <div id="main-wrapper">
+        <div class='main section' id='main'>
+          <div class='widget Blog' id='Blog1'>
+            <div class='blog-posts hfeed'>
+              <div class='post clearfix hentry uncustomized-post-template'>
+  
+<div class='clearfix'>
+  <div class='postmetahd'>
+    <h2 class='post-title entry-title single-post'>
+      
+        Programmation fonctionnelle en Javascript
+      
+    </h2>
+    <p class='post-header-line-1'>
+      <span class='st_twitter_hcount' style="float: right;" displayText='Tweet'></span>
+      <span class='st_plusone_hcount' style="float: right;" displayText='Google +1'></span>
+      <span class='post-author vcard'>
+
+<span class='fn'>
+  Cat&eacute;gorie :
+  
+    <a class='category' href='/web-tambouille/categories/language/'>Language</a>
+  
+</span>
+
+</span> |
+      <span class='date-header'>
+
+
+
+
+
+
+
+
+  <time datetime="2011-01-11T00:00:00+01:00" pubdate data-updated="true">11 janvier 2011</time>
+
+
+
+</span> |
+      <span class='post-labels'>
+
+Tags :&nbsp;
+<span class='post-labels'>
+  
+    <a class='tag' href='/web-tambouille/tags/fonctionnelle/'>Fonctionnelle</a>, <a class='tag' href='/web-tambouille/tags/javascript/'>Javascript</a>
+  
+</span>
+
+</span>
+    </p>
+  </div>
+</div>
+
+
+<div id="post" class='post-body entry-content'>
+  
+    <p><a href="https://picasaweb.google.com/lh/photo/nMrNHG_1l1y3WohchX2EKA?feat=embedwebsite"><img style="float: right; margin: 10px;" src="https://lh4.googleusercontent.com/-Il3aKnteYJY/ThmqRC_eSXI/AAAAAAAAAuk/d1gwQ4AkEeY/s800/logo_programmation_fonctionnelle.jpg" alt="Programmation Fonctionnelle" width="100" height="100" /></a>Parmi les sujets qui nous ont occup&eacute;s en 2010, je retiendrai une fois de plus l&#8217;int&eacute;r&ecirc;t croissant des grands du Web pour la <a href="http://fr.wikipedia.org/wiki/Programmation_fonctionnelle" target="_blank">Programmation Fonctionnelle</a>&nbsp;<em>(Scala, F#&#8230;)</em>. Un paradigme qui, s&#8217;il est bien appliqu&eacute;, permet d&#8217;avoir un code compl&egrave;tement r&eacute;utilisable gr&acirc;ce aux objets immutables <em>(pas de modification ni de partage d&#8217;&eacute;tat)</em>, aux fonctions en tant que type <em>(String, Integer et maintenant Function)</em>&#8230; mais aussi de construire des applications hautement disponibles. Pour une introduction de la programmation fonctionnelle, je vous renvoie vers l&#8217;excellent article sur <a href="http://www.haskell.org/haskellwiki/Functional_programming" target="_blank">haskell.org</a>.</p>
+<p>Mais ce ne sont pas que les grands du Web qui en auront besoin, en effet nos architectures orient&eacute;e web ou WOA&nbsp;<em>(Web Oriented Architecture)</em> vont aussi avoir besoin de la programmation fonctionnelle et cette <a href="http://www.zengularity.com/item/1519646134/functional-web-functional-programing-for-web" target="_blank">vid&eacute;o</a> nous le prouve. De plus en plus de services sont disponibles sur internet <em>(accessibles notamment via REST) </em>et cr&eacute;er ou transformer une donn&eacute;e avant de l&#8217;envoyer en tant que param&egrave;tre de service va &ecirc;tre une habitude &agrave; prendre tr&egrave;s rapidement. Et en effet, la transformation d&#8217;un format de donn&eacute;es vers un autre est aussi une des forces de la programmation fonctionnelle.</p>
+<p>Une question se pose alors : mais comment va t-on faire pour apprendre &agrave; &eacute;crire fonctionnellement et ainsi &ecirc;tre pr&ecirc;t quand ces langages fonctionnelles auront balay&eacute; des entreprises Java et Ruby <em>(XD)</em> ?<br /> Pas de panique et surtout pas la peine de passer les 6 prochains mois &agrave; apprendre et maitriser ces langages sur votre temps de sommeil, la solution tient en un mot : <a href="http://fr.wikipedia.org/wiki/JavaScript" target="_blank">Javascript</a> !</p>
+<p>Nous allons voir comment &eacute;crire un code de mani&egrave;re fonctionnelle en Javascript  ou plut&ocirc;t comment transformer un code Javascript de tous les jours en  code Javascript fonctionnelle. Et pour r&eacute;pondre &agrave; cette question, cette  article s&#8217;appuiera sur quelques exemples rencontr&eacute;s sur le terrain et ainsi vous prouver que d&egrave;s maintenant, dans vos applications d&#8217;entreprise, vous pouvez vous entra&icirc;ner &agrave; programmer  de mani&egrave;re fonctionnelle et ne pas vous apitoyer sur votre sort car vous  ne fa&icirc;tes pas de Scala ;-)</p>
+<p><!--more--></p>
+<p>Car oui, m&ecirc;me si Javascript est sur le papier un langage objet &agrave; prototype, vous allez quand m&ecirc;me pouvoir coder de mani&egrave;re fonctionnelle. En effet, les pr&eacute;-requis &agrave; un langage fonctionnelle sont respect&eacute;s : pouvoir avoir une <em>fonction</em> comme type de classe et ainsi pouvoir passer des fonctions en param&egrave;tre de m&eacute;thode.</p>
+<h3>It&eacute;ration (map, fold, some&#8230;)</h3>
+<p>Voici un premier exemple de validation d&#8217;un champ. Ce code v&eacute;rifie que le protocole fourni est bien soit <span style="font-family: courier new,courier;">http</span> soit <span style="font-family: courier new,courier;">ftp</span>, la liste n&#8217;&eacute;tant pas arr&ecirc;t&eacute;e.<br /> Bien &eacute;videmment, je ne triche pas et je reprends tel que le code original sans optimisation et pour cause : c&#8217;est tr&egrave;s souvent ce type de code que l&#8217;on retrouve chez nos clients.<br /> La premi&egrave;re fonction est la version originale et la seconde est la version orient&eacute;e fonctionnelle.</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/** Before fp. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">validProtocol</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">availableProtocols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;ftp&quot;</span><span class="p">];</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">availableProtocols</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="nx">availableProtocols</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">protocolLength</span> <span class="o">=</span> <span class="nx">availableProtocols</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">toTest</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">protocolLength</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">toTest</span> <span class="o">==</span> <span class="nx">availableProtocols</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/** After fp. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">validProtocol</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">path</span><span class="p">))</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">some</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="o">+</span><span class="nx">path</span><span class="o">+</span><span class="s2">&quot;&#39;.startsWith(_)&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;ftp&quot;</span><span class="p">]);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>On note ici plusieurs choses :</p>
+<ol>
+<li>Plusieurs fonctions ont &eacute;t&eacute; introduites, c&#8217;est le principe des m&eacute;thodes compos&eacute;es : <ol>
+<li>chaque m&eacute;thode n&#8217;a qu&#8217;un seul r&ocirc;le : <span style="font-family: courier new,courier;">isEmpty</span> ne v&eacute;rifie que si la cha&icirc;ne est vide ou <span style="font-family: courier new,courier;">null</span> et ne fait rien d&#8217;autre !</li>
+<li>chaque m&eacute;thode n&#8217;a qu&#8217;un seul niveau d&#8217;abstraction<em> </em>: acc&egrave;s disque, sauvegarde en base, calcul du retour&#8230; dans une seule m&eacute;thode ne serait vraiment pas une bonne id&eacute;e ! Les niveaux d&#8217;abstraction seraient ici diff&eacute;rents donc devraient &ecirc;tre dans plusieurs m&eacute;thodes.</li>
+</ol> </li>
+<li>On passe donc d&#8217;un code qui fait tout &agrave; un code qui fait appel &agrave; d&#8217;autres fonctions g&eacute;n&eacute;riques ayant un r&ocirc;le bien pr&eacute;cis et retournant les r&eacute;sultats attendus.</li>
+<li>Ainsi, et en exag&eacute;rant un tout petit peu <img title="Tongue out" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />, on se retrouverait presque &agrave; lire des phrases <em>(&agrave; la mani&egrave;re d&#8217;un DSL)</em>, toutes les abstractions ayant &eacute;t&eacute; redescendues <em>(test de non nullit&eacute;, parcours de la liste&#8230;)</em> dans des fonctions ayant des noms explicites<em>.</em></li>
+<li>De nombreuses fonctions utilitaires au niveau des tableaux ou des listes existent d&eacute;j&agrave; donc ne r&eacute;inventez pas la roue : utilisez <a href="http://osteele.com/sources/javascript/functional/" target="_blank">functionnal javascript</a> ou <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a> ! <em>(ici functionnal javascript)</em></li>
+<li>Et au final on obtient un code r&eacute;ellement r&eacute;utilisable avec des fonctions comme <span style="font-family: courier new,courier;">isEmpty</span>, <span style="font-family: courier new,courier;">some</span>&#8230;</li>
+</ol>
+<p>Ce n&#8217;est bien s&ucirc;r pas une solution ultime mais on voit ressortir ces fonctions tr&egrave;s pris&eacute;es en programmation fonctionnelle &agrave; savoir les <span style="font-family: courier new,courier;">map</span>, <span style="font-family: courier new,courier;">fold</span>, <span style="font-family: courier new,courier;">reduce</span>, <span style="font-family: courier new,courier;">some</span>&#8230; qui sont des fonctions nous cachant la r&eacute;cursion sur la liste : tout ce qu&#8217;ellent nous demandent c&#8217;est la fonction &agrave; ex&eacute;cuter sur chaque &eacute;l&eacute;ment de la liste, <span style="font-family: courier new,courier;">map</span> faisant une transformation, <span style="font-family: courier new,courier;">fold</span> et <span style="font-family: courier new,courier;">reduce</span> des r&eacute;ductions, <span style="font-family: courier new,courier;">some</span> v&eacute;rifiant si au moins un &eacute;l&eacute;ment v&eacute;rifie la fonction pass&eacute;e&#8230;</p>
+<h3>Maybe et Either</h3>
+<p>Deuxi&egrave;me exemple avec cette fois-ci uniquement le code final qui doit respecter la demande suivante :</p>
+<ol>
+<li>si le produit est autoris&eacute; : <ol>
+<li>si l&#8217;utilisateur est logu&eacute;, alors on lui affiche une image avec un bouton pour effectuer une action</li>
+<li>sinon, on ne lui affiche qu&#8217;une image</li>
+</ol> </li>
+<li>sinon : <ol>
+<li>si l&#8217;utilisateur est logu&eacute;, on lui affiche un bouton standard pour effectuer une action</li>
+<li>sinon on n&#8217;affiche rien</li>
+</ol> </li>
+</ol>
+<p>Vous &ecirc;tes quasiment face &agrave; la sp&eacute;cification demand&eacute;e et voici le code final :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">newAllowedButton</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">theId</span><span class="p">,</span> <span class="nx">theUrl</span><span class="p">,</span> <span class="nx">isAuthenticated</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nx">image</span><span class="p">(</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="s2">&quot;Allowed&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">imageWithButton</span> <span class="o">=</span> <span class="nx">richLink</span><span class="p">(</span><span class="nx">image</span><span class="p">(</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="s2">&quot;Allowed&quot;</span><span class="p">),</span> <span class="nx">template</span><span class="p">(</span><span class="nx">URL_UPDATE</span><span class="p">).</span><span class="nx">withParam</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="nx">theId</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span><span class="nx">theUrl</span><span class="p">}));</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">richLink</span><span class="p">(</span><span class="nx">image</span><span class="p">(</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span><span class="s2">&quot;picture.png&quot;</span><span class="p">,</span><span class="s2">&quot;Allowed&quot;</span><span class="p">),</span> <span class="nx">template</span><span class="p">(</span><span class="nx">URL_UPDATE</span><span class="p">).</span><span class="kd">with</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="nx">theId</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span><span class="nx">theUrl</span><span class="p">}));</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">isAuthenticatedFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">isAuthenticated</span> <span class="p">};</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">either</span><span class="p">(</span>
+</span><span class='line'>          <span class="nx">either</span><span class="p">(</span><span class="nx">imageWithButton</span><span class="p">,</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">isAuthenticatedFunc</span><span class="p">),</span>
+</span><span class='line'>          <span class="nx">maybe</span><span class="p">(</span><span class="nx">button</span><span class="p">,</span> <span class="nx">isAuthenticatedFunc</span><span class="p">),</span>
+</span><span class='line'>          <span class="nx">isAllowed</span><span class="p">(</span><span class="nx">theId</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">)();</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">component</span><span class="p">)</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="nx">container</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">content</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>Les premi&egrave;res lignes de la fonction cr&eacute;ent les diff&eacute;rents composants dont elle aura besoin. Un petit shortcut est ensuite cr&eacute;er au niveau du bool&eacute;en <span style="font-family: courier new,courier;">isAuthenticated</span> afin de la wrapper dans une fonction et de la mettre dans une variable ayant un nom explicite <em>(isAuthenticatedFunc)</em>. Et enfin, comme si nous lisions la sp&eacute;cification, nous sommes face aux fameuses fonctions <span style="font-family: courier new,courier;">maybe</span> et <span style="font-family: courier new,courier;">either</span> mais cette fois-ci en Javascript !</p>
+<p>Ainsi <span style="font-family: courier new,courier;">either</span>, qui prend en param&egrave;tre une action 1, une action 2 et une fonction &agrave; tester, ex&eacute;cutera l&#8217;action 1 si la fonction en 3&egrave;me argument renvoie <span style="font-family: courier new,courier;">true</span> et ex&eacute;cutera l&#8217;action 2 si elle renvoie <span style="font-family: courier new,courier;">false</span>. Tandis que <span style="font-family: courier new,courier;">maybe</span> se contentera juste d&#8217;ex&eacute;cuter son action pass&eacute;e en 1er argument si l&#8217;ex&eacute;cution de la fonction pass&eacute;e en 2&egrave;me argument renvoie <span style="font-family: courier new,courier;">true</span>, et ne fera rien si elle renvoie <span style="font-family: courier new,courier;">false</span>.</p>
+<p>Ces fonctions se codent tr&egrave;s facilement, si toutefois une librairie plus haut niveau fournit ces impl&eacute;mentations, merci de le pr&eacute;ciser en commentaire ! Si besoin, voici nos <span style="font-family: courier new,courier;">either</span> et <span style="font-family: courier new,courier;">maybe</span>, celles-ci pouvant prendre en param&egrave;tre une fonction &agrave; tester pouvant avoir 0 ou 1 param&egrave;tre <em>(et sera r&eacute;percut&eacute; sur l&#8217;action)</em> mais bien s&ucirc;r &agrave; vous d&#8217;adapter &agrave; votre besoin :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/** Execute action if predicate is true. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">maybe</span><span class="p">(</span><span class="nx">action</span><span class="p">,</span><span class="nx">predicate</span><span class="p">){</span>
+</span><span class='line'>	<span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		    <span class="k">if</span><span class="p">((</span><span class="o">!</span><span class="nx">predicate</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">predicate</span><span class="p">()))</span> <span class="k">return</span> <span class="nx">action</span><span class="p">();</span>
+</span><span class='line'>		    <span class="k">else</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span><span class='line'>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>		    <span class="k">if</span><span class="p">((</span><span class="o">!</span><span class="nx">predicate</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">predicate</span><span class="p">(</span><span class="nx">val</span><span class="p">)))</span> <span class="k">return</span> <span class="nx">action</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+</span><span class='line'>		    <span class="k">else</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>	<span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/** Execute action1 if predicate is true and execute action2 if predicate is false. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">either</span><span class="p">(</span><span class="nx">action1</span><span class="p">,</span><span class="nx">action2</span><span class="p">,</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>	<span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		    <span class="k">if</span><span class="p">((</span><span class="o">!</span><span class="nx">selector</span><span class="p">)</span><span class="o">||</span><span class="nx">selector</span><span class="p">())</span> <span class="k">return</span> <span class="nx">action1</span><span class="p">();</span>
+</span><span class='line'>		    <span class="k">else</span> <span class="k">return</span> <span class="nx">action2</span><span class="p">();</span>
+</span><span class='line'>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>		    <span class="k">if</span><span class="p">((</span><span class="o">!</span><span class="nx">selector</span><span class="p">)</span><span class="o">||</span><span class="nx">selector</span><span class="p">(</span><span class="nx">val</span><span class="p">))</span> <span class="k">return</span> <span class="nx">action1</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+</span><span class='line'>		    <span class="k">else</span> <span class="k">return</span> <span class="nx">action2</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>	<span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>De m&ecirc;me, vous avez peut-&ecirc;tre not&eacute; la ligne <span style="font-family: courier new,courier;">template(URL_UPDATE).withParam({id:theId, url:theUrl})</span> qui fait appel &agrave; une fonction de templating que nous avons &eacute;crit afin de ne pas avoir &agrave; faire des appels &agrave; la m&eacute;thode <span style="font-family: courier new,courier;">replace</span> directement sur nos cha&icirc;nes de caract&egrave;res. Encore une fois, nous descendons l&#8217;abstraction et nous avons une API bien plus simple &agrave; utiliser et nous obtenons un code bien plus lisible.</p>
+<p>Voici les impl&eacute;mentations, elle s&#8217;appuie sur <a href="http://json-template.googlecode.com/svn/trunk/doc/Introducing-JSON-Template.html" target="_blank">json-template</a> :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">template</span><span class="p">(</span><span class="s2">&quot;/an/url.html?id={id}&amp;url={url}&quot;</span><span class="p">).</span><span class="nx">withParam</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="nx">anId</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span><span class="nx">anUrl</span><span class="p">})</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/** Template. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">template</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span>
+</span><span class='line'>	 <span class="k">return</span> <span class="p">({</span> <span class="nx">withParam</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="k">return</span> <span class="nx">jsontemplate</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="nx">t</span><span class="p">).</span><span class="nx">expand</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+</span><span class='line'>	<span class="p">}});</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/** From template. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">fromTemplate</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">jsontemplate</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="nx">t</span><span class="p">).</span><span class="nx">expand</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<h3>Nommage, transformation et simplicit&eacute;</h3>
+<p>Enfin, un exemple un peu plus compliqu&eacute;. Je pr&eacute;cise qu&#8217;il n&#8217;est pas important de comprendre l&#8217;exemple mais plut&ocirc;t le refactoring effectu&eacute; pour obtenir un code plus orient&eacute; fonctionnel.</p>
+<p>Regardez bien tous les tests, toutes les transformations en nouvelles listes, toutes les boucles effectu&eacute;es&#8230; le tout imbriqu&eacute; les uns dans les autres rendant &agrave; la fois la lecture et le refactoring presque impossible<em> (avant et apr&egrave;s)</em> :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/** Before fp. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">newBeforeAfterLabel</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">list</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>	<span class="kd">var</span> <span class="nx">idList</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+</span><span class='line'>	<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="nx">idList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
+</span><span class='line'>	<span class="p">}</span>
+</span><span class='line'>	<span class="kd">var</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">contextualize</span><span class="p">(</span><span class="s2">&quot;/types/&quot;</span><span class="o">+</span><span class="nx">idList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)));</span>
+</span><span class='line'>	<span class="k">if</span> <span class="p">(</span><span class="nx">xml</span><span class="p">.</span><span class="nx">status</span> <span class="o">!=</span> <span class="mi">404</span> <span class="o">&amp;&amp;</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="kd">var</span> <span class="nx">resultList</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">evalJSON</span><span class="p">(</span><span class="nx">xml</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">list</span><span class="p">;</span>
+</span><span class='line'>		<span class="kd">var</span> <span class="nx">txt</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>		<span class="k">if</span><span class="p">(</span><span class="nx">type</span> <span class="o">==</span> <span class="s2">&quot;BEFORE&quot;</span><span class="p">){</span>
+</span><span class='line'>				<span class="k">if</span><span class="p">(</span><span class="nx">resultList</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">resultList</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 1&#39;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>					<span class="kd">var</span> <span class="nx">printList</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+</span><span class='line'>					<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">resultList</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>						<span class="k">if</span><span class="p">(</span><span class="nx">resultList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">!=</span> <span class="nx">id</span><span class="p">)</span>
+</span><span class='line'>							<span class="nx">printList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">resultList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+</span><span class='line'>					<span class="p">}</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 2 : &#39;</span> <span class="o">+</span> <span class="nx">printList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span>
+</span><span class='line'>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>			<span class="k">if</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>				<span class="k">if</span><span class="p">(</span><span class="nx">resultList</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla bla 3 : &#39;</span> <span class="o">+</span> <span class="nx">list</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>					<span class="kd">var</span> <span class="nx">printList</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+</span><span class='line'>					<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">resultList</span><span class="p">){</span>
+</span><span class='line'>						<span class="nx">printList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">resultList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+</span><span class='line'>					<span class="p">}</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 4 : &#39;</span> <span class="o">+</span> <span class="nx">printList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span>
+</span><span class='line'>			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>				<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 5&#39;</span><span class="p">;</span>
+</span><span class='line'>			<span class="p">}</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="nx">container</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;span&gt;&#39;</span><span class="o">+</span><span class="nx">txt</span><span class="o">+</span><span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
+</span><span class='line'>	<span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/** After fp. */</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">newBeforeAfterLabel</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>	<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">getDataForId</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+</span><span class='line'>	<span class="k">if</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+</span><span class='line'>		<span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">type</span>
+</span><span class='line'>		<span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">list</span>
+</span><span class='line'>		<span class="kd">var</span> <span class="nx">before</span> <span class="o">=</span> <span class="nx">type</span> <span class="o">==</span> <span class="s2">&quot;BEFORE&quot;</span><span class="p">;</span>
+</span><span class='line'>                <span class="kd">var</span> <span class="nx">after</span> <span class="o">=</span> <span class="nx">type</span> <span class="o">==</span> <span class="s2">&quot;AFTER&quot;</span><span class="p">;</span>
+</span><span class='line'>		<span class="k">if</span><span class="p">(</span><span class="nx">before</span> <span class="o">||</span> <span class="nx">after</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>			<span class="kd">var</span> <span class="nx">idList</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="s1">&#39;_.id&#39;</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
+</span><span class='line'>			<span class="kd">var</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">contextualize</span><span class="p">(</span><span class="s2">&quot;/an/url/&quot;</span><span class="o">+</span><span class="nx">idList</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)));</span>
+</span><span class='line'>			<span class="k">if</span> <span class="p">(</span><span class="nx">xml</span><span class="p">.</span><span class="nx">status</span> <span class="o">!=</span> <span class="mi">404</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>				<span class="kd">var</span> <span class="nx">resultList</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">evalJSON</span><span class="p">(</span><span class="nx">xml</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">list</span><span class="p">;</span>
+</span><span class='line'>				<span class="kd">var</span> <span class="nx">resultListWithoutMe</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="s1">&#39;_.name&#39;</span><span class="p">,</span> <span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;_.id!=&#39;</span><span class="o">+</span><span class="nx">id</span><span class="p">,</span> <span class="nx">list</span><span class="p">));</span>
+</span><span class='line'>				<span class="kd">var</span> <span class="nx">resultListWithoutMeInHtml</span> <span class="o">=</span> <span class="nx">resultListWithoutMe</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'>				<span class="kd">var</span> <span class="nx">txt</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>				<span class="k">if</span><span class="p">(</span> <span class="nx">before</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">resultListWithoutMe</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 1&#39;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">before</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">resultListWithoutMe</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 2 : &#39;</span> <span class="o">+</span> <span class="nx">referentsWithoutMeInHtml</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">after</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">resultListWithoutMe</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 3&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;_.id!=&#39;</span><span class="o">+</span><span class="nx">id</span><span class="p">,</span><span class="nx">list</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="s1">&#39; a &#39;</span><span class="o">:</span><span class="s1">&#39; b &#39;</span><span class="p">)</span> <span class="o">+</span><span class="nx">resultListWithoutMeInHtml</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">after</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span> <span class="nx">resultListWithoutMe</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+</span><span class='line'>					<span class="nx">txt</span> <span class="o">=</span> <span class="s1">&#39;Bla 4&#39;</span><span class="p">;</span>
+</span><span class='line'>				<span class="p">}</span>
+</span><span class='line'>				<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="nx">container</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;span&gt;&#39;</span><span class="o">+</span><span class="nx">txt</span><span class="o">+</span><span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
+</span><span class='line'>			<span class="p">}</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>	<span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>La chose qui saute aux yeux imm&eacute;diatement est qu&#8217;il n&#8217;y a d&eacute;sormais que tr&egrave;s peu de niveaux d&#8217;imbrication et plus aucun <span style="font-family: courier new,courier;">if</span> dans un <span style="font-family: courier new,courier;">for</span> dans un <span style="font-family: courier new,courier;">if</span> dans un <span style="font-family: courier new,courier;">for</span> <em>(bonjour la complexit&eacute; cyclomatique&#8230;)</em>.</p>
+<p>On remarque aussi que la transformation d&#8217;une liste d&#8217;objets vers la liste des identifiants de ces objets est devenue tr&egrave;s simple et tr&egrave;s lisible : <span style="font-family: courier new,courier;">var idList = map(&#8216;_.id&#8217;, list)</span>. Une ligne concise et auto-document&eacute;e pour peu que tout le monde utilise la m&ecirc;me librairie fonctionnelle. Mais m&ecirc;me sans, on devine tr&egrave;s bien ce que le code fait.</p>
+<p>Enfin, quelques bonnes pratiques :</p>
+<ol>
+<li>Remontez le plus possible les tests effectu&eacute;s et stockez les dans des variables, vos <span style="font-family: courier new,courier;">if</span> deviendront plus lisibles !</li>
+<li>Usez et abusez <em>(avec mod&eacute;ration) </em>des fonctions de transformations de liste : <span style="font-family: courier new,courier;">map(&#8216;_.name&#8217;, filter(&#8216;_.id!=&#8217;+id, list))</span> =&gt; filtrage dans la liste de tous les &eacute;l&eacute;ments sauf celui d&#8217;identifiant <span style="font-family: courier new,courier;">id</span> et transformation de cette liste d&#8217;objet en liste de <span style="font-family: courier new,courier;">name</span>.</li>
+<li>Des que vous m&eacute;langez plusieurs abstractions, fa&icirc;tes des fonctions ! Ici, <span style="font-family: courier new,courier;">getDataForId</span> en est une : elle r&eacute;cup&egrave;re un objet &agrave; partir d&#8217;un id, l&#8217;appel REST, l&#8217;Url&#8230; n&#8217;est pas mon probl&egrave;me dans cette m&eacute;thode qui n&#8217;a pour but que de cr&eacute;er le widget <em>before after label</em>.</li>
+</ol>
+<h3>Conclusion</h3>
+<p>Bien s&ucirc;r, pour tous ces exemples, d&#8217;autres solutions existent et de nombreux plugins jQuery doivent faire le travail.</p>
+<p>L&#8217;id&eacute;e ici n&#8217;est pas d&#8217;obtenir la solution parfaite au probl&egrave;me donn&eacute;e mais bien de montrer comment transformer un code objet/proc&eacute;dural en un code plus fonctionnel. Des librairies comme <a href="http://jquery.com/" target="_blank">jQuery</a>, <a href="http://osteele.com/sources/javascript/functional/" target="_blank">functionnal javascript</a> ou bien encore <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a> vous aiderons grandement dans cet apprentissage.</p>
+<p>J&#8217;esp&egrave;re vous avoir convaincu de faire de la programmation orient&eacute;e fonctionnelle en Javascript !</p>
+
+  
+  <div style='clear: both;'></div>
+</div>
+
+
+  
+    <div class="post-share-after">
+  <span class='st_twitter_vcount with_space' displayText='Tweet'></span>
+  <span class='st_plusone_vcount with_space' displayText='Google +1'></span>
+  <span class='st_linkedin_vcount with_space' displayText='LinkedIn'></span>
+  <span class='st_sharethis_vcount with_space' displayText='ShareThis'></span>
+</div>
+
+  
+
+  <p class="meta">
+  
+    <div class='blog-pager' id='blog-pager'>
+      <div class="alignleft"><a href="/web-tambouille/2010/12/13/sortie-de-play-framework-1.1.html" title="Billets pr&eacute;c&eacute;dents : Let's Play! (1.1)">&laquo; Let's Play! (1.1)</a></div>
+      <div class="alignright"><a href="/web-tambouille/2011/01/18/bonnes-pratiques-de-performance-pour-webapp-html5.html" title="Billets suivants : Bonnes pratiques de performance pour Webapp HTML5">Bonnes pratiques de performance pour Webapp HTML5 &raquo;</a></div>
+      <div class='clear'></div>
+    </div>
+  
+  </p>
+
+  
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+  
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-wrapper">
+        <div class='gadget clearfix' id='subscribe'>
+  <h4>Abonnez-vous !</h4>
+  <ul>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouille' target="_blank">Blog</a></li>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouilleComments' target="_blank">Commentaires</a></li>
+    <li class='twitter'><a href='http://twitter.com/rmat0n' target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+<div class='sidebar clearfix section' id='promotecolumn'>
+  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/rmat0n"></a>
+  <noscript>
+    <a href="http://flattr.com/thing/296927/Web-Tambouille-rmat0n" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+  </noscript>
+  <a href="http://www.viadeo.com/en/profile/romain.maton" style="margin-left:5px;vertical-align:text-bottom;">
+    <img src="http://mohamedtazi.com/viadeo_button_logo.jpg" width="50" border="0" alt="Mon profil sur Viadeo" />
+  </a>
+  <a href="http://fr.linkedin.com/in/rmaton" style="margin-left:5px;">
+    <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png" width="145" height="25" border="0" alt="Mon profil sur LinkedIn" />
+  </a>
+</div>
+
+
+<div class='sidebar clearfix section' id='searchcolumn'>
+  <form action="http://google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:www.web-tambouille.fr" />
+      Recherche : <input class="search" type="text" name="q" results="0" placeholder="Search" size="44px;" />
+    </fieldset>
+  </form>
+</div>
+
+
+<div class='sidebar clearfix section' id='onecolumn10'>
+  <div class='widget LinkList' id='LinkList10'>
+    <div id="tagCloud">
+      <h2>Mots-cl&eacute;s :</h2>
+      <div class='widget-content'>
+        <ul id="tagList">
+          <li><a style="font-size: 121%" href="/tags/android/">Android</a></li>
+<li><a style="font-size: 151%" href="/tags/devoxx/">Devoxx</a></li>
+<li><a style="font-size: 139%" href="/tags/fonctionnelle/">Fonctionnelle</a></li>
+<li><a style="font-size: 128%" href="/tags/html5/">HTML5</a></li>
+<li><a style="font-size: 165%" href="/tags/java/">Java</a></li>
+<li><a style="font-size: 163%" href="/tags/javascript/">Javascript</a></li>
+<li><a style="font-size: 160%" href="/tags/node-dot-js/">Node.js</a></li>
+<li><a style="font-size: 121%" href="/tags/play/">Play</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='clearfix' id='twocolumns'>
+  <div class='fl section' id='sl'>
+    <div class='widget Label' id='Label1'>
+      <h2>Cat&eacute;gories</h2>
+      <div class='widget-content list-label-widget-content'>
+        
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fr section' id='sr'>
+    <div class='widget BlogArchive' id='BlogArchive1'>
+      <h2>Archives</h2>
+      <div class='widget-content'>
+        <div id='ArchiveList'>
+          <div id='BlogArchive1_ArchiveList'>
+            <ul class='hierarchy'>
+              <!--li class='archivedate expanded'-->
+              <!--li><a class='post-count-link' href=> <span class='post-count' dir='ltr'>()</span></a></li-->
+              <!--li-->
+            </ul>
+          </div>
+        </div>
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:15px;">
+  <div id="zindepWidget" data-profil="http://www.leszindeps.fr/p/Romain/Maton/8aff0abe371c3fd601371c3fe3e40012" data-width="315"></div>
+</div>
+
+<div class='sidebar clearfix section' id='onecolumn20'>
+  <div class='widget LinkList' id='LinkList20'>
+    <div class='widget-content licence' style="padding-top:15px;">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Contrat Creative Commons" style="border-width:0;float:left;padding-right:5px;padding-top: 4px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      Cette oeuvre est mise &agrave; disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> Licence Creative Commons Paternit&eacute; - Pas d'Utilisation Commerciale -
+                                                                                                                                                   Partage &agrave;
+                                                                                                                                                   l'Identique 3.0 non transcrit</a>.
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1471642924127242";
+/* web-tambouille-1 */
+google_ad_slot = "8625499162";
+google_ad_width = 324;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+      </div>
+    </div>
+    <!--</div>-->
+    <footer role="contentinfo"><div class='clearfix clear' id='footer-wrapper'>
+  <div class='fl'>
+    Copyright &copy; 2013 - Romain MATON (rmat0n) - Propuls&eacute; par <a href="http://octopress.org">Octopress</a>
+  </div>
+  <div class='fr'><a href='http://cloudblogging.blogspot.com/'>Cloud Blogging</a> desgined by
+    <a href='http://btemplates.com/' title='Blogger Templates'><img alt='BTemplates' src='http://4.bp.blogspot.com/_Zuzii37VUO4/S59W9qxAUWI/AAAAAAAAEqY/4plNq9KEqBQ/s1600/blogger-templates.png' /></a>.
+  </div>
+</div>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'web-tambouille';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html';
+        var disqus_url = 'http://www.web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19424814-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript">
+  $("figure").each(function () {
+    $(this).html($(this).html().replace(/\t/g, "  "));
+  });
+</script>
+
+
+  </div>
+</div>
+</body>

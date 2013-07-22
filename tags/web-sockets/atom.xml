@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Web Sockets | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/web-sockets/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Node.JS partie 3 - Première application Node.js et HTML5]]></title>
+    <link href="http://www.web-tambouille.fr/2011/03/08/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html"/>
+    <updated>2011-03-08T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2011/03/08/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/mG0J6Uh8xWSH8OdrGQKyBA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Socket.IO" src="https://lh6.googleusercontent.com/-fnx-F_p0HSM/ThmqRc6_-NI/AAAAAAAAAuo/zx8mDxtunGE/s800/logo_socketio.jpg" alt="Socket.IO" width="240" height="84" /></a>Suite de la s&eacute;rie d'articles consacr&eacute;s &agrave; Node.js et, apr&egrave;s une <a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">petite introduction au serveur</a> ainsi qu'une <a href="http://www.webtambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html" target="_blank">pr&eacute;sentation de Cloud9 IDE</a>, nous allons enfin mettre les mains dedans !</p>
+
+
+<p>Pour ce Quick Start, je vous propose une application qui fera du push sur tous les clients pour leur envoyer l'heure syst&egrave;me ainsi que le nombre de clients actuellement connect&eacute;s au serveur <em>(avec gestion de la d&eacute;connection)</em>. Ces clients pourront envoyer des <em>pokes</em> aux autres clients <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />, le tout tournera avec&nbsp;<a href="http://expressjs.com/" target="_blank">express</a> et <a href="http://socket.io/" target="_blank">Socket.IO</a>.</p>
+
+
+<p>L'id&eacute;e n'est pas de d&eacute;velopper une application de gestion compl&egrave;te <em>(qui m&eacute;riterait une bonne dizaine de billets</em>) ni de faire un tour d'horizon de la centaine de frameworks existants mais juste de vous montrer &agrave; quoi ressemble le code d'une application Node avec 2 frameworks tr&egrave;s r&eacute;pandus dans la communaut&eacute;.</p>
+
+
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /> <a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /> <a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /> <a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+
+
+<p><!--more--></p>
+
+
+<h3>Installation</h3>
+
+
+<p>Normalement, vous devriez avoir avoir Node et NPM install&eacute;s sur votre machine <em>(<a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">&sect; installation</a>).</em> Pour rappel, selon votre OS et votre package manager si besoin <em>(ici Mac OSX et Homebrew)</em> :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~$ brew install node
+rmat0n:~$ curl http://npmjs.org/install.sh | sudo sh</pre>
+
+
+<p>D&egrave;s lors, vous n'avez plus que 2 commandes &agrave; effectuer pour installer les modules express et Socket.IO pour Node :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~$ npm install express
+rmat0n:~$ npm install socket.io</pre>
+
+
+<p>Vous voil&agrave; pr&ecirc;ts, commen&ccedil;ons de suite !</p>
+
+
+<h3>Arborescence</h3>
+
+
+<p>Le projet aura l'arborescence suivante :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/ project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>/ public
+</span><span class='line'>    index.html
+</span><span class='line'>server.js
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Tr&egrave;s simple donc avec un fichier <span style="font-family: 'courier new', courier;">server.js</span> et, dans un dossier <span style="font-family: 'courier new', courier;">public</span>, un fichier <span style="font-family: 'courier new', courier;">index.html</span>.</p>
+
+
+<h3>Client</h3>
+
+
+<p>Tout d'abord, voyons le squelette du fichier html :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Socket IO Demo<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.5.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://www.web-tambouille.fr/socket.io/socket.io.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>h2<span class="ni">&amp;gt;</span>D<span class="ni">&amp;amp;</span>amp;eacute;mo Node.js + Socket IO<span class="ni">&amp;lt;</span>/h2<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;timestamp&quot;<span class="ni">&amp;gt;</span>Timestamp<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;timestamp&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;clients&quot;<span class="ni">&amp;gt;</span>Clients<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;clients&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;message&quot;<span class="ni">&amp;gt;</span>Message<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;message&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>p<span class="ni">&amp;gt;&amp;lt;</span>button id=&quot;poke&quot;<span class="ni">&amp;gt;</span>Send poke !<span class="ni">&amp;lt;</span>/button<span class="ni">&amp;gt;&amp;lt;</span>/p<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Un fichier tr&egrave;s standard donc avec un import du dernier jQuery, l'import de Socket.IO <em>(module charg&eacute; par Node)</em> et quelques <span style="font-family: 'courier new', courier;">div</span> qui me permettront d'afficher les retours du serveur.</p>
+
+
+<p>A la suite des 2 balises scripts d&eacute;j&agrave; pr&eacute;sentes, je rajoute le code Javascript suivant :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Socket</span><span class="p">();</span>
+</span><span class='line'>    <span class="nx">sock</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#message&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timestamp&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#clients&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">clients</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>    <span class="nx">sock</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#poke&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">sock</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Poke !&quot;</span><span class="p">);</span> <span class="p">});</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Quelques explications :</p>
+
+
+<ul>
+<li>tout d'abord, je cr&eacute;e un object <span style="font-family: 'courier new', courier;">io.Socket</span>&nbsp;<em>(qui par d&eacute;faut utilisera le host d'entr&eacute;e et le port 80)</em></li>
+<li>lorsque le serveur m'envoie un message, c&ocirc;t&eacute; client je peux le r&eacute;cup&eacute;rer en utilisant le code suivant <em>(API Socket.IO)</em> : <span style="font-family: 'courier new', courier;">sock.on('message', function(data) {...});</span></li>
+<li>le serveur me renverra un objet JSON, je le parse et r&eacute;cup&egrave;re les propri&eacute;t&eacute;s message ou timestamp et client<em>&nbsp;</em>que je mets dans les champs associ&eacute;s</li>
+<li>je connecte la socket imm&eacute;diatement apr&egrave;s</li>
+<li>je d&eacute;finis un handler sur le bouton et, lors d'un <span style="font-family: 'courier new', courier;">click</span> utilisateur, j'envoie un message <em>poke</em>.</li>
+</ul>
+
+
+<p>Plut&ocirc;t simple non ? M&ecirc;me si l'API standard est d&eacute;j&agrave; tr&egrave;s simple d'utilisation, Socket.IO nous simplifie encore plus l'utilisation de Web Sockets c&ocirc;t&eacute; client et c&ocirc;t&eacute; serveur.</p>
+
+
+<p>Voyons mantenant le code c&ocirc;t&eacute; serveur.</p>
+
+
+<h3>Serveur</h3>
+
+
+<p>Et voici le fichier <span style="font-family: 'courier new', courier;">server.js</span> :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">createServer</span><span class="p">();</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/public&amp;rsquo;));</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/&amp;rsquo;, function(req, res, next){</span>
+</span><span class='line'>  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;.</span><span class="o">/</span><span class="kr">public</span><span class="o">/</span><span class="nx">index</span><span class="p">.</span><span class="nx">html</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8333</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">flashPolicyServer</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">websocket</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">flashsocket</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">htmlfile</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">xhr</span><span class="o">-</span><span class="nx">multipart</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">xhr</span><span class="o">-</span><span class="nx">polling</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">jsonp</span><span class="o">-</span><span class="nx">polling</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">allClients</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">clientId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">connection</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">my_timer</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">my_client</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">id</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="nx">clientId</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">obj</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="nx">client</span> <span class="p">};</span>
+</span><span class='line'>  <span class="nx">clientId</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">allClients</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">my_timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">obj</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="s2">&quot;timestamp&quot;</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">(),</span> <span class="s2">&quot;clients&quot;</span><span class="o">:</span> <span class="nx">allClients</span> <span class="p">}));</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">message</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">obj</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;poke send by client &quot;</span><span class="o">+</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">id</span> <span class="p">}));</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">disconnect</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">my_timer</span><span class="p">);</span>
+</span><span class='line'><span class="nx">allClients</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Et dans le d&eacute;tail :</p>
+
+
+<ul>
+<li>j'importe les modules Socket.IO et express</li>
+<li>je cr&eacute;e le serveur express, je configure le dossier <span style="font-family: 'courier new', courier;">public</span> en statique, je mappe l'url root <span style="font-family: 'courier new', courier;">'/'</span>&nbsp;vers le fichier <span style="font-family: 'courier new', courier;">index.html</span> et je d&eacute;marre le serveur ; on voit ici que express nous simplifie grandement le mapping entre une url et une action <em>(mais il n'est pas le seul)</em> avec une bonne gestion des param&egrave;tres, j'aime beaucoup ce framework car il me rappelle le tr&egrave;s puissant <a href="http://static.springsource.org/spring/docs/3.0.x/reference/mvc.html" target="_blank">Spring MVC</a></li>
+<li>je cr&eacute;e ensuite l'objet socket en sp&eacute;cifiant quelques transports et en supprimant le flash policy server <em>(inutile pour notre exemple)</em></li>
+<li>sur la connexion d'un client, je le stocke dans un objet JSON, j'augmente la variable <span style="font-family: 'courier new', courier;">id</span> et j'augmente le nombre de clients connect&eacute;s <em>(variable <span style="font-family: 'courier new', courier;">allClients</span>)</em></li>
+<li>je lance un <span style="font-family: 'courier new', courier;">setInterval</span> pour envoyer toutes les secondes l'heure courante du serveur ainsi que le nombre de clients connect&eacute;s <em>(le JSON qui sera r&eacute;cup&eacute;r&eacute; dans mon client, cf code du &sect; client)</em></li>
+<li>ensuite, si un client envoie un message c&ocirc;t&eacute; serveur, je <span style="font-family: 'courier new', courier;">broadcast</span> &agrave; tous les autres un message g&eacute;n&eacute;rique avec l'<span style="font-family: 'courier new', courier;">id</span> du client qui a envoy&eacute; le message</li>
+<li>enfin, sur une d&eacute;connexion d'un client, je stoppe le setInterval li&eacute; &agrave; ce client et je d&eacute;cr&eacute;mente la variavle <span style="font-family: 'courier new', courier;">allClients</span> ; celle-ci sera ensuite envoy&eacute;e &agrave; tous les autres clients lors d'un prochain envoi de donn&eacute;es du <span style="font-family: 'courier new', courier;">setInterval</span></li>
+</ul>
+
+
+<p>Il y a bien s&ucirc;r diff&eacute;rentes mani&egrave;res de faire ce code, celui-ci ne sert qu'&agrave; vous montrer ce que l'on peut faire :</p>
+
+
+<ul>
+<li>envoyer un message &agrave; un client sp&eacute;cifique</li>
+<li>broadcaster un message d'un client vers tous les autres</li>
+<li>mettre &agrave; jour des variables globales utilis&eacute;s par tous les clients</li>
+<li>...</li>
+</ul>
+
+
+<p>D'ailleurs, si vous avez d'autres astuces concernant les Web Sockets dans Node, n'h&eacute;sitez pas &agrave; les partager en commentaires !</p>
+
+
+<h3>Run baby !</h3>
+
+
+<p>Bon, il n'y a plus qu'&agrave; lancer le code et &agrave; vous rendre &agrave; l'url <a href="http://localhost:8333/" target="_blank">http://localhost:8333/</a> :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~/dev/node-example$ node server.js</pre>
+
+
+<p>Et maintenant, amusez-vous &agrave; lancer plusieurs navigateur &agrave; cette url, envoyer des <em>pokes</em>, vous d&eacute;connecter...</p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/-zo4W58Rw68Q/ThmqTMIeKCI/AAAAAAAAAu0/TZYQ7HtZr94/s800/nodejs_3_clients.jpg"><img class="aligncenter" title="Node Example 3 users" src="https://lh4.googleusercontent.com/-zo4W58Rw68Q/ThmqTMIeKCI/AAAAAAAAAu0/TZYQ7HtZr94/s800/nodejs_3_clients.jpg" alt="Node Example 3 users" width="500" height="377" /></a></p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/--yim4hz-Onk/ThmqSkgIzqI/AAAAAAAAAus/2OYM5XPkV10/s800/nodejs_2_clients.jpg"><img class="aligncenter" title="Node Example 2 users" src="https://lh4.googleusercontent.com/--yim4hz-Onk/ThmqSkgIzqI/AAAAAAAAAus/2OYM5XPkV10/s800/nodejs_2_clients.jpg" alt="Node Example 2 users" width="500" height="344" /></a></p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Bien s&ucirc;r, on est tr&egrave;s loin d'une application de gestion et ce n'est pas le but de cet article. Mais vous pouvez voir avec cet exemple un code tr&egrave;s minimal qui fait des Web Sockets, du&nbsp;<span style="font-family: 'courier new', courier;">send</span>, du <span style="font-family: 'courier new', courier;">broadcast</span>, du MVC... le tout tr&egrave;s facilement !</p>
+
+
+<p>Prochaine &eacute;tape et dernier article sur Node <em>(et oui, d&eacute;j&agrave; <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />)</em> : d&eacute;ployer ce projet sur un serveur Node et pour cela nous allons regarder de plus pr&egrave;s l'offre de <a href="http://nodester.com/" target="_blank">Nodester</a>.</p>
+
+
+<p>Pour ceux qui veulent r&eacute;cup&eacute;rer le projet, le code se trouve ici : <a href="https://github.com/rmat0n/node-example/" target="_blank">node-example</a>.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

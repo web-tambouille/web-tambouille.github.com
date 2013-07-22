@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Offline | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/offline/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Working off the grid: HTML5 Offline]]></title>
+    <link href="http://www.web-tambouille.fr/2011/11/17/working-off-the-grid-html5-offline-devoxx-2011.html"/>
+    <updated>2011-11-17T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2011/11/17/working-off-the-grid-html5-offline-devoxx-2011</id>
+    <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/GRykHuuNQLHJf1IKRs_8aQ?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" src="https://lh4.googleusercontent.com/-qLtr7pDbmHA/TsS0hoX9WZI/AAAAAAAAA10/rAckVVeDL8c/s400/P1060800.JPG" alt="HTML Speaker" width="400" height="225" /></a>C'est parti pour le 3&egrave;me jour de la conf&eacute;rence Devoxx 2011 ! A peine arriv&eacute; &agrave; la gare d'Anvers, direction le tramway et les fameuses Keynotes de milieu de semaine. Quelques news concernant Parley's et d&eacute;j&agrave; une grosse news : Devoxx France &agrave; Paris du 18 au 20 avril 2012, l'&eacute;v&egrave;nement &agrave; ne pas manquer !</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Puis suivent 2 Keynotes Oracle, une session tr&egrave;s sympa de Joshua Bloch sur Java: The Good, the bad end the ugly parts, petite pause repas bien m&eacute;rit&eacute;e et ensuite, sujet de ce billet, une session Working Off The grid : HTML5 Offline. R&eacute;sum&eacute; !</p>
+
+
+<p><!--more--></p>
+
+
+<h2>Historique</h2>
+
+
+<p>Et d'abord un petit historique : comment faisait-on du "offline" avant HTML5 ? Quelques techniques/hacks :</p>
+
+
+<ul>
+<li>Cookies</li>
+<li>Flash Storage (oui oui...)</li>
+<li>Internet Explorer UserDate</li>
+<li>Google Gears</li>
+<li>Dojo Storage</li>
+<li>window.name (grow hack)</li>
+</ul>
+
+
+<p>Ce n'est donc clairement pas la panac&eacute;e&hellip; Heureusement, HTML5 arrive avec plusieurs solutions pour faire fonctionner notre webapp en mode offline.</p>
+
+
+<h2>localStorage</h2>
+
+
+<p>Premier &eacute;l&eacute;ment de r&eacute;ponse : le localStorage.</p>
+
+
+<p>Il permet de stocker facilement de la donn&eacute;e au format key-value.&nbsp;On ne peut toutefois y stocker que des Strings.&nbsp;A noter que l'API est synchrone.</p>
+
+
+<p>Pour ceux qui ont jou&eacute; avec les Cookies, termin&eacute; les m&eacute;thodes indexOf, substring et autres split, maintenant tout se fait tel que :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">userStr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+</span><span class='line'>   <span class="nx">user</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">John</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
+</span><span class='line'>   <span class="nx">id</span><span class="o">:</span> <span class="mi">10</span>
+</span><span class='line'><span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">user</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;))</span> <span class="p">{</span>
+</span><span class='line'>   <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">user</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="nx">userStr</span><span class="p">));</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">user</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;));</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Les m&eacute;thodes &agrave; notre disposition sont tr&egrave;s simples :</p>
+
+
+<ul>
+<li>setItem()</li>
+<li>getItem()</li>
+<li>removeItem()</li>
+<li>clear()</li>
+</ul>
+
+
+<h2>sessionStorage</h2>
+
+
+<p>Pareil que localStorage avec les diff&eacute;rences suivantes :</p>
+
+
+<ul>
+<li>existe tant que le navigateur est ouvert</li>
+<li>ouvrir une nouvelle fen&ecirc;tre ou un nouvel onglet d&eacute;marre une nouvelle session</li>
+</ul>
+
+
+<p>Cet objet est parfait pour tout ce qui est sauvegarde de donn&eacute;es temporaires (par exemple une barre de progression).</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">sessionStorage</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="https://picasaweb.google.com/lh/photo/VfvqvQR3ePTFNhjCnEQu2g?feat=embedwebsite"><img class="aligncenter" src="https://lh5.googleusercontent.com/-IlMN-1NEMHU/TsS0hyZ1B5I/AAAAAAAAA10/kVdKg5IyZhI/s640/P1060807.JPG" alt="Buzz words" width="640" height="361" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2>indexedDB</h2>
+
+
+<p>Autre &eacute;l&eacute;ment &agrave; regarder pour faire du offline : indexedDB qui nous permet de des donn&eacute;es structur&eacute; (objet Javascript) c&ocirc;t&eacute; client.</p>
+
+
+<p>A noter qu'il n'y a pas de sch&eacute;ma ni de SQL pour le requ&eacute;tage.</p>
+
+
+<p>On recherche en utilisant des index. Avec cet index, on obtient un cursor (l'&eacute;quivalent d'un it&eacute;rator en bdd) et on parcourra un resultSet pour r&eacute;cup&eacute;rer nos donn&eacute;es.</p>
+
+
+<p>A noter enfin que l'API est asynchrone.</p>
+
+
+<p>Quelques exemples avec une r&eacute;cup&eacute;ration par cl&eacute; et une requ&ecirc;te :</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/XMBFLT_h7etpSMIDHreJTA?feat=embedwebsite"><img class="aligncenter" src="https://lh3.googleusercontent.com/-ZlWt6zNgZQ4/TsS0hltAvKI/AAAAAAAAA10/dFhi0AcVHco/s640/P1060812.JPG" alt="IndexedDB" width="640" height="361" /></a></p>
+
+
+<h2>App Cache</h2>
+
+
+<p>App Cache est clairement la fonctionnalit&eacute; que beaucoup de d&eacute;veloppeurs regardent s'ils souhaitent mettre en place du offline.</p>
+
+
+<p>Il va vous permettre de mettre en cache toute votre application web ! Pourquoi faire cela ?</p>
+
+
+<ul>
+<li>Le HTML, CSS et JS reste globalement consistent entre plusieurs appels</li>
+<li>On ne peut pas d'appuyer sur le cache natif des navigateurs</li>
+<li>Mettre en cache, c'est aussi un gain en performance/rapidit&eacute; (utilis&eacute; par GMail sur Android et iPhone)</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+
+<p>Pour cette partie de mise en cache pour gagner en performance, je vous renvoie vers ma pr&eacute;sentation "Optimisation pour votre site web mobile" qui pour booster les perds de votre site parle notamment du App Cache mais bien plus encore !</p>
+
+
+<p>Exemple de fichier manifest, &agrave; mettre dans votre balise &lt;html&gt; :&nbsp;</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/p74eW2PzwyYKl4neSiiQPw?feat=embedwebsite"><img class="aligncenter" src="https://lh4.googleusercontent.com/-u9AGL1N7iQM/TsS0i-7gw-I/AAAAAAAAA10/7VdEIAi8HTM/s640/P1060814.JPG" alt="Manisfest" width="640" height="361" /></a></p>
+
+
+<p>Notez l'utilisation d'un timestamp en 2&egrave;me ligne, cela permet de forcer le navigateur &agrave; rafra&icirc;chir le cache.</p>
+
+
+<p>Quelques informations suppl&eacute;mentaires sur App Cache :</p>
+
+
+<ul>
+<li>Le document HTML est aussi mis en cache</li>
+<li>Le mime-type est text/cache-manifest</li>
+<li>Les erreurs de syntaxes dans le fichier manifest annule le cache (il existe des validators)</li>
+<li>Le cache n'est mis &agrave; jour que lorsque le fichier manifest change (d'o&ugrave; la bonne pratique du timestamp pour forcer le cache &agrave; se mettre &agrave; jour)</li>
+</ul>
+
+
+<h2>API File</h2>
+
+
+<p>Petit apart&eacute; avec l'API File, je vous mets les slides tels quels, n'h&eacute;sitez pas &agrave; googler pour plus d'informations :</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/lZuCKrkvBBJdg-CoSUZh2g?feat=embedwebsite"><img class="aligncenter" src="https://lh6.googleusercontent.com/-2VhpVXNW3po/TsS0i9simoI/AAAAAAAAA10/6dH6rYP6OWw/s640/P1060817.JPG" alt="File API" width="640" height="361" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/4I_EhE4E2bps6DLv7MTuGw?feat=embedwebsite"><img class="aligncenter" src="https://lh4.googleusercontent.com/--UWUGWY10Uw/TsS0jSRWgxI/AAAAAAAAA10/r8DXcS3Rnrg/s640/P1060818.JPG" alt="Drag &amp; drop" width="640" height="361" /></a></p>
+
+
+<p>&nbsp;</p>
+
+
+<h2>D&eacute;tection</h2>
+
+
+<p>Il est possible de d&eacute;tecter que le site est en mode offline :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">online</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">you</span> <span class="nx">are</span> <span class="nx">online</span><span class="o">!&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">no</span> <span class="nx">connection</span> <span class="nx">found</span> <span class="o">:</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Une autre possibilit&eacute; est de passer par des listeners :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">online</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>   <span class="c1">// Re-sync data with server</span>
+</span><span class='line'><span class="p">},</span> <span class="kc">false</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">offline</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'> <span class="c1">// Queue up events for server</span>
+</span><span class='line'><span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Support</h2>
+
+
+<p>Terminons par le support de toutes ces fonctionnalit&eacute;s par navigateur avec IE toujours &agrave; la traine et tous les autres qui g&egrave;rent le Web Storage et App Cache :</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/BE3Vxw3N2KOLB6aLPkBucw?feat=embedwebsite"><img class="aligncenter" src="https://lh3.googleusercontent.com/-RN4c0t0FoDs/TsS0lAtqwKI/AAAAAAAAA10/Vl6MfagwmHU/s640/P1060823.JPG" alt="Support" width="640" height="361" /></a></p>
+
+
+<p>Mais aussi pour la partie mobile avec les m&ecirc;mes constats :</p>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/DbZLsdGIidRKtpI1WFxIcQ?feat=embedwebsite"><img class="aligncenter" src="https://lh3.googleusercontent.com/-DKAc4ht1Xac/TsS0lVNx3JI/AAAAAAAAA10/oATlzIxo0vI/s640/P1060824.JPG" alt="Support mobile" width="640" height="361" /></a></p>
+
+
+<h2>Conclusion</h2>
+
+
+<p><a href="https://picasaweb.google.com/lh/photo/S3yM5vAQadCbdAnIRieoRg?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" src="https://lh3.googleusercontent.com/-ORLWBWSMsoY/TsS0lRaVmQI/AAAAAAAAA10/Nn7yqGSYk4Q/s288/P1060923.JPG" alt="Tasse HTML5" width="162" height="288" /></a>Une tr&egrave;s bonne session, un tr&egrave;s bon speaker et des id&eacute;es encore plus clair sur le cache.</p>
+
+
+<p>J'ai d&eacute;j&agrave; mis en place certaines de ces fonctionnalit&eacute;s sur Web Tambouille pour la partie mobile.</p>
+
+
+<p>Il est clair qu'une session comme celle l&agrave; me donne envie de pousser encore plus loin <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>&nbsp;</p>
+
+
+<p>La pr&eacute;sentation se trouve sur <a href="http://html5-offline.appspot.com/" target="_blank">cette page</a>.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>Et bien s&ucirc;r, je ne repars pas de Devoxx sans ma tasse HTML5, non mais <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" /></p>
+
+]]></content>
+  </entry>
+  
+</feed>

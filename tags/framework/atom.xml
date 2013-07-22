@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Framework | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/framework/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Let's Play! (1.1)]]></title>
+    <link href="http://www.web-tambouille.fr/2010/12/13/sortie-de-play-framework-1.1.html"/>
+    <updated>2010-12-13T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2010/12/13/sortie-de-play-framework-1.1</id>
+    <content type="html"><![CDATA[<div><a href="https://picasaweb.google.com/lh/photo/g_xu25hlrSYnu-hqwUZugQ?feat=embedwebsite"><img style="float: left; margin-right: 15px; margin-bottom: 5px;" title="Play! Framework" src="https://lh3.googleusercontent.com/-Mz7Ky8bTH_w/ThmqRGRBo3I/AAAAAAAAAuc/99jxThf7F0U/s800/logo_play.jpg" alt="Play! Framework" width="170" height="63" /></a>Apr&egrave;s un peu de repos bien m&eacute;rit&eacute;, je reprends du service <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />&nbsp;et je vais vous parler du framework qui m'occupe beaucoup en ce moment &agrave; savoir <a href="http://www.playframework.org/" target="_blank">Play! Framework</a>. Celui-ci s'est d'ailleurs mis &agrave; jour il y a un peu plus d'un mois et est ainsi pass&eacute; en version 1.1. On pourrait penser &agrave; une release mineure mais les nouveaut&eacute;s sont tr&egrave;s nombreuses, une version pas si mineure que &ccedil;a donc. Je ne m'interdis pas un de ces jours une petite s&eacute;rie d'articles &agrave; son sujet tellement ce framework est une bombe de productivit&eacute;. Mais pour l'instant, concentrons-nous sur les nouveaut&eacute;s de cette nouvelle version.</div>
+
+
+<div>&nbsp;</div>
+
+
+<p><!--more--></p>
+
+
+<h3>Migration</h3>
+
+
+<div>Tout d'abord, la migration ne devrait pas vous poser trop probl&egrave;mes. Des API d&eacute;pr&eacute;ci&eacute;es depuis longtemps ont &eacute;t&eacute; supprim&eacute;es, l'ordre d'ex&eacute;cution des plugins a chang&eacute;, une grande partie des m&eacute;thodes de&nbsp;<span style="font-family: 'courier new', courier;">play.libs.IO</span> passe d'exceptions checked &agrave; runtime et enfin le <span style="font-family: 'courier new', courier;">ddl</span> JPA n'est plus &agrave; <span style="font-family: 'courier new', courier;">update</span> par d&eacute;faut pour le mode production. Rien d'insurmontable donc.</div>
+
+
+<div>&nbsp;</div>
+
+
+<h3><strong>Core</strong></h3>
+
+
+<div>C&ocirc;t&eacute; noyau, un changement int&eacute;ressant est l'ajout d'un browser standalone qui s'appuie sur&nbsp;<a href="http://htmlunit.sourceforge.net/" target="_blank">HtmlUnit</a>. Ainsi, &agrave; l'aide de la commande <span style="font-family: 'courier new', courier;">play auto-test</span>, c'est ce browser qui sera utilis&eacute; en lieu et place de S&eacute;l&eacute;nium qui lan&ccedil;ait un browser pr&eacute;-install&eacute; sur la machine. Cela permet ainsi une meilleure int&eacute;gration avec notre serveur d'int&eacute;gration continue qui n'est pas si facile &agrave; configurer avec un S&eacute;l&eacute;nium qui requiert souvent une configuration sp&eacute;cifique par rapport au browser install&eacute;. Ici, on ne se soucie pas de ce qui est pr&eacute;sent sur la machine, sur ce qui est dans votre path... Play! lancera un browser embarqu&eacute; qui fonctionnera partout avec tout ! Les articles pour faire fonctionner S&eacute;l&eacute;nium avec un CI sont nombreux <em>(g&eacute;rer des profiles Firefox sp&eacute;cifiques, probl&egrave;mes avec Ajax...)</em>, c'est donc une tr&egrave;s bonne nouvelle.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Autre changement dans le c&oelig;ur de Play! : le serveur embarqu&eacute; passe de Apache Mina &agrave; JBoss Netty. L&agrave; encore, aucun impacte sur notre code existant. Ce changement permettra par la suite un meilleur support des WebSockets qui seront en plus facilit&eacute;ess avec ce serveur <em>(entre autres...)</em>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Scala est aussi de la partie et Play! va nous permettre de coder notre application en Scala. Un exemple int&eacute;ressant de ce que Scala peut nous offrir est pr&eacute;sent&eacute; par Zengularity en&nbsp;<a href="http://www.zengularity.com/item/1002919091/integrer-une-correction-orthographique-avec-play-scala" target="_blank">vid&eacute;o</a>. Celle-ci nous montre&nbsp;l'ajout d'une correction orthographique avec l'API Google Traduction qui se trouve grandement simplifi&eacute; avec le support natif du XML en Scala.</div>
+
+
+<div>&nbsp;</div>
+
+
+<h3><strong>API</strong></h3>
+
+
+<div>Nouvelle API <span style="font-family: 'courier new', courier;">play.db.Model</span> qui est d&eacute;sormais totalement&nbsp;d&eacute;coupl&eacute;e du datastore. Cela permet ainsi d'avoir tout type de base de donn&eacute;es, m&ecirc;me NoSQL, et ainsi d'avoir des modules comme le <a href="http://www.playframework.org/modules/morphia" target="_blank">play-morphia</a> qui permet de se connecter &agrave; une base <a href="http://web-tambouille.fr/2010/11/15/devoxx-universite-session-mongodb.html" target="_blank">MongoDB</a>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Grosse nouveaut&eacute; concernant l'API <span style="font-family: 'courier new', courier;">play.libs.WS</span>&nbsp;qui ajoute le comportement asynchrone d'une requ&ecirc;te avec une impl&eacute;mentation qui s'appuie sur le fameux framework <a href="http://github.com/AsyncHttpClient/async-http-client" target="_blank">AsyncHttpClient</a> de Jean-Fran&ccedil;ois Arcand <em>(<a href="http://atmosphere.java.net/" target="_blank">Atmosphere</a>, framework Ajax/Push et WebSocket)</em>. Le non-blocking IO est donc tr&egrave;s &agrave; la mode <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />&nbsp;enfin il est surtout tr&egrave;s utile pour&nbsp;construire&nbsp;des applications hautement disponible.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>L'API Binding a subit aussi plusieurs changements nous donnant ainsi une plus grande libert&eacute; concernant la d&eacute;finition et l'utilisation de notre propre Binding ou Custom Binding :</div>
+
+
+<div>
+<ul>
+<li><span style="font-family: 'courier new', courier;">@play.data.binding.As</span> pour configurer un binding sp&eacute;cifique pour une variable :&nbsp;<span style="color: #444444; line-height: 18px; white-space: pre;"><span style="font-family: 'courier new', courier;">@As("dd/MM/yyyy") Date updatedAt</span> permet ainsi de d&eacute;finir le format de la date</span></li>
+<li><span style="color: #444444;"><span style="line-height: 18px; white-space: pre;"><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@play.data.binding.NoBinding</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> pour bloquer le binding d'un champ sp&eacute;cifique :&nbsp;</span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@NoBinding("profile") public boolean isAdmin</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> et ensuite&nbsp;</span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@As("profile") User user</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> fera que le champs </span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">isAdmin</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> ne sera pas remplit dans l'objet </span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">user</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> permettant ainsi de filtrer la donn&eacute;e &agrave; l'affichage</span></span></span></li>
+<li><span style="color: #444444;"><span style="line-height: 18px; white-space: pre;"><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">play.data.binding.TypeBinder</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> qui nous permet de d&eacute;finir nos propres Binders pour un type </span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">&lt;T&gt;</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> donn&eacute; :&nbsp;</span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@As(binder=MyCustomStringBinder.class) String name</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> appliquera votre&nbsp;</span></span></span><span style="font-family: 'courier new', courier;">MyCustomStringBinder</span> sur le l'objet <span style="font-family: 'courier new', courier;">String</span></li>
+<li><span style="color: #444444;"><span style="line-height: 18px; white-space: pre;"><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@play.data.binding.Global</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> peut &ecirc;tre utilis&eacute; en compl&eacute;ment pour d&eacute;finir un </span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">TypBinder</span></span><span style="color: #000000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Verdana, sans-serif; line-height: 19px; white-space: normal;"> global et ainsi plus besoin d'utiliser l'annotation </span><span style="color: #000000; line-height: 19px; white-space: normal;"><span style="font-family: 'courier new', courier;">@As</span></span></span></span><span style="font-family: 'courier new', courier;">&nbsp;</span></li>
+</ul>
+<ul>
+</ul>
+</div>
+
+
+<h3></h3>
+
+
+<h3><strong>Cache</strong></h3>
+
+
+<div>Voici 2 nouvelles fonctionnalit&eacute;s int&eacute;ressantes qui vont nous simplifier la t&acirc;che de mettre en cache certaines pages ou certains fragments de page. En effet, il n'est pas forc&eacute;ment n&eacute;cessaire de devoir tout le temps recalculer une page, il est quelques fois int&eacute;ressant de mettre en cache un contenu statique de cette page pendant une dur&eacute;e d&eacute;termin&eacute;e <em>(par exemple 1h)</em>.</div>
+
+
+<div>C'est ce que va nous permettre l'annotation&nbsp;<span style="font-family: 'courier new', courier;">@play.cache.CacheFo</span>r qui s'utilise telle que :&nbsp;<span style="font-family: 'courier new', courier;">@CacheFor("1h") public static void index() { render(); }</span> ce qui va permettre de mettre en cache pendant une dur&eacute;e d'une heure la page <span style="font-family: 'courier new', courier;">index</span>.</div>
+
+
+<div>Pour un fragment, il faudra passer par le nouveau tag <span style="font-family: 'courier new', courier;">#cache</span> :&nbsp;<span style="font-family: 'courier new', courier;">#{cache 'home-' + connectedUser.email, for:'15min'}...#{/cache}</span> et ainsi avoir cette portion de code mis en cache pendant 15 minutes.</div>
+
+
+<div>&nbsp;</div>
+
+
+<h3>Divers</h3>
+
+
+<div>A noter enfin le support de OAuth, de HTTPS, de WAR int&eacute;gralement pr&eacute;compil&eacute;, la possibilit&eacute; de d&eacute;finir des arguments de mani&egrave;re globale pour plusieurs routes et bien d'autres encore.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>En conclusion, mettez &agrave; jour vos applications Play! et essayez toutes ces nouvelles choses qui vous feront gagner encore plus en productivit&eacute; ! Release notes compl&egrave;te&nbsp;<a href="http://www.playframework.org/documentation/1.1/releasenotes-1.1" target="_blank">ici</a><em>.</em></div>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+</feed>

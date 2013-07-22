@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : Eclipse | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/eclipse/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ne manquez pas 24 plugins chrono à Devoxx France 2013 !]]></title>
+    <link href="http://www.web-tambouille.fr/2013/03/25/ne-manquez-pas-24-plugins-chrono-devoxx-france-2013.html"/>
+    <updated>2013-03-25T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2013/03/25/ne-manquez-pas-24-plugins-chrono-devoxx-france-2013</id>
+    <content type="html"><![CDATA[<p><img style="float: right; margin-bottom: 10px; margin-left: 10px;" title="Devoxx France" src="https://lh6.googleusercontent.com/-9F1gvUwxYlw/T24C2YvqelI/AAAAAAAAA2w/dsL1f2uKJhg/s389/devox-blog-home.png" alt="Devoxx France" />Que le temps passe vite... j'ai l'impression que <a href="http://www.devoxx.com/display/FR12/Accueil" target="_blank">Devoxx 2012</a> c'&eacute;tait hier <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>Bon, pas le temps d'&ecirc;tre nostalgique, on remet le couvert avec <a href="http://www.devoxx.com/display/FR13/Accueil?atl_token=3rXzZlfGau" target="_blank">Devoxx 2013</a>... et c'est d&eacute;j&agrave; pour mercredi !</p>
+
+
+<p>Toujours 3 jours de geekeries en tout genre, de goodies, de bonnes rencontres et de conf&eacute;rences &agrave; ne plus savoir o&ugrave; donner de la t&ecirc;te !</p>
+
+
+<p>Et cette ann&eacute;e encore, j'ai la chance de pouvoir vous faire un talk, en l'occurence un <a href="http://www.devoxx.com/display/FR13/Tools+in+Action" target="_blank">Tools In Action</a> et ce sera <a href="http://www.devoxx.com/display/FR13/24+Plugins+Chrono" target="_blank">24 Plugins Chrono</a> !</p>
+
+
+<p>Si vous voulez booster votre IDE et avoir les meilleurs plugins qui existent aujourd'hui, ne ratez surtout pas cette session !</p>
+
+
+<p>Donc rendez-vous est pris mercredi 27 mars sur la Seine B &agrave; 17h !</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Débugger une application Node.js]]></title>
+    <link href="http://www.web-tambouille.fr/2010/11/07/debugger-une-application-node-js-cote-serveur.html"/>
+    <updated>2010-11-07T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2010/11/07/debugger-une-application-node-js-cote-serveur</id>
+    <content type="html"><![CDATA[<div><a href="http://nodejs.org/" target="_blank">Node.js</a> est un serveur orient&eacute; &eacute;v&egrave;nement qui tourne sur le <a href="http://code.google.com/p/v8/" target="_blank">moteur Javascript V8 de Google</a>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Sa particularit&eacute; : alors que la plupart des frameworks Java ont pour principe de nous faire coder Java c&ocirc;t&eacute; client <em>(<a href="http://code.google.com/intl/fr-FR/webtoolkit/" target="_blank">GWT</a>, <a href="http://wicket.apache.org/" target="_blank">Wicket</a>&nbsp;ou bien encore <a href="http://vaadin.com/home" target="_blank">Vaadin</a>)</em>&nbsp;et ainsi faire que le d&eacute;veloppeur n'ait &agrave; coder aucune ligne de Javascript, Node nous fait coder Javascript &agrave; la fois c&ocirc;t&eacute; client mais surtout c&ocirc;t&eacute; serveur. Donc tout le contraire !</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Question : comment fait-on pour d&eacute;bugger une application Node ?</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Sur le client, <a href="http://www.chromium.org/devtools" target="_blank">Google Chrome Developper Tool</a> ou <a href="https://addons.mozilla.org/fr/firefox/addon/1843/" target="_blank">Firebug</a> font le boulot.&nbsp;C'est surtout c&ocirc;t&eacute; serveur que la question se pose et les solutions sont <a href="https://github.com/ry/node/wiki/modules#debugging" target="_blank">nombreuses</a> !&nbsp;J'ai retenu pour cet article le <a href="https://github.com/ry/node/wiki/Using-Eclipse-as-Node-Applications-Debugger" target="_blank">debug depuis Eclipse &agrave; l'aide du plugin v8</a>&nbsp;ainsi que le plugin&nbsp;<a href="https://github.com/dannycoates/node-inspector" target="_blank">node-inspector</a>&nbsp;pour un debug dans le navigateur.</div>
+
+
+<div>&nbsp;</div>
+
+
+<p><!--more--></p>
+
+
+<div><strong>Eclipse</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Il est possible de d&eacute;bugger une application Node directement depuis son IDE Eclipse &agrave; l'aide de l'<a href="http://code.google.com/p/chromedevtools/" target="_blank">Eclipse debugger plugin for v8</a>. Comme pour nos applications Tomcat, Jetty... l'id&eacute;e est de d&eacute;marrer le serveur node en debug avec un port sp&eacute;cifique sur lequel on viendra se connecter en remote.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Tout d'abord, il faut installer le plugin, l'url de l'update site est la suivante :&nbsp;<a href="http://chromedevtools.googlecode.com/svn/update/dev/" target="_blank">http://chromedevtools.googlecode.com/svn/update/dev/</a>&nbsp;<em>(que vous utiliserez &agrave; partir de Help &gt; Install New Software...)</em>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>A partir de l&agrave;, 2 options sont possibles :</div>
+
+
+<div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// No break</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span><span class="p">[</span><span class="o">=</span><span class="nx">port</span><span class="p">]</span> <span class="nx">nodeapp</span><span class="p">.</span><span class="nx">js</span>
+</span><span class='line'><span class="c1">// With break</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span><span class="o">-</span><span class="nx">brk</span><span class="p">[</span><span class="o">=</span><span class="nx">port</span><span class="p">]</span> <span class="nx">nodeapp</span><span class="p">.</span><span class="nx">js</span><span class="o">&lt;</span><span class="err">/pre&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+
+
+<div>L'option <em>--debug</em> permet de lancer l'application de mani&egrave;re non bloquante, il sera possible de se connecter en remote plus tard. Alors que l'option <em>--debug-brk</em> bloquera l'application qui sera en attente d'une connexion remote.&nbsp;Le port par d&eacute;faut est le port 5858.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Une fois votre application lanc&eacute;e en debug, il vous faudra cr&eacute;er une configuration de debug dans Eclipse au niveau de <em>Standalone V8 VM</em> :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><a class="lightbox" href="https://lh6.googleusercontent.com/-oMHwvkagy40/TiWdH2zpjoI/AAAAAAAAAv8/6xVTfXDqWb4/s800/sZqH3%25255B1%25255D.png"><img class="aligncenter" style="vertical-align: middle;" src="https://lh6.googleusercontent.com/-oMHwvkagy40/TiWdH2zpjoI/AAAAAAAAAv8/6xVTfXDqWb4/s800/sZqH3%25255B1%25255D.png" alt="Eclipse Debug Window" width="600" height="383" /></a></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Une fois la configuration cr&eacute;&eacute;e, n'oubliez pas de mettre 5858 comme port de connexion remote.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><em>That's all !</em> A vous les joies du debug, il ne vous reste plus qu'&agrave; mettre des breakpoints depuis l'&eacute;diteur Javascript fourni par le plugin :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><a class="lightbox" href="https://lh6.googleusercontent.com/-N25waz6TnqU/TiWdKuzK5RI/AAAAAAAAAv8/gd5_GQcE7Mo/s800/TuqCv%25255B1%25255D.png"><img class="aligncenter" style="vertical-align: middle;" src="https://lh6.googleusercontent.com/-N25waz6TnqU/TiWdKuzK5RI/AAAAAAAAAv8/gd5_GQcE7Mo/s800/TuqCv%25255B1%25255D.png" alt="Eclipse Editor" width="600" height="489" /></a></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>A noter qu'il est possible de se connecter sur une machine distante.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>La documentation compl&egrave;te se trouve <a href="https://github.com/ry/node/wiki/Using-Eclipse-as-Node-Applications-Debugger" target="_blank">ici</a>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div><strong>Node-Inspector</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Node Inspector est un debugger Node par navigateur qui s'appuie sur WebKit. Il fonctionne sur tous les navigateurs compatible WebKit <em>(Chrome, Safari...)</em>.</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>L'installation se fait par <a href="http://github.com/isaacs/npm" target="_blank">nmp</a>&nbsp;avec la commande suivante :</div>
+
+
+<div>
+<pre class="brush: bash;fontsize: 100; first-line: 1; ">npm install node-inspector</pre>
+</div>
+
+
+<div>Le debug de l'application se fait en 3 &eacute;tapes :</div>
+
+
+<div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// Démarrer l&#39;inspecteur en tâche de fond</span>
+</span><span class='line'><span class="nx">node</span><span class="o">-</span><span class="nx">inspector</span> <span class="o">&amp;</span>
+</span><span class='line'><span class="c1">// Démarrer votre application Node</span>
+</span><span class='line'><span class="nx">node</span> <span class="o">--</span><span class="nx">debug</span> <span class="nx">NodeApp</span><span class="p">.</span><span class="nx">js</span>
+</span><span class='line'><span class="c1">// Ouvrir votre navigateur WebKit favori</span>
+</span><span class='line'><span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8080/debug?port=5858</span>
+</span><span class='line'><span class="c1">// Puis rdv sur votre application</span>
+</span><span class='line'><span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8124/</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Et voil&agrave;, votre application Node est pr&ecirc;te pour le debug.</p>
+</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Si vous avec une dizaine de minutes devant vous, je vous conseille cette petite vid&eacute;o explicative de l'outil :</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>
+<object width="425" height="350" data="http://www.youtube.com/v/AOnK3NVnxL8" type="application/x-shockwave-flash"><br />
+<param name="data" value="http://www.youtube.com/v/AOnK3NVnxL8" />
+<param name="play" value="false" />
+<param name="loop" value="false" />
+<param name="scale" value="showall" />
+<param name="src" value="http://www.youtube.com/v/AOnK3NVnxL8" /></object></div>
+
+
+<div>&nbsp;</div>
+
+
+<div><strong>Conclusion</strong></div>
+
+
+<div>&nbsp;</div>
+
+
+<div>Quel outil choisir ?&nbsp;Et bien tout d&eacute;pend de votre utilisation.</div>
+
+
+<div>Du fait que je travaille tous les jours sur Eclipse, j'ai suis de suite parti sur le plugin V8.</div>
+
+
+<div>Si vous utilisez un autre &eacute;diteur <em>(TextMate, VIM...)</em>, vous irez plut&ocirc;t sur node-inspector ou un autre outil du m&ecirc;me genre.</div>
+
+
+<div>Dans tous les cas, ces outils sont des must have pour d&eacute;velopper vos applications Node !</div>
+
+
+<div>A vous le debug Javascript c&ocirc;t&eacute; serveur <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></div>
+
+
+<div>&nbsp;</div>
+
+]]></content>
+  </entry>
+  
+</feed>

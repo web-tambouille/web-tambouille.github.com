@@ -1,0 +1,571 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content='true' name='MSSmartTagsPreventParsing' />
+  <title>Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js - Web Tambouille</title>
+  <meta name="author" content="Romain MATON (rmat0n)">
+
+  
+  <meta name="description" content="Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js Cat&eacute;gorie : Outil | 22 février 2011 | Tags :&nbsp; IDE, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">
+  <link href="/web-tambouille/favicon.gif" rel="icon">
+  <!--<link href="/web-tambouille/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">-->
+  <link href="http://feeds.feedburner.com/WebTambouille" rel="alternate" title="Web Tambouille" type="application/atom+xml">
+
+  <script src="/web-tambouille/javascripts/modernizr-2.0.js"></script>
+  <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/web-tambouille/javascripts/octopress.js" type="text/javascript"></script>
+  
+<link href="/web-tambouille/stylesheets/custom/style.css" rel="stylesheet" type="text/css">
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
+<link type="text/css" rel="stylesheet" href="/web-tambouille/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="/web-tambouille/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+  stLight.options({
+    publisher: "ur-b6758c2d-7a90-b852-fb6-acec8e7acc08",
+    st_title: "Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js",
+    st_url: "/web-tambouille"
+  });
+</script>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  (function () {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+
+  $(document).ready(function () {
+    $('a.lightbox').lightBox({
+      imageLoading: '/static/images/lightbox-ico-loading.gif',
+      imageBtnClose: '/static/images/lightbox-btn-close.gif',
+      imageBtnPrev: '/static/images/lightbox-btn-prev.gif',
+      imageBtnNext: '/static/images/lightbox-btn-next.gif',
+      imageBlank: '/static/images/lightbox-blank.gif'
+    });
+  });
+  /* ]]> */
+</script>
+
+</head>
+
+<body >
+<div class='navbar section' id='navbar'>
+  <div class='widget Navbar' id='Navbar1'>
+    <div></div>
+  </div>
+</div>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+      <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main (ir a principal) </a> |
+        <a href='#sidebar'>skip to sidebar (ir al sidebar)</a>
+      </span>
+    <div class='crosscol section' id='pages'>
+  <div class='widget PageList' id='PageList1'>
+    <h2>Pages</h2>
+
+    <div class='widget-content'>
+      <ul class="main-navigation">
+        <li class='selected pagemenu'><a href="/web-tambouille/" title="">Accueil</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/contact.html'>Contact</a></li>
+        <li class='pagemenu'><a href='/web-tambouille/a-propos-de-l-auteur.html'>A propos de l'auteur</a></li>
+        <li style="float:right; padding-right:0px; line-height:12px;">
+          <style>
+            .google_translate img {
+              filter: alpha(opacity=100);
+              -moz-opacity: 1.0;
+              opacity: 1.0;
+              border: 0;
+            }
+
+            .google_translate:hover img {
+              filter: alpha(opacity=30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+
+            .google_translatextra:hover img {
+              filter: alpha(opacity=0.30);
+              -moz-opacity: 0.30;
+              opacity: 0.30;
+              border: 0;
+            }
+          </style>
+          <div>
+            <a class="google_translate" href="#" title="French" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cfr&hl=en';"><img alt="French" border="0" align="absbottom" title="French" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBrDZLrI/AAAAAAAAAC0/Kc6eDMT9LFI/s200/France.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="English" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cen&hl=en';"><img alt="English" border="0" align="absbottom" title="English" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVBORD9bI/AAAAAAAAACs/XkaLmmin4zg/s200/United+Kingdom(Great+Britain).png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="German" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cde&hl=en';"><img alt="German" border="0" align="absbottom" title="German" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YVBzoFF2I/AAAAAAAAAC8/WgvMK3zP1Rk/s200/Germany.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Spain" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Ces&hl=en';"><img alt="Spain" border="0" align="absbottom" title="Spain" height="24" src="http://3.bp.blogspot.com/_5jbh95HruKA/S1YVCdHp5VI/AAAAAAAAADE/lWHzr5znExU/s200/Spain.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Italian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cit&hl=en';"><img alt="Italian" border="0" align="absbottom" title="Italian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YVCskNubI/AAAAAAAAADM/ChdHC6vYT4s/s200/Italy.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Russian" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cru&hl=en';"><img alt="Russian" border="0" align="absbottom" title="Russian" height="24" src="http://4.bp.blogspot.com/_5jbh95HruKA/S1YWR-jg9pI/AAAAAAAAADc/vYZrPOzazHU/s200/Russian+Federation.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+            <a class="google_translate" href="#" title="Japanese" onclick="window.location.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=auto%7Cja&hl=en';"><img alt="Japanese" border="0" align="absbottom" title="Japanese" height="24" src="http://1.bp.blogspot.com/_5jbh95HruKA/S1YWSR2_wYI/AAAAAAAAADs/GtKdPLKUluE/s200/Japan.png" style="cursor: pointer;margin-right:2px;" width="24" /></a>
+          </div>
+        </li>
+      </ul>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='header-wrapper'>
+  <div class='header section' id='header'>
+    <div class='widget Header' id='Header1'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            Web Tambouille
+          </h1>
+        </div>
+        <div class='descriptionwrapper'>
+          <p class='description'><span>Java, Scala, Web, Android, HTML5, JS, NoSQL et bien d'autres !</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id='twitter_div'>
+  <ul id='twitter_update_list'>
+    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+  </ul>
+</div>
+<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
+<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
+
+    <div id="content-wrapper">
+      <div id="main-wrapper">
+        <div class='main section' id='main'>
+          <div class='widget Blog' id='Blog1'>
+            <div class='blog-posts hfeed'>
+              <div class='post clearfix hentry uncustomized-post-template'>
+  
+<div class='clearfix'>
+  <div class='postmetahd'>
+    <h2 class='post-title entry-title single-post'>
+      
+        Node.js partie 2 - Cloud9 : IDE pour le développement Javascript et Node.js
+      
+    </h2>
+    <p class='post-header-line-1'>
+      <span class='st_twitter_hcount' style="float: right;" displayText='Tweet'></span>
+      <span class='st_plusone_hcount' style="float: right;" displayText='Google +1'></span>
+      <span class='post-author vcard'>
+
+<span class='fn'>
+  Cat&eacute;gorie :
+  
+    <a class='category' href='/web-tambouille/categories/outil/'>Outil</a>
+  
+</span>
+
+</span> |
+      <span class='date-header'>
+
+
+
+
+
+
+
+
+  <time datetime="2011-02-22T00:00:00+01:00" pubdate data-updated="true">22 février 2011</time>
+
+
+
+</span> |
+      <span class='post-labels'>
+
+Tags :&nbsp;
+<span class='post-labels'>
+  
+    <a class='tag' href='/web-tambouille/tags/ide/'>IDE</a>, <a class='tag' href='/web-tambouille/tags/javascript/'>Javascript</a>, <a class='tag' href='/web-tambouille/tags/node-dot-js/'>Node.js</a>
+  
+</span>
+
+</span>
+    </p>
+  </div>
+</div>
+
+
+<div id="post" class='post-body entry-content'>
+  
+    <p><a href="https://picasaweb.google.com/lh/photo/--ARY5R3ysp4PWa81wVPhA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Cloud9 IDE" src="https://lh5.googleusercontent.com/-nCfsVq1IazM/ThmqQGoXI4I/AAAAAAAAAuM/VXBrHmBCDbo/s800/logo_cloud9ide.jpg" alt="Cloud9 IDE" width="120" height="120" /></a>Suite de la s&eacute;rie de billets consacr&eacute;s &agrave; <a href="http://nodejs.org/" target="_blank">Node.js</a>. Apr&egrave;s une <a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">petite introduction</a> de ce serveur Javascript, nous allons faire&nbsp;un petit tour du c&ocirc;t&eacute; des environnements de d&eacute;veloppement.</p>
+<p>Un <a href="http://web-tambouille.fr/2010/11/7/debugger-une-application-nodejs-cote-serveur.html" target="_blank">pr&eacute;c&eacute;dent article</a> de Web Tambouille avait d&eacute;j&agrave; d&eacute;taill&eacute; comment d&eacute;buguer une application Node par <a href="http://www.eclipse.org/" target="_blank">Eclipse</a> ou &agrave; l&#8217;aide de <a href="https://github.com/dannycoates/node-inspector" target="_blank">node-inspector</a>. Moyennant l&#8217;installation du&nbsp;<a href="http://code.google.com/p/chromedevtools/" target="_blank">Eclipse debugger plugin for V8</a>, il sera donc possible d&#8217;utiliser tout IDE qui s&#8217;appuie sur le noyau Eclipse : <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-361/heliossr1" target="_blank">Eclipse Classic</a>, <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/heliossr1" target="_blank">Eclipse for Javascript Developpers</a>, <a href="http://www.aptana.com/" target="_blank">Aptana</a>&nbsp;et bien d&#8217;autres encore. De m&ecirc;me, en choisissant de faire le debug de l&#8217;application dans node-inspector, tout &eacute;diteur de texte pourra &ecirc;tre utilis&eacute; pour le d&eacute;veloppement : <a href="http://www.vim.org/" target="_blank">VIM</a>, <a href="http://macromates.com/" target="_blank">TextMate</a> ou votre &eacute;diteur pr&eacute;f&eacute;r&eacute; !</p>
+<p>Je vais donc vous pr&eacute;senter un tout autre IDE &agrave; savoir&nbsp;<a href="http://cloud9ide.com/" target="_blank">Cloud9</a>. Il est sp&eacute;cialement con&ccedil;u pour le d&eacute;veloppement d&#8217;applications Javascript avec le gros avantage d&#8217;inclure nativement le debug d&#8217;application Node. Voyons cela de plus pr&egrave;s.</p>
+<p>Au menu : Yet another Javascript IDE, installation, utilisation, points forts, points faibles, roadmap et une petite conclusion.</p>
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /><a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /><a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /><a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+<p><!--more--></p>
+<h3>Yet Another Javascript IDE ?</h3>
+<p><a href="http://cloud9ide.com/" target="_blank">Cloud9</a> est un IDE sp&eacute;cialement con&ccedil;u pour les d&eacute;veloppeurs Javascript. Comme le rappelle la <a href="http://cloud9ide.com/" target="_blank">page d&#8217;accueil du site</a>, de nombreux environnements de d&eacute;veloppement incluent un support de HTML/CSS/Javascript avec coloration syntaxique, compl&eacute;tion&#8230; mais cela reste souvent assez d&eacute;cevant.</p>
+<p>J&#8217;ai beaucoup travaill&eacute; avec Eclipse et, c&ocirc;t&eacute; Web, il faut bien admettre que ce n&#8217;est vraiment pas sa force, que ce soit avec la <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-361/heliossr1" target="_blank">version classique</a> ou des versions plus orient&eacute;es Web comme <a href="http://www.aptana.com/" target="_blank">Aptana</a> ou <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/heliossr1" target="_blank">E4JD</a>. Depuis plusieurs mois, je suis pass&eacute; sur <a href="http://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a>&nbsp;et, dans sa version Ultimate <em>(la C.E. n&#8217;est malheureusement pas concern&eacute;)</em>, force est de constater que le support de Javascript est tr&egrave;s bon : une coloration syntaxique qui va plus loin que la simple couleur sur des cha&icirc;nes de caract&egrave;res, une compl&eacute;tion assez &eacute;volu&eacute;e, des outils int&eacute;gr&eacute;s pour&nbsp;<a href="http://blogs.jetbrains.com/idea/2010/04/javascript-debugger-improvements/" target="_blank">d&eacute;buguer c&ocirc;t&eacute; client et c&ocirc;t&eacute; serveur du code Javascript</a>, etc&#8230; Tout ceci fait qu&#8217;IntelliJ IDEA est actuellement un des meilleurs IDE Javascript du march&eacute; <em>(pas forc&eacute;ment son but premier mais c&#8217;est bon &agrave; prendre)</em>.&nbsp;A noter aussi qu&#8217;IntelliJ propose un IDE compl&egrave;tement d&eacute;di&eacute; au Web : <a href="http://www.jetbrains.com/webstorm/" target="_blank">Web Storm</a>. N&#8217;h&eacute;sitez pas &agrave; faire vos retours en commentaires si vous avez pu jouer avec.</p>
+<p>Mais depuis peu, un autre IDE fait du bruit : <a href="http://cloud9ide.com/" target="_blank">Cloud9</a>, l&#8217;IDE fait par des <em>Javascripteurs</em> pour des <em>Javascripteurs</em> <img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />. Ses principales caract&eacute;ristiques sont :</p>
+<ul>
+<li>IDE en ligne <em>(pour l&#8217;instant en b&ecirc;ta ferm&eacute;)</em> qui sera donc accessible par votre navigateur</li>
+<li>Propose, en terme de fonctionalit&eacute;s d&#8217;&eacute;diteur, au moins aussi bien que la concurrence</li>
+<li>Facile &agrave; &eacute;tendre pour rajouter toutes sortes de plugins</li>
+<li>Support du debug d&#8217;application Node</li>
+<li>Test et d&eacute;ploiement sur le cloud</li>
+</ul>
+<p>Techniquement, Cloud9 c&#8217;est : un serveur Node, de l&#8217;ajax dans tous les sens, des Web Sockets, du HTML5&#8230; en gros, un condens&eacute; de nouvelles technologies ! Il est d&#8217;ailleurs un tr&egrave;s bel exemple de ce que l&#8217;on peut faire avec toutes ces nouvelles technos.&nbsp;Objectif de l&#8217;IDE :</p>
+<blockquote>We want to be to Eclipse what Google Docs is to Microsoft Word <em>(<a href="http://cloud9ide.posterous.com/a-short-introduction-to-the-cloud9-ide" target="_blank">citation</a>)</em></blockquote>
+<h3>Installation</h3>
+<p>Pour l&#8217;utiliser, 2 possibilit&eacute;s :</p>
+<ol>
+<li>avoir un <a href="http://run.cloud9ide.com/" target="_blank">compte pour la b&ecirc;ta priv&eacute;e</a> online</li>
+<li>ou <a href="https://github.com/ajaxorg/cloud9" target="_blank">cloner le projet</a> sur git</li>
+</ol>
+<p>Pour ma part, j&#8217;ai choisi, apr&egrave;s 5 secondes d&#8217;attente de ticket <img title="Laughing" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />, la deuxi&egrave;me solution. Cela se r&eacute;sume donc tr&egrave;s simplement par :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">rmat0n</span><span class="o">:~</span><span class="nx">$</span> <span class="nx">git</span> <span class="nx">clone</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/ajaxorg/cloud9.git</span>
+</span><span class='line'><span class="nx">rmat0n</span><span class="o">:~</span><span class="nx">$</span> <span class="nx">node</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">cloud9</span><span class="p">.</span><span class="nx">js</span> <span class="o">-</span><span class="nx">w</span> <span class="o">/</span><span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">your</span><span class="o">/</span><span class="nx">workspace</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>Cloud9 d&eacute;pend de plusieurs autres projets github <em>(Socket.IO&#8230;),</em> donc le premier lancement sera un peu long avec un nombre assez cons&eacute;quent de <span style="font-family: 'courier new', courier;">git clone</span>. Une fois tous les t&eacute;l&eacute;chargements termin&eacute;s, vous devriez voir ce joli log dans votre console :</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>                         <span class="p">.</span>  <span class="p">..</span><span class="nx">__</span><span class="o">%|</span><span class="nx">iiiiiii</span><span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;,..</span>
+</span><span class='line'>                          <span class="nx">_</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">iIIviiiiiiiiiillli</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">_</span><span class="p">.</span>
+</span><span class='line'>                       <span class="p">.</span><span class="nx">ivIvilli</span><span class="o">%||+++++|</span><span class="nx">iillllvs</span><span class="p">;</span><span class="nx">_</span>
+</span><span class='line'>                     <span class="p">..</span><span class="nx">nvlIlv</span><span class="o">|~</span><span class="err">`</span><span class="p">..........</span> <span class="o">-&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="o">*</span><span class="nx">IIIvv</span><span class="o">=</span>
+</span><span class='line'>                    <span class="p">.)</span><span class="nx">nvvvvv</span><span class="o">-</span><span class="p">....</span> <span class="p">.</span>   <span class="p">..</span> <span class="p">...</span>  <span class="o">~</span><span class="nx">nvvvo</span><span class="o">=</span><span class="p">.</span>
+</span><span class='line'>         <span class="p">.</span><span class="nx">__i</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">iiiii</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vvvvn</span><span class="p">(</span><span class="o">=</span> <span class="p">.</span>  <span class="p">.</span> <span class="p">..</span><span class="nx">i</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;,</span> <span class="p">.</span>  <span class="p">...</span> <span class="o">+</span><span class="p">)</span><span class="nx">nnnv</span><span class="p">..</span>
+</span><span class='line'>      <span class="nx">_i</span><span class="o">%</span><span class="nx">vvvvllIIlIlIvIvvv</span><span class="p">(</span>   <span class="p">..</span> <span class="p">.</span> <span class="nx">lnnsi</span>  <span class="p">.</span>    <span class="o">:</span><span class="p">)</span><span class="nx">vnvnsissvisi</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">__</span><span class="p">.</span>
+</span><span class='line'>   <span class="p">.</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vnvvvvvvIvvvvvvvlvvII</span><span class="p">;.</span> <span class="p">.</span>     <span class="o">|</span><span class="nx">nnvv</span><span class="o">:</span>  <span class="p">.</span> <span class="p">.</span> <span class="o">-</span><span class="p">)</span><span class="nx">lvvlIIIIlvvIvnnns</span><span class="o">=</span><span class="nx">_</span><span class="p">.</span>
+</span><span class='line'> <span class="p">.</span><span class="o">:</span><span class="nx">vnvvvvvvvvvvvvvIvIvIIvv</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="o">:</span>  <span class="p">.</span> <span class="p">.</span> <span class="p">.</span> <span class="o">|</span><span class="p">{}</span><span class="nx">l</span><span class="p">.</span>    <span class="p">.</span> <span class="o">:&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">lvIvvvvvvvvvvvvvvnov</span><span class="p">.</span>
+</span><span class='line'> <span class="o">|</span><span class="p">)</span><span class="nx">nvnvnvnvnvnvvvvvvvvvvvvis</span> <span class="p">.</span>            <span class="p">.</span> <span class="p">.</span>  <span class="o">=</span><span class="nx">ivvvvvvvvvvvnvnvnvnvnn</span><span class="p">..</span>
+</span><span class='line'><span class="p">.</span><span class="nx">nnnnnnvnnvnvnvnvvvnvvvvvvvnv_</span>   <span class="p">.</span>    <span class="p">.</span>       <span class="o">:</span><span class="nx">vnvvvvvvvnvnnvnnnnnnnnov</span><span class="p">;</span>
+</span><span class='line'><span class="o">:</span><span class="mi">2</span><span class="nx">oonnnnnnnnnvnvnnvnvvnvvvvvIvvi</span><span class="o">==</span><span class="nx">_i</span><span class="p">..</span>    <span class="p">.</span>  <span class="p">.</span><span class="nx">vvvvvvvvnvnnvnnnnnnnnooooc</span>
+</span><span class='line'><span class="o">:</span><span class="nx">nnooonnnnnnnnnnvvnvvvvvvvvIvIlIvvnI</span><span class="o">-</span>      <span class="p">.</span><span class="o">=</span><span class="nx">vvvvvvvvnvnvnnnnnnnnnnooo2</span><span class="p">(</span>
+</span><span class='line'> <span class="o">|</span><span class="p">{</span><span class="nx">XooooonnnnnvnvnvvvvvvvIIIIIIIIv</span><span class="o">|-</span>      <span class="p">.</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">vIlIIvIvvvvvnvvnvnnnnnooo2v</span><span class="p">(</span>
+</span><span class='line'> <span class="p">.){</span><span class="mi">2</span><span class="nx">ooooonnnnvnvnvvvvvIIIIIIlll</span><span class="o">+-</span>     <span class="p">.</span> <span class="o">=</span><span class="p">)</span><span class="nx">lllIIvIvvvvvvvnvnnnvnnooo22</span><span class="o">-</span><span class="err">`</span>
+</span><span class='line'>   <span class="o">-</span><span class="p">{</span><span class="mi">2</span><span class="nx">oooonnnnnvvvvvvvlIIlllllil</span><span class="o">==</span><span class="nx">_</span>   <span class="p">.</span><span class="nx">_iIllillllllIvvvvvvnvnnnnoooo</span><span class="o">*-</span>
+</span><span class='line'>  <span class="p">.</span> <span class="o">-</span><span class="p">.</span><span class="s2">&quot;11oonnvvvnvvIIlIlliliiiiillii||iliiiiiiililllIIvvvvvnnnnn2}(~.</span>
+</span><span class='line'><span class="s2">      . -+~!lvvnvIvIIllliiiii|i|||i||i|||i||iiiiilillIIvvvvvv}|&quot;</span><span class="o">-</span> <span class="p">.</span>
+</span><span class='line'>          <span class="p">.</span> <span class="p">..</span><span class="o">--~++++++++~+~+~+~+-+-+~+~+-+~+~++~++++++~~~-:</span><span class="p">..</span> <span class="p">.</span>
+</span><span class='line'>               <span class="p">.</span> <span class="p">.</span>  <span class="p">.</span> <span class="p">.</span> <span class="p">....</span> <span class="p">.</span> <span class="p">.</span> <span class="p">....</span> <span class="p">..</span> <span class="p">...</span> <span class="p">..</span> <span class="p">...</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+</span><span class='line'>
+</span><span class='line'>                           <span class="nx">Ajax</span><span class="p">.</span><span class="nx">org</span> <span class="nx">Cloud9</span> <span class="nx">IDE</span>
+</span><span class='line'>                              <span class="nx">version</span> <span class="mf">0.2</span><span class="p">.</span><span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure>
+<p>Votre Cloud9 est pr&ecirc;t ! Rendez-vous alors imm&eacute;diatement &agrave; l&#8217;url suivante :&nbsp;<a href="http://127.0.0.1:3000" target="_blank">http://127.0.0.1:3000</a>&nbsp;et, apr&egrave;s cr&eacute;ation de votre projet javascript dans le&nbsp;<span style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 18px; white-space: pre;">/path/to/your/workspace</span>, vous devriez voir l&#8217;interface suivante :</p>
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-8b_JKSm3XDg/ThmqKYeSAvI/AAAAAAAAAs0/sWMKKgPQSQw/s800/cloud9ide_complete_example.jpg"><img class="aligncenter" title="Cloud9 Interface" src="https://lh5.googleusercontent.com/-8b_JKSm3XDg/ThmqKYeSAvI/AAAAAAAAAs0/sWMKKgPQSQw/s800/cloud9ide_complete_example.jpg" alt="Cloud9 Interface" width="600" height="466" /></a></p>
+<p>Pour l&#8217;heure, si vous avez le dernier Node 0.4.0 install&eacute;, l&#8217;IDE d&eacute;marre et plante&nbsp;instantan&eacute;ment. Il a fallu que je downgrade vers un ancien Node<em> (0.2.6)</em> pour que Cloud9 refonctionne. Il faudra donc attendre un peu pour que la version sur github soit compatible avec le dernier Node.</p>
+<h3>Utilisation</h3>
+<p>Pour l&#8217;instant, l&#8217;IDE dispose de 4 menus :</p>
+<ul>
+<li><strong>File :</strong> new (file, folder&#8230;), open, save, save as, save all, settings&#8230;</li>
+<li><strong>Edit :</strong> undo, redo, cut, copy, paste, search, search &amp; replace, go to line&#8230;</li>
+<li><strong>View :</strong> theme, syntax highlighting, select full line, highlight active line, show print margin&#8230;</li>
+<li>et <strong>Windows :</strong> layout, status bar, toolbar, editors, tree, debug, console, close tab, close all tabs, close all but current tab&#8230;</li>
+</ul>
+<p>On voit que l&#8217;on est donc face &agrave; un menu assez standard pour un environnement de d&eacute;veloppement mais qui reste toutefois assez light par rapport &agrave; ce qu&#8217;Eclipse, IDEA&#8230; nous proposent actuellement.&nbsp;On peut donc faire de la recherche <em>(avec gestion de la casse, regexp&#8230;)</em>, du remplacement ou aller directement &agrave; une ligne pr&eacute;cise.&nbsp;C&ocirc;t&eacute;&nbsp;pr&eacute;f&eacute;rences,&nbsp;il est possible de d&eacute;finir que l&#8217;on retourne &agrave; la ligne &agrave; partir d&#8217;un certain nombre de caract&egrave;res, si l&#8217;on affiche les fichiers cach&eacute;s, le nombre d&#8217;espaces par tabulation&#8230; En ce qui concerne les th&egrave;mes, une petite dizaine sont &agrave; votre disposition. J&#8217;aime beaucoup, pour le confort de lecture, le th&egrave;me <a href="http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/" target="_blank">Monokai</a> :</p>
+<p><a class="lightbox" href="https://lh6.googleusercontent.com/-ONbeY_Gda8M/ThmqK9HRwlI/AAAAAAAAAs4/0-SyVEwiraU/s800/cloud9ide_ide_example.jpg"><img class="aligncenter" title="Cloud9 Theme" src="https://lh6.googleusercontent.com/-ONbeY_Gda8M/ThmqK9HRwlI/AAAAAAAAAs4/0-SyVEwiraU/s800/cloud9ide_ide_example.jpg" alt="Cloud9 Theme" width="300" height="323" /></a></p>
+<p>Notez aussi qu&#8217;il existe un raccourci clavier&nbsp;pour&nbsp;toutes les actions du menu <em>(changement d&#8217;onglet&#8230;)</em>.</p>
+<p>Nous sommes d&#8217;accord, cela reste tr&egrave;s bas niveau compar&eacute; aux IDE que nous avons actuellement.</p>
+<p>Mais la puissance de Cloud9 r&eacute;side dans son int&eacute;gration native avec Node et ainsi pouvoir lancer et d&eacute;buguer son application Node directement dans Cloud9 sans aucun plugin additionnel. Si vous retournez 2 images plus haut, vous verrez des petites ic&ocirc;nes <span style="font-family: 'courier new', courier;">run</span>/<span style="font-family: 'courier new', courier;">debug</span>/<span style="font-family: 'courier new', courier;">stop</span>. Il vous suffit de vous placer sur votre fichier serveur Javascript et de faire un run pour lancer le serveur Node ! La console s&#8217;active alors et l&#8217;on voit dans mon exemple que Socket.IO est pr&ecirc;t &agrave; recevoir des clients. On profite d&egrave;s lors d&#8217;une vue <span style="font-family: 'courier new', courier;">variable</span>&nbsp;qui affiche l&#8217;&eacute;tat de toutes les variables &agrave; l&#8217;endroit o&ugrave; le breakpoint a &eacute;t&eacute; pos&eacute;. On peut aussi faire de l&#8217;inspection avec des expressions que l&#8217;on peut d&eacute;finir soit m&ecirc;me. On peut donc tout d&eacute;buguer dans l&#8217;IDE, que ce soit un fichier client ou un fichier serveur.</p>
+<p>Cette int&eacute;gration est extr&ecirc;mement bien faite et, pour le coup, bien sup&eacute;rieure aux autres IDE du march&eacute;. Donc si vous faites du Node, Cloud9 est fait pour vous&#8230;</p>
+<h3>Points forts / Points faibles / Roadmap</h3>
+<p>&#8230; mais attention quand m&ecirc;me car pendant les semaines qui viennent il va falloir tol&eacute;rer de revenir un peu &agrave; l&#8217;&acirc;ge de pierre en terme de fonctionnalit&eacute;s. J&#8217;exag&egrave;re &agrave; peine&#8230;</p>
+<p>C&ocirc;t&eacute; points forts :</p>
+<ul>
+<li>run et debug natif d&#8217;applications Node<em> (d&eacute;finitivement la killer feature de l&#8217;IDE)</em></li>
+<li>vue console</li>
+<li>vue variable avec l&#8217;&eacute;tat des tous les objets et la possibilit&eacute; de d&eacute;finir des expressions sp&eacute;cifiques</li>
+<li>th&egrave;mes et coloration syntaxique</li>
+</ul>
+<ul>
+</ul>
+<p>Et pour les points faibles <em>(qui sont tr&egrave;s li&eacute;s &agrave; la jeunesse de l&#8217;outil)</em> :</p>
+<ul>
+<li>pas de compl&eacute;tion !!!</li>
+<li>pas de refactoring possible <em>(renommage&#8230;)</em></li>
+<li>peu de plugins</li>
+<li>peu de documentations pour cr&eacute;er ses propres plugins</li>
+</ul>
+<p>Mais attention, la roadmap est encourageante et corrigera plusieurs points faibles cit&eacute;s ci-dessus :</p>
+<ul>
+<li>une version online ouverte &agrave; tous</li>
+<li>meilleure int&eacute;gration avec git et github</li>
+<li>outils de refactoring Javascript</li>
+<li>compl&eacute;tion</li>
+<li>chrome debugging</li>
+</ul>
+<p>Donc pas de panique, les points faibles seront corrig&eacute;s dans les prochains mois.</p>
+<h3>Conclusion</h3>
+<p>Alors faut-il utiliser Cloud9 d&egrave;s aujourd&#8217;hui ?</p>
+<p>Si vous faites du d&eacute;veloppement Node, la r&eacute;ponse est clairement oui : l&#8217;int&eacute;gration est vraiment tr&egrave;s bonne et les points faibles s&#8217;oublient assez vite. De toute fa&ccedil;on, Javascript &eacute;tant dynamique, on a l&#8217;habitude depuis longtemps d&#8217;avoir une compl&eacute;tion et du refactoring tr&egrave;s limit&eacute;s.</p>
+<p>Si vous ne faites pas de Node, tout d&eacute;pendra de votre tol&eacute;rance aux points faibles cit&eacute;s : certains d&eacute;veloppeurs ne supportent pas de ne pas avoir de compl&eacute;tion. Pour ceux l&agrave;, il sera difficile de s&#8217;y mettre avec la version actuelle. De m&ecirc;me, si vous &ecirc;tes un accro aux nombreux fonctionnalit&eacute;s de votre Eclipse ou IntelliJ IDEA, le passage &agrave; Cloud9 vous fera certainement sourire <img title="Smile" src="/web-tambouille/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+<p>Mais dans tous les cas, c&#8217;est vraiment un IDE &agrave; essayer, que vous l&#8217;adoptiez ou non !</p>
+<p>Connaissez-vous d&#8217;autres IDE Web / Javascript ?</p>
+
+  
+  <div style='clear: both;'></div>
+</div>
+
+
+  
+    <div class="post-share-after">
+  <span class='st_twitter_vcount with_space' displayText='Tweet'></span>
+  <span class='st_plusone_vcount with_space' displayText='Google +1'></span>
+  <span class='st_linkedin_vcount with_space' displayText='LinkedIn'></span>
+  <span class='st_sharethis_vcount with_space' displayText='ShareThis'></span>
+</div>
+
+  
+
+  <p class="meta">
+  
+    <div class='blog-pager' id='blog-pager'>
+      <div class="alignleft"><a href="/web-tambouille/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" title="Billets pr&eacute;c&eacute;dents : Node.js partie 1 - Tout ce que vous devez savoir sur Node.js">&laquo; Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a></div>
+      <div class="alignright"><a href="/web-tambouille/2011/02/24/web-tambouille-les-nouvelles-suggestions-du-chef.html" title="Billets suivants : Web Tambouille : les nouvelles suggestions du Chef !">Web Tambouille : les nouvelles suggestions du Chef ! &raquo;</a></div>
+      <div class='clear'></div>
+    </div>
+  
+  </p>
+
+  
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+  
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-wrapper">
+        <div class='gadget clearfix' id='subscribe'>
+  <h4>Abonnez-vous !</h4>
+  <ul>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouille' target="_blank">Blog</a></li>
+    <li class='rss'><a href='http://feeds.feedburner.com/WebTambouilleComments' target="_blank">Commentaires</a></li>
+    <li class='twitter'><a href='http://twitter.com/rmat0n' target="_blank">Twitter</a></li>
+  </ul>
+</div>
+
+<div class='sidebar clearfix section' id='promotecolumn'>
+  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="https://flattr.com/profile/rmat0n"></a>
+  <noscript>
+    <a href="http://flattr.com/thing/296927/Web-Tambouille-rmat0n" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+  </noscript>
+  <a href="http://www.viadeo.com/en/profile/romain.maton" style="margin-left:5px;vertical-align:text-bottom;">
+    <img src="http://mohamedtazi.com/viadeo_button_logo.jpg" width="50" border="0" alt="Mon profil sur Viadeo" />
+  </a>
+  <a href="http://fr.linkedin.com/in/rmaton" style="margin-left:5px;">
+    <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png" width="145" height="25" border="0" alt="Mon profil sur LinkedIn" />
+  </a>
+</div>
+
+
+<div class='sidebar clearfix section' id='searchcolumn'>
+  <form action="http://google.com/search" method="get">
+    <fieldset role="search">
+      <input type="hidden" name="q" value="site:www.web-tambouille.fr" />
+      Recherche : <input class="search" type="text" name="q" results="0" placeholder="Search" size="44px;" />
+    </fieldset>
+  </form>
+</div>
+
+
+<div class='sidebar clearfix section' id='onecolumn10'>
+  <div class='widget LinkList' id='LinkList10'>
+    <div id="tagCloud">
+      <h2>Mots-cl&eacute;s :</h2>
+      <div class='widget-content'>
+        <ul id="tagList">
+          <li><a style="font-size: 121%" href="/tags/android/">Android</a></li>
+<li><a style="font-size: 151%" href="/tags/devoxx/">Devoxx</a></li>
+<li><a style="font-size: 139%" href="/tags/fonctionnelle/">Fonctionnelle</a></li>
+<li><a style="font-size: 128%" href="/tags/html5/">HTML5</a></li>
+<li><a style="font-size: 165%" href="/tags/java/">Java</a></li>
+<li><a style="font-size: 163%" href="/tags/javascript/">Javascript</a></li>
+<li><a style="font-size: 160%" href="/tags/node-dot-js/">Node.js</a></li>
+<li><a style="font-size: 121%" href="/tags/play/">Play</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='clearfix' id='twocolumns'>
+  <div class='fl section' id='sl'>
+    <div class='widget Label' id='Label1'>
+      <h2>Cat&eacute;gories</h2>
+      <div class='widget-content list-label-widget-content'>
+        
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fr section' id='sr'>
+    <div class='widget BlogArchive' id='BlogArchive1'>
+      <h2>Archives</h2>
+      <div class='widget-content'>
+        <div id='ArchiveList'>
+          <div id='BlogArchive1_ArchiveList'>
+            <ul class='hierarchy'>
+              <!--li class='archivedate expanded'-->
+              <!--li><a class='post-count-link' href=> <span class='post-count' dir='ltr'>()</span></a></li-->
+              <!--li-->
+            </ul>
+          </div>
+        </div>
+        <div class='clear'></div>
+          <span class='widget-item-control'>
+            <span class='item-control blog-admin'></span>
+          </span>
+        <div class='clear'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:15px;">
+  <div id="zindepWidget" data-profil="http://www.leszindeps.fr/p/Romain/Maton/8aff0abe371c3fd601371c3fe3e40012" data-width="315"></div>
+</div>
+
+<div class='sidebar clearfix section' id='onecolumn20'>
+  <div class='widget LinkList' id='LinkList20'>
+    <div class='widget-content licence' style="padding-top:15px;">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Contrat Creative Commons" style="border-width:0;float:left;padding-right:5px;padding-top: 4px;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+      Cette oeuvre est mise &agrave; disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> Licence Creative Commons Paternit&eacute; - Pas d'Utilisation Commerciale -
+                                                                                                                                                   Partage &agrave;
+                                                                                                                                                   l'Identique 3.0 non transcrit</a>.
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1471642924127242";
+/* web-tambouille-1 */
+google_ad_slot = "8625499162";
+google_ad_width = 324;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+      </div>
+    </div>
+    <!--</div>-->
+    <footer role="contentinfo"><div class='clearfix clear' id='footer-wrapper'>
+  <div class='fl'>
+    Copyright &copy; 2013 - Romain MATON (rmat0n) - Propuls&eacute; par <a href="http://octopress.org">Octopress</a>
+  </div>
+  <div class='fr'><a href='http://cloudblogging.blogspot.com/'>Cloud Blogging</a> desgined by
+    <a href='http://btemplates.com/' title='Blogger Templates'><img alt='BTemplates' src='http://4.bp.blogspot.com/_Zuzii37VUO4/S59W9qxAUWI/AAAAAAAAEqY/4plNq9KEqBQ/s1600/blogger-templates.png' /></a>.
+  </div>
+</div>
+
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'web-tambouille';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html';
+        var disqus_url = 'http://www.web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19424814-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript">
+  $("figure").each(function () {
+    $(this).html($(this).html().replace(/\t/g, "  "));
+  });
+</script>
+
+
+  </div>
+</div>
+</body>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag : MongoDB | Web Tambouille]]></title>
+  <link href="http://www.web-tambouille.fr/tags/mongodb/atom.xml" rel="self"/>
+  <link href="http://www.web-tambouille.fr/"/>
+  <updated>2013-07-22T22:08:13+02:00</updated>
+  <id>http://www.web-tambouille.fr/</id>
+  <author>
+    <name><![CDATA[Romain MATON (rmat0n)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DEVOXX - Université Session MongoDB]]></title>
+    <link href="http://www.web-tambouille.fr/2010/11/15/devoxx-universite-session-mongodb.html"/>
+    <updated>2010-11-15T00:00:00+01:00</updated>
+    <id>http://www.web-tambouille.fr/2010/11/15/devoxx-universite-session-mongodb</id>
+    <content type="html"><![CDATA[<p>Devoxx, c'est parti !&nbsp;Et on commence tambour battant avec un premier r&eacute;sum&eacute; sur la session <a href="http://www.devoxx.com/display/Devoxx2K10/Building+Web+Applications+with+MongoDB" target="_blank">MongoDB</a> par Alvin Richards&nbsp;(<a href="http://www.10gen.com/" target="_blank">10gen</a>, les cr&eacute;ateurs de MongoDB).</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-cC8THXW0Dgo/ThmqOb8O2aI/AAAAAAAAAto/b27s_hBwKxk/s800/devoxx10_mongodb_overview.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh5.googleusercontent.com/-cC8THXW0Dgo/ThmqOb8O2aI/AAAAAAAAAto/b27s_hBwKxk/s800/devoxx10_mongodb_overview.jpg" alt="Devoxx 2010 MongoDB Salle" width="500" height="375" /></a></p>
+
+
+<p>Le programme est dense mais c'est une session de 3h donc il faut bien &ccedil;a <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /></p>
+
+
+<p>La couverture du workshop sur le papier&nbsp;<em>(en anglais)</em>&nbsp;mais qui a &eacute;t&eacute; tr&egrave;s adapt&eacute;e :&nbsp;</p>
+
+
+<ul>
+<li>How to install and configure MongoDB</li>
+<li>How the MongoDB drivers work, and how to use them to build applications</li>
+<li>Data modeling with MongoDB documents</li>
+<li>When to use MongoDB, when another database type might be a better choice</li>
+<li>Scaling with MongoDB<em> (master/slave configurations and auto-sharding)</em></li>
+<li>Unique database features, including capped collections, large file storage, and atomic updates</li>
+</ul>
+
+
+<p><!--more--></p>
+
+
+<p><a class="lightbox" href="https://lh3.googleusercontent.com/-OAdsLmUqxmk/ThmqO92GApI/AAAAAAAAAt0/ujVCT4QUYH4/s800/devoxx10_mongodb_speaker.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh3.googleusercontent.com/-OAdsLmUqxmk/ThmqO92GApI/AAAAAAAAAt0/ujVCT4QUYH4/s800/devoxx10_mongodb_speaker.jpg" alt="Devoxx 2010 MongoDB Speaker" width="300" height="233" /></a></p>
+
+
+<p>Tout d'abord, les chiffres concernant les t&eacute;l&eacute;chargements de la base sont en constante progression et c'est un point rassurant. Quelques rappels sur ce que veut dire NoSQL, un petit sch&eacute;ma RDBMS, OLAP et NoSQL... et la session commence avec un overview global de Mongo.</p>
+
+
+<h2>Overview</h2>
+
+
+<p>MongoDB est une base NoSQL orient&eacute;e document &eacute;crite en C++. Scalable et&nbsp;extr&ecirc;mement&nbsp;performante, sa particularit&eacute; r&eacute;side dans son concept <em>schema-free</em> faisant que l'on peut manipuler le mod&egrave;le comme bon nous semble.</p>
+
+
+<p>Tout d'abord, le positionnement de MongoDB par rapport &agrave; des solutions comme MemCached ou d'autres RDBMS, clairement entre les 2 avec au niveau scalabilit&eacute; et performance un rapprochement avec les solutions de type Key/Value :</p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/-Jg1PK8OAYdQ/ThmqOXdJIqI/AAAAAAAAAts/l6obcBcfOYA/s800/devoxx10_mongodb_philosophy.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh4.googleusercontent.com/-Jg1PK8OAYdQ/ThmqOXdJIqI/AAAAAAAAAts/l6obcBcfOYA/s800/devoxx10_mongodb_philosophy.jpg" alt="Devoxx 2010 MongoDB Position" width="500" height="444" /></a></p>
+
+
+<p>Les premiers concepts forts nous arrivent peu &agrave; peu et justifient ce positionnement et surtout cette capacit&eacute; &agrave; scaler &agrave; l'infinie :</p>
+
+
+<ul>
+<li>pas de jointure</li>
+<li>pas de transaction complexe<em> (et m&ecirc;me pas de transaction tout court)</em></li>
+</ul>
+
+
+<p>Ceci permet une scalabilit&eacute; horizontale sans se soucier de m&eacute;canisme comme la r&eacute;plication de donn&eacute;es sur diff&eacute;rents noeuds.</p>
+
+
+<p>Il existe des drivers pour de nombreux langages : Java, Ruby, Python, C#, C/C++, Erlang, Perl, Javascript, Scala... cette liste vous dit quelque chose ? <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>Vient une partie avant/apr&egrave;s. Tout d'abord, que nous a apport&eacute; le relationnel :</p>
+
+
+<ol>
+<li>avant le relationnel : logic et data combin&eacute;es...</li>
+<li>apr&egrave;s le relationnel : s&eacute;paration, mod&egrave;le de donn&eacute;es ind&eacute;pendant de la logique m&eacute;tier, logique m&eacute;tier ind&eacute;pendante.</li>
+<li>avec MongoDB : tout ceci continue !</li>
+</ol>
+
+
+<p>C&ocirc;t&eacute; terminology, quelques changements :</p>
+
+
+<ul>
+<li>une table devient une collection,</li>
+<li>un enregistrement <em>(row)</em> devient un document JSON,</li>
+<li>un index reste un index,</li>
+<li>une jointure devient un document embedded ou linking,</li>
+<li>une partition devient un shard,</li>
+<li>et une cl&eacute; de partition devient une cl&eacute; de shard.</li>
+</ul>
+
+
+<h2>Coding</h2>
+
+
+<p>Et maintenant, du code ! De nombreux slides nous ont &eacute;t&eacute; diffus&eacute;s, je vais essay&eacute; de vous les r&eacute;sumer. Tout d'abord, voici un document dans MongoDB :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">post</span> <span class="o">=</span> <span class="p">{</span><span class="nx">author</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="o">&amp;</span><span class="nx">eacute</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+</span><span class='line'>    <span class="nx">text</span><span class="o">:</span> <span class="s2">&quot;Destination Moon&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;comic&quot;</span><span class="p">,</span> <span class="s2">&quot;adventure&quot;</span><span class="p">]}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">post</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">post</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></blockquote>
+
+<p>Du <em>plain</em> JSON (ou presque) ! La deuxi&egrave;me ligne est donn&eacute;e en tant qu'exemple d'insertion d'un document en base. Plut&ocirc;t simple et efficace.</p>
+
+
+<p>Un id unique est g&eacute;n&eacute;r&eacute; par MongoDB si vous le ne sp&eacute;cifiez pas.</p>
+
+
+<p>On peut d&egrave;s lors cr&eacute;er des index, requ&ecirc;ter notre base, &eacute;tendre notre sch&eacute;ma :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// Index, 1 ascending and -1 descending&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">ensureIndex</span><span class="p">({</span><span class="nx">author</span><span class="o">:</span> <span class="mi">1</span><span class="p">})</span>
+</span><span class='line'><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="nx">author</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="err">é</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;})</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Query operators</span>
+</span><span class='line'><span class="c1">// $ne, $in, $nin, $mod, $all, $size, $exists, $lt, $gt&amp;hellip;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="nx">tags</span><span class="o">:</span> <span class="p">{</span><span class="nx">$exists</span><span class="o">:</span> <span class="kc">true</span><span class="p">}})</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Extending the schema on the fly !</span>
+</span><span class='line'><span class="nx">new_comment</span> <span class="o">=</span> <span class="p">{</span><span class="nx">author</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Kyle</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>           <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+</span><span class='line'>           <span class="nx">text</span><span class="o">:</span> <span class="s2">&quot;great book&quot;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;},</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="p">{</span> <span class="s2">&quot;$push&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">comments</span><span class="o">:</span> <span class="nx">new_comment</span><span class="p">},</span>
+</span><span class='line'>          <span class="s2">&quot;$inc&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">comment_count</span><span class="o">:</span> <span class="mi">1</span><span class="p">}})</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Just modify my schema with comments and counts&lt;/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Index the new schema&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">ensureIndex</span><span class="p">({</span><span class="nx">comments</span><span class="p">.</span><span class="nx">author</span><span class="o">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Find the last 5 posts&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">sort</span><span class="p">({</span><span class="nx">date</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// You can explain the query to get stats&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="nx">author</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="err">é</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;}).</span><span class="nx">explain</span><span class="p">()</span>
+</span><span class='line'><span class="c1">// Returns a JSON object with query analysis</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></blockquote>
+
+<h2>MapReduce</h2>
+
+
+<p>Il est bien s&ucirc;r possible de faire du MapReduce et ainsi profiter du calcul parall&eacute;lis&eacute; sur plusieurs noeuds :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">mapFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>   <span class="k">this</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">z</span><span class="p">)</span> <span class="p">{</span><span class="nx">emit</span><span class="p">(</span><span class="nx">z</span><span class="p">,</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="mi">1</span><span class="p">});});</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">reduceFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>   <span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="nx">total</span> <span class="o">+=</span> <span class="nx">v</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">count</span> <span class="p">}</span>
+</span><span class='line'>   <span class="k">return</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="nx">total</span><span class="p">};</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">res</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">posts</span><span class="p">.</span><span class="nx">mapReduce</span><span class="p">(</span><span class="nx">mapFunc</span><span class="p">,</span> <span class="nx">reduceFunc</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">blockquote</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">db</span><span class="p">[</span><span class="nx">res</span><span class="p">.</span><span class="nx">result</span><span class="p">].</span><span class="nx">find</span><span class="p">()</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/blockquote&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Gives</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">id</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">comic</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="nx">value</span><span class="o">:</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="mi">1</span><span class="p">}}</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;</span><span class="err">/em&gt;id: &amp;ldquo;adventure&amp;rdquo;, value: {count: 1}}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Je passe la partie OneToMany et ManyToMany, l'id&eacute;e est d'avoir des tableaux en entr&eacute;e pour g&eacute;rer ces cas. Tout d&eacute;pendra du design de vos objets, si l'on souhaite avoir une d&eacute;pendance bi-directionnelle ou non... Mais dans tous les cas, MongoDB le g&egrave;re tr&egrave;s bien.</p>
+
+
+<h2>Scaling</h2>
+
+
+<p>En quelques mots :</p>
+
+
+<ul>
+<li>le volume de donn&eacute;es ne peut qu'augmenter,</li>
+<li>le nombre d'op&eacute;rations / sec aussi,</li>
+<li>une appli ne pourra pas scal&eacute;e&nbsp;ind&eacute;finiment&nbsp;verticalement...</li>
+</ul>
+
+
+<p>Et c'est pour cela que l'on doit regarder horizontalement et mettre en place plusieurs instances de MongoDB pour la r&eacute;plication des donn&eacute;es voir m&ecirc;me pour un shards des donn&eacute;es i.e. toutes les donn&eacute;es sont r&eacute;parties sur tous les shards. Un shard n'a qu'une partie des donn&eacute;es !</p>
+
+
+<p>MongoDB fonctionne <em>un peu</em> comme MySQL &agrave; savoir une r&eacute;plication Master/Slave en asynchrone. Il est possible de faire du live <em>(non recommand&eacute; par le speaker) </em>ou des replica sets.</p>
+
+
+<p>Qu'est-ce qu'un replica sets :</p>
+
+
+<ul>
+<li>un cluster de N serveurs,</li>
+<li>chaque&nbsp;shard&nbsp;peut &ecirc;tre&nbsp;shard&nbsp;primaire,</li>
+<li>consensus d'&eacute;lection du&nbsp;shard&nbsp;primaire,</li>
+<li>failover automatique,</li>
+<li>recovery automatique aussi,</li>
+<li>&eacute;criture dans le&nbsp;shard&nbsp;primaire,</li>
+<li>lecture dans le&nbsp;shard&nbsp;primaire ou un secondaire.</li>
+</ul>
+
+
+<p>Les concepts autour du replica sets :</p>
+
+
+<ul>
+<li>l'&eacute;criture est durable quand l'info est disponible sur plusieurs membres,</li>
+<li>l'&eacute;criture peut-&ecirc;tre visible avant un <em>cluster wide commit</em>,</li>
+<li>sur un failover, si une donn&eacute;e n'a pas &eacute;t&eacute; r&eacute;pliqu&eacute;e depuis le&nbsp;shard&nbsp;primaire, la donn&eacute;e est supprim&eacute;e !</li>
+</ul>
+
+
+<p>Mod&eacute;lisation d'un sharding multi instance :</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-GvsALT5yKJU/ThmqOsKdyII/AAAAAAAAAtw/m5b_NoKPjUo/s800/devoxx10_mongodb_sharding.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh5.googleusercontent.com/-GvsALT5yKJU/ThmqOsKdyII/AAAAAAAAAtw/m5b_NoKPjUo/s800/devoxx10_mongodb_sharding.jpg" alt="Devoxx 2010 MongoDB Shards" width="500" height="427" /></a></p>
+
+
+<p>Je m'arr&ecirc;te l&agrave; pour la partie shards mais il y a encore quelques slides en r&eacute;serve, pour un prochain article ! Mais d&eacute;j&agrave; cela vous donne une bonne vision de ce qu'est capable de faire l'outil.</p>
+
+
+<h2>Java</h2>
+
+
+<p>Pour utiliser MongoDB avec le monde Java, 2 possibilit&eacute;s :</p>
+
+
+<ul>
+<li>le RAW MongoDB driver avec des Map&lt;String, Object> en tant que vue ;</li>
+<li>Morphia, un mapper type-safe, qui fonctionne en POJO avec des annotations (&agrave; la JPA).</li>
+</ul>
+
+
+<p>Exemple avec le driver :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">DBCollection</span> <span class="nx">coll</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mongo</span><span class="p">().</span><span class="nx">getDB</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">blogdb</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">ArrayList</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">tags</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ArrayList</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span class='line'><span class="nx">tags</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">comic</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span><span class='line'><span class="nx">tags</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">adventure</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// First example</span>
+</span><span class='line'><span class="nx">coll</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="k">new</span> <span class="nx">BasicDBObjectBuilder</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">author</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="err">é</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;)</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;Destination Moon&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">())</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;tags&quot;</span><span class="p">,</span> <span class="nx">tags</span><span class="p">));</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// Second example, another way</span>
+</span><span class='line'><span class="nx">Map</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nb">String</span><span class="p">,</span> <span class="nb">Object</span><span class="o">&gt;</span> <span class="nx">fields</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HashMap</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nb">String</span><span class="p">,</span> <span class="nb">Object</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span class='line'><span class="nx">fields</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">author</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="err">é</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span><span class='line'><span class="nx">fields</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">text</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Destination</span> <span class="nx">Moon</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span><span class='line'><span class="nx">fields</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">date</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+</span><span class='line'><span class="nx">fields</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">tags</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="nx">tags</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">coll</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="k">new</span> <span class="nx">BasicDBObject</span><span class="p">(</span><span class="nx">fields</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Il est aussi possible de parser du JSON natif :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">DBObject</span> <span class="nx">dbObj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;{</span><span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;}</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>C&ocirc;t&eacute; Morphia, cela donne :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">Blog</span> <span class="nx">entry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blog</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="o">&amp;</span><span class="nx">eacute</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Datastore</span> <span class="nx">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Morphia</span><span class="p">().</span><span class="nx">createDatastore</span><span class="p">();</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">ds</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Blog</span> <span class="nx">foundEntry</span> <span class="o">=</span> <span class="nx">ds</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">Blog</span><span class="p">.</span><span class="kr">class</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Herg</span><span class="o">&amp;</span><span class="nx">eacute</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;)</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">ds</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Tout est bien s&ucirc;r cach&eacute; dans le POJO avec les annotations connues du type : @Entity, @Id, @Property, @Embedded...</p>
+
+
+<p>Concernant la r&eacute;plication avec Java, certaines fonctions nous permettront de synchroniser nos shards : DB.slaveOK(), Collection.slaveOK()...</p>
+
+
+<p>Pour le sharding, aucun changement dans notre code !!! Tout est pris en charge par MongoDB. Quand on sait &agrave; quelle point g&eacute;rer du sharding est tout sauf simple...</p>
+
+
+<h2>Backup</h2>
+
+
+<p>L&agrave; encore, 2 possibilit&eacute;s :</p>
+
+
+<ul>
+<li>mongodump / mongorestore</li>
+<li>fsync + lock</li>
+</ul>
+
+
+<p>Le dump / restore fonctionne comme pour MySQL. Pour le fsync, tout est flush&eacute; sur le disque avec un lock avant la t&acirc;che et un unlock apr&egrave;s. Cela peut donc ralentir le syst&egrave;me.</p>
+
+
+<h2>Conclusion</h2>
+
+
+<p>Et le slide final :</p>
+
+
+<p><a class="lightbox" href="https://lh5.googleusercontent.com/-q7x9akDZkR0/ThmqPVNCAtI/AAAAAAAAAt4/n92Pc5XmzQY/s800/devoxx10_mongodb_summary.jpg"><img class="aligncenter" style="vertical-align: middle;" src="https://lh5.googleusercontent.com/-q7x9akDZkR0/ThmqPVNCAtI/AAAAAAAAAt4/n92Pc5XmzQY/s800/devoxx10_mongodb_summary.jpg" alt="Devoxx 2010 MongoDB Final" width="500" height="375" /></a></p>
+
+
+<p>Une session extr&ecirc;mement int&eacute;ressante, passionnante m&ecirc;me. Toujours quelques doutes concernants l'euphorie du speaker qui met tr&egrave;s bien en avant son produit sans donner ses d&eacute;fauts. Mais bon, je pinaille <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>A la prochaine ! Je crois qu'une s&eacute;rie de billets sur Android vous attend...</p>
+
+]]></content>
+  </entry>
+  
+</feed>

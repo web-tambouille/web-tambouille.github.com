@@ -1,0 +1,750 @@
+---
+        layout: nil
+        ---
+        <?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title><![CDATA[Cat&eacute;gorie : Language | Web Tambouille]]></title>
+    <link href="http://www.web-tambouille.fr/categories/language/atom.xml" rel="self"/>
+    <link href="http://www.web-tambouille.fr/"/>
+    <updated>2013-07-22T22:08:13+02:00</updated>
+    <id>http://www.web-tambouille.fr/</id>
+    <author>
+        <name><![CDATA[Romain MATON (rmat0n)]]></name>
+        
+    </author>
+    <generator uri="http://octopress.org/">Octopress</generator>
+
+    
+    <entry>
+        <title type="html"><![CDATA[Javascript++]]></title>
+        <link href="http://www.web-tambouille.fr/2012/02/23/javascript-plus-plus-evolution-du-langage.html"/>
+        <updated>2012-02-23T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2012/02/23/javascript-plus-plus-evolution-du-langage</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/nMrNHG_1l1y3WohchX2EKNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img style="float: right; margin-left: 10px; margin-bottom: 10px;" title="Programmation fonctionnelle" src="https://lh4.googleusercontent.com/-Il3aKnteYJY/ThmqRC_eSXI/AAAAAAAAAuk/d1gwQ4AkEeY/s800/logo_programmation_fonctionnelle.jpg" alt="Programmation fonctionnelle" /></a>Quelques nouvelles de Javascript avec ce tr&egrave;s bon article sur D&eacute;veloppez :&nbsp;<a href="http://blog.developpez.com/web/p10401/web/javascript/le-core-javascript-s-enrichit-de-nouvell/" target="_blank">Le "core" JavaScript s'enrichit de nouvelles m&eacute;thodes</a>.</p>
+
+
+<p>En effet, je vous pr&eacute;sentais il y a un an quelques exemples de <a href="../2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">programmation fonctionnelle en Javascript</a>&nbsp;avec des librairies telles que <a href="http://osteele.com/sources/javascript/functional/" target="_blank">functional-javascript</a> ou <a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>.</p>
+
+
+<p>Sans pour autant arriver &agrave; ce niveau de fonctionnalit&eacute;s, Javascript de dote de nouvelles m&eacute;thodes que nous allons rapidement parcourir.</p>
+
+
+<p><!--more--></p>
+
+
+<h3>Array</h3>
+
+
+<p>La plupart de ces m&eacute;thodes sont d&eacute;j&agrave; pr&eacute;sentes dans&nbsp;<a href="http://osteele.com/sources/javascript/functional/" target="_blank">functional-javascript</a>&nbsp;et&nbsp;<a href="http://documentcloud.github.com/underscore/" target="_blank">underscore.js</a>, l'avantage est que si vous n'utilisiez que celles-l&agrave;, plus besoin de mettre la librairie dans vos scripts !<br /> Enfin, seulement si vous visez les tous derniers navigateurs du march&eacute;...</p>
+
+
+<ul>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">every</span> :</span>&nbsp;retourne true si tous les &eacute;l&eacute;ments valident la fonction et false sinon.<br /> exemple : <span style="font-family: 'courier new', courier;">[1, 4, 8].every(function(val) { return val &gt; 0 });</span> retournera <span style="font-family: 'courier new', courier;">true</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">some</span> :</span>&nbsp;retourne true si au moins un des &eacute;l&eacute;ments valide la fonction et false sinon.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[1, -4, 8].some(function(val) { return val &lt; 0 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">true</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">filter</span> :</span>&nbsp;retourne un nouveau tableau avec les &eacute;l&eacute;ments ayant valid&eacute;s la fonction.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[3, 4, 7, 12].filter(function(val) { return val%2==0 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">[4, 12]</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">forEach</span> :</span>&nbsp;appelle la fonction sur tous les &eacute;l&eacute;ments&nbsp;du tableau.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[5, 9].forEach(function(val) { alert(val) });</span>&nbsp;fera 2 appels &agrave; la fonction <span style="font-family: 'courier new', courier;">alert</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">map</span> :</span>&nbsp;retourne un nouveau tableau avec tous les &eacute;l&eacute;ments transform&eacute;s par la fonction<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">[1, 2, 3].map(function(val) { return val*3 });</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">[3, 6, 9]</span>.</li>
+</ul>
+
+
+<h3>String</h3>
+
+
+<p>Aussi &eacute;trange que cela puisse para&icirc;tre, des fonctions de type <span style="font-family: 'courier new', courier;">trim</span> n'existent pas par d&eacute;faut sur l'objet String en Javascript.<br /> La plupart des d&eacute;veloppeurs passent par des librairies comme jQuery ou autres pour faire cela. Plus besoin !</p>
+
+
+<ul>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trim</span>&nbsp;:</span>&nbsp;supprime les caract&egrave;res d'espacement.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trim();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"toto"</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trimRight</span>&nbsp;:</span>&nbsp;comme <span style="font-family: 'courier new', courier;">trim</span>&nbsp;mais uniquement &agrave; droite.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trimRight();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"&nbsp;&nbsp;toto"</span>.</li>
+<li><span style="text-decoration: underline;"><span style="font-family: 'courier new', courier;">trimLeft</span>&nbsp;:</span>&nbsp;comme <span style="font-family: 'courier new', courier;">trim</span>&nbsp;mais uniquement &agrave; gauche.<br /> exemple :&nbsp;<span style="font-family: 'courier new', courier;">" &nbsp;toto &nbsp; ".trimLeft();</span>&nbsp;retournera&nbsp;<span style="font-family: 'courier new', courier;">"toto&nbsp;&nbsp;&nbsp;"</span>.</li>
+</ul>
+
+
+<p>Comme d'habitude, c'est une bonne nouvelle car cela permettra &eacute;ventuellement d'embarquer moins de librairies d'ici <em>quelques ann&eacute;es</em>.<br /> Le probl&egrave;me &eacute;tant que ces <em>quelques ann&eacute;es</em> repr&eacute;sentent la dur&eacute;e qu'auront les "vieux" navigateurs &agrave; se faire remplacer par une version plus r&eacute;cente, et on connait le fabuleux destin d'IE6 qui a surv&eacute;cu bien plus longtemps que pr&eacute;vu...<br /> Donc oui : des nouvelles fonctionnalit&eacute;s dans Javascript mais toujours ces librairies dans nos tags script !</p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Node.JS partie 3 - Première application Node.js et HTML5]]></title>
+        <link href="http://www.web-tambouille.fr/2011/03/08/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html"/>
+        <updated>2011-03-08T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/03/08/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/mG0J6Uh8xWSH8OdrGQKyBA?feat=embedwebsite"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Socket.IO" src="https://lh6.googleusercontent.com/-fnx-F_p0HSM/ThmqRc6_-NI/AAAAAAAAAuo/zx8mDxtunGE/s800/logo_socketio.jpg" alt="Socket.IO" width="240" height="84" /></a>Suite de la s&eacute;rie d'articles consacr&eacute;s &agrave; Node.js et, apr&egrave;s une <a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">petite introduction au serveur</a> ainsi qu'une <a href="http://www.webtambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html" target="_blank">pr&eacute;sentation de Cloud9 IDE</a>, nous allons enfin mettre les mains dedans !</p>
+
+
+<p>Pour ce Quick Start, je vous propose une application qui fera du push sur tous les clients pour leur envoyer l'heure syst&egrave;me ainsi que le nombre de clients actuellement connect&eacute;s au serveur <em>(avec gestion de la d&eacute;connection)</em>. Ces clients pourront envoyer des <em>pokes</em> aux autres clients <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />, le tout tournera avec&nbsp;<a href="http://expressjs.com/" target="_blank">express</a> et <a href="http://socket.io/" target="_blank">Socket.IO</a>.</p>
+
+
+<p>L'id&eacute;e n'est pas de d&eacute;velopper une application de gestion compl&egrave;te <em>(qui m&eacute;riterait une bonne dizaine de billets</em>) ni de faire un tour d'horizon de la centaine de frameworks existants mais juste de vous montrer &agrave; quoi ressemble le code d'une application Node avec 2 frameworks tr&egrave;s r&eacute;pandus dans la communaut&eacute;.</p>
+
+
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br /> <a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br /> <a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br /> <a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+
+
+<p><!--more--></p>
+
+
+<h3>Installation</h3>
+
+
+<p>Normalement, vous devriez avoir avoir Node et NPM install&eacute;s sur votre machine <em>(<a href="http://www.webtambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html" target="_blank">&sect; installation</a>).</em> Pour rappel, selon votre OS et votre package manager si besoin <em>(ici Mac OSX et Homebrew)</em> :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~$ brew install node
+rmat0n:~$ curl http://npmjs.org/install.sh | sudo sh</pre>
+
+
+<p>D&egrave;s lors, vous n'avez plus que 2 commandes &agrave; effectuer pour installer les modules express et Socket.IO pour Node :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~$ npm install express
+rmat0n:~$ npm install socket.io</pre>
+
+
+<p>Vous voil&agrave; pr&ecirc;ts, commen&ccedil;ons de suite !</p>
+
+
+<h3>Arborescence</h3>
+
+
+<p>Le projet aura l'arborescence suivante :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/ project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>/ public
+</span><span class='line'>    index.html
+</span><span class='line'>server.js
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Tr&egrave;s simple donc avec un fichier <span style="font-family: 'courier new', courier;">server.js</span> et, dans un dossier <span style="font-family: 'courier new', courier;">public</span>, un fichier <span style="font-family: 'courier new', courier;">index.html</span>.</p>
+
+
+<h3>Client</h3>
+
+
+<p>Tout d'abord, voyons le squelette du fichier html :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Socket IO Demo<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.5.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://www.web-tambouille.fr/socket.io/socket.io.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>h2<span class="ni">&amp;gt;</span>D<span class="ni">&amp;amp;</span>amp;eacute;mo Node.js + Socket IO<span class="ni">&amp;lt;</span>/h2<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;timestamp&quot;<span class="ni">&amp;gt;</span>Timestamp<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;timestamp&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;clients&quot;<span class="ni">&amp;gt;</span>Clients<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;clients&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>label for=&quot;message&quot;<span class="ni">&amp;gt;</span>Message<span class="ni">&amp;lt;</span>/label<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div id=&quot;message&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>p<span class="ni">&amp;gt;&amp;lt;</span>button id=&quot;poke&quot;<span class="ni">&amp;gt;</span>Send poke !<span class="ni">&amp;lt;</span>/button<span class="ni">&amp;gt;&amp;lt;</span>/p<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Un fichier tr&egrave;s standard donc avec un import du dernier jQuery, l'import de Socket.IO <em>(module charg&eacute; par Node)</em> et quelques <span style="font-family: 'courier new', courier;">div</span> qui me permettront d'afficher les retours du serveur.</p>
+
+
+<p>A la suite des 2 balises scripts d&eacute;j&agrave; pr&eacute;sentes, je rajoute le code Javascript suivant :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">sock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Socket</span><span class="p">();</span>
+</span><span class='line'>    <span class="nx">sock</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#message&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timestamp&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#clients&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">clients</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>    <span class="nx">sock</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#poke&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">sock</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Poke !&quot;</span><span class="p">);</span> <span class="p">});</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Quelques explications :</p>
+
+
+<ul>
+<li>tout d'abord, je cr&eacute;e un object <span style="font-family: 'courier new', courier;">io.Socket</span>&nbsp;<em>(qui par d&eacute;faut utilisera le host d'entr&eacute;e et le port 80)</em></li>
+<li>lorsque le serveur m'envoie un message, c&ocirc;t&eacute; client je peux le r&eacute;cup&eacute;rer en utilisant le code suivant <em>(API Socket.IO)</em> : <span style="font-family: 'courier new', courier;">sock.on('message', function(data) {...});</span></li>
+<li>le serveur me renverra un objet JSON, je le parse et r&eacute;cup&egrave;re les propri&eacute;t&eacute;s message ou timestamp et client<em>&nbsp;</em>que je mets dans les champs associ&eacute;s</li>
+<li>je connecte la socket imm&eacute;diatement apr&egrave;s</li>
+<li>je d&eacute;finis un handler sur le bouton et, lors d'un <span style="font-family: 'courier new', courier;">click</span> utilisateur, j'envoie un message <em>poke</em>.</li>
+</ul>
+
+
+<p>Plut&ocirc;t simple non ? M&ecirc;me si l'API standard est d&eacute;j&agrave; tr&egrave;s simple d'utilisation, Socket.IO nous simplifie encore plus l'utilisation de Web Sockets c&ocirc;t&eacute; client et c&ocirc;t&eacute; serveur.</p>
+
+
+<p>Voyons mantenant le code c&ocirc;t&eacute; serveur.</p>
+
+
+<h3>Serveur</h3>
+
+
+<p>Et voici le fichier <span style="font-family: 'courier new', courier;">server.js</span> :</p>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">io</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">socket</span><span class="p">.</span><span class="nx">io</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">createServer</span><span class="p">();</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/public&amp;rsquo;));</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/&amp;rsquo;, function(req, res, next){</span>
+</span><span class='line'>  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;.</span><span class="o">/</span><span class="kr">public</span><span class="o">/</span><span class="nx">index</span><span class="p">.</span><span class="nx">html</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8333</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">flashPolicyServer</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">websocket</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">flashsocket</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">htmlfile</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">xhr</span><span class="o">-</span><span class="nx">multipart</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">xhr</span><span class="o">-</span><span class="nx">polling</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">jsonp</span><span class="o">-</span><span class="nx">polling</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;]</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">allClients</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">clientId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">connection</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">my_timer</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">my_client</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">id</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="nx">clientId</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">obj</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="nx">client</span> <span class="p">};</span>
+</span><span class='line'>  <span class="nx">clientId</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">allClients</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">my_timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">obj</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="s2">&quot;timestamp&quot;</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">(),</span> <span class="s2">&quot;clients&quot;</span><span class="o">:</span> <span class="nx">allClients</span> <span class="p">}));</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">message</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">obj</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;poke send by client &quot;</span><span class="o">+</span><span class="nx">my_client</span><span class="p">.</span><span class="nx">id</span> <span class="p">}));</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">disconnect</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">my_timer</span><span class="p">);</span>
+</span><span class='line'><span class="nx">allClients</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Et dans le d&eacute;tail :</p>
+
+
+<ul>
+<li>j'importe les modules Socket.IO et express</li>
+<li>je cr&eacute;e le serveur express, je configure le dossier <span style="font-family: 'courier new', courier;">public</span> en statique, je mappe l'url root <span style="font-family: 'courier new', courier;">'/'</span>&nbsp;vers le fichier <span style="font-family: 'courier new', courier;">index.html</span> et je d&eacute;marre le serveur ; on voit ici que express nous simplifie grandement le mapping entre une url et une action <em>(mais il n'est pas le seul)</em> avec une bonne gestion des param&egrave;tres, j'aime beaucoup ce framework car il me rappelle le tr&egrave;s puissant <a href="http://static.springsource.org/spring/docs/3.0.x/reference/mvc.html" target="_blank">Spring MVC</a></li>
+<li>je cr&eacute;e ensuite l'objet socket en sp&eacute;cifiant quelques transports et en supprimant le flash policy server <em>(inutile pour notre exemple)</em></li>
+<li>sur la connexion d'un client, je le stocke dans un objet JSON, j'augmente la variable <span style="font-family: 'courier new', courier;">id</span> et j'augmente le nombre de clients connect&eacute;s <em>(variable <span style="font-family: 'courier new', courier;">allClients</span>)</em></li>
+<li>je lance un <span style="font-family: 'courier new', courier;">setInterval</span> pour envoyer toutes les secondes l'heure courante du serveur ainsi que le nombre de clients connect&eacute;s <em>(le JSON qui sera r&eacute;cup&eacute;r&eacute; dans mon client, cf code du &sect; client)</em></li>
+<li>ensuite, si un client envoie un message c&ocirc;t&eacute; serveur, je <span style="font-family: 'courier new', courier;">broadcast</span> &agrave; tous les autres un message g&eacute;n&eacute;rique avec l'<span style="font-family: 'courier new', courier;">id</span> du client qui a envoy&eacute; le message</li>
+<li>enfin, sur une d&eacute;connexion d'un client, je stoppe le setInterval li&eacute; &agrave; ce client et je d&eacute;cr&eacute;mente la variavle <span style="font-family: 'courier new', courier;">allClients</span> ; celle-ci sera ensuite envoy&eacute;e &agrave; tous les autres clients lors d'un prochain envoi de donn&eacute;es du <span style="font-family: 'courier new', courier;">setInterval</span></li>
+</ul>
+
+
+<p>Il y a bien s&ucirc;r diff&eacute;rentes mani&egrave;res de faire ce code, celui-ci ne sert qu'&agrave; vous montrer ce que l'on peut faire :</p>
+
+
+<ul>
+<li>envoyer un message &agrave; un client sp&eacute;cifique</li>
+<li>broadcaster un message d'un client vers tous les autres</li>
+<li>mettre &agrave; jour des variables globales utilis&eacute;s par tous les clients</li>
+<li>...</li>
+</ul>
+
+
+<p>D'ailleurs, si vous avez d'autres astuces concernant les Web Sockets dans Node, n'h&eacute;sitez pas &agrave; les partager en commentaires !</p>
+
+
+<h3>Run baby !</h3>
+
+
+<p>Bon, il n'y a plus qu'&agrave; lancer le code et &agrave; vous rendre &agrave; l'url <a href="http://localhost:8333/" target="_blank">http://localhost:8333/</a> :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; " style="font: normal normal normal 12px/18px 'Courier New', monospace;">rmat0n:~/dev/node-example$ node server.js</pre>
+
+
+<p>Et maintenant, amusez-vous &agrave; lancer plusieurs navigateur &agrave; cette url, envoyer des <em>pokes</em>, vous d&eacute;connecter...</p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/-zo4W58Rw68Q/ThmqTMIeKCI/AAAAAAAAAu0/TZYQ7HtZr94/s800/nodejs_3_clients.jpg"><img class="aligncenter" title="Node Example 3 users" src="https://lh4.googleusercontent.com/-zo4W58Rw68Q/ThmqTMIeKCI/AAAAAAAAAu0/TZYQ7HtZr94/s800/nodejs_3_clients.jpg" alt="Node Example 3 users" width="500" height="377" /></a></p>
+
+
+<p><a class="lightbox" href="https://lh4.googleusercontent.com/--yim4hz-Onk/ThmqSkgIzqI/AAAAAAAAAus/2OYM5XPkV10/s800/nodejs_2_clients.jpg"><img class="aligncenter" title="Node Example 2 users" src="https://lh4.googleusercontent.com/--yim4hz-Onk/ThmqSkgIzqI/AAAAAAAAAus/2OYM5XPkV10/s800/nodejs_2_clients.jpg" alt="Node Example 2 users" width="500" height="344" /></a></p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Bien s&ucirc;r, on est tr&egrave;s loin d'une application de gestion et ce n'est pas le but de cet article. Mais vous pouvez voir avec cet exemple un code tr&egrave;s minimal qui fait des Web Sockets, du&nbsp;<span style="font-family: 'courier new', courier;">send</span>, du <span style="font-family: 'courier new', courier;">broadcast</span>, du MVC... le tout tr&egrave;s facilement !</p>
+
+
+<p>Prochaine &eacute;tape et dernier article sur Node <em>(et oui, d&eacute;j&agrave; <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />)</em> : d&eacute;ployer ce projet sur un serveur Node et pour cela nous allons regarder de plus pr&egrave;s l'offre de <a href="http://nodester.com/" target="_blank">Nodester</a>.</p>
+
+
+<p>Pour ceux qui veulent r&eacute;cup&eacute;rer le projet, le code se trouve ici : <a href="https://github.com/rmat0n/node-example/" target="_blank">node-example</a>.</p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Node.js partie 1 - Tout ce que vous devez savoir sur Node.js]]></title>
+        <link href="http://www.web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html"/>
+        <updated>2011-02-15T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js</id>
+        <content type="html"><![CDATA[<p><a href="https://lh5.googleusercontent.com/-E1DLFTEFczM/TiggQDjgitI/AAAAAAAAAyE/2ykc_U4xL8w/s288/nodejs-dark-small.png"><img style="float: right; margin-left: 5px; margin-bottom: 5px;" title="Node.js" src="https://lh5.googleusercontent.com/-E1DLFTEFczM/TiggQDjgitI/AAAAAAAAAyE/2ykc_U4xL8w/s288/nodejs-dark-small.png" alt="Node.js" width="200" height="61" /></a>Parmi les nombreuses technologies qui me passionnent actuellement, <a href="http://nodejs.org/" target="_blank">Node.js</a> tient une place importante. Et pour plusieurs raisons : d&eacute;veloppement Javascript c&ocirc;t&eacute; serveur, gestion des entr&eacute;es/sorties de mani&egrave;res non bloquantes, communaut&eacute; tr&egrave;s pr&eacute;sente avec de nombreux modules comme <a href="http://socket.io/" target="_blank">Socket.IO</a>&nbsp;et bien d'autres choses encore.</p>
+
+
+<p>C'est pour toutes ces raisons, et aussi parce que la nouvelle version <a href="http://linuxfr.org/2011/02/12/27858.html" target="_blank">0.4.0 vient de sortir</a>, que <a href="http://web-tambouille.fr/" target="_blank">Web Tambouille</a>&nbsp;vous propose une s&eacute;rie de 4 billets consacr&eacute;e exclusivement &agrave; votre <em>futur</em>&nbsp;<img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />&nbsp;serveur pr&eacute;f&eacute;r&eacute; : Node !</p>
+
+
+<p>Et cela commence d&egrave;s aujourd'hui avec une petite introduction g&eacute;n&eacute;rale du serveur, ses concepts, les interviews et autres vid&eacute;os &agrave; ne pas manquer, les liens &agrave; conna&icirc;tre... bref un condens&eacute; de tout ce que vous devez absolument savoir sur Node !</p>
+
+
+<p><a href="http://web-tambouille.fr/2011/02/15/node-js-partie-1-tout-ce-que-vous-devez-savoir-sur-node-js.html">Node.js partie 1 - Tout ce que vous devez savoir sur Node.js</a><br />
+<a href="http://web-tambouille.fr/2011/02/22/node-js-partie-2-cloud9-ide-ultime-pour-le-developpement-javascript-html-css.html">Node.js partie 2 - Cloud9 : IDE pour le d&eacute;veloppement Javascript et Node.js</a><br />
+<a href="http://web-tambouille.fr/2011/03/8/node-js-partie-3-premiere-application-node-js-et-html5-express-socket-io.html">Node.js partie 3 - Premi&egrave;re application Node.js et HTML5</a><br />
+<a href="http://web-tambouille.fr/2011/03/15/node-js-partie-4-deploiement-sur-le-cloud-avec-nodester-node-js-npm-rest-amazon-ec2-git.html">Node.js partie 4 - D&eacute;ploiement sur le Cloud avec Nodester : Node.js, NPM, REST, Amazon EC2 et Git</a></p>
+
+
+<p><!--more--></p>
+
+
+<h3>Pr&eacute;sentation</h3>
+
+
+<p>Node s'appuie sur&nbsp;<a href="http://code.google.com/p/v8/" target="_blank">V8</a>, le moteur Javascript de Google utilis&eacute; dans Chrome, qui fait partie des moteurs Javascript les plus puissants du march&eacute; actuellement. Node va nous permettre de d&eacute;velopper tr&egrave;s simplement des applications scalables. Comment ? Un petit tour sur le site nous explique son approche : <a href="http://nodejs.org/#about" target="_blank">http://nodejs.org/#about</a>. En fran&ccedil;ais et en quelques mots : l'id&eacute;e est d'utiliser des IO non bloquantes pour g&eacute;rer toutes les requ&ecirc;tes entrantes, sortantes ainsi que tout le process li&eacute; &agrave; la requ&ecirc;te.</p>
+
+
+<p>Prenons l'exemple du serveur Apache. Chaque requ&ecirc;te HTTP entrante se voit allouer un thread. Celui-ci est utilis&eacute; pendant toute la dur&eacute;e du traitement de la requ&ecirc;te : lecture/&eacute;criture en base de donn&eacute;es, lecture/&eacute;criture dans des fichiers de logs ou autres, ex&eacute;cution de code... Ainsi, si votre code c&ocirc;t&eacute; serveur fait un acc&egrave;s &agrave; la base de donn&eacute;es, celui-ci est <em>en attente</em> de la r&eacute;ponse.&nbsp;De plus, durant toute la dur&eacute;e de la requ&ecirc;te, le client sera bloqu&eacute;, en attente de la r&eacute;ponse du serveur.</p>
+
+
+<p>Node et plus globalement les serveurs dits non bloquants <em>(comme&nbsp;<a href="http://www.jboss.org/netty" target="_blank">Netty</a> ou <a href="https://github.com/rschildmeijer/deft" target="_blank">Deft</a>&nbsp;pour ceux qui tournent sur JVM)</em> adoptent une autre approche.&nbsp;Node n'utilise qu'un seul thread pour g&eacute;rer les requ&ecirc;tes entrantes. De plus, Node ne propose pas, dans ses API, de fonctions bloquantes. Ainsi, tout notre code est asynchrone. L'avantage imm&eacute;diat &agrave; cela est la simplification &agrave; l'extr&ecirc;me de la gestion de la concurrence dans nos applications qui n'est ici plus g&eacute;r&eacute;e par le d&eacute;veloppeur mais directement par l'OS. Concr&egrave;tement, toutes les fonctions fournies par Node prennent en param&egrave;tre un callback. Une fois que la fonction aura termin&eacute; son traitement, le callback sera appel&eacute; avec le r&eacute;sultat en param&egrave;tre et une &eacute;ventuelle erreur. Ainsi, pendant toute la dur&eacute;e du traitement, le thread sera rel&acirc;ch&eacute; et pourra &ecirc;tre donn&eacute; &agrave; une autre requ&ecirc;te pour effectuer un autre traitement. Nous sommes donc face &agrave; un syst&egrave;me &eacute;v&egrave;nementiel. Et&nbsp;Javascript est un tr&egrave;s bon choix de langage du fait que&nbsp;l'on peut&nbsp;<a href="http://web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">programmer de mani&egrave;re fonctionnelle avec celui-ci</a>. Les callbacks dans tous les sens, nous connaissons tr&egrave;s bien avec des librairies comme <a href="http://jquery.com/" target="_blank">jQuery</a>&nbsp;qui nous habituent depuis d&eacute;j&agrave; quelques temps &agrave; ce type de d&eacute;veloppement.</p>
+
+
+<p>Juste pour pinailler <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" />, il y a quand m&ecirc;me un &eacute;l&eacute;ment de la biblioth&egrave;que Node qui est bloquant &agrave; savoir&nbsp;<span style="font-family: 'courier new', courier;">require</span>&nbsp;<em>(module compatible <a href="http://www.commonjs.org/" target="_blank">commonJS</a>)</em> qui fait un appel synchrone pour r&eacute;cup&eacute;rer la d&eacute;pendance demand&eacute;e. D'ailleurs, lors d'une s&eacute;ance de questions/r&eacute;ponses donn&eacute;e il y a quelques mois, Ryan Dahl <em>(le cr&eacute;ateur de Node)</em> a admis qu'il serait possible de rendre cela asynchrone mais que cela n'avait pas forc&eacute;ment un sens puisqu'on pouvait consid&eacute;rer cela comme un pr&eacute;requis de d&eacute;veloppement. Cela ne me choque pas non plus...</p>
+
+
+<h3>Cas r&eacute;els d'utilisation</h3>
+
+
+<p>Car oui, sur le papier c'est beau :</p>
+
+
+<ul>
+<li>un serveur qui tient une charge tr&egrave;s importante en terme de connections par seconde</li>
+<li>peut-&ecirc;tre&nbsp;<a href="http://groups.google.com/group/nodejs/browse_thread/thread/d19df83c7fd1f3ca?pli=1" target="_blank">100 000 connections</a> sur un seul serveur</li>
+<li>et pourquoi pas&nbsp;1 000 000 d'utilisateurs&nbsp;comme dans cet <a href="http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-1/" target="_blank">article</a>&nbsp;:&nbsp;une webapp Comet qui utilise <a href="https://github.com/mochi/mochiweb" target="_blank">Mochiweb</a> <em>(Serveur lightweight HTTP en Erlang)</em></li>
+</ul>
+
+
+<p>Mais a t-on d&eacute;j&agrave; quelques retours d'utilisation en production ? Et c'est l&agrave; que &ccedil;a coince car malheureusement les retours sont assez rares... Node est &eacute;videmment un projet tr&egrave;s r&eacute;cent et beaucoup pensent qu'il serait suicidaire de partir en production avec ce serveur. L'argument de la jeunesse peut tenir la route, mais je me rappelle avoir entendu des choses douteuses comme : <em>"tant que le num&eacute;ro de version n'a pas atteint au moins un 1.x, c'est du suicide !"</em>. L&agrave;, j'ai envie de renvoyer ces personnes vers&nbsp;<a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> avec sa version 0.21 qui est juste utilis&eacute; pas <a href="http://engineering.twitter.com/2010/04/hadoop-at-twitter.html" target="_blank">Twitter</a>, <a href="http://www.facebook.com/note.php?note_id=16121578919" target="_blank">Facebook</a> ou bien encore <a href="http://nosql.mypopescu.com/post/1514472152/ebay-hadoop-hbase" target="_blank">eBay</a>. Comme quoi le num&eacute;ro de version ne veut pas forc&eacute;ment dire grand chose&nbsp;<img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />&nbsp;et surtout pas <em>interdit &agrave; la prod</em> !</p>
+
+
+<p>Apr&egrave;s quelques soir&eacute;es Javascript diverses et vari&eacute;es et quelques investigations aupr&egrave;s de la communaut&eacute;, il ressort qu'actuellement Node est beaucoup utilis&eacute; comme serveur de d&eacute;veloppement, pour une productivit&eacute; accrue, sur des frameworks comme Sproutcore. Le build final de l'application &eacute;tant dans ce cas compos&eacute; de fichiers statiques, celui-ci n'est d&egrave;s lors plus d&eacute;pendant de Node et peut tourner sur n'importe quel serveur HTTP. Node uniquement pour le d&eacute;veloppement ? Tout &ccedil;a ne nous aide pas beaucoup...</p>
+
+
+<p>Mais voil&agrave;, un petit billet est sorti avec un titre plut&ocirc;t accrocheur :&nbsp;<a href="http://bostinnovation.com/2011/01/15/who-is-using-node-js-and-why-yammer-bocoup-proxlet-and-yahoo/" target="_blank">Who is Using Node.js And Why ? Yammer, Bocoup, Proxlet and Yahoo</a>. Et en plus il y a du lourd !&nbsp;</p>
+
+
+<p>En regardant de plus pr&egrave;s, on remarque d&eacute;j&agrave; qu'il y a pas/peu d'inconv&eacute;nient remont&eacute; par ces entreprises, si ce n'est la jeunesse du framework. Rendez-vous compte : Proxlet a commenc&eacute; &agrave; utiliser Node en version 0.1.0 !!!&nbsp;Pour les avantages, le retour est unanime : Node est tr&egrave;s bon pour g&eacute;rer de nombreuses requ&ecirc;tes en parall&egrave;les, et ce n'est donc pas une surprise de se retrouver face &agrave; des applications de type proxy. Ainsi, Yammer utilise Node en tant que proxy cross-domain pour leur plateforme de d&eacute;veloppement.&nbsp;L'application de Proxlet est int&eacute;ressante &agrave; plusieurs points, ce qui me plait plus particuli&egrave;rement c'est cette full stack Javascript qui part d'une base de donn&eacute;es MongoDB, accessible par requ&ecirc;te Javascript, qui passe par un serveur Node pour finir en tant qu'extension Chrome. Un bel exemple de r&eacute;ussite d'une application 100% Javascript !</p>
+
+
+<p>A noter enfin que la partie <a href="http://www.myspace.com/threads#!__/home/sort/most_crowded" target="_blank">threads de MySpace</a> utilise aussi Node, le but &eacute;tant d'&ecirc;tre en temps r&eacute;el avec tous les threads d&eacute;pos&eacute;s sur le mur.</p>
+
+
+<h3>Quelques liens et vid&eacute;os</h3>
+
+
+<p>Tout d'abord les liens, on retiendra notamment :</p>
+
+
+<ul>
+<li><a href="https://github.com/ry/node/wiki/modules" target="_blank">https://github.com/ry/node/wiki/modules</a>&nbsp;:&nbsp;une liste tr&egrave;s compl&egrave;te des modules disponibles pour Node</li>
+<li><a href="http://npmjs.org/" target="_blank">NPM</a>&nbsp;: le package manager <em>officiel</em> qui simplifie grandement l'installation de modules</li>
+<li><a href="http://expressjs.com/" target="_blank">Express</a>&nbsp;: le framework web inspir&eacute; par <a href="http://www.sinatrarb.com/" target="_blank">Sinatra</a>&nbsp;avec une tr&egrave;s bonne <a href="http://blog.mklog.fr/article/express-framework-web-node" target="_blank">introduction chez mklabs</a></li>
+<li><a href="http://socket.io/" target="_blank">Socket.IO</a>&nbsp;: le framework ultime pour une application temps r&eacute;el multi navigateurs, il utilisera ainsi selon le support les Web Sockets, du Long Polling, Flash...</li>
+<li><a href="http://riakjs.org/" target="_blank">Riak-JS</a> : un client pour se connecter &agrave; une base Riak</li>
+<li><a href="https://github.com/senchalabs/connect" target="_blank">Connect</a> : middleware pour application Node</li>
+<li><a href="https://github.com/cloudhead/vows" target="_blank">Vows</a> : Behavior Driven Development asynchrone et Int&eacute;gration Continue pour Node</li>
+<li><a href="http://www.ianwootten.co.uk/2011/02/07/blog-rolling-with-couchdb-express-and-node-js" target="_blank">Tutoriel Blog Rolling</a> : un article tr&egrave;s complet pour cr&eacute;er un Blog en Node, Express et une base CouchDB</li>
+</ul>
+
+
+<p>En ce qui concerne les vid&eacute;os, je vous conseille cette tr&egrave;s bonne introduction par le cr&eacute;ateur de Node, Ryan Dahl, donn&eacute;e le 28 Juillet 2010 &agrave; la conf&eacute;rence Google Tech Talks (60 min) :&nbsp;<a href="http://www.youtube.com/watch?v=F6k8lTrAE2g" target="_blank">http://www.youtube.com/watch?v=F6k8lTrAE2g</a>.</p>
+
+
+<p>Et si vous avez encore un peu de temps, 3 autres vid&eacute;os sont disponibles sur InfoQ avec :</p>
+
+
+<ul>
+<li>une <a href="http://www.infoq.com/interviews/node-ryan-dahl" target="_blank">interview de Ryan Dahl</a></li>
+<li>une <a href="http://www.infoq.com/presentations/nodejs" target="_blank">session d'introduction lors de QCon</a></li>
+<li>une <a href="http://www.infoq.com/presentations/Parallel-Programming-with-Nodejs" target="_blank">autre session lors du Strange Loop</a> orient&eacute;e programmation parall&egrave;le</li>
+</ul>
+
+
+<h3>Installation</h3>
+
+
+<p>L'installation est assez simple : pour tout ceux qui fonctionnent sans package manager, cela se passe par <a href="https://github.com/ry/node/wiki/Installation" target="_blank">ici</a>&nbsp;et pour les autres cela se passe par <a href="https://github.com/ry/node/wiki/Installing-Node.js-via-package-manager" target="_blank">l&agrave;</a>.</p>
+
+
+<p>Sans package manager, cela d&eacute;pendra de votre OS. Le plus simple sous windows sera de passer par un &eacute;mulateur type <a href="http://www.cygwin.com/" target="_blank">Cygwin</a>. &Eacute;tant sous OSX, l'installation chez moi s'est r&eacute;sum&eacute;e aux 2 commandes suivantes&nbsp;<em>(j'utilise homebrew)</em> :</p>
+
+
+<pre class="brush: bash;fontsize: 100; first-line: 1; ">rmat0n:~$ brew install node
+rmat0n:~$ curl http://npmjs.org/install.sh | sudo sh</pre>
+
+
+<p>Simple non ?</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Fin de cette premi&egrave;re partie, j'esp&egrave;re que vous avez les id&eacute;es claires sur ce qu'est Node, ce qu'il apporte et sa simplicit&eacute; d'utilisation, que l'on connaisse ou non Javascript.</p>
+
+
+<p>Dans le prochain article, je vous parlerai des IDE pour d&eacute;velopper une application Node et surtout de l'IDE en Node pour Node &agrave; savoir <a href="http://cloud9ide.com/" target="_blank">Cloud9</a>. <em>Stay tuned !</em></p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Android 3.0 (HoneyComb) en approche !]]></title>
+        <link href="http://www.web-tambouille.fr/2011/02/01/android-3-0-sdk-honeycomb-en-approche.html"/>
+        <updated>2011-02-01T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/02/01/android-3-0-sdk-honeycomb-en-approche</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/kkkr5LlIV2C9tN8plT0LHg?feat=embedwebsite"><img style="float: right; margin: 5px;" title="Android" src="https://lh6.googleusercontent.com/-Te4I2KpcMO8/ThmqQHtIzpI/AAAAAAAAAuI/jQpzkbtAomo/s800/logo_android.jpg" alt="Android" width="100" height="100" /></a>La version d'Android 3.0, nom de code <em>HoneyComb</em>, est disponible depuis une semaine en <em>pre-release</em>.&nbsp;La bonne nouvelle nous vient directement du blog d'<a href="http://android-developers.blogspot.com/2011/01/android-30-platform-preview-and-updated.html" target="_blank">android-developers</a>. Apr&egrave;s les 3 releases mineures &Eacute;clair, Froyo et Gingerbread, nous allons enfin pouvoir tester la prochaine mouture majeure d'Android.</p>
+
+
+<p>Vous pouvez r&eacute;cup&eacute;rer ce nouvel <em>Android 3.0 Preview SDK</em> &agrave; cette <a href="http://developer.android.com/sdk/preview/index.html" target="_blank">adresse</a>. Gardez bien en t&ecirc;te que ce n'est qu'une <em>pre-release</em> : vous pouvez donc tester les nouvelles API en sachant qu'elles pourront &eacute;voluer <em>(m&eacute;thodes, performance...)</em> entre cette version et la version finale.</p>
+
+
+<p>Petit tour d'horizon des nouveaut&eacute;s...</p>
+
+
+<p><!--more--></p>
+
+
+<p>... et le moins que l'on puisse dire c'est qu'elles sont <a href="http://developer.android.com/sdk/android-3.0-highlights.html" target="_blank">nombreuses</a> ! Voici d'ailleurs un petit teaser vid&eacute;o :</p>
+
+
+<p>
+<object style="width: 560px; height: 340px;" width="560" height="340" data="http://www.youtube-nocookie.com/v/hPUGNCIozp0?fs=1&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash">
+<param name="data" value="http://www.youtube-nocookie.com/v/hPUGNCIozp0?fs=1&amp;hl=fr_FR&amp;rel=0" />
+<param name="play" value="false" />
+<param name="loop" value="false" />
+<param name="menu" value="false" />
+<param name="src" value="http://www.youtube-nocookie.com/v/hPUGNCIozp0?fs=1&amp;hl=fr_FR&amp;rel=0" />
+<param name="vspace" value="10" />
+</object>
+</p>
+
+
+<h3>Tablette First !</h3>
+
+
+<p>Premier point : <em>HoneyComb</em> a &eacute;t&eacute; sp&eacute;cialement con&ccedil;ue pour les terminaux &agrave; grand &eacute;cran et en particulier les tablettes. C'est d'ailleurs ce support des grands &eacute;crans qui est tout de suite mis en avant dans les <em><a href="http://developer.android.com/sdk/android-3.0-highlights.html" target="_blank">highlights</a></em>. Quelques images :</p>
+
+
+<p><a class="lightbox" href="https://lh6.googleusercontent.com/--wPB52_30cw/TiWth6ZdaJI/AAAAAAAAAxI/U0ZF6mT5JgM/s800/home_hero1_full%25255B1%25255D.png"><img class="aligncenter" title="Android Tablette Home" src="https://lh6.googleusercontent.com/--wPB52_30cw/TiWth6ZdaJI/AAAAAAAAAxI/U0ZF6mT5JgM/s800/home_hero1_full%25255B1%25255D.png" alt="Android Tablette Home" width="600" height="375" /></a></p>
+
+
+<p><a class="lightbox" href="https://lh3.googleusercontent.com/-36RmFC36Jw0/TiWtnIVpTDI/AAAAAAAAAxM/6GMudej8OQM/s800/browser_full%25255B1%25255D.png"><img class="aligncenter" title="Android Tablette Navigateur" src="https://lh3.googleusercontent.com/-36RmFC36Jw0/TiWtnIVpTDI/AAAAAAAAAxM/6GMudej8OQM/s800/browser_full%25255B1%25255D.png" alt="Android Tablette Navigateur" width="600" height="375" /></a></p>
+
+
+<h3>Nouvelle Interface Utilisateur</h3>
+
+
+<p>Cette nouvelle UI pour tablette apporte entre autres :</p>
+
+
+<ul>
+<li>des widgets et des notifications plus riches</li>
+<li>des nouveaux th&egrave;mes</li>
+<li>une barre syst&egrave;me persistante pour des notifications globales</li>
+<li>une barre d'action pour l'application en cours</li>
+<li>un &eacute;cran d'accueil customisable</li>
+<li>un menu "applications r&eacute;centes" dans la barre syst&egrave;me tirant ainsi avantage du multit&acirc;che <em>(partie centrale de ce nouvel Android)</em> pour passer rapidement d'une application &agrave; une autre</li>
+<li>un drag'n drop am&eacute;lior&eacute; pour l'&eacute;diteur de texte</li>
+<li>un clavier recon&ccedil;u et adapt&eacute; (pour tablette donc)</li>
+<li>une am&eacute;lioration de la s&eacute;lection de texte ainsi que du copier/coller</li>
+<li>des nouvelles options de connectivit&eacute; <em>(m&eacute;dia, photo, USB, mass-storage...)</em></li>
+<li>et des am&eacute;liorations g&eacute;n&eacute;rales d'applications existantes :&nbsp;navigateur,&nbsp;appareil photo,&nbsp;gallerie,&nbsp;contacts,&nbsp;email </li>
+</ul>
+
+
+<h3>Nouvelles Fonctionnalit&eacute;s</h3>
+
+
+<p>Les d&eacute;veloppeurs ne sont pas en reste et seront ravis de voir plusieurs nouvelles fonctionnalit&eacute;s mises &agrave; leur disposition :</p>
+
+
+<ul>
+<li>nouveaux composants graphiques <em>(widgets, notifications, nouvelles barres...)</em></li>
+<li>graphismes 2D et 3D :&nbsp;nouvelle API d'animation,&nbsp;acc&eacute;l&eacute;ration hardware pour la 2D et&nbsp;<em>Renderscript</em>, un moteur 3D </li>
+<li>support du multicore</li>
+<li>multim&eacute;dia avec du <em>live streaming</em> par HTTP, DRM...</li>
+<li>fonctionnalit&eacute;s dites d'<em>entreprise</em> avec du stockage crypt&eacute;, expiration de mot de passe, complexit&eacute; du mot de passe...</li>
+</ul>
+
+
+<h3>Mais aussi</h3>
+
+
+<p>A noter aussi quelques mises &agrave; jour concernant les outils suivants :</p>
+
+
+<ul>
+<li>SDK Tools (r9)</li>
+<li>NDK (r5b)</li>
+<li>ADT Plugin pour Eclipse (9.0.0)</li>
+</ul>
+
+
+<h3>Et la version finale ?</h3>
+
+
+<p>Concernant la version finale, pas de date pr&eacute;cise.<br />Seule information : celle-ci est pr&eacute;vue dans les prochains mois, ce qui ne nous aide pas <img title="Smile" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-smile.gif" border="0" alt="Smile" /><br />En tout cas, nous pouvons d&eacute;j&agrave; tester ce nouvel opus. Je vais d'ailleurs de suite m'attaquer &agrave; cette nouvelle API d'animation !</p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Bonnes pratiques de performance pour Webapp HTML5]]></title>
+        <link href="http://www.web-tambouille.fr/2011/01/18/bonnes-pratiques-de-performance-pour-webapp-html5.html"/>
+        <updated>2011-01-18T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/01/18/bonnes-pratiques-de-performance-pour-webapp-html5</id>
+        <content type="html"><![CDATA[<p><a href="https://picasaweb.google.com/lh/photo/14qU5Hfk_JVdTNBSnxqlsA?feat=embedwebsite"><img style="float: right; margin-bottom: 10px;" title="HTML 5" src="https://lh5.googleusercontent.com/-fwsYPhh6YjA/ThmqQUF2BzI/AAAAAAAAAuQ/UmInw2cyjQ4/s800/logo_html5.png" alt="HTML 5" width="144" height="144" /></a>En attendant que HTML5 devienne une r&eacute;f&eacute;rence incontournable en entreprise <em>(sa standardisation n'est malheureusement <a href="http://news.cnet.com/8301-30685_3-20008935-264.html" target="_blank">pas pr&egrave;s d'arriver</a>)</em>, nous pouvons toujours nous former aux <a href="https://developer.mozilla.org/En/Using_web_workers" target="_blank">Web Workers</a>, aux <a href="http://zackhobson.com/2010/03/28/node-js-and-web-sockets.html" target="_blank">Web Sockets</a> ou bien encore au <a href="http://www.w3schools.com/html5/html5_webstorage.asp" target="_blank">Web Storage</a>.</p>
+
+
+<p>Pour l'instant cela reste de l'auto formation qui consiste &agrave; int&eacute;grer les bonnes pratiques d'utilisation et &agrave; identifier les difficult&eacute;s qui seront souvent rencontr&eacute;es dans des projets r&eacute;els &agrave; grande envergure <em>(nombre de connexions, utilisateurs simultan&eacute;s ou requ&ecirc;tes par seconde)</em>. Bien souvent, ces besoins de performances nous en font voir des vertes et des pas m&ucirc;res ! C'est ainsi que l'on exp&eacute;rimente les limites d'un framework, d'une architecture ou m&ecirc;me d'un langage.</p>
+
+
+<p>Si vous ne connaissez pas encore <a href="http://www.html5rocks.com/" target="_blank">HTML5Rocks</a>, le portail de Google d&eacute;di&eacute; aux d&eacute;veloppeurs HTML5, il est grand temps d'aller y faire un tour ! Les tutoriaux sont nombreux et je voulais partager avec vous celui-ci : <a href="http://www.html5rocks.com/tutorials/speed/quick/" target="_blank">Best Practices for a Faster Web App with HTML5</a>.</p>
+
+
+<p><!--more--></p>
+
+
+<p>L'article met en avant 10 astuces pour avoir de bonnes performances dans une application HTML5. Encore une fois, et m&ecirc;me si plusieurs librairies existent et nous permettent de simuler HTML5 dans d'anciens navigateurs, il sera difficile d'appliquer toutes ces bonnes pratiques en entreprise. Ce n'est toutefois pas une raison pour nous priver de ces <em>best practices</em> et nous allons rapidement les parcourir.</p>
+
+
+<h3>Astuce 1 : utiliser le Web Storage plut&ocirc;t que les Cookies</h3>
+
+
+<p>Et un constat : toutes vos donn&eacute;es de cookies, pour un site donn&eacute;, sont envoy&eacute;es dans le header de toutes vos requ&ecirc;tes HTTP ! Ce qui bien s&ucirc;r peut avoir un impact sur le temps de r&eacute;ponse de vos requ&ecirc;tes. Une bonne pratique qui en d&eacute;coule est de r&eacute;duire la taille de vos Cookies.</p>
+
+
+<p>Mais gr&acirc;ce &agrave; HTML5, il est possible de faire mieux et d'utiliser le <a href="http://www.w3schools.com/html5/html5_webstorage.asp" target="_blank">Web Storage</a> avec le <span style="font-family: courier new,courier;">sessionStorage</span> et le <span style="font-family: courier new,courier;">localStorage</span>. Les informations sont ainsi persist&eacute;es c&ocirc;t&eacute; client pour la dur&eacute;e de la session ou ind&eacute;finiment et les donn&eacute;es ne sont pas transf&eacute;r&eacute;es lors d'une requ&ecirc;te HTTP. Plut&ocirc;t int&eacute;ressant !</p>
+
+
+<h3>Astuce 2 : utiliser les transitions CSS au lieu des animations Javascript</h3>
+
+
+<p>Dans de nombreux cas, vous pouvez vous passer des animations Javascript et ainsi utiliser les <a href="http://www.alsacreations.com/tuto/lire/873-transitions-css3-animations.html" target="_blank">transitions CSS3</a>. Ces effets se font par l'ajout/suppression de classes sur vos &eacute;l&eacute;ments HTML.</p>
+
+
+<p>Vous gagnerez en taux de transfert car globalement le code n&eacute;cessaire pour effectuer un effet est plus concis en CSS3 comparer &agrave; sa version Javascript. De plus, avec les acc&eacute;l&eacute;rations mat&eacute;riels au niveau GPU, vous gagnerez en fluidit&eacute;.</p>
+
+
+<h3>Astuce 3 : pr&eacute;f&eacute;rer une base de donn&eacute;es c&ocirc;t&eacute; client plut&ocirc;t que des aller-retour c&ocirc;t&eacute; serveur</h3>
+
+
+<p>L'id&eacute;e ici n'est pas de mettre votre base de donn&eacute;es Oracle avec toutes vos donn&eacute;es sensibles c&ocirc;t&eacute; client <em>(je vous voyais venir <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" />)</em> mais plut&ocirc;t de limiter le plus possible le nombre de requ&ecirc;tes HTTP surtout de type XHR. C'est d'ailleurs une optimisation de performance importante recherch&eacute;e pour tout site &agrave; haut trafic. Et encore une fois, le <span style="font-family: courier new,courier;">sessionStorage</span> et le <span style="font-family: courier new,courier;">localStorage</span> seront vos alli&eacute;s.</p>
+
+
+<h3>Astuce 4 : optimisation Javascript = &eacute;normes avantages en terme de performance</h3>
+
+
+<p>L'exemple donn&eacute; ici est l'objet <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array#Methods" target="_blank">Array</a> qui r&eacute;cup&egrave;re un grand nombre de m&eacute;thodes &agrave; partir de Javascript 1.6. D'ailleurs, ces m&eacute;thodes devraient vous rappeler l'article pr&eacute;c&eacute;demment paru sur Web Tambouille sur la <a href="http://web-tambouille.fr/2011/01/11/programmation-fonctionnelle-en-javascript.html" target="_blank">Programmation Fonctionnelle en Javascript</a>, sauf que cette fois-ci pas de librairies externes ! Il en ressort que ces nouvelles m&eacute;thodes <span style="font-family: courier new,courier;">forEach</span>, <span style="font-family: courier new,courier;">map</span>, <span style="font-family: courier new,courier;">filter</span> et consorts sont plus rapides que notre bonne vieille boucle &agrave; la main <span style="font-family: courier new,courier;">for(var i=0; i&lt;arr.length; i++)</span>. De m&ecirc;me, il est pr&eacute;f&eacute;rable d'utiliser le parsing JSON natif &agrave; l'aide de <span style="font-family: courier new,courier;">JSON.parse()</span>, plus rapide que n'importe quelle librairie externe.</p>
+
+
+<h3>Astuce 5 : utiliser le cache manifest et pas seulement le offline</h3>
+
+
+<p>Il y a 2 ans, Wordpress utilisa Google Gears <em>(offline apps)</em> pour mettre en cache plusieurs ressources de la partie admin et ainsi gagner en rapidit&eacute;. Le <a href="http://www.html5rocks.com/tutorials/appcache/beginner/" target="_blank">cache manifest</a> va aussi nous &ecirc;tre utile.</p>
+
+
+<p>Exemple : nous allons pouvoir traiter diff&eacute;remment une donn&eacute;e JSON, qui &eacute;volue dans le temps, et un HTML d'enrobage, qui lui, &eacute;volue moins. Ce dernier sera cach&eacute; <em>(avec une balise sp&eacute;cifique)</em> et consid&eacute;r&eacute; comme un template sur lequel on bouclera avec la donn&eacute;e JSON pour mettre &agrave; jour une partie du site. On obtiendra alors une grosse partie du HTML qui sera cach&eacute; et une autre partie plus dynamique intimement li&eacute;e &agrave; de la donn&eacute;e pure qui ne le sera pas.</p>
+
+
+<h3>Astuce 6 : activer l'acc&eacute;l&eacute;ration mat&eacute;rielle</h3>
+
+
+<p>Ce point d&eacute;pendra vraiment du navigateur... mais l'id&eacute;e est encore une fois de d&eacute;l&eacute;guer au GPU tout ce que l'on peut pour gagner en terme de temps et d'effet visuel. La petite ligne magique mais qui toutefois ne garantit rien : <span style="font-family: courier new,courier;">.hwaccel {&nbsp; -webkit-transform: translateZ(0); }</span>.</p>
+
+
+<h3>Astuce 7 : utiliser les Web Workers pour de lourdes op&eacute;rations CPU</h3>
+
+
+<p>Car en effet : les Web Workers sont rapides et surtout d&eacute;coupl&eacute;s du thread de l'UI. Vous allez donc pouvoir effectuer des traitements lourds en t&acirc;che de fond et continuer de travailler sur votre interface sans &ecirc;tre bloqu&eacute;.</p>
+
+
+<h3>Astuce 8 : utiliser les attributs et input types HTML5 dans vos formulaires</h3>
+
+
+<p>En plus des existants <span style="font-family: courier new,courier;">text</span>, <span style="font-family: courier new,courier;">password</span> et <span style="font-family: courier new,courier;">file</span>, HTML5 ajoute les <span style="font-family: courier new,courier;">search</span>, <span style="font-family: courier new,courier;">tel</span>, <span style="font-family: courier new,courier;">url</span>, <span style="font-family: courier new,courier;">email</span>, <span style="font-family: courier new,courier;">datetime</span>, <span style="font-family: courier new,courier;">date</span>, <span style="font-family: courier new,courier;">month</span>, <span style="font-family: courier new,courier;">week</span>, <span style="font-family: courier new,courier;">time</span>, <span style="font-family: courier new,courier;">datetime-local</span>, <span style="font-family: courier new,courier;">number</span>, <span style="font-family: courier new,courier;">range</span> and <span style="font-family: courier new,courier;">color</span>. L'id&eacute;e ici est d'utiliser les validations natives de ces champs mais aussi de pouvoir passer par les attributs <span style="font-family: courier new,courier;">required</span> et <span style="font-family: courier new,courier;">pattern</span>, ce dernier permettant de sp&eacute;cifier sa propre expression r&eacute;guli&egrave;re de validation. De plus, si les validations ne sont pas respect&eacute;es, l'envoi du formulaire est bloqu&eacute;. L&agrave; aussi, pas de gestion sp&eacute;cifique du <span style="font-family: courier new,courier;">onclick</span> pour bloquer selon telles ou telles conditions.</p>
+
+
+<p>Une nouvelle fois, plus besoin de passer par une librairie externe Javascript pour faire ceci. On obtient de plus une r&eacute;duction de code concernant toutes ces validations, et boum! encore un gain en termes de transfert r&eacute;seau!</p>
+
+
+<h3>Astuce 9 : utiliser les effets CSS3 plut&ocirc;t que des images sprites</h3>
+
+
+<p>CSS3 apporte un grand nombre de nouveaut&eacute;s : les <span style="font-family: courier new,courier;">linear</span> et <span style="font-family: courier new,courier;">radial gradients</span>, les fameux <span style="font-family: courier new,courier;">rounded corners</span>, les masques, les transformations/rotations et bien d'autres encore ! Et, comme le dit le tutoriel, remplacer une image sprites de 2k par une centaine de bytes CSS nous fait encore gagner en transfert r&eacute;seau. Une fois encore, si le navigateur ne supporte pas ces effets, des librairies comme <a href="http://www.modernizr.com/" target="_blank">modernizr</a> peuvent g&eacute;rer cette compatibilit&eacute; descendante avec les navigateurs ne les g&eacute;rant pas.</p>
+
+
+<h3>Astuce 10 : utiliser les Web Sockets au lieu de XmlHttpRequest</h3>
+
+
+<p>Les Web Sockets ont &eacute;t&eacute; con&ccedil;ues en r&eacute;ponse &agrave; la popularit&eacute; de Comet, et les avantages des Web Sockets sont nombreux.<br />Prenons quelques chiffres : selon certains rapports, les Web Sockets r&eacute;duisent le transfert r&eacute;seau de 35% ! Et sur de gros volumes, les performances des WS sont meilleures que celle de XHR <em>(1 &agrave; 5 fois plus rapide)</em>.</p>
+
+
+<p>Donc si vous le pouvez, pr&eacute;f&eacute;rez l'utilisation des Web Sockets au lieu des appels XmlHttpRequest.</p>
+
+
+<h3>Conclusion</h3>
+
+
+<p>Beaucoup de bonnes pratiques dans ce tutoriel ! Quelques outils peuvent nous aider dans cette qu&ecirc;te de la performance, je dirai m&ecirc;me plus qu'ils sont &agrave; installer d'urgence :     <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a>, <a href="http://code.google.com/webtoolkit/speedtracer/">Speed Tracer for Chrome</a> ou <a href="http://ajax.dynatrace.com/pages/">DynaTrace Ajax for IE</a>.</p>
+
+
+<p>D'autres articles sont &agrave; venir : nous allons mettre les mains dans les Web Sockets avec Node.JS, les Web Workers<em> (et ce ne sera pas un calcul de nombres premiers) </em>mais aussi les transitions CSS3.</p>
+
+
+<p>Un beau programme non ? Donc <em>stay tuned</em> <img title="Wink" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-wink.gif" border="0" alt="Wink" /></p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+    </entry>
+    
+</feed>

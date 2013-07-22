@@ -1,0 +1,61 @@
+---
+        layout: nil
+        ---
+        <?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title><![CDATA[Cat&eacute;gorie : Divers | Web Tambouille]]></title>
+    <link href="http://www.web-tambouille.fr/categories/divers/atom.xml" rel="self"/>
+    <link href="http://www.web-tambouille.fr/"/>
+    <updated>2013-07-22T22:08:13+02:00</updated>
+    <id>http://www.web-tambouille.fr/</id>
+    <author>
+        <name><![CDATA[Romain MATON (rmat0n)]]></name>
+        
+    </author>
+    <generator uri="http://octopress.org/">Octopress</generator>
+
+    
+    <entry>
+        <title type="html"><![CDATA[Web Tambouille : les nouvelles suggestions du Chef !]]></title>
+        <link href="http://www.web-tambouille.fr/2011/02/24/web-tambouille-les-nouvelles-suggestions-du-chef.html"/>
+        <updated>2011-02-24T00:00:00+01:00</updated>
+        <id>http://www.web-tambouille.fr/2011/02/24/web-tambouille-les-nouvelles-suggestions-du-chef</id>
+        <content type="html"><![CDATA[<p>Tout d'abord, chers tambouilleurs <img title="Tongue out" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" border="0" alt="Tongue out" />, je souhaitais vous remercier de votre fid&eacute;lit&eacute;. Vous &ecirc;tes de plus en plus nombreux &agrave; suivre ce blog et cela fait vraiment plaisir. Vos retours sont encourageants et apportent une vraie valeur ajout&eacute;e aux diff&eacute;rents articles d&eacute;j&agrave; publi&eacute;s. Donc un grand merci !</p>
+
+
+<p>Et donc, cet article juste pour vous annoncer quelques nouveaut&eacute;s :</p>
+
+
+<ul>
+<li>ajout du <a href="http://feeds.feedburner.com/WebTambouilleComments" target="_blank">fil RSS des commentaires</a>, id&eacute;al pour r&eacute;agir et voir si vous avez des r&eacute;ponses, une seule chose &agrave; faire : abonnez-vous !</li>
+<li>migration du site vers <a href="http://jquerymobile.com/" target="_blank">jQuery Mobile</a>&nbsp;<em>(en cours)</em> pour vos smartphones pr&eacute;f&eacute;r&eacute;s, un article sur les pratiques de migration ne devrait pas tarder...</li>
+<li>ajout de quelques boutons de partage d'articles <em>(<a href="http://sharethis.com/" target="_blank">ShareThis</a>) </em>en fin d'article</li>
+</ul>
+
+
+<p>A venir aussi : un petit sondage pour savoir quelles technologies vous int&eacute;ressent et ce que vous voudriez lire sur la Tambouille <em>(HTML5, Java, Javascript, Android...)</em>. <em>Stay tuned !</em></p>
+
+]]></content>
+    </entry>
+    
+    <entry>
+        <title type="html"><![CDATA[Web-Tambouille S01E01]]></title>
+        <link href="http://www.web-tambouille.fr/2010/09/20/web-tambouille-s01e01.html"/>
+        <updated>2010-09-20T00:00:00+02:00</updated>
+        <id>http://www.web-tambouille.fr/2010/09/20/web-tambouille-s01e01</id>
+        <content type="html"><![CDATA[<p>Bonjour &agrave; tous,</p>
+
+
+<p>Et bienvenue pour le pilote de la premi&egrave;re saison de&nbsp;<a href="../../">web-tambouille.fr</a>&nbsp;!<br />Nous parlerons Web, Javascript, NoSQL, HTML5, Canvas, Node.js, Java, Ruby... bref le Web dans tous ses &eacute;tats qu'il soit d'entreprise ou juste pour le fun.</p>
+
+
+<p>Je serai d'ailleurs pr&eacute;sent au prochain&nbsp;<a href="http://barcamp.org/w/page/WebWorkersCamp10" target="_blank">WebWorkersCamp10</a>&nbsp;organis&eacute; par <a href="http://dev.af83.com/barcamp/webworkerscamp10-paris-2930-octobre-2010/2010/09/22" target="_blank">af83</a>. <br />L'occasion d'&eacute;crire un premier article sous forme de compte-rendu de la journ&eacute;e.</p>
+
+
+<p>J'esp&egrave;re que vous allez vous plaire ici ;-)</p>
+
+]]></content>
+    </entry>
+    
+</feed>
