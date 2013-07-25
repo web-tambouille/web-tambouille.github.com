@@ -175,9 +175,10 @@ body#layout #twocolumns .fr, body#layout #twocolumns .fl {width:49% !important;}
 body#layout #content-wrapper {margin: ;}
 body#layout #footer-wrapper .links, body#layout #search, .post-feeds {display:none;}
 
+#sidebar-wrapper #tagCloud h2 { margin-bottom: 10px; }
 #sidebar-wrapper #tagList { overflow:auto; margin:0; padding:0; }
 #sidebar-wrapper #tagList ul { list-style-type:none; padding: 2px; line-height: 2.3em; text-align: center; }
-#sidebar-wrapper #tagList li { border:none; list-style-type:none; float:left; margin:1px 2px; padding:2px 15px 0 0; }
+#sidebar-wrapper #tagList li { border:none; list-style-type:none; padding: 0; margin: 0 5px 3px; text-align: left; display: inline-block; }
 #sidebar-wrapper #tagList li a { padding: 0;text-decoration:none; float:left; }
 #sidebar-wrapper #tagList li a:hover { text-decoration:underline; }
 
@@ -191,11 +192,17 @@ ul.fl{margin:0;}
 .post-share-after {margin-top:20px;}
 .post-share-after span.with_space {margin-right:25px;}
 
+#main h2.post-title, #main h2.entry-title, #main h2.single-post {margin-top: 35px;}
+
+.archive-title {text-align: center}
 #ArchiveList ul.hierarchy span.post-count-year,#ArchiveList ul.hierarchy span.post-count {color:#666;}
+.hide {display: none}
 
 .crosscol .PageList ul.main-navigation, .footer .PageList ul.main-navigation {margin-top:5px}
 #promotecolumn {margin-bottom:8px;}
 #searchcolumn {text-align:center;margin:25px 0 30px;}
+
+
 
 /* Code snippet from Octopress */
 pre {text-align: left;}
