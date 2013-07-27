@@ -99,6 +99,7 @@ p.description {font-size:18px;color:#333333;margin:0;}
 #twitter_div{color:#333;width:249px;padding:5px 5px 5px 70px;background:url(http://3.bp.blogspot.com/_Zuzii37VUO4/S59XKd9hYpI/AAAAAAAAErQ/bEC7dZOL8Bg/s1600/status.png) no-repeat 0 0;height:72px;overflow:hidden;float:right;font-size:10px;}
 #twitter_div a{color:#3CB3BD;}
 #twitter_div a:hover{text-decoration:underline;}
+span.st_plusone_hcount, span.st_twitter_hcount {float: right}
 /* MAIN */
 #main{background:#fff url("./images/posttop.png") no-repeat 0 0;}
 #main .post-title,#main .post-title a{font-size:24px;color:#B2C336;margin-bottom:10px;text-decoration:none;}
@@ -201,6 +202,28 @@ ul.fl{margin:0;}
 .crosscol .PageList ul.main-navigation, .footer .PageList ul.main-navigation {margin-top:5px}
 #promotecolumn {margin-bottom:8px;}
 #searchcolumn {text-align:center;margin:25px 0 30px;}
+
+
+
+/* Progressive enhancement */
+@media (max-width: 1144px) {
+    #main {background: #fff}
+    #outer-wrapper {width: 100%}
+    #main-wrapper {width: 100%}
+    #twitter_div, #sidebar-wrapper {display: none}
+    #header-wrapper {width: 100%; background-image: none}
+    #footer-wrapper .fl, #footer-wrapper .fr {width: auto; background-image: none; padding: 0}
+    .post-header-line-1 {width: 100%; padding: 4px}
+}
+@media (max-width: 800px) {
+    span.st_plusone_hcount, span.st_twitter_hcount {float: left}
+}
+@media (max-width: 640px) {
+    .post-labels {display: block}
+}
+@media (max-width: 460px) {
+    img {display: none}
+}
 
 
 
