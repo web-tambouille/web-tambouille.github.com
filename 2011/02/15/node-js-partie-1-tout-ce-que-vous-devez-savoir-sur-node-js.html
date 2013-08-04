@@ -30,6 +30,9 @@
 <link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/3761248391-widget_css_bundle.css' />
 <link type="text/css" rel="stylesheet" href="/stylesheets/custom/jquery.lightbox-0.5.css" media="screen" />
 <script type="text/javascript" src="/javascripts/custom/jquery.lightbox-0.5.pack.js"></script>
+<script type="text/javascript" src="/javascripts/custom/twitterFetcher.min.js"></script>
+
+
 
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">
@@ -145,12 +148,14 @@
 
     <div id='twitter_div'>
   <ul id='twitter_update_list'>
-    <li>Follow us on <a href='http://twitter.com/btemplates' rel='nofollow'>Twitter</a></li>
+    <li>Suivez moi sur Twitter : <a href='http://twitter.com/rmat0n' rel='nofollow' target='_blank'>@rmat0n</a></li>
   </ul>
 </div>
-<script src='http://twitter.com/javascripts/blogger.js' type='text/javascript'></script>
-<script src='http://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&screen_name=rmat0n&count=1&callback=twitterCallback2' type='text/javascript'></script>
-
+<script type="text/javascript">
+	twitterFetcher.fetch(/*id*/'364065543617134592', /*dom*/'', /*nb*/1, /*urls*/true, /*photo*/false, /*time*/false, /*date*/'', /*RT*/true, function (tweets) {
+	    $('#twitter_update_list').append('<li>' + tweets[0] + '</li>');
+	});
+</script>
     <div id="content-wrapper">
       <div id="main-wrapper">
         <div class='main section' id='main'>
