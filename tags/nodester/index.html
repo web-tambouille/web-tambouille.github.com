@@ -416,16 +416,26 @@ google_ad_height = 250;
   </script>
 
 
+<script type="text/javascript" src="http://snaptortoise.github.io/konami-js/konami.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     // 2 instead of 4 tabs in code snippets
     $("figure").each(function () {
       $(this).html($(this).html().replace(/\t/g, "  "));
     });
+
     // Handle archives
     var handleArchiveHashChange = function () {
-      var getHashParams = function () { var hashParams = {}; var e, a = /\+/g, r = /([^&;=]+)=?([^&;]*)/g, d = function (s) { return decodeURIComponent(s.replace(a, " ")); }, q = window.location.hash.substring(1); while (e = r.exec(q)) { hashParams[d(e[1])] = d(e[2]); } return hashParams; };
-      var hashParams = getHashParams();
+      var hashParams = (function () {
+        var hashParams = {};
+        var e, a = /\+/g, r = /([^&;=]+)=?([^&;]*)/g, d = function (s) {
+          return decodeURIComponent(s.replace(a, " "));
+        }, q = window.location.hash.substring(1);
+        while (e = r.exec(q)) {
+          hashParams[d(e[1])] = d(e[2]);
+        }
+        return hashParams;
+      })();
       if (hashParams['month'] && hashParams['year']) {
         var month = hashParams['month'];
         var year = hashParams['year'];
@@ -435,7 +445,8 @@ google_ad_height = 250;
         $('h2.post-title.entry-title.single-post').each(function () {
           if ($(this).text() !== year) $(this).addClass('hide');
           else $(this).removeClass('hide');
-        });$('article time').each(function () {
+        });
+        $('article time').each(function () {
           if ($(this).find('span.month').text() === month && $(this).find('span.year').text() === year) $(this).closest('article').removeClass('hide');
           else $(this).closest('article').addClass('hide');
         });
@@ -443,6 +454,30 @@ google_ad_height = 250;
     };
     handleArchiveHashChange();
     window.onhashchange = handleArchiveHashChange;
+
+    // Konami code
+    new Konami(function () {
+      $('body').css({
+        background: 'url("http://img.gamefaqs.net/screens/2/9/e/gfs_37016_2_3.jpg") no-repeat center center fixed',
+        '-webkit-background-size': 'cover',
+        '-moz-background-size': 'cover',
+        '-o-background-size': 'cover',
+        'background-size': 'cover'
+      });
+      var $header = $('#header-inner');
+      $header.find('.titlewrapper h1').html('DESTROY WEB TAMBOUILLE !!!');
+      $header.find('.descriptionwrapper .description').css({
+        'margin-top': '20px',
+        color: 'white'
+      }).find('span').html('Certainement dans mon top 10 des meilleurs jeux de tous les temps !');
+      $('<script />').attr({
+        type: 'text/javascript',
+        src: 'http://hi.kickassapp.com/kickass.js'
+      }).appendTo('body');
+      setTimeout(function () {
+        $(document).scrollTop(0);
+      }, 1000);
+    });
   });
 </script>
 

@@ -7,7 +7,7 @@
     <title><![CDATA[Cat&eacute;gorie : Outil | Web Tambouille 3.0]]></title>
     <link href="http://www.web-tambouille.fr/categories/outil/atom.xml" rel="self"/>
     <link href="http://www.web-tambouille.fr/"/>
-    <updated>2013-08-04T19:26:11+02:00</updated>
+    <updated>2013-08-27T22:10:35+02:00</updated>
     <id>http://www.web-tambouille.fr/</id>
     <author>
         <name><![CDATA[Romain MATON (rmat0n)]]></name>
@@ -180,8 +180,8 @@
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester coupon &lt;a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x79;&#111;&#x75;&#114;&#95;&#101;&#109;&#97;&#105;&#108;&#x40;&#99;&#111;&#x6d;&#112;&#x61;&#110;&#121;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#111;&#x75;&#x72;&#95;&#101;&#109;&#x61;&#x69;&#x6c;&#64;&#99;&#111;&#109;&#x70;&#97;&#110;&#x79;&#46;&#x63;&#x6f;&#x6d;&lt;/a>
-</span><span class='line'>nodester info Requesting coupon code for: &lt;a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#x79;&#x6f;&#117;&#x72;&#95;&#101;&#109;&#97;&#105;&#x6c;&#x40;&#x63;&#x6f;&#109;&#x70;&#x61;&#x6e;&#121;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#95;&#x65;&#109;&#x61;&#x69;&#x6c;&#64;&#99;&#x6f;&#109;&#112;&#x61;&#110;&#121;&#46;&#99;&#x6f;&#109;&lt;/a>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ nodester coupon &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x79;&#x6f;&#117;&#x72;&#95;&#x65;&#x6d;&#97;&#x69;&#108;&#64;&#x63;&#x6f;&#x6d;&#112;&#97;&#110;&#121;&#x2e;&#x63;&#111;&#x6d;">&#121;&#111;&#x75;&#x72;&#x5f;&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#99;&#111;&#x6d;&#112;&#97;&#x6e;&#x79;&#46;&#x63;&#111;&#x6d;&lt;/a>
+</span><span class='line'>nodester info Requesting coupon code for: &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x79;&#111;&#117;&#x72;&#x5f;&#x65;&#109;&#x61;&#x69;&#108;&#x40;&#99;&#x6f;&#x6d;&#x70;&#97;&#x6e;&#x79;&#x2e;&#99;&#x6f;&#109;">&#x79;&#111;&#117;&#114;&#x5f;&#x65;&#x6d;&#97;&#x69;&#108;&#64;&#x63;&#x6f;&#x6d;&#112;&#x61;&#110;&#x79;&#x2e;&#x63;&#111;&#109;&lt;/a>
 </span><span class='line'>nodester info SUCCESS &ndash; you are now in queue to receive an invite on our next batch!</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p style="text-align: left;">Maintenant, on utilise l'url de cr&eacute;ation d'utilisateur avec notre coupon <em>(que vous recevrez par mail)</em>, un identifiant, notre mot de passe et notre cl&eacute; SSH. Notez que vous pouvez, pour cette partie, vous rendre sur le site et passer par le menu <em>register</em>. Attention, Nodester a besoin que tous les caract&egrave;res <em>+</em> de votre cl&eacute; SSH soient remplac&eacute;s par&nbsp;<em>%2B</em>. Un petit combo <span style="font-family: 'courier new', courier;">cat/sed/pbcopy</span> fait le travail :</p>
@@ -190,7 +190,7 @@
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~$ cat ~/.ssh/id_rsa.pub | sed s/&lsquo;+&rsquo;/&lsquo;%2B&rsquo;/g > ~/.ssh/id_rsa_nodester.pub
-</span><span class='line'>rmat0n:~$ nodester user create your_username your_password &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x79;&#111;&#117;&#x72;&#95;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#x63;&#x6f;&#x6d;&#112;&#x61;&#x6e;&#x79;&#46;&#x63;&#111;&#109;">&#121;&#111;&#117;&#x72;&#x5f;&#x65;&#109;&#97;&#105;&#108;&#64;&#99;&#x6f;&#109;&#112;&#97;&#110;&#121;&#46;&#x63;&#111;&#x6d;&lt;/a> ~/.ssh/id_rsa_nodester.pub your_coupon</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>rmat0n:~$ nodester user create your_username your_password &lt;a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x79;&#x6f;&#117;&#x72;&#95;&#101;&#109;&#x61;&#x69;&#x6c;&#x40;&#x63;&#x6f;&#109;&#112;&#x61;&#x6e;&#x79;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#117;&#x72;&#95;&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#x63;&#x6f;&#x6d;&#x70;&#97;&#110;&#121;&#x2e;&#x63;&#x6f;&#109;&lt;/a> ~/.ssh/id_rsa_nodester.pub your_coupon</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Voil&agrave; ! Vous avez cr&eacute;&eacute; un user en 2 appels REST <img title="Laughing" src="http://www.web-tambouille.fr/tinymce/plugins/emoticons/img/smiley-laughing.gif" border="0" alt="Laughing" />&nbsp;Maintenant, occupons-nous de l'application et commen&ccedil;ons par la cr&eacute;er <em>(le nom de l'application en dernier argument n'est pas n&eacute;cessaire si on est d&eacute;j&agrave; dans le dossier projet)</em> :</p>
 
@@ -232,7 +232,7 @@
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install &lt;a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#101;&#x78;&#112;&#114;&#x65;&#115;&#x73;&#64;&#50;&#46;&#48;&#46;&#48;&#98;&#x65;&#x74;&#x61;">&#x65;&#x78;&#x70;&#114;&#101;&#x73;&#x73;&#64;&#50;&#46;&#x30;&#46;&#x30;&#x62;&#101;&#116;&#x61;&lt;/a>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#101;&#120;&#112;&#x72;&#101;&#x73;&#x73;&#64;&#x32;&#x2e;&#48;&#x2e;&#48;&#x62;&#x65;&#x74;&#x61;">&#x65;&#x78;&#x70;&#114;&#x65;&#x73;&#115;&#x40;&#50;&#46;&#48;&#x2e;&#x30;&#x62;&#x65;&#x74;&#x61;&lt;/a>
 </span><span class='line'>rmat0n:~/node-example (master)$ nodester appnpm install socket.io
 </span><span class='line'>rmat0n:~/node-example (master)$ nodester app start</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
